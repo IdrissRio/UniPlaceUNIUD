@@ -1,0 +1,1051 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D045D5A1C2ADA030021F14F /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D045D591C2ADA030021F14F /* checkin.png */; };
+		2D045D5E1C2ADC400021F14F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D045D5D1C2ADC400021F14F /* SWRevealViewController.m */; };
+		2D0E2F991C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F591C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png */; };
+		2D0E2F9A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png */; };
+		2D0E2F9B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg */; };
+		2D0E2F9C1C045022009420A5 /* IstitutoUniversitarioDiStudiSuperiori.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5C1C045022009420A5 /* IstitutoUniversitarioDiStudiSuperiori.jpeg */; };
+		2D0E2F9D1C045022009420A5 /* Iuav.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5D1C045022009420A5 /* Iuav.jpg */; };
+		2D0E2F9E1C045022009420A5 /* L'Orientale - UniversitaDegliStudiDiNapoli.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5E1C045022009420A5 /* L'Orientale - UniversitaDegliStudiDiNapoli.jpg */; };
+		2D0E2F9F1C045022009420A5 /* ParthenopeUnivesitaDegliStudidiNapoli.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5F1C045022009420A5 /* ParthenopeUnivesitaDegliStudidiNapoli.gif */; };
+		2D0E2FA01C045022009420A5 /* PolitecnicoDiBari.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F601C045022009420A5 /* PolitecnicoDiBari.gif */; };
+		2D0E2FA11C045022009420A5 /* PolitecnicoDiMilano.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F611C045022009420A5 /* PolitecnicoDiMilano.png */; };
+		2D0E2FA21C045022009420A5 /* PolitecnicoDiTorino.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F621C045022009420A5 /* PolitecnicoDiTorino.png */; };
+		2D0E2FA31C045022009420A5 /* SapienzaUniversitaDiRoma.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F631C045022009420A5 /* SapienzaUniversitaDiRoma.png */; };
+		2D0E2FA41C045022009420A5 /* ScuolaNormaleDiPisa.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F641C045022009420A5 /* ScuolaNormaleDiPisa.png */; };
+		2D0E2FA51C045022009420A5 /* ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F651C045022009420A5 /* ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png */; };
+		2D0E2FA61C045022009420A5 /* SecondaUnviversitaDegliStudi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F661C045022009420A5 /* SecondaUnviversitaDegliStudi.png */; };
+		2D0E2FA71C045022009420A5 /* TorVergataUniversitaDegliStudiDiRoma.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F671C045022009420A5 /* TorVergataUniversitaDegliStudiDiRoma.png */; };
+		2D0E2FA81C045022009420A5 /* UniveresitaDegliStudiDiParma.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F681C045022009420A5 /* UniveresitaDegliStudiDiParma.gif */; };
+		2D0E2FA91C045022009420A5 /* UniversitaCaFoscariDiVenezia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F691C045022009420A5 /* UniversitaCaFoscariDiVenezia.png */; };
+		2D0E2FAA1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F6A1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png */; };
+		2D0E2FAB1C045022009420A5 /* UniversitaDegliStudiDellaCalabria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F6B1C045022009420A5 /* UniversitaDegliStudiDellaCalabria.jpg */; };
+		2D0E2FAC1C045022009420A5 /* UniversitaDegliStudiDellAquila.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F6C1C045022009420A5 /* UniversitaDegliStudiDellAquila.gif */; };
+		2D0E2FAD1C045022009420A5 /* UniversitaDegliStudiDellaTuscia.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F6D1C045022009420A5 /* UniversitaDegliStudiDellaTuscia.gif */; };
+		2D0E2FAE1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F6E1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG */; };
+		2D0E2FAF1C045022009420A5 /* UniversitaDegliStudiDelMolise.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F6F1C045022009420A5 /* UniversitaDegliStudiDelMolise.png */; };
+		2D0E2FB01C045022009420A5 /* UniversitaDegliStudiDelPiemonte.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F701C045022009420A5 /* UniversitaDegliStudiDelPiemonte.jpg */; };
+		2D0E2FB11C045022009420A5 /* UniversitaDegliStudiDelSannio.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F711C045022009420A5 /* UniversitaDegliStudiDelSannio.png */; };
+		2D0E2FB21C045022009420A5 /* UniversitaDegliStudiDiBari.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F721C045022009420A5 /* UniversitaDegliStudiDiBari.png */; };
+		2D0E2FB31C045022009420A5 /* UniversitaDegliStudiDiBergamo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F731C045022009420A5 /* UniversitaDegliStudiDiBergamo.png */; };
+		2D0E2FB41C045022009420A5 /* UniversitaDegliStudiDiBologna.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F741C045022009420A5 /* UniversitaDegliStudiDiBologna.png */; };
+		2D0E2FB51C045022009420A5 /* UniversitaDegliStudiDiBrescia.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F751C045022009420A5 /* UniversitaDegliStudiDiBrescia.gif */; };
+		2D0E2FB61C045022009420A5 /* UniversitaDegliStudiDiCagliari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F761C045022009420A5 /* UniversitaDegliStudiDiCagliari.jpg */; };
+		2D0E2FB71C045022009420A5 /* UniversitaDegliStudiDiCamerino.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F771C045022009420A5 /* UniversitaDegliStudiDiCamerino.png */; };
+		2D0E2FB81C045022009420A5 /* UniversitaDegliStudiDiCassinoEDelLazioMerdidionale.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F781C045022009420A5 /* UniversitaDegliStudiDiCassinoEDelLazioMerdidionale.gif */; };
+		2D0E2FB91C045022009420A5 /* UniversitaDegliStudiDiCatania.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F791C045022009420A5 /* UniversitaDegliStudiDiCatania.jpg */; };
+		2D0E2FBA1C045022009420A5 /* UniversitaDegliStudiDiCatanzaro.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F7A1C045022009420A5 /* UniversitaDegliStudiDiCatanzaro.gif */; };
+		2D0E2FBB1C045022009420A5 /* UniversitaDegliStudiDiFerrara.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F7B1C045022009420A5 /* UniversitaDegliStudiDiFerrara.jpeg */; };
+		2D0E2FBC1C045022009420A5 /* UniversitaDegliStudiDiFirenze.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F7C1C045022009420A5 /* UniversitaDegliStudiDiFirenze.jpg */; };
+		2D0E2FBD1C045022009420A5 /* UniversitaDegliStudiDiFoggia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F7D1C045022009420A5 /* UniversitaDegliStudiDiFoggia.jpg */; };
+		2D0E2FBE1C045022009420A5 /* UniversitaDegliStudiDiGenova.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F7E1C045022009420A5 /* UniversitaDegliStudiDiGenova.jpg */; };
+		2D0E2FBF1C045022009420A5 /* UniversitaDegliStudiDiMacerata.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F7F1C045022009420A5 /* UniversitaDegliStudiDiMacerata.png */; };
+		2D0E2FC01C045022009420A5 /* UniversitaDegliStudiDiMessina.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F801C045022009420A5 /* UniversitaDegliStudiDiMessina.png */; };
+		2D0E2FC11C045022009420A5 /* UniversitaDegliStudiDiMilano.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F811C045022009420A5 /* UniversitaDegliStudiDiMilano.png */; };
+		2D0E2FC21C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F821C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif */; };
+		2D0E2FC31C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F831C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png */; };
+		2D0E2FC41C045022009420A5 /* UniversitaDegliStudiDiPadova.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F841C045022009420A5 /* UniversitaDegliStudiDiPadova.png */; };
+		2D0E2FC51C045022009420A5 /* UniversitaDegliStudiDiPalermo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F851C045022009420A5 /* UniversitaDegliStudiDiPalermo.jpg */; };
+		2D0E2FC61C045022009420A5 /* UniversitaDegliStudiDiPerugia.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F861C045022009420A5 /* UniversitaDegliStudiDiPerugia.gif */; };
+		2D0E2FC71C045022009420A5 /* UniversitaDegliStudiDiSalerno.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F871C045022009420A5 /* UniversitaDegliStudiDiSalerno.jpg */; };
+		2D0E2FC81C045022009420A5 /* UniversitaDegliStudiDiSassari.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F881C045022009420A5 /* UniversitaDegliStudiDiSassari.png */; };
+		2D0E2FC91C045022009420A5 /* UniversitaDegliStudiDiSiena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F891C045022009420A5 /* UniversitaDegliStudiDiSiena.jpg */; };
+		2D0E2FCA1C045022009420A5 /* UniversitaDegliStudiDiTeramo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F8A1C045022009420A5 /* UniversitaDegliStudiDiTeramo.png */; };
+		2D0E2FCB1C045022009420A5 /* UniversitaDegliStudiDiTorino.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F8B1C045022009420A5 /* UniversitaDegliStudiDiTorino.png */; };
+		2D0E2FCC1C045022009420A5 /* UniversitaDegliStudiDiTrento.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F8C1C045022009420A5 /* UniversitaDegliStudiDiTrento.gif */; };
+		2D0E2FCD1C045022009420A5 /* UniversitaDegliStudiDiTrieste.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F8D1C045022009420A5 /* UniversitaDegliStudiDiTrieste.gif */; };
+		2D0E2FCE1C045022009420A5 /* UniversitaDegliStudiDiUdine.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F8E1C045022009420A5 /* UniversitaDegliStudiDiUdine.png */; };
+		2D0E2FCF1C045022009420A5 /* UniversitaDegliStudiDiUrbino.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F8F1C045022009420A5 /* UniversitaDegliStudiDiUrbino.png */; };
+		2D0E2FD01C045022009420A5 /* UniversitaDegliStudiDiVerona.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F901C045022009420A5 /* UniversitaDegliStudiDiVerona.gif */; };
+		2D0E2FD11C045022009420A5 /* UniversitaDegliStudiGabrieleDAnnunzio.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F911C045022009420A5 /* UniversitaDegliStudiGabrieleDAnnunzio.png */; };
+		2D0E2FD21C045022009420A5 /* UniversitaDegliStudiMediterraneaDiReggioCalabria.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F921C045022009420A5 /* UniversitaDegliStudiMediterraneaDiReggioCalabria.png */; };
+		2D0E2FD31C045022009420A5 /* UniversitaDegliStudiRomaTre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F931C045022009420A5 /* UniversitaDegliStudiRomaTre.jpg */; };
+		2D0E2FD41C045022009420A5 /* UniversitaDelSalento.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F941C045022009420A5 /* UniversitaDelSalento.png */; };
+		2D0E2FD51C045022009420A5 /* UniversitaDiMilanoBicocca.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F951C045022009420A5 /* UniversitaDiMilanoBicocca.png */; };
+		2D0E2FD61C045022009420A5 /* UniversitaDiPavia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F961C045022009420A5 /* UniversitaDiPavia.png */; };
+		2D0E2FD71C045022009420A5 /* UniversitaDiPisa.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F971C045022009420A5 /* UniversitaDiPisa.png */; };
+		2D0E2FD81C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F981C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png */; };
+		2D0E2FDD1C046A6B009420A5 /* accountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E2FDA1C046A6B009420A5 /* accountInfoViewController.m */; };
+		2D0E2FDE1C046A6B009420A5 /* userInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E2FDC1C046A6B009420A5 /* userInfoViewController.m */; };
+		2D4C49701C24553700743AC1 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C496F1C24553700743AC1 /* unlock.png */; };
+		2D4C49721C245BA800743AC1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C49711C245BA800743AC1 /* location.png */; };
+		2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */; };
+		2D4D5BA01C2C7C0B0025A939 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4D5B9F1C2C7C0B0025A939 /* menu.png */; };
+		2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D75279E1BFD135B00459FD1 /* UPUniversitario.m */; };
+		2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */; };
+		2DC180D71C20E38000673136 /* UPAltreCategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */; };
+		2DC180DA1C20E39600673136 /* UPAltreCategorieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D91C20E39600673136 /* UPAltreCategorieCell.m */; };
+		2DC180DD1C20E3B200673136 /* UPNelleVicinanzeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180DC1C20E3B200673136 /* UPNelleVicinanzeCell.m */; };
+		2DC180DF1C20E3C500673136 /* UPNelleVicinanzeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180DE1C20E3C500673136 /* UPNelleVicinanzeCell.xib */; };
+		2DC180E51C20E48100673136 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180E21C20E48100673136 /* lock.png */; };
+		2DC846811C047AEB006E5F38 /* UPSelectUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC846801C047AEB006E5F38 /* UPSelectUniversity.m */; };
+		2DC846841C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC846831C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m */; };
+		2DD2059D1C23067E00133056 /* UPCategoriePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */; };
+		2DD2059F1C23196600133056 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD2059E1C23196600133056 /* CoreLocation.framework */; };
+		2DF567E51C297FF100941E2D /* UPLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF567E41C297FF100941E2D /* UPLuogo.m */; };
+		2DF567EB1C299CD000941E2D /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF567E91C299CD000941E2D /* close.png */; };
+		2DF567ED1C299D1700941E2D /* cestino.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF567EC1C299D1700941E2D /* cestino.png */; };
+		2DFDCBE41BFA3158008A2558 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDCBE21BFA3158008A2558 /* FBSDKCoreKit.framework */; };
+		2DFDCBE51BFA3159008A2558 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDCBE31BFA3158008A2558 /* FBSDKLoginKit.framework */; };
+		2DFDCBE91BFA34F5008A2558 /* firstLoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDCBE81BFA34F5008A2558 /* firstLoginScreenViewController.m */; };
+		2DFDCBED1BFA4305008A2558 /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFDCBDF1BFA2F6A008A2558 /* Bariol_Regular.otf */; };
+		2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFDCBEE1BFA43BE008A2558 /* buddyUniversita.png */; };
+		CA9EB4E71C006C92004C5507 /* buddy.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9EB4E61C006C92004C5507 /* buddy.png */; };
+		CAC374631BF5EBC900CB53DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC374621BF5EBC900CB53DD /* main.m */; };
+		CAC374661BF5EBC900CB53DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC374651BF5EBC900CB53DD /* AppDelegate.m */; };
+		CAC3746C1BF5EBC900CB53DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC3746A1BF5EBC900CB53DD /* Main.storyboard */; };
+		CAC3746F1BF5EBC900CB53DD /* Progetto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAC3746D1BF5EBC900CB53DD /* Progetto.xcdatamodeld */; };
+		CAC374711BF5EBC900CB53DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC374701BF5EBC900CB53DD /* Assets.xcassets */; };
+		CAC374741BF5EBC900CB53DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC374721BF5EBC900CB53DD /* LaunchScreen.storyboard */; };
+		CAC3747F1BF5EBC900CB53DD /* ProgettoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC3747E1BF5EBC900CB53DD /* ProgettoTests.m */; };
+		CAC3748A1BF5EBC900CB53DD /* ProgettoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC374891BF5EBC900CB53DD /* ProgettoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CAC3747B1BF5EBC900CB53DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAC374561BF5EBC900CB53DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAC3745D1BF5EBC900CB53DD;
+			remoteInfo = Progetto;
+		};
+		CAC374861BF5EBC900CB53DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAC374561BF5EBC900CB53DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAC3745D1BF5EBC900CB53DD;
+			remoteInfo = Progetto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2D045D591C2ADA030021F14F /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
+		2D045D5C1C2ADC400021F14F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../../SlideOutMenuFiles/SWRevealViewController.h; sourceTree = "<group>"; };
+		2D045D5D1C2ADC400021F14F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../../SlideOutMenuFiles/SWRevealViewController.m; sourceTree = "<group>"; };
+		2D0E2F591C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ForoItalicoUniversitaDegliStudiDiRoma.png; sourceTree = "<group>"; };
+		2D0E2F5A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IstitutoDiStudiAvanzatiDiLucca.png; sourceTree = "<group>"; };
+		2D0E2F5B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IstitutoItalianoDiScienzeUmane.jpg; sourceTree = "<group>"; };
+		2D0E2F5C1C045022009420A5 /* IstitutoUniversitarioDiStudiSuperiori.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IstitutoUniversitarioDiStudiSuperiori.jpeg; sourceTree = "<group>"; };
+		2D0E2F5D1C045022009420A5 /* Iuav.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Iuav.jpg; sourceTree = "<group>"; };
+		2D0E2F5E1C045022009420A5 /* L'Orientale - UniversitaDegliStudiDiNapoli.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "L'Orientale - UniversitaDegliStudiDiNapoli.jpg"; sourceTree = "<group>"; };
+		2D0E2F5F1C045022009420A5 /* ParthenopeUnivesitaDegliStudidiNapoli.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ParthenopeUnivesitaDegliStudidiNapoli.gif; sourceTree = "<group>"; };
+		2D0E2F601C045022009420A5 /* PolitecnicoDiBari.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = PolitecnicoDiBari.gif; sourceTree = "<group>"; };
+		2D0E2F611C045022009420A5 /* PolitecnicoDiMilano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PolitecnicoDiMilano.png; sourceTree = "<group>"; };
+		2D0E2F621C045022009420A5 /* PolitecnicoDiTorino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PolitecnicoDiTorino.png; sourceTree = "<group>"; };
+		2D0E2F631C045022009420A5 /* SapienzaUniversitaDiRoma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SapienzaUniversitaDiRoma.png; sourceTree = "<group>"; };
+		2D0E2F641C045022009420A5 /* ScuolaNormaleDiPisa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScuolaNormaleDiPisa.png; sourceTree = "<group>"; };
+		2D0E2F651C045022009420A5 /* ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png; sourceTree = "<group>"; };
+		2D0E2F661C045022009420A5 /* SecondaUnviversitaDegliStudi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SecondaUnviversitaDegliStudi.png; sourceTree = "<group>"; };
+		2D0E2F671C045022009420A5 /* TorVergataUniversitaDegliStudiDiRoma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TorVergataUniversitaDegliStudiDiRoma.png; sourceTree = "<group>"; };
+		2D0E2F681C045022009420A5 /* UniveresitaDegliStudiDiParma.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniveresitaDegliStudiDiParma.gif; sourceTree = "<group>"; };
+		2D0E2F691C045022009420A5 /* UniversitaCaFoscariDiVenezia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaCaFoscariDiVenezia.png; sourceTree = "<group>"; };
+		2D0E2F6A1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDellaBasilicata.png; sourceTree = "<group>"; };
+		2D0E2F6B1C045022009420A5 /* UniversitaDegliStudiDellaCalabria.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDellaCalabria.jpg; sourceTree = "<group>"; };
+		2D0E2F6C1C045022009420A5 /* UniversitaDegliStudiDellAquila.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDellAquila.gif; sourceTree = "<group>"; };
+		2D0E2F6D1C045022009420A5 /* UniversitaDegliStudiDellaTuscia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDellaTuscia.gif; sourceTree = "<group>"; };
+		2D0E2F6E1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDellInsubria.PNG; sourceTree = "<group>"; };
+		2D0E2F6F1C045022009420A5 /* UniversitaDegliStudiDelMolise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDelMolise.png; sourceTree = "<group>"; };
+		2D0E2F701C045022009420A5 /* UniversitaDegliStudiDelPiemonte.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDelPiemonte.jpg; sourceTree = "<group>"; };
+		2D0E2F711C045022009420A5 /* UniversitaDegliStudiDelSannio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDelSannio.png; sourceTree = "<group>"; };
+		2D0E2F721C045022009420A5 /* UniversitaDegliStudiDiBari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiBari.png; sourceTree = "<group>"; };
+		2D0E2F731C045022009420A5 /* UniversitaDegliStudiDiBergamo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiBergamo.png; sourceTree = "<group>"; };
+		2D0E2F741C045022009420A5 /* UniversitaDegliStudiDiBologna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiBologna.png; sourceTree = "<group>"; };
+		2D0E2F751C045022009420A5 /* UniversitaDegliStudiDiBrescia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiBrescia.gif; sourceTree = "<group>"; };
+		2D0E2F761C045022009420A5 /* UniversitaDegliStudiDiCagliari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiCagliari.jpg; sourceTree = "<group>"; };
+		2D0E2F771C045022009420A5 /* UniversitaDegliStudiDiCamerino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiCamerino.png; sourceTree = "<group>"; };
+		2D0E2F781C045022009420A5 /* UniversitaDegliStudiDiCassinoEDelLazioMerdidionale.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiCassinoEDelLazioMerdidionale.gif; sourceTree = "<group>"; };
+		2D0E2F791C045022009420A5 /* UniversitaDegliStudiDiCatania.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiCatania.jpg; sourceTree = "<group>"; };
+		2D0E2F7A1C045022009420A5 /* UniversitaDegliStudiDiCatanzaro.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiCatanzaro.gif; sourceTree = "<group>"; };
+		2D0E2F7B1C045022009420A5 /* UniversitaDegliStudiDiFerrara.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiFerrara.jpeg; sourceTree = "<group>"; };
+		2D0E2F7C1C045022009420A5 /* UniversitaDegliStudiDiFirenze.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiFirenze.jpg; sourceTree = "<group>"; };
+		2D0E2F7D1C045022009420A5 /* UniversitaDegliStudiDiFoggia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiFoggia.jpg; sourceTree = "<group>"; };
+		2D0E2F7E1C045022009420A5 /* UniversitaDegliStudiDiGenova.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiGenova.jpg; sourceTree = "<group>"; };
+		2D0E2F7F1C045022009420A5 /* UniversitaDegliStudiDiMacerata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiMacerata.png; sourceTree = "<group>"; };
+		2D0E2F801C045022009420A5 /* UniversitaDegliStudiDiMessina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiMessina.png; sourceTree = "<group>"; };
+		2D0E2F811C045022009420A5 /* UniversitaDegliStudiDiMilano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiMilano.png; sourceTree = "<group>"; };
+		2D0E2F821C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiModenaEReggio.gif; sourceTree = "<group>"; };
+		2D0E2F831C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiNapoliFedericoII.png; sourceTree = "<group>"; };
+		2D0E2F841C045022009420A5 /* UniversitaDegliStudiDiPadova.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiPadova.png; sourceTree = "<group>"; };
+		2D0E2F851C045022009420A5 /* UniversitaDegliStudiDiPalermo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiPalermo.jpg; sourceTree = "<group>"; };
+		2D0E2F861C045022009420A5 /* UniversitaDegliStudiDiPerugia.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiPerugia.gif; sourceTree = "<group>"; };
+		2D0E2F871C045022009420A5 /* UniversitaDegliStudiDiSalerno.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiSalerno.jpg; sourceTree = "<group>"; };
+		2D0E2F881C045022009420A5 /* UniversitaDegliStudiDiSassari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiSassari.png; sourceTree = "<group>"; };
+		2D0E2F891C045022009420A5 /* UniversitaDegliStudiDiSiena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiDiSiena.jpg; sourceTree = "<group>"; };
+		2D0E2F8A1C045022009420A5 /* UniversitaDegliStudiDiTeramo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiTeramo.png; sourceTree = "<group>"; };
+		2D0E2F8B1C045022009420A5 /* UniversitaDegliStudiDiTorino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiTorino.png; sourceTree = "<group>"; };
+		2D0E2F8C1C045022009420A5 /* UniversitaDegliStudiDiTrento.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiTrento.gif; sourceTree = "<group>"; };
+		2D0E2F8D1C045022009420A5 /* UniversitaDegliStudiDiTrieste.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiTrieste.gif; sourceTree = "<group>"; };
+		2D0E2F8E1C045022009420A5 /* UniversitaDegliStudiDiUdine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiUdine.png; sourceTree = "<group>"; };
+		2D0E2F8F1C045022009420A5 /* UniversitaDegliStudiDiUrbino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiDiUrbino.png; sourceTree = "<group>"; };
+		2D0E2F901C045022009420A5 /* UniversitaDegliStudiDiVerona.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = UniversitaDegliStudiDiVerona.gif; sourceTree = "<group>"; };
+		2D0E2F911C045022009420A5 /* UniversitaDegliStudiGabrieleDAnnunzio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiGabrieleDAnnunzio.png; sourceTree = "<group>"; };
+		2D0E2F921C045022009420A5 /* UniversitaDegliStudiMediterraneaDiReggioCalabria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDegliStudiMediterraneaDiReggioCalabria.png; sourceTree = "<group>"; };
+		2D0E2F931C045022009420A5 /* UniversitaDegliStudiRomaTre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UniversitaDegliStudiRomaTre.jpg; sourceTree = "<group>"; };
+		2D0E2F941C045022009420A5 /* UniversitaDelSalento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDelSalento.png; sourceTree = "<group>"; };
+		2D0E2F951C045022009420A5 /* UniversitaDiMilanoBicocca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDiMilanoBicocca.png; sourceTree = "<group>"; };
+		2D0E2F961C045022009420A5 /* UniversitaDiPavia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDiPavia.png; sourceTree = "<group>"; };
+		2D0E2F971C045022009420A5 /* UniversitaDiPisa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDiPisa.png; sourceTree = "<group>"; };
+		2D0E2F981C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaPolitecnicaDelleMarche.png; sourceTree = "<group>"; };
+		2D0E2FD91C046A6B009420A5 /* accountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountInfoViewController.h; sourceTree = "<group>"; };
+		2D0E2FDA1C046A6B009420A5 /* accountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountInfoViewController.m; sourceTree = "<group>"; };
+		2D0E2FDB1C046A6B009420A5 /* userInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userInfoViewController.h; sourceTree = "<group>"; };
+		2D0E2FDC1C046A6B009420A5 /* userInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userInfoViewController.m; sourceTree = "<group>"; };
+		2D4C496F1C24553700743AC1 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
+		2D4C49711C245BA800743AC1 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		2D4C49731C245DAF00743AC1 /* UPRegistrazioneLuogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPRegistrazioneLuogo.h; sourceTree = "<group>"; };
+		2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPRegistrazioneLuogo.m; sourceTree = "<group>"; };
+		2D4D5B9F1C2C7C0B0025A939 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		2D75279D1BFD135B00459FD1 /* UPUniversitario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPUniversitario.h; sourceTree = "<group>"; };
+		2D75279E1BFD135B00459FD1 /* UPUniversitario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPUniversitario.m; sourceTree = "<group>"; };
+		2DC180D31C20E35D00673136 /* UPAtterraggioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAtterraggioTableViewController.h; sourceTree = "<group>"; };
+		2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPAtterraggioTableViewController.m; sourceTree = "<group>"; };
+		2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPAltreCategorieCell.xib; sourceTree = "<group>"; };
+		2DC180D81C20E39600673136 /* UPAltreCategorieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAltreCategorieCell.h; sourceTree = "<group>"; };
+		2DC180D91C20E39600673136 /* UPAltreCategorieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPAltreCategorieCell.m; sourceTree = "<group>"; };
+		2DC180DB1C20E3B200673136 /* UPNelleVicinanzeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPNelleVicinanzeCell.h; sourceTree = "<group>"; };
+		2DC180DC1C20E3B200673136 /* UPNelleVicinanzeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPNelleVicinanzeCell.m; sourceTree = "<group>"; };
+		2DC180DE1C20E3C500673136 /* UPNelleVicinanzeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPNelleVicinanzeCell.xib; sourceTree = "<group>"; };
+		2DC180E21C20E48100673136 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		2DC8467F1C047AEB006E5F38 /* UPSelectUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPSelectUniversity.h; sourceTree = "<group>"; };
+		2DC846801C047AEB006E5F38 /* UPSelectUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPSelectUniversity.m; sourceTree = "<group>"; };
+		2DC846821C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCustomCellUniversitaTableViewCell.h; sourceTree = "<group>"; };
+		2DC846831C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCustomCellUniversitaTableViewCell.m; sourceTree = "<group>"; };
+		2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCategoriePageViewController.h; sourceTree = "<group>"; };
+		2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCategoriePageViewController.m; sourceTree = "<group>"; };
+		2DD2059E1C23196600133056 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2DF567E31C297FF100941E2D /* UPLuogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPLuogo.h; sourceTree = "<group>"; };
+		2DF567E41C297FF100941E2D /* UPLuogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPLuogo.m; sourceTree = "<group>"; };
+		2DF567E61C299B6300941E2D /* cestino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cestino.png; sourceTree = "<group>"; };
+		2DF567E91C299CD000941E2D /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		2DF567EC1C299D1700941E2D /* cestino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cestino.png; sourceTree = "<group>"; };
+		2DFDCBDF1BFA2F6A008A2558 /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
+		2DFDCBE21BFA3158008A2558 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		2DFDCBE31BFA3158008A2558 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		2DFDCBE71BFA34F5008A2558 /* firstLoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstLoginScreenViewController.h; sourceTree = "<group>"; };
+		2DFDCBE81BFA34F5008A2558 /* firstLoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstLoginScreenViewController.m; sourceTree = "<group>"; };
+		2DFDCBEE1BFA43BE008A2558 /* buddyUniversita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddyUniversita.png; sourceTree = "<group>"; };
+		CA9EB4E61C006C92004C5507 /* buddy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy.png; sourceTree = "<group>"; };
+		CAC3745E1BF5EBC900CB53DD /* Progetto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progetto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAC374621BF5EBC900CB53DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CAC374641BF5EBC900CB53DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CAC374651BF5EBC900CB53DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CAC3746B1BF5EBC900CB53DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CAC3746E1BF5EBC900CB53DD /* Progetto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Progetto.xcdatamodel; sourceTree = "<group>"; };
+		CAC374701BF5EBC900CB53DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAC374731BF5EBC900CB53DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CAC374751BF5EBC900CB53DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAC3747A1BF5EBC900CB53DD /* ProgettoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgettoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAC3747E1BF5EBC900CB53DD /* ProgettoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgettoTests.m; sourceTree = "<group>"; };
+		CAC374801BF5EBC900CB53DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAC374851BF5EBC900CB53DD /* ProgettoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgettoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAC374891BF5EBC900CB53DD /* ProgettoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgettoUITests.m; sourceTree = "<group>"; };
+		CAC3748B1BF5EBC900CB53DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAC3745B1BF5EBC900CB53DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD2059F1C23196600133056 /* CoreLocation.framework in Frameworks */,
+				2DFDCBE51BFA3159008A2558 /* FBSDKLoginKit.framework in Frameworks */,
+				2DFDCBE41BFA3158008A2558 /* FBSDKCoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAC374771BF5EBC900CB53DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAC374821BF5EBC900CB53DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D045D5B1C2ADC300021F14F /* SlideOutMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2D045D5C1C2ADC400021F14F /* SWRevealViewController.h */,
+				2D045D5D1C2ADC400021F14F /* SWRevealViewController.m */,
+			);
+			name = SlideOutMenu;
+			sourceTree = "<group>";
+		};
+		2D4C49761C245DB400743AC1 /* RegistrazioneLuogo */ = {
+			isa = PBXGroup;
+			children = (
+				2D4C49731C245DAF00743AC1 /* UPRegistrazioneLuogo.h */,
+				2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */,
+			);
+			name = RegistrazioneLuogo;
+			sourceTree = "<group>";
+		};
+		2D75279C1BFD124B00459FD1 /* Modello */ = {
+			isa = PBXGroup;
+			children = (
+				2D75279D1BFD135B00459FD1 /* UPUniversitario.h */,
+				2D75279E1BFD135B00459FD1 /* UPUniversitario.m */,
+				2DF567E31C297FF100941E2D /* UPLuogo.h */,
+				2DF567E41C297FF100941E2D /* UPLuogo.m */,
+			);
+			name = Modello;
+			sourceTree = "<group>";
+		};
+		2D7A884D1C084D9F0077B9DA /* immaginiUtente */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = immaginiUtente;
+			sourceTree = "<group>";
+		};
+		2DC180CD1C20E23600673136 /* Categorie */ = {
+			isa = PBXGroup;
+			children = (
+				2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */,
+				2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */,
+				2D4C49761C245DB400743AC1 /* RegistrazioneLuogo */,
+				2DC180CE1C20E30600673136 /* TableViewController */,
+			);
+			name = Categorie;
+			sourceTree = "<group>";
+		};
+		2DC180CE1C20E30600673136 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2DC180D31C20E35D00673136 /* UPAtterraggioTableViewController.h */,
+				2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */,
+				2DC180D01C20E31B00673136 /* TabelViewCell */,
+			);
+			name = TableViewController;
+			sourceTree = "<group>";
+		};
+		2DC180D01C20E31B00673136 /* TabelViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2DC180D21C20E33D00673136 /* AltreCategorie */,
+				2DC180D11C20E32E00673136 /* NelleVicinanze */,
+			);
+			name = TabelViewCell;
+			sourceTree = "<group>";
+		};
+		2DC180D11C20E32E00673136 /* NelleVicinanze */ = {
+			isa = PBXGroup;
+			children = (
+				2DC180DB1C20E3B200673136 /* UPNelleVicinanzeCell.h */,
+				2DC180DC1C20E3B200673136 /* UPNelleVicinanzeCell.m */,
+				2DC180DE1C20E3C500673136 /* UPNelleVicinanzeCell.xib */,
+			);
+			name = NelleVicinanze;
+			sourceTree = "<group>";
+		};
+		2DC180D21C20E33D00673136 /* AltreCategorie */ = {
+			isa = PBXGroup;
+			children = (
+				2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */,
+				2DC180D81C20E39600673136 /* UPAltreCategorieCell.h */,
+				2DC180D91C20E39600673136 /* UPAltreCategorieCell.m */,
+			);
+			name = AltreCategorie;
+			sourceTree = "<group>";
+		};
+		2DC180E01C20E47500673136 /* ImmaginiSupportoMappe */ = {
+			isa = PBXGroup;
+			children = (
+				2DF567E61C299B6300941E2D /* cestino.png */,
+				2D045D591C2ADA030021F14F /* checkin.png */,
+				2D4D5B9F1C2C7C0B0025A939 /* menu.png */,
+				2DF567EC1C299D1700941E2D /* cestino.png */,
+				2D4C496F1C24553700743AC1 /* unlock.png */,
+				2DF567E91C299CD000941E2D /* close.png */,
+				2D4C49711C245BA800743AC1 /* location.png */,
+				2DC180E21C20E48100673136 /* lock.png */,
+			);
+			name = ImmaginiSupportoMappe;
+			sourceTree = "<group>";
+		};
+		2DFDCBE01BFA3028008A2558 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				2DFDCBE11BFA3037008A2558 /* Facebook */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		2DFDCBE11BFA3037008A2558 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				2DFDCBE21BFA3158008A2558 /* FBSDKCoreKit.framework */,
+				2DFDCBE31BFA3158008A2558 /* FBSDKLoginKit.framework */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		CA79D5D01BFA2DBB0003137D /* loghiUniversita */ = {
+			isa = PBXGroup;
+			children = (
+				2D0E2F591C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png */,
+				2D0E2F5A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png */,
+				2D0E2F5B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg */,
+				2D0E2F5C1C045022009420A5 /* IstitutoUniversitarioDiStudiSuperiori.jpeg */,
+				2D0E2F5D1C045022009420A5 /* Iuav.jpg */,
+				2D0E2F5E1C045022009420A5 /* L'Orientale - UniversitaDegliStudiDiNapoli.jpg */,
+				2D0E2F5F1C045022009420A5 /* ParthenopeUnivesitaDegliStudidiNapoli.gif */,
+				2D0E2F601C045022009420A5 /* PolitecnicoDiBari.gif */,
+				2D0E2F611C045022009420A5 /* PolitecnicoDiMilano.png */,
+				2D0E2F621C045022009420A5 /* PolitecnicoDiTorino.png */,
+				2D0E2F631C045022009420A5 /* SapienzaUniversitaDiRoma.png */,
+				2D0E2F641C045022009420A5 /* ScuolaNormaleDiPisa.png */,
+				2D0E2F651C045022009420A5 /* ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png */,
+				2D0E2F661C045022009420A5 /* SecondaUnviversitaDegliStudi.png */,
+				2D0E2F671C045022009420A5 /* TorVergataUniversitaDegliStudiDiRoma.png */,
+				2D0E2F681C045022009420A5 /* UniveresitaDegliStudiDiParma.gif */,
+				2D0E2F691C045022009420A5 /* UniversitaCaFoscariDiVenezia.png */,
+				2D0E2F6A1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png */,
+				2D0E2F6B1C045022009420A5 /* UniversitaDegliStudiDellaCalabria.jpg */,
+				2D0E2F6C1C045022009420A5 /* UniversitaDegliStudiDellAquila.gif */,
+				2D0E2F6D1C045022009420A5 /* UniversitaDegliStudiDellaTuscia.gif */,
+				2D0E2F6E1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG */,
+				2D0E2F6F1C045022009420A5 /* UniversitaDegliStudiDelMolise.png */,
+				2D0E2F701C045022009420A5 /* UniversitaDegliStudiDelPiemonte.jpg */,
+				2D0E2F711C045022009420A5 /* UniversitaDegliStudiDelSannio.png */,
+				2D0E2F721C045022009420A5 /* UniversitaDegliStudiDiBari.png */,
+				2D0E2F731C045022009420A5 /* UniversitaDegliStudiDiBergamo.png */,
+				2D0E2F741C045022009420A5 /* UniversitaDegliStudiDiBologna.png */,
+				2D0E2F751C045022009420A5 /* UniversitaDegliStudiDiBrescia.gif */,
+				2D0E2F761C045022009420A5 /* UniversitaDegliStudiDiCagliari.jpg */,
+				2D0E2F771C045022009420A5 /* UniversitaDegliStudiDiCamerino.png */,
+				2D0E2F781C045022009420A5 /* UniversitaDegliStudiDiCassinoEDelLazioMerdidionale.gif */,
+				2D0E2F791C045022009420A5 /* UniversitaDegliStudiDiCatania.jpg */,
+				2D0E2F7A1C045022009420A5 /* UniversitaDegliStudiDiCatanzaro.gif */,
+				2D0E2F7B1C045022009420A5 /* UniversitaDegliStudiDiFerrara.jpeg */,
+				2D0E2F7C1C045022009420A5 /* UniversitaDegliStudiDiFirenze.jpg */,
+				2D0E2F7D1C045022009420A5 /* UniversitaDegliStudiDiFoggia.jpg */,
+				2D0E2F7E1C045022009420A5 /* UniversitaDegliStudiDiGenova.jpg */,
+				2D0E2F7F1C045022009420A5 /* UniversitaDegliStudiDiMacerata.png */,
+				2D0E2F801C045022009420A5 /* UniversitaDegliStudiDiMessina.png */,
+				2D0E2F811C045022009420A5 /* UniversitaDegliStudiDiMilano.png */,
+				2D0E2F821C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif */,
+				2D0E2F831C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png */,
+				2D0E2F841C045022009420A5 /* UniversitaDegliStudiDiPadova.png */,
+				2D0E2F851C045022009420A5 /* UniversitaDegliStudiDiPalermo.jpg */,
+				2D0E2F861C045022009420A5 /* UniversitaDegliStudiDiPerugia.gif */,
+				2D0E2F871C045022009420A5 /* UniversitaDegliStudiDiSalerno.jpg */,
+				2D0E2F881C045022009420A5 /* UniversitaDegliStudiDiSassari.png */,
+				2D0E2F891C045022009420A5 /* UniversitaDegliStudiDiSiena.jpg */,
+				2D0E2F8A1C045022009420A5 /* UniversitaDegliStudiDiTeramo.png */,
+				2D0E2F8B1C045022009420A5 /* UniversitaDegliStudiDiTorino.png */,
+				2D0E2F8C1C045022009420A5 /* UniversitaDegliStudiDiTrento.gif */,
+				2D0E2F8D1C045022009420A5 /* UniversitaDegliStudiDiTrieste.gif */,
+				2D0E2F8E1C045022009420A5 /* UniversitaDegliStudiDiUdine.png */,
+				2D0E2F8F1C045022009420A5 /* UniversitaDegliStudiDiUrbino.png */,
+				2D0E2F901C045022009420A5 /* UniversitaDegliStudiDiVerona.gif */,
+				2D0E2F911C045022009420A5 /* UniversitaDegliStudiGabrieleDAnnunzio.png */,
+				2D0E2F921C045022009420A5 /* UniversitaDegliStudiMediterraneaDiReggioCalabria.png */,
+				2D0E2F931C045022009420A5 /* UniversitaDegliStudiRomaTre.jpg */,
+				2D0E2F941C045022009420A5 /* UniversitaDelSalento.png */,
+				2D0E2F951C045022009420A5 /* UniversitaDiMilanoBicocca.png */,
+				2D0E2F961C045022009420A5 /* UniversitaDiPavia.png */,
+				2D0E2F971C045022009420A5 /* UniversitaDiPisa.png */,
+				2D0E2F981C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png */,
+				2DFDCBEE1BFA43BE008A2558 /* buddyUniversita.png */,
+				CA9EB4E61C006C92004C5507 /* buddy.png */,
+			);
+			name = loghiUniversita;
+			sourceTree = "<group>";
+		};
+		CA79D5D11BFA2DFB0003137D /* Registrazione */ = {
+			isa = PBXGroup;
+			children = (
+				2DFDCBE71BFA34F5008A2558 /* firstLoginScreenViewController.h */,
+				2DFDCBE81BFA34F5008A2558 /* firstLoginScreenViewController.m */,
+				2D0E2FD91C046A6B009420A5 /* accountInfoViewController.h */,
+				2D0E2FDA1C046A6B009420A5 /* accountInfoViewController.m */,
+				2D0E2FDB1C046A6B009420A5 /* userInfoViewController.h */,
+				2D0E2FDC1C046A6B009420A5 /* userInfoViewController.m */,
+				2DC8467F1C047AEB006E5F38 /* UPSelectUniversity.h */,
+				2DC846801C047AEB006E5F38 /* UPSelectUniversity.m */,
+				2DC846821C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.h */,
+				2DC846831C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m */,
+			);
+			name = Registrazione;
+			sourceTree = "<group>";
+		};
+		CAC374551BF5EBC900CB53DD = {
+			isa = PBXGroup;
+			children = (
+				2DD2059E1C23196600133056 /* CoreLocation.framework */,
+				CAC374601BF5EBC900CB53DD /* Progetto */,
+				CAC3747D1BF5EBC900CB53DD /* ProgettoTests */,
+				CAC374881BF5EBC900CB53DD /* ProgettoUITests */,
+				CAC3745F1BF5EBC900CB53DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CAC3745F1BF5EBC900CB53DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAC3745E1BF5EBC900CB53DD /* Progetto.app */,
+				CAC3747A1BF5EBC900CB53DD /* ProgettoTests.xctest */,
+				CAC374851BF5EBC900CB53DD /* ProgettoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CAC374601BF5EBC900CB53DD /* Progetto */ = {
+			isa = PBXGroup;
+			children = (
+				CAC374641BF5EBC900CB53DD /* AppDelegate.h */,
+				CAC374651BF5EBC900CB53DD /* AppDelegate.m */,
+				2D045D5B1C2ADC300021F14F /* SlideOutMenu */,
+				2DC180CD1C20E23600673136 /* Categorie */,
+				CA79D5D11BFA2DFB0003137D /* Registrazione */,
+				2D75279C1BFD124B00459FD1 /* Modello */,
+				CAC3746A1BF5EBC900CB53DD /* Main.storyboard */,
+				CAC374721BF5EBC900CB53DD /* LaunchScreen.storyboard */,
+				CAC374751BF5EBC900CB53DD /* Info.plist */,
+				CAC3746D1BF5EBC900CB53DD /* Progetto.xcdatamodeld */,
+				CAC374611BF5EBC900CB53DD /* Supporting Files */,
+			);
+			path = Progetto;
+			sourceTree = "<group>";
+		};
+		CAC374611BF5EBC900CB53DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DC180E01C20E47500673136 /* ImmaginiSupportoMappe */,
+				2D7A884D1C084D9F0077B9DA /* immaginiUtente */,
+				2DFDCBE01BFA3028008A2558 /* Framework */,
+				CAC374701BF5EBC900CB53DD /* Assets.xcassets */,
+				CA79D5D01BFA2DBB0003137D /* loghiUniversita */,
+				2DFDCBDF1BFA2F6A008A2558 /* Bariol_Regular.otf */,
+				CAC374621BF5EBC900CB53DD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CAC3747D1BF5EBC900CB53DD /* ProgettoTests */ = {
+			isa = PBXGroup;
+			children = (
+				CAC3747E1BF5EBC900CB53DD /* ProgettoTests.m */,
+				CAC374801BF5EBC900CB53DD /* Info.plist */,
+			);
+			path = ProgettoTests;
+			sourceTree = "<group>";
+		};
+		CAC374881BF5EBC900CB53DD /* ProgettoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CAC374891BF5EBC900CB53DD /* ProgettoUITests.m */,
+				CAC3748B1BF5EBC900CB53DD /* Info.plist */,
+			);
+			path = ProgettoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAC3745D1BF5EBC900CB53DD /* Progetto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAC3748E1BF5EBC900CB53DD /* Build configuration list for PBXNativeTarget "Progetto" */;
+			buildPhases = (
+				CAC3745A1BF5EBC900CB53DD /* Sources */,
+				CAC3745B1BF5EBC900CB53DD /* Frameworks */,
+				CAC3745C1BF5EBC900CB53DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Progetto;
+			productName = Progetto;
+			productReference = CAC3745E1BF5EBC900CB53DD /* Progetto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CAC374791BF5EBC900CB53DD /* ProgettoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAC374911BF5EBC900CB53DD /* Build configuration list for PBXNativeTarget "ProgettoTests" */;
+			buildPhases = (
+				CAC374761BF5EBC900CB53DD /* Sources */,
+				CAC374771BF5EBC900CB53DD /* Frameworks */,
+				CAC374781BF5EBC900CB53DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAC3747C1BF5EBC900CB53DD /* PBXTargetDependency */,
+			);
+			name = ProgettoTests;
+			productName = ProgettoTests;
+			productReference = CAC3747A1BF5EBC900CB53DD /* ProgettoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CAC374841BF5EBC900CB53DD /* ProgettoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAC374941BF5EBC900CB53DD /* Build configuration list for PBXNativeTarget "ProgettoUITests" */;
+			buildPhases = (
+				CAC374811BF5EBC900CB53DD /* Sources */,
+				CAC374821BF5EBC900CB53DD /* Frameworks */,
+				CAC374831BF5EBC900CB53DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAC374871BF5EBC900CB53DD /* PBXTargetDependency */,
+			);
+			name = ProgettoUITests;
+			productName = ProgettoUITests;
+			productReference = CAC374851BF5EBC900CB53DD /* ProgettoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAC374561BF5EBC900CB53DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Idriss e Gabriele";
+				TargetAttributes = {
+					CAC3745D1BF5EBC900CB53DD = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					CAC374791BF5EBC900CB53DD = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = CAC3745D1BF5EBC900CB53DD;
+					};
+					CAC374841BF5EBC900CB53DD = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = CAC3745D1BF5EBC900CB53DD;
+					};
+				};
+			};
+			buildConfigurationList = CAC374591BF5EBC900CB53DD /* Build configuration list for PBXProject "Progetto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CAC374551BF5EBC900CB53DD;
+			productRefGroup = CAC3745F1BF5EBC900CB53DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAC3745D1BF5EBC900CB53DD /* Progetto */,
+				CAC374791BF5EBC900CB53DD /* ProgettoTests */,
+				CAC374841BF5EBC900CB53DD /* ProgettoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAC3745C1BF5EBC900CB53DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D0E2F991C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png in Resources */,
+				2DC180DF1C20E3C500673136 /* UPNelleVicinanzeCell.xib in Resources */,
+				2D0E2FAA1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png in Resources */,
+				2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */,
+				2D0E2FC81C045022009420A5 /* UniversitaDegliStudiDiSassari.png in Resources */,
+				2D0E2FAF1C045022009420A5 /* UniversitaDegliStudiDelMolise.png in Resources */,
+				2D0E2FD11C045022009420A5 /* UniversitaDegliStudiGabrieleDAnnunzio.png in Resources */,
+				2D0E2FB01C045022009420A5 /* UniversitaDegliStudiDelPiemonte.jpg in Resources */,
+				2D0E2FCC1C045022009420A5 /* UniversitaDegliStudiDiTrento.gif in Resources */,
+				2DFDCBED1BFA4305008A2558 /* Bariol_Regular.otf in Resources */,
+				2D0E2FD71C045022009420A5 /* UniversitaDiPisa.png in Resources */,
+				2D0E2FBB1C045022009420A5 /* UniversitaDegliStudiDiFerrara.jpeg in Resources */,
+				2D0E2FCA1C045022009420A5 /* UniversitaDegliStudiDiTeramo.png in Resources */,
+				CA9EB4E71C006C92004C5507 /* buddy.png in Resources */,
+				2D0E2FB51C045022009420A5 /* UniversitaDegliStudiDiBrescia.gif in Resources */,
+				CAC374741BF5EBC900CB53DD /* LaunchScreen.storyboard in Resources */,
+				2D0E2FB91C045022009420A5 /* UniversitaDegliStudiDiCatania.jpg in Resources */,
+				2D0E2FD81C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png in Resources */,
+				2D0E2FA41C045022009420A5 /* ScuolaNormaleDiPisa.png in Resources */,
+				2D0E2FB31C045022009420A5 /* UniversitaDegliStudiDiBergamo.png in Resources */,
+				2D0E2FB11C045022009420A5 /* UniversitaDegliStudiDelSannio.png in Resources */,
+				2D0E2FB71C045022009420A5 /* UniversitaDegliStudiDiCamerino.png in Resources */,
+				2D0E2FA31C045022009420A5 /* SapienzaUniversitaDiRoma.png in Resources */,
+				2D0E2FAB1C045022009420A5 /* UniversitaDegliStudiDellaCalabria.jpg in Resources */,
+				2D0E2FCE1C045022009420A5 /* UniversitaDegliStudiDiUdine.png in Resources */,
+				2D0E2F9D1C045022009420A5 /* Iuav.jpg in Resources */,
+				2D0E2F9C1C045022009420A5 /* IstitutoUniversitarioDiStudiSuperiori.jpeg in Resources */,
+				CAC374711BF5EBC900CB53DD /* Assets.xcassets in Resources */,
+				2D0E2FAC1C045022009420A5 /* UniversitaDegliStudiDellAquila.gif in Resources */,
+				2D0E2FC61C045022009420A5 /* UniversitaDegliStudiDiPerugia.gif in Resources */,
+				2D0E2FB61C045022009420A5 /* UniversitaDegliStudiDiCagliari.jpg in Resources */,
+				2D0E2FD61C045022009420A5 /* UniversitaDiPavia.png in Resources */,
+				2D0E2FC21C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif in Resources */,
+				2D045D5A1C2ADA030021F14F /* checkin.png in Resources */,
+				2DC180E51C20E48100673136 /* lock.png in Resources */,
+				2D0E2FAE1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG in Resources */,
+				2D0E2FA81C045022009420A5 /* UniveresitaDegliStudiDiParma.gif in Resources */,
+				2D0E2FA11C045022009420A5 /* PolitecnicoDiMilano.png in Resources */,
+				2D0E2F9E1C045022009420A5 /* L'Orientale - UniversitaDegliStudiDiNapoli.jpg in Resources */,
+				2D0E2FBD1C045022009420A5 /* UniversitaDegliStudiDiFoggia.jpg in Resources */,
+				2D0E2FCF1C045022009420A5 /* UniversitaDegliStudiDiUrbino.png in Resources */,
+				2DF567EB1C299CD000941E2D /* close.png in Resources */,
+				2D0E2FB41C045022009420A5 /* UniversitaDegliStudiDiBologna.png in Resources */,
+				2D0E2FB21C045022009420A5 /* UniversitaDegliStudiDiBari.png in Resources */,
+				2D0E2FA61C045022009420A5 /* SecondaUnviversitaDegliStudi.png in Resources */,
+				2D0E2F9B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg in Resources */,
+				2D0E2FA21C045022009420A5 /* PolitecnicoDiTorino.png in Resources */,
+				2D0E2F9F1C045022009420A5 /* ParthenopeUnivesitaDegliStudidiNapoli.gif in Resources */,
+				2D0E2FD51C045022009420A5 /* UniversitaDiMilanoBicocca.png in Resources */,
+				2D0E2FD21C045022009420A5 /* UniversitaDegliStudiMediterraneaDiReggioCalabria.png in Resources */,
+				2D0E2FBA1C045022009420A5 /* UniversitaDegliStudiDiCatanzaro.gif in Resources */,
+				2D0E2FA51C045022009420A5 /* ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png in Resources */,
+				2DC180D71C20E38000673136 /* UPAltreCategorieCell.xib in Resources */,
+				2D0E2FC01C045022009420A5 /* UniversitaDegliStudiDiMessina.png in Resources */,
+				CAC3746C1BF5EBC900CB53DD /* Main.storyboard in Resources */,
+				2D0E2F9A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png in Resources */,
+				2D0E2FC51C045022009420A5 /* UniversitaDegliStudiDiPalermo.jpg in Resources */,
+				2D0E2FCD1C045022009420A5 /* UniversitaDegliStudiDiTrieste.gif in Resources */,
+				2D0E2FBF1C045022009420A5 /* UniversitaDegliStudiDiMacerata.png in Resources */,
+				2D0E2FC71C045022009420A5 /* UniversitaDegliStudiDiSalerno.jpg in Resources */,
+				2D0E2FA01C045022009420A5 /* PolitecnicoDiBari.gif in Resources */,
+				2D0E2FD01C045022009420A5 /* UniversitaDegliStudiDiVerona.gif in Resources */,
+				2D4C49701C24553700743AC1 /* unlock.png in Resources */,
+				2D4D5BA01C2C7C0B0025A939 /* menu.png in Resources */,
+				2D0E2FD31C045022009420A5 /* UniversitaDegliStudiRomaTre.jpg in Resources */,
+				2D0E2FD41C045022009420A5 /* UniversitaDelSalento.png in Resources */,
+				2D0E2FC11C045022009420A5 /* UniversitaDegliStudiDiMilano.png in Resources */,
+				2D0E2FC41C045022009420A5 /* UniversitaDegliStudiDiPadova.png in Resources */,
+				2D0E2FA71C045022009420A5 /* TorVergataUniversitaDegliStudiDiRoma.png in Resources */,
+				2D0E2FB81C045022009420A5 /* UniversitaDegliStudiDiCassinoEDelLazioMerdidionale.gif in Resources */,
+				2DF567ED1C299D1700941E2D /* cestino.png in Resources */,
+				2D4C49721C245BA800743AC1 /* location.png in Resources */,
+				2D0E2FCB1C045022009420A5 /* UniversitaDegliStudiDiTorino.png in Resources */,
+				2D0E2FBE1C045022009420A5 /* UniversitaDegliStudiDiGenova.jpg in Resources */,
+				2D0E2FC31C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png in Resources */,
+				2D0E2FA91C045022009420A5 /* UniversitaCaFoscariDiVenezia.png in Resources */,
+				2D0E2FBC1C045022009420A5 /* UniversitaDegliStudiDiFirenze.jpg in Resources */,
+				2D0E2FAD1C045022009420A5 /* UniversitaDegliStudiDellaTuscia.gif in Resources */,
+				2D0E2FC91C045022009420A5 /* UniversitaDegliStudiDiSiena.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAC374781BF5EBC900CB53DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAC374831BF5EBC900CB53DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAC3745A1BF5EBC900CB53DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D0E2FDE1C046A6B009420A5 /* userInfoViewController.m in Sources */,
+				CAC3746F1BF5EBC900CB53DD /* Progetto.xcdatamodeld in Sources */,
+				2DC846841C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m in Sources */,
+				CAC374661BF5EBC900CB53DD /* AppDelegate.m in Sources */,
+				2D0E2FDD1C046A6B009420A5 /* accountInfoViewController.m in Sources */,
+				2DC180DA1C20E39600673136 /* UPAltreCategorieCell.m in Sources */,
+				2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */,
+				2DFDCBE91BFA34F5008A2558 /* firstLoginScreenViewController.m in Sources */,
+				2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */,
+				2DC846811C047AEB006E5F38 /* UPSelectUniversity.m in Sources */,
+				2DD2059D1C23067E00133056 /* UPCategoriePageViewController.m in Sources */,
+				2D045D5E1C2ADC400021F14F /* SWRevealViewController.m in Sources */,
+				2DC180DD1C20E3B200673136 /* UPNelleVicinanzeCell.m in Sources */,
+				2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */,
+				CAC374631BF5EBC900CB53DD /* main.m in Sources */,
+				2DF567E51C297FF100941E2D /* UPLuogo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAC374761BF5EBC900CB53DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAC3747F1BF5EBC900CB53DD /* ProgettoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAC374811BF5EBC900CB53DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAC3748A1BF5EBC900CB53DD /* ProgettoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CAC3747C1BF5EBC900CB53DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAC3745D1BF5EBC900CB53DD /* Progetto */;
+			targetProxy = CAC3747B1BF5EBC900CB53DD /* PBXContainerItemProxy */;
+		};
+		CAC374871BF5EBC900CB53DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAC3745D1BF5EBC900CB53DD /* Progetto */;
+			targetProxy = CAC374861BF5EBC900CB53DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CAC3746A1BF5EBC900CB53DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAC3746B1BF5EBC900CB53DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CAC374721BF5EBC900CB53DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAC374731BF5EBC900CB53DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CAC3748C1BF5EBC900CB53DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CAC3748D1BF5EBC900CB53DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAC3748F1BF5EBC900CB53DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Progetto",
+				);
+				INFOPLIST_FILE = Progetto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unipr.progetti.mobdev.Progetto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CAC374901BF5EBC900CB53DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Progetto",
+				);
+				INFOPLIST_FILE = Progetto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unipr.progetti.mobdev.Progetto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CAC374921BF5EBC900CB53DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ProgettoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unipr.progetti.mobdev.ProgettoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Progetto.app/Progetto";
+			};
+			name = Debug;
+		};
+		CAC374931BF5EBC900CB53DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ProgettoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unipr.progetti.mobdev.ProgettoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Progetto.app/Progetto";
+			};
+			name = Release;
+		};
+		CAC374951BF5EBC900CB53DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ProgettoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unipr.progetti.mobdev.ProgettoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Progetto;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CAC374961BF5EBC900CB53DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ProgettoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unipr.progetti.mobdev.ProgettoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Progetto;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAC374591BF5EBC900CB53DD /* Build configuration list for PBXProject "Progetto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAC3748C1BF5EBC900CB53DD /* Debug */,
+				CAC3748D1BF5EBC900CB53DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAC3748E1BF5EBC900CB53DD /* Build configuration list for PBXNativeTarget "Progetto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAC3748F1BF5EBC900CB53DD /* Debug */,
+				CAC374901BF5EBC900CB53DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAC374911BF5EBC900CB53DD /* Build configuration list for PBXNativeTarget "ProgettoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAC374921BF5EBC900CB53DD /* Debug */,
+				CAC374931BF5EBC900CB53DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAC374941BF5EBC900CB53DD /* Build configuration list for PBXNativeTarget "ProgettoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAC374951BF5EBC900CB53DD /* Debug */,
+				CAC374961BF5EBC900CB53DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CAC3746D1BF5EBC900CB53DD /* Progetto.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CAC3746E1BF5EBC900CB53DD /* Progetto.xcdatamodel */,
+			);
+			currentVersion = CAC3746E1BF5EBC900CB53DD /* Progetto.xcdatamodel */;
+			path = Progetto.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CAC374561BF5EBC900CB53DD /* Project object */;
+}
