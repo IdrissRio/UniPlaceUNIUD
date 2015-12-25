@@ -2762,11 +2762,12 @@
                                 <state key="normal" title="Check In"/>
                             </button>
                             <connections>
-                                <action selector="checkInLuogo:" destination="aa7-cy-OTs" id="dRS-dF-Nd8"/>
+                                <action selector="CheckInButtonItem:" destination="aa7-cy-OTs" id="0jy-kn-sTg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="CheckInButtonItem" destination="5Zo-lK-ief" id="Yf6-kU-NNP"/>
                         <outlet property="blurEffect" destination="n28-iN-jSh" id="diJ-Uw-wBR"/>
                         <outlet property="cameraButton" destination="GgG-Um-1Y3" id="RpT-cH-vFj"/>
                         <outlet property="galleriaButton" destination="1SK-wk-jnO" id="pJr-jM-lQg"/>
