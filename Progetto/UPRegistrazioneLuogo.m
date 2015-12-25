@@ -16,8 +16,8 @@
     UIImage* immagineInserita;
 
 }
-@property (weak, nonatomic) IBOutlet UIImageView *imageViewLuogoSottoBlur;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewLuogoSottoBlur;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewLuogo;
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *blurEffect;
 @property (weak, nonatomic) IBOutlet UIButton *galleriaButton;
@@ -26,6 +26,16 @@
 @end
 
 @implementation UPRegistrazioneLuogo
+
+
+- (IBAction)CheckInButtonItem:(UIBarButtonItem *)sender {
+    //Creare un oggetto di tipo UPLuogo, riempirne ogni campo (l'immagine se esiste la si trova in immagineInserita), la location la si trova in locationManager.location.longitude/latitude poi telefono e nome luogo e indirizzo li si prendono dai textbox.
+        //Va preso questo oggetto e mandato sul db.
+    
+    
+    
+}
+
 
 
 - (CLLocationManager *)locationManager{
