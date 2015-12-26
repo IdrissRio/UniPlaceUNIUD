@@ -101,9 +101,7 @@
     if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
     return _locationManager;
 }
-- (IBAction)checkInLuogo:(UIBarButtonItem *)sender {
-    //Salva luogo nell db.
-}
+
 
 - (void)viewDidLoad {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
