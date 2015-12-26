@@ -367,38 +367,6 @@
             endingLineNumber = "248"
             landmarkName = "-insertNicknameDidChanged:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[accountInfoViewController inviaImmagineProfilo]"
-                  moduleName = "Progetto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrieleetta/Desktop/ProgettoMobileFinale/Progetto/Progetto/Progetto/accountInfoViewController.m"
-                  timestampString = "471179416.636591"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "248"
-                  endingLineNumber = "248"
-                  offsetFromSymbolStart = "1537">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__49-[accountInfoViewController inviaImmagineProfilo]_block_invoke"
-                  moduleName = "Progetto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrieleetta/Desktop/ProgettoMobileFinale/Progetto/Progetto/Progetto/accountInfoViewController.m"
-                  timestampString = "471179416.636818"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "248"
-                  endingLineNumber = "248"
-                  offsetFromSymbolStart = "98">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -511,38 +479,6 @@
             endingLineNumber = "118"
             landmarkName = "-loginButtonPressed:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__53-[firstLoginScreenViewController loginButtonPressed:]_block_invoke"
-                  moduleName = "Progetto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrieleetta/Desktop/ProgettoMobileFinale/Progetto/Progetto/Progetto/firstLoginScreenViewController.m"
-                  timestampString = "471179416.640635"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "1855">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__53-[firstLoginScreenViewController loginButtonPressed:]_block_invoke"
-                  moduleName = "Progetto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrieleetta/Desktop/ProgettoMobileFinale/Progetto/Progetto/Progetto/firstLoginScreenViewController.m"
-                  timestampString = "471179416.640835"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "1917">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -575,38 +511,6 @@
             endingLineNumber = "133"
             landmarkName = "-loginButtonPressed:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[firstLoginScreenViewController checkCredentials]"
-                  moduleName = "Progetto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrieleetta/Desktop/ProgettoMobileFinale/Progetto/Progetto/Progetto/firstLoginScreenViewController.m"
-                  timestampString = "471179416.642792"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__50-[firstLoginScreenViewController checkCredentials]_block_invoke"
-                  moduleName = "Progetto"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrieleetta/Desktop/ProgettoMobileFinale/Progetto/Progetto/Progetto/firstLoginScreenViewController.m"
-                  timestampString = "471179416.642991"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "15">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -654,6 +558,22 @@
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "-loginButtonPressed:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Progetto/UPAtterraggioTableViewController.m"
+            timestampString = "472820742.397824"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

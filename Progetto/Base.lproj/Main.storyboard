@@ -2653,7 +2653,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="location.png"/>
                                 <connections>
-                                    <segue destination="aa7-cy-OTs" kind="show" id="4TO-KM-Yyy"/>
+                                    <segue destination="aa7-cy-OTs" kind="show" identifier="luogoSegue" id="4TO-KM-Yyy"/>
                                 </connections>
                             </button>
                         </barButtonItem>
