@@ -10,8 +10,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h> // Per impostare i border nelle textField
 #import "UPUniversitario.h"
+#import "UIViewController+TextFieldDelegate.h"
 
-@interface accountInfoViewController : UIViewController
+@interface accountInfoViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong,nonatomic) UPUniversitario *universitario;
 //@property (retain, nonatomic) NSString *nome;

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "UPUniversitario.h"
-@interface userInfoViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+#import "UIViewController+TextFieldDelegate.h"
+
+@interface userInfoViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *avantiPressed;
 @property (strong,nonatomic) UPUniversitario *universitario;
@@ -20,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorNomeInsert;
 @property (weak, nonatomic) IBOutlet UILabel *errorCognomeInsert;
 @property (weak, nonatomic) IBOutlet UILabel *labelUniversita;
-
+@property (nonatomic, assign)NSNumber *maxlength;
 /*!
  * @brief ifLoginWithFacebook
  * @discussion ifLoginWithFacebook: controlla se l'utente si è registrato con facebook e se si è registrato con facebook allora procede con il riempimento dei TextFiled e dell'immagine */

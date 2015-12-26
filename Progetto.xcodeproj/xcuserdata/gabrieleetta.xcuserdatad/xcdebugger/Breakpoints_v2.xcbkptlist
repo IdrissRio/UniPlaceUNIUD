@@ -157,7 +157,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
             endingLineNumber = "202"
-            landmarkName = "-didReceiveMemoryWarning"
+            landmarkName = "-loginButton:didCompleteWithResult:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -189,7 +189,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "-isValidEmail:"
+            landmarkName = "-endRegistrationButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -205,7 +205,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "-isValidEmail:"
+            landmarkName = "-endRegistrationButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -221,7 +221,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
             endingLineNumber = "74"
-            landmarkName = "-isDuplicated"
+            landmarkName = "-isValidEmail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -269,7 +269,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
             endingLineNumber = "214"
-            landmarkName = "-inviaDatiUtente:"
+            landmarkName = "-insertNicknameDidBegin:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -317,8 +317,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "250"
             endingLineNumber = "250"
-            landmarkName = "-inviaImmagineProfilo"
-            landmarkType = "5">
+            landmarkName = "@implementation accountInfoViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -333,7 +333,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "-isDuplicated"
+            landmarkName = "-canFinishRegistration"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -349,7 +349,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "249"
             endingLineNumber = "249"
-            landmarkName = "-inviaImmagineProfilo"
+            landmarkName = "-insertNicknameDidChanged:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -365,7 +365,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "248"
             endingLineNumber = "248"
-            landmarkName = "-inviaImmagineProfilo"
+            landmarkName = "-insertNicknameDidChanged:"
             landmarkType = "5">
             <Locations>
                <Location

@@ -11,9 +11,13 @@
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #import <CoreLocation/CoreLocation.h>
 #import "UPLuogo.h"
-@interface UPRegistrazioneLuogo ()<CLLocationManagerDelegate,UIPickerViewDataSource, UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
-    NSArray* pickerValues;
-    UIImage* immagineInserita;
+#import "NetworkLoadingManager.h"
+@interface UPRegistrazioneLuogo ()<CLLocationManagerDelegate,UIPickerViewDataSource, UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate
+   >{
+       
+       NSArray* pickerValues;
+       UIImage* immagineInserita;
+       NSString* selectedPicker;
 
 }
 
@@ -32,7 +36,62 @@
     //Creare un oggetto di tipo UPLuogo, riempirne ogni campo (l'immagine se esiste la si trova in immagineInserita), la location la si trova in locationManager.location.longitude/latitude poi telefono e nome luogo e indirizzo li si prendono dai textbox.
         //Va preso questo oggetto e mandato sul db.
     
+    self.pickerTipologia.dataSource = self;
+    self.pickerTipologia.delegate = self;
     
+    NetworkLoadingManager *locationUploader = [[NetworkLoadingManager alloc]init];
+    
+    NSDictionary *parametriLuogo = [[NSDictionary alloc]initWithObjectsAndKeys:
+        self.nomeLuogoTextField.text, @"nome",
+        self.indirizzoLuogoTextField.text, @"indirizzo",
+        self.telefonoLuogoTextField.text, @"numeroTelefonico",
+        selectedPicker, @"categoria",
+        self.locationManager.location.coordinate.latitude, @"latitudine",
+        self.locationManager.location.coordinate.longitude, @"longitudine",
+        nil];
+    
+    NSData *immagineLuogo = UIImageJPEGRepresentation(immagineInserita, 0.9);
+    NSArray*infoImmagine = @[self.nomeLuogoTextField, @"photo"];
+    
+    NSURLRequest *request = [locationUploader createBodyWithURL:@"http://mobdev2015.com/aggiungiluogo.php" Parameters:parametriLuogo DataImage:immagineLuogo ImageInformations:infoImmagine];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if(data){
+            NSError *parseError;
+            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            if (datiUtente) {
+                NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                
+                if([esito isEqualToString:@"1"])
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self setReviewResult:1];
+                    });
+                
+                else
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self setReviewResult:0];
+                    });
+                
+            } else
+                NSLog(@"parseError = %@ \n", parseError);
+            
+            NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self setReviewResult:0];
+            });
+            
+        } else
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self setReviewResult:0];
+            });
+        
+        
+    }] resume];
+
     
 }
 
@@ -121,6 +180,7 @@
 // The data to return for the row and component (column) that's being passed in
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    selectedPicker = pickerValues[row];
     return pickerValues[row];
 }
 
@@ -190,5 +250,26 @@
     return YES;
 }
 
+- (void) setReviewResult:(int)Esito{
+    if(Esito == 1){
+        [self dismissViewControllerAnimated:NO completion:^{
+            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Luogo inserimento correttamente"
+                                                                         preferredStyle:UIAlertControllerStyleAlert ];
+            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+            [errorAlert addAction:OkAction];
+            [self presentViewController:errorAlert animated:YES completion:nil];
+        }];
+    }
+    else{
+        [self dismissViewControllerAnimated:NO completion:^{
+            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Il luogo non è stato inserito!"
+                                                                         preferredStyle:UIAlertControllerStyleAlert ];
+            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Errore" style:UIAlertActionStyleDefault handler:nil];
+            [errorAlert addAction:OkAction];
+            [self presentViewController:errorAlert animated:YES completion:nil];
+            
+        }];
+    }
+}
 
 @end
