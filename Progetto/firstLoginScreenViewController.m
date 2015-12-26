@@ -12,7 +12,6 @@
 #import "firstLoginScreenViewController.h"
 #import "UPUniversitario.h"
 #import "userInfoViewController.h"
-#import "AppDelegate.h"
 @interface firstLoginScreenViewController (){
     UPUniversitario* soloFacebookUniversitario;
      NSString *serverReply;
@@ -121,15 +120,11 @@
                 // of the fields above, as parameter.
                 universitarioLoggato.LogoUni = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlUniImage]];
                 universitarioLoggato.fotoProfilo = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlProfileImage]];
-                
+            
                 /***************** PREPARED FOR SEGUE *************/
-                
-                [self salvaDatiNelDBnome:universitarioLoggato.nome cognome:universitarioLoggato.cognome email:universitarioLoggato.email fotoProfilo:universitarioLoggato.fotoProfilo nomeUtente:universitarioLoggato.nomeUtente universita:universitarioLoggato.universita];
-                
                 } else {
                 NSLog(@"parseError = %@", parseError);
                 NSLog(@"responseString = %@", universitarioLoggato);
-                   
             }
             
         }] resume];
@@ -146,14 +141,13 @@
             self.errorLabel.hidden = YES;
             self.usernameTextField.layer.borderColor = [[UIColor clearColor] CGColor];
             self.passwordTextField.layer.borderColor = [[UIColor clearColor] CGColor];
-            /*UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Accesso Effettuato"preferredStyle:UIAlertControllerStyleAlert ];
+            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Accesso Effettuato"preferredStyle:UIAlertControllerStyleAlert ];
             UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
-            [errorAlert addAction:OkAction];*/
-            //[self presentViewController:errorAlert animated:YES completion:nil];
+            [errorAlert addAction:OkAction];
+            [self presentViewController:errorAlert animated:YES completion:nil];
             /**** PREPARE FOR SEGUE ****/
-           [self performSegueWithIdentifier:@"successfulLoginSegue" sender:self];
+            
         }];
-        
     }
     else{
         [self dismissViewControllerAnimated:NO completion:^{
@@ -187,11 +181,6 @@ textField.layer.borderWidth= 1.0f;
     self.loginButton.readPermissions =  @[@"public_profile", @"email", @"user_friends"];
     self.loginButton.delegate=self;
     self.loginWithoutFacebook.layer.cornerRadius=3;
-
-    UIColor * UPGreenColor=[UIColor colorWithRed:1.0/255.0 green:106.0/255.0 blue:127.0/255.0 alpha:1];
-    self.navigationController.navigationBar.barTintColor = UPGreenColor;
-    [self.navigationController.navigationBar
-     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
 - (void)viewDidLoad {
@@ -248,36 +237,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     NSLog(@"Logout withFacebook");
 }
 
-#pragma mark gestione del db e salvataggio del nuovo utente.
--(void)salvaDatiNelDBnome:(NSString*)nome
-                  cognome:(NSString*)cognome
-                    email:(NSString*)email
-              fotoProfilo:(NSData*)fotoProfilo
-               nomeUtente:(NSString*)nomeUtente
-               universita:(NSString*)universita{
-    AppDelegate *objApp=(AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context=[objApp managedObjectContext];
-    NSEntityDescription* entityDesc=[NSEntityDescription entityForName:@"Utente" inManagedObjectContext:context];
-    NSManagedObject* persona=[[NSManagedObject alloc]initWithEntity:entityDesc insertIntoManagedObjectContext:context];
-    [persona setValue:nome forKey:@"nome"];
-    [persona setValue:cognome forKey:@"cognome"];
-    [persona setValue:email forKey:@"email"];
-    [persona setValue:fotoProfilo forKey:@"fotoprofilo"];
-    [persona setValue:nomeUtente forKey:@"nomeutente"];
-    [persona setValue:universita forKey:@"universita"];
-    NSError* err;
-    NSLog(@"Salvo utente nel db locale: \n");
-    NSLog(@"%@\n",nome);
-    NSLog(@"%@\n",cognome);
-    NSLog(@"%@\n",email);
-    NSLog(@"%@\n",universita);
-    NSLog(@"%@\n",nomeUtente);
-    //  NSLog(@"%@\n",fotoProfilo);
-    [context save:&err];
-    if(err!=nil)
-        NSLog(@"%@",err.description);
-    
-}
+
 
 #pragma mark - Navigation
 

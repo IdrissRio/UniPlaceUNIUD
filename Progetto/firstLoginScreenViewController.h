@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-
+#import "UIViewController+TextFieldDelegate.h"
 /*!
  * @class firstLoginScreenViewController
  * @superclass UIViewController
@@ -19,7 +19,7 @@
  * @discussion firstLoginScreenViewController è una classe che definisce come deve apparire e quali sono i dati che devono essere caricati durante la prima schermata di login. Questa schermata apparirà solamente se l'utente non si è mai registrato o se dopo esseresi registrato avrà effettuata il logout.
  */
 
-@interface firstLoginScreenViewController : UIViewController<FBSDKLoginButtonDelegate>
+@interface firstLoginScreenViewController : UIViewController<FBSDKLoginButtonDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 /*! loginButton: rappresenta il bottone con la quale l'utente può ottenere le sue informazioni senza dovere compilare il form. Abbiamo utilizzato le GRAPH-API sviluppate da facebook.*/

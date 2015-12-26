@@ -72,8 +72,6 @@
 		2D0E2FD61C045022009420A5 /* UniversitaDiPavia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F961C045022009420A5 /* UniversitaDiPavia.png */; };
 		2D0E2FD71C045022009420A5 /* UniversitaDiPisa.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F971C045022009420A5 /* UniversitaDiPisa.png */; };
 		2D0E2FD81C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F981C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png */; };
-		2D0E2FDD1C046A6B009420A5 /* accountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E2FDA1C046A6B009420A5 /* accountInfoViewController.m */; };
-		2D0E2FDE1C046A6B009420A5 /* userInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E2FDC1C046A6B009420A5 /* userInfoViewController.m */; };
 		2D4C49701C24553700743AC1 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C496F1C24553700743AC1 /* unlock.png */; };
 		2D4C49721C245BA800743AC1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C49711C245BA800743AC1 /* location.png */; };
 		2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */; };
@@ -86,8 +84,6 @@
 		2DC180DD1C20E3B200673136 /* UPNelleVicinanzeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180DC1C20E3B200673136 /* UPNelleVicinanzeCell.m */; };
 		2DC180DF1C20E3C500673136 /* UPNelleVicinanzeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180DE1C20E3C500673136 /* UPNelleVicinanzeCell.xib */; };
 		2DC180E51C20E48100673136 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180E21C20E48100673136 /* lock.png */; };
-		2DC846811C047AEB006E5F38 /* UPSelectUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC846801C047AEB006E5F38 /* UPSelectUniversity.m */; };
-		2DC846841C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC846831C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m */; };
 		2DD2059D1C23067E00133056 /* UPCategoriePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */; };
 		2DD2059F1C23196600133056 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD2059E1C23196600133056 /* CoreLocation.framework */; };
 		2DF567E51C297FF100941E2D /* UPLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF567E41C297FF100941E2D /* UPLuogo.m */; };
@@ -95,9 +91,22 @@
 		2DF567ED1C299D1700941E2D /* cestino.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF567EC1C299D1700941E2D /* cestino.png */; };
 		2DFDCBE41BFA3158008A2558 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDCBE21BFA3158008A2558 /* FBSDKCoreKit.framework */; };
 		2DFDCBE51BFA3159008A2558 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDCBE31BFA3158008A2558 /* FBSDKLoginKit.framework */; };
-		2DFDCBE91BFA34F5008A2558 /* firstLoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDCBE81BFA34F5008A2558 /* firstLoginScreenViewController.m */; };
 		2DFDCBED1BFA4305008A2558 /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFDCBDF1BFA2F6A008A2558 /* Bariol_Regular.otf */; };
 		2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFDCBEE1BFA43BE008A2558 /* buddyUniversita.png */; };
+		CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */; };
+		CA83AC151C2DD238000D6432 /* UIViewController+TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC131C2DD238000D6432 /* UIViewController+TextFieldDelegate.m */; };
+		CA83AC191C2DD263000D6432 /* NetworkLoadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC181C2DD263000D6432 /* NetworkLoadingManager.m */; };
+		CA83AC221C2DD2A8000D6432 /* accountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC1B1C2DD2A8000D6432 /* accountInfoViewController.m */; };
+		CA83AC231C2DD2A8000D6432 /* userInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC1D1C2DD2A8000D6432 /* userInfoViewController.m */; };
+		CA83AC241C2DD2A8000D6432 /* UPSelectUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC1F1C2DD2A8000D6432 /* UPSelectUniversity.m */; };
+		CA83AC251C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC211C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m */; };
+		CA83AC281C2DD311000D6432 /* firstLoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC271C2DD311000D6432 /* firstLoginScreenViewController.m */; };
+		CA83AC2C1C2DD33A000D6432 /* InserimentoLuogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC2B1C2DD33A000D6432 /* InserimentoLuogoViewController.m */; };
+		CA83AC311C2DDB37000D6432 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83AC2E1C2DDB37000D6432 /* Camera.png */; };
+		CA83AC321C2DDB37000D6432 /* piena.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83AC2F1C2DDB37000D6432 /* piena.png */; };
+		CA83AC331C2DDB37000D6432 /* vuota.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83AC301C2DDB37000D6432 /* vuota.png */; };
+		CA83AC391C2DDC6E000D6432 /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC361C2DDC6E000D6432 /* StarRatingView.m */; };
+		CA83AC3A1C2DDC6E000D6432 /* AddReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC371C2DDC6E000D6432 /* AddReviewController.m */; };
 		CA9EB4E71C006C92004C5507 /* buddy.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9EB4E61C006C92004C5507 /* buddy.png */; };
 		CAC374631BF5EBC900CB53DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC374621BF5EBC900CB53DD /* main.m */; };
 		CAC374661BF5EBC900CB53DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC374651BF5EBC900CB53DD /* AppDelegate.m */; };
@@ -192,10 +201,6 @@
 		2D0E2F961C045022009420A5 /* UniversitaDiPavia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDiPavia.png; sourceTree = "<group>"; };
 		2D0E2F971C045022009420A5 /* UniversitaDiPisa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaDiPisa.png; sourceTree = "<group>"; };
 		2D0E2F981C045022009420A5 /* UniversitaPolitecnicaDelleMarche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversitaPolitecnicaDelleMarche.png; sourceTree = "<group>"; };
-		2D0E2FD91C046A6B009420A5 /* accountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountInfoViewController.h; sourceTree = "<group>"; };
-		2D0E2FDA1C046A6B009420A5 /* accountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountInfoViewController.m; sourceTree = "<group>"; };
-		2D0E2FDB1C046A6B009420A5 /* userInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userInfoViewController.h; sourceTree = "<group>"; };
-		2D0E2FDC1C046A6B009420A5 /* userInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userInfoViewController.m; sourceTree = "<group>"; };
 		2D4C496F1C24553700743AC1 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
 		2D4C49711C245BA800743AC1 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		2D4C49731C245DAF00743AC1 /* UPRegistrazioneLuogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPRegistrazioneLuogo.h; sourceTree = "<group>"; };
@@ -214,10 +219,6 @@
 		2DC180DC1C20E3B200673136 /* UPNelleVicinanzeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPNelleVicinanzeCell.m; sourceTree = "<group>"; };
 		2DC180DE1C20E3C500673136 /* UPNelleVicinanzeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPNelleVicinanzeCell.xib; sourceTree = "<group>"; };
 		2DC180E21C20E48100673136 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
-		2DC8467F1C047AEB006E5F38 /* UPSelectUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPSelectUniversity.h; sourceTree = "<group>"; };
-		2DC846801C047AEB006E5F38 /* UPSelectUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPSelectUniversity.m; sourceTree = "<group>"; };
-		2DC846821C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCustomCellUniversitaTableViewCell.h; sourceTree = "<group>"; };
-		2DC846831C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCustomCellUniversitaTableViewCell.m; sourceTree = "<group>"; };
 		2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCategoriePageViewController.h; sourceTree = "<group>"; };
 		2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCategoriePageViewController.m; sourceTree = "<group>"; };
 		2DD2059E1C23196600133056 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -229,9 +230,32 @@
 		2DFDCBDF1BFA2F6A008A2558 /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
 		2DFDCBE21BFA3158008A2558 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2DFDCBE31BFA3158008A2558 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		2DFDCBE71BFA34F5008A2558 /* firstLoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstLoginScreenViewController.h; sourceTree = "<group>"; };
-		2DFDCBE81BFA34F5008A2558 /* firstLoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstLoginScreenViewController.m; sourceTree = "<group>"; };
 		2DFDCBEE1BFA43BE008A2558 /* buddyUniversita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddyUniversita.png; sourceTree = "<group>"; };
+		CA83AC101C2DD238000D6432 /* UITextField+RuntimeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+RuntimeExtension.h"; sourceTree = "<group>"; };
+		CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+RuntimeExtension.m"; sourceTree = "<group>"; };
+		CA83AC121C2DD238000D6432 /* UIViewController+TextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TextFieldDelegate.h"; sourceTree = "<group>"; };
+		CA83AC131C2DD238000D6432 /* UIViewController+TextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TextFieldDelegate.m"; sourceTree = "<group>"; };
+		CA83AC171C2DD263000D6432 /* NetworkLoadingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLoadingManager.h; sourceTree = "<group>"; };
+		CA83AC181C2DD263000D6432 /* NetworkLoadingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLoadingManager.m; sourceTree = "<group>"; };
+		CA83AC1A1C2DD2A8000D6432 /* accountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountInfoViewController.h; sourceTree = "<group>"; };
+		CA83AC1B1C2DD2A8000D6432 /* accountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountInfoViewController.m; sourceTree = "<group>"; };
+		CA83AC1C1C2DD2A8000D6432 /* userInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userInfoViewController.h; sourceTree = "<group>"; };
+		CA83AC1D1C2DD2A8000D6432 /* userInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userInfoViewController.m; sourceTree = "<group>"; };
+		CA83AC1E1C2DD2A8000D6432 /* UPSelectUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPSelectUniversity.h; sourceTree = "<group>"; };
+		CA83AC1F1C2DD2A8000D6432 /* UPSelectUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPSelectUniversity.m; sourceTree = "<group>"; };
+		CA83AC201C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCustomCellUniversitaTableViewCell.h; sourceTree = "<group>"; };
+		CA83AC211C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCustomCellUniversitaTableViewCell.m; sourceTree = "<group>"; };
+		CA83AC261C2DD311000D6432 /* firstLoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstLoginScreenViewController.h; sourceTree = "<group>"; };
+		CA83AC271C2DD311000D6432 /* firstLoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstLoginScreenViewController.m; sourceTree = "<group>"; };
+		CA83AC2A1C2DD33A000D6432 /* InserimentoLuogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InserimentoLuogoViewController.h; sourceTree = "<group>"; };
+		CA83AC2B1C2DD33A000D6432 /* InserimentoLuogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InserimentoLuogoViewController.m; sourceTree = "<group>"; };
+		CA83AC2E1C2DDB37000D6432 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		CA83AC2F1C2DDB37000D6432 /* piena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piena.png; sourceTree = "<group>"; };
+		CA83AC301C2DDB37000D6432 /* vuota.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vuota.png; sourceTree = "<group>"; };
+		CA83AC351C2DDC6E000D6432 /* StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarRatingView.h; sourceTree = "<group>"; };
+		CA83AC361C2DDC6E000D6432 /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarRatingView.m; sourceTree = "<group>"; };
+		CA83AC371C2DDC6E000D6432 /* AddReviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReviewController.m; sourceTree = "<group>"; };
+		CA83AC381C2DDC6E000D6432 /* AddReviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReviewController.h; sourceTree = "<group>"; };
 		CA9EB4E61C006C92004C5507 /* buddy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy.png; sourceTree = "<group>"; };
 		CAC3745E1BF5EBC900CB53DD /* Progetto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progetto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC374621BF5EBC900CB53DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -317,9 +341,10 @@
 		2DC180CD1C20E23600673136 /* Categorie */ = {
 			isa = PBXGroup;
 			children = (
+				CA83AC161C2DD241000D6432 /* Gestione dati Server */,
+				CA83AC0F1C2DD1EA000D6432 /* Controllo TextField */,
 				2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */,
 				2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */,
-				2D4C49761C245DB400743AC1 /* RegistrazioneLuogo */,
 				2DC180CE1C20E30600673136 /* TableViewController */,
 			);
 			name = Categorie;
@@ -472,18 +497,68 @@
 		CA79D5D11BFA2DFB0003137D /* Registrazione */ = {
 			isa = PBXGroup;
 			children = (
-				2DFDCBE71BFA34F5008A2558 /* firstLoginScreenViewController.h */,
-				2DFDCBE81BFA34F5008A2558 /* firstLoginScreenViewController.m */,
-				2D0E2FD91C046A6B009420A5 /* accountInfoViewController.h */,
-				2D0E2FDA1C046A6B009420A5 /* accountInfoViewController.m */,
-				2D0E2FDB1C046A6B009420A5 /* userInfoViewController.h */,
-				2D0E2FDC1C046A6B009420A5 /* userInfoViewController.m */,
-				2DC8467F1C047AEB006E5F38 /* UPSelectUniversity.h */,
-				2DC846801C047AEB006E5F38 /* UPSelectUniversity.m */,
-				2DC846821C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.h */,
-				2DC846831C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m */,
+				CA83AC261C2DD311000D6432 /* firstLoginScreenViewController.h */,
+				CA83AC271C2DD311000D6432 /* firstLoginScreenViewController.m */,
+				CA83AC1A1C2DD2A8000D6432 /* accountInfoViewController.h */,
+				CA83AC1B1C2DD2A8000D6432 /* accountInfoViewController.m */,
+				CA83AC1C1C2DD2A8000D6432 /* userInfoViewController.h */,
+				CA83AC1D1C2DD2A8000D6432 /* userInfoViewController.m */,
+				CA83AC1E1C2DD2A8000D6432 /* UPSelectUniversity.h */,
+				CA83AC1F1C2DD2A8000D6432 /* UPSelectUniversity.m */,
+				CA83AC201C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.h */,
+				CA83AC211C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m */,
 			);
 			name = Registrazione;
+			sourceTree = "<group>";
+		};
+		CA83AC0F1C2DD1EA000D6432 /* Controllo TextField */ = {
+			isa = PBXGroup;
+			children = (
+				CA83AC101C2DD238000D6432 /* UITextField+RuntimeExtension.h */,
+				CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */,
+				CA83AC121C2DD238000D6432 /* UIViewController+TextFieldDelegate.h */,
+				CA83AC131C2DD238000D6432 /* UIViewController+TextFieldDelegate.m */,
+			);
+			name = "Controllo TextField";
+			sourceTree = "<group>";
+		};
+		CA83AC161C2DD241000D6432 /* Gestione dati Server */ = {
+			isa = PBXGroup;
+			children = (
+				CA83AC171C2DD263000D6432 /* NetworkLoadingManager.h */,
+				CA83AC181C2DD263000D6432 /* NetworkLoadingManager.m */,
+			);
+			name = "Gestione dati Server";
+			sourceTree = "<group>";
+		};
+		CA83AC291C2DD322000D6432 /* Inserimento Luogo */ = {
+			isa = PBXGroup;
+			children = (
+				CA83AC2A1C2DD33A000D6432 /* InserimentoLuogoViewController.h */,
+				CA83AC2B1C2DD33A000D6432 /* InserimentoLuogoViewController.m */,
+			);
+			name = "Inserimento Luogo";
+			sourceTree = "<group>";
+		};
+		CA83AC2D1C2DDB1C000D6432 /* ImmaginiRecensione */ = {
+			isa = PBXGroup;
+			children = (
+				CA83AC2E1C2DDB37000D6432 /* Camera.png */,
+				CA83AC2F1C2DDB37000D6432 /* piena.png */,
+				CA83AC301C2DDB37000D6432 /* vuota.png */,
+			);
+			name = ImmaginiRecensione;
+			sourceTree = "<group>";
+		};
+		CA83AC341C2DDC5B000D6432 /* Inserimento Recensione */ = {
+			isa = PBXGroup;
+			children = (
+				CA83AC351C2DDC6E000D6432 /* StarRatingView.h */,
+				CA83AC361C2DDC6E000D6432 /* StarRatingView.m */,
+				CA83AC371C2DDC6E000D6432 /* AddReviewController.m */,
+				CA83AC381C2DDC6E000D6432 /* AddReviewController.h */,
+			);
+			name = "Inserimento Recensione";
 			sourceTree = "<group>";
 		};
 		CAC374551BF5EBC900CB53DD = {
@@ -510,6 +585,9 @@
 		CAC374601BF5EBC900CB53DD /* Progetto */ = {
 			isa = PBXGroup;
 			children = (
+				CA83AC341C2DDC5B000D6432 /* Inserimento Recensione */,
+				2D4C49761C245DB400743AC1 /* RegistrazioneLuogo */,
+				CA83AC291C2DD322000D6432 /* Inserimento Luogo */,
 				CAC374641BF5EBC900CB53DD /* AppDelegate.h */,
 				CAC374651BF5EBC900CB53DD /* AppDelegate.m */,
 				2D045D5B1C2ADC300021F14F /* SlideOutMenu */,
@@ -528,6 +606,7 @@
 		CAC374611BF5EBC900CB53DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA83AC2D1C2DDB1C000D6432 /* ImmaginiRecensione */,
 				2DC180E01C20E47500673136 /* ImmaginiSupportoMappe */,
 				2D7A884D1C084D9F0077B9DA /* immaginiUtente */,
 				2DFDCBE01BFA3028008A2558 /* Framework */,
@@ -673,6 +752,7 @@
 				2D0E2FD71C045022009420A5 /* UniversitaDiPisa.png in Resources */,
 				2D0E2FBB1C045022009420A5 /* UniversitaDegliStudiDiFerrara.jpeg in Resources */,
 				2D0E2FCA1C045022009420A5 /* UniversitaDegliStudiDiTeramo.png in Resources */,
+				CA83AC331C2DDB37000D6432 /* vuota.png in Resources */,
 				CA9EB4E71C006C92004C5507 /* buddy.png in Resources */,
 				2D0E2FB51C045022009420A5 /* UniversitaDegliStudiDiBrescia.gif in Resources */,
 				CAC374741BF5EBC900CB53DD /* LaunchScreen.storyboard in Resources */,
@@ -682,6 +762,8 @@
 				2D0E2FB31C045022009420A5 /* UniversitaDegliStudiDiBergamo.png in Resources */,
 				2D0E2FB11C045022009420A5 /* UniversitaDegliStudiDelSannio.png in Resources */,
 				2D0E2FB71C045022009420A5 /* UniversitaDegliStudiDiCamerino.png in Resources */,
+				CA83AC311C2DDB37000D6432 /* Camera.png in Resources */,
+				CA83AC321C2DDB37000D6432 /* piena.png in Resources */,
 				2D0E2FA31C045022009420A5 /* SapienzaUniversitaDiRoma.png in Resources */,
 				2D0E2FAB1C045022009420A5 /* UniversitaDegliStudiDellaCalabria.jpg in Resources */,
 				2D0E2FCE1C045022009420A5 /* UniversitaDegliStudiDiUdine.png in Resources */,
@@ -763,22 +845,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D0E2FDE1C046A6B009420A5 /* userInfoViewController.m in Sources */,
+				CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */,
+				CA83AC191C2DD263000D6432 /* NetworkLoadingManager.m in Sources */,
+				CA83AC2C1C2DD33A000D6432 /* InserimentoLuogoViewController.m in Sources */,
 				CAC3746F1BF5EBC900CB53DD /* Progetto.xcdatamodeld in Sources */,
-				2DC846841C049C6C006E5F38 /* UPCustomCellUniversitaTableViewCell.m in Sources */,
 				CAC374661BF5EBC900CB53DD /* AppDelegate.m in Sources */,
-				2D0E2FDD1C046A6B009420A5 /* accountInfoViewController.m in Sources */,
 				2DC180DA1C20E39600673136 /* UPAltreCategorieCell.m in Sources */,
+				CA83AC281C2DD311000D6432 /* firstLoginScreenViewController.m in Sources */,
 				2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */,
-				2DFDCBE91BFA34F5008A2558 /* firstLoginScreenViewController.m in Sources */,
 				2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */,
-				2DC846811C047AEB006E5F38 /* UPSelectUniversity.m in Sources */,
 				2DD2059D1C23067E00133056 /* UPCategoriePageViewController.m in Sources */,
 				2D83E4751C2DC023006DCC33 /* SWRevealViewController.m in Sources */,
+				CA83AC151C2DD238000D6432 /* UIViewController+TextFieldDelegate.m in Sources */,
 				2DC180DD1C20E3B200673136 /* UPNelleVicinanzeCell.m in Sources */,
+				CA83AC3A1C2DDC6E000D6432 /* AddReviewController.m in Sources */,
+				CA83AC241C2DD2A8000D6432 /* UPSelectUniversity.m in Sources */,
 				2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */,
 				CAC374631BF5EBC900CB53DD /* main.m in Sources */,
+				CA83AC221C2DD2A8000D6432 /* accountInfoViewController.m in Sources */,
+				CA83AC251C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m in Sources */,
+				CA83AC231C2DD2A8000D6432 /* userInfoViewController.m in Sources */,
 				2DF567E51C297FF100941E2D /* UPLuogo.m in Sources */,
+				CA83AC391C2DDC6E000D6432 /* StarRatingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

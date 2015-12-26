@@ -10,6 +10,7 @@
 #import "accountInfoViewController.h"
 #import "UPSelectUniversity.h"
 #include <math.h>
+#define MAX_FIELD_LENGTH 10
 
 @interface userInfoViewController()
 {
@@ -20,8 +21,10 @@
     BOOL aviableImmageUni;
 }
 
+
 - (void)canGoAhead;
 - (void)setErrorBorder:(UITextField *)textField;
+
 
 @end
 
@@ -177,18 +180,25 @@
 
 #pragma mark Gestione del contenuto inserito dall'utente
 
+
 - (IBAction)insertNomeDidChanged:(id)sender {
     self.nomeTextField.layer.borderColor = [[UIColor clearColor]CGColor];
     self.errorNomeInsert.hidden = YES;
     
-    if([self.nomeTextField.text isEqualToString:@""])
+    if([self.nomeTextField.text length] >= MAX_FIELD_LENGTH)
+        self.nomeTextField.enabled = NO;
+    else if([self.nomeTextField.text isEqualToString:@""])
         aviableNome = NO;
     else aviableNome = YES;
+    
     [self canGoAhead];
 }
 
 - (IBAction)insertCognomeDidChanged:(id)sender {
-    if([self.cognomeTextField.text isEqualToString:@""])
+    
+    if([self.cognomeTextField.text length] >= MAX_FIELD_LENGTH)
+        self.cognomeTextField.enabled = NO;
+    else if([self.cognomeTextField.text isEqualToString:@""])
         aviableCognome = NO;
     else aviableCognome = YES;
     
