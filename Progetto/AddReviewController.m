@@ -3,6 +3,7 @@
 
 @interface AddReviewController ()
 {
+    BOOL ImageSelected;
     NSString *voto;
 }
 @end
@@ -12,6 +13,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    ImageSelected = NO;
     self.rateView.notSelectedImage = [UIImage imageNamed:@"vuota.png"];
     self.rateView.halfSelectedImage = [UIImage imageNamed:@"mezza.png"];
     self.rateView.fullSelectedImage = [UIImage imageNamed:@"piena.png"];
@@ -62,7 +64,9 @@
     [spinner startAnimating];
     
     NSArray *infoImmagine = @[@"luogo", @"photo"];
-    NSData *dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
+    NSData *dataImmagine;
+    if(ImageSelected == YES) dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
+    else dataImmagine = nil;
     NSURLRequest *request = [loader createBodyWithURL:url Parameters:testualiRecensione DataImage:dataImmagine ImageInformations:infoImmagine];
     [self presentViewController:alert animated:YES completion:nil];
     
@@ -142,6 +146,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     self.immagineRecensione.image = info[UIImagePickerControllerEditedImage];
+    ImageSelected = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
@@ -155,7 +160,14 @@
         [self dismissViewControllerAnimated:NO completion:^{
             UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Recensione Inserita Correttamente"
                                                                          preferredStyle:UIAlertControllerStyleAlert ];
-            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:
+                                       ^(UIAlertAction * action)
+                                       {
+                                           ImageSelected = NO;
+                                           [self dismissViewControllerAnimated:YES completion:nil];
+                                           //[self performSegueWithIdentifier:@"ExampleMainSegue" sender:self];
+                                           
+                                       }];
             [errorAlert addAction:OkAction];
             [self presentViewController:errorAlert animated:YES completion:nil];
         }];
