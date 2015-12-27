@@ -3,10 +3,29 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Bariol_Regular.otf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
         </mutableArray>
     </customFonts>
@@ -275,10 +294,10 @@
                             <tableViewSection headerTitle="Lombardia" id="hCa-SM-o1h">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ghL-gP-bcy" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghL-gP-bcy" id="VBo-FX-mhQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PolitecnicoDiMilano.png" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-Yk-pCk">
@@ -309,10 +328,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N5j-Gh-SSB" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="158" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N5j-Gh-SSB" id="X1Q-kn-xkm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiBergamo.png" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-Op-XLa">
@@ -343,10 +362,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8Lq-hH-Seb" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="201.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="202" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Lq-hH-Seb" id="gVL-6e-bYb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli Studi di Milano" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elp-9J-IRa">
@@ -377,10 +396,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8jo-Px-XgV" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="245.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="246" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8jo-Px-XgV" id="Crc-OO-ZCH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDiMilanoBicocca.png" translatesAutoresizingMaskIntoConstraints="NO" id="XpT-vU-gLn">
@@ -411,10 +430,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bd8-vI-7vx" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="289.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="290" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bd8-vI-7vx" id="qPz-RO-NYW">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiBrescia.gif" translatesAutoresizingMaskIntoConstraints="NO" id="erD-1d-hzd">
@@ -445,10 +464,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OeR-jG-RFI" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="333.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="334" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OeR-jG-RFI" id="nJS-5W-xr9">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università di Pavia" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBu-IV-Euh">
@@ -479,10 +498,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pzE-53-dEd" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="377.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="378" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pzE-53-dEd" id="kT0-7f-Acc">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli studi dell'Insubria" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adW-AY-bra">
@@ -513,10 +532,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TaL-2A-Dzc" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="421.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="422" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TaL-2A-Dzc" id="XOo-TT-8tI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IUSS - Istituto Universitario di Studi Superiori" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoB-GQ-XTU">
@@ -551,10 +570,10 @@
                             <tableViewSection headerTitle="Lazio" id="m1p-gy-l9g">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vHO-o9-aVs" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="515.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="517" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vHO-o9-aVs" id="z9y-1i-0e2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SapienzaUniversitaDiRoma.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bw1-Np-bLu">
@@ -585,10 +604,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X2V-Tz-A6S" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="559.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="561" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X2V-Tz-A6S" id="tOB-P3-DrI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiCassinoEDelLazioMerdidionale.gif" translatesAutoresizingMaskIntoConstraints="NO" id="onS-xo-1Bf">
@@ -619,10 +638,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rmY-ZF-EAG" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="603.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="605" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rmY-ZF-EAG" id="Ce7-gK-StT">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tor Vergata - Università degli Studi di Roma" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="183-yh-g9I">
@@ -653,10 +672,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jPh-Rl-gux" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="647.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="649" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jPh-Rl-gux" id="2OB-Y6-FdH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiRomaTre.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zqF-Mu-KLV">
@@ -687,10 +706,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eyM-uU-DD2" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="691.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="693" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyM-uU-DD2" id="6HZ-hS-u6e">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ForoItalicoUniversitaDegliStudiDiRoma.png" translatesAutoresizingMaskIntoConstraints="NO" id="lY8-Yf-sfF">
@@ -725,10 +744,10 @@
                             <tableViewSection headerTitle="Toscana" id="JJa-8A-YJJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vI1-dc-DUg" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="785.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="788" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vI1-dc-DUg" id="itk-7n-7HO">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiFirenze.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="llm-QX-WMz">
@@ -759,10 +778,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hnP-wq-aY5" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="829.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="832" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hnP-wq-aY5" id="ivg-Nl-hRG">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IstitutoItalianoDiScienzeUmane.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0NR-gY-q16">
@@ -793,10 +812,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GzL-Fi-LRG" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="873.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="876" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GzL-Fi-LRG" id="dgX-zX-ejR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università di Pisa" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7me-hU-wje">
@@ -827,10 +846,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zCM-Lw-3Qg" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="917.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="920" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zCM-Lw-3Qg" id="a80-Ov-jho">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScuolaNormaleDiPisa.png" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-Ej-jaz">
@@ -861,10 +880,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="I8T-z1-R2a" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="961.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="964" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I8T-z1-R2a" id="jAZ-kU-sBz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png" translatesAutoresizingMaskIntoConstraints="NO" id="s8a-VM-jYM">
@@ -895,10 +914,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Jsp-eo-bar" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1005.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1008" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jsp-eo-bar" id="f88-ty-JTx">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddyUniversita.png" translatesAutoresizingMaskIntoConstraints="NO" id="y6W-7h-8XT">
@@ -929,10 +948,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hy6-9w-gH1" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1049.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1052" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hy6-9w-gH1" id="DI2-7N-tCu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IstitutoDiStudiAvanzatiDiLucca.png" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-uJ-7Xw">
@@ -963,10 +982,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VqI-Xs-PQ8" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1093.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1096" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VqI-Xs-PQ8" id="VTd-uh-oLL">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiSiena.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IOG-5f-J0L">
@@ -1001,10 +1020,10 @@
                             <tableViewSection headerTitle="Campania" id="Ii3-Ki-IO7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hCC-Sm-8gs" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1187.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1191" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hCC-Sm-8gs" id="Amc-VV-IKq">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiNapoliFedericoII.png" translatesAutoresizingMaskIntoConstraints="NO" id="xie-z9-ffr">
@@ -1035,10 +1054,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tpo-TR-9hX" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1231.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1235" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tpo-TR-9hX" id="qVR-st-8FW">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="L'Orientale - UniversitaDegliStudiDiNapoli.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1Qd-2b-IZg">
@@ -1069,10 +1088,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dcO-XF-HhZ" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1275.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1279" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcO-XF-HhZ" id="4MQ-Je-HeZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parthenope - Università degli Studi di Napoli" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsT-nk-LlQ">
@@ -1103,10 +1122,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hbv-bn-Oma" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1319.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1323" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbv-bn-Oma" id="0qN-gf-1HL">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SecondaUnviversitaDegliStudi.png" translatesAutoresizingMaskIntoConstraints="NO" id="u42-Vm-XAC">
@@ -1137,10 +1156,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xpe-RQ-4kf" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1363.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1367" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xpe-RQ-4kf" id="eQq-kK-zNt">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiSalerno.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lq7-eW-wrU">
@@ -1171,10 +1190,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CKH-Mq-6vM" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1407.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1411" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CKH-Mq-6vM" id="kpO-tP-ZLd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDelSannio.png" translatesAutoresizingMaskIntoConstraints="NO" id="jiF-Gl-l3I">
@@ -1209,10 +1228,10 @@
                             <tableViewSection headerTitle="Emilia Romagna" id="13p-hu-vFd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uKX-lp-A5Z" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1501.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1506" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uKX-lp-A5Z" id="s9C-Td-hsJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniveresitaDegliStudiDiParma.gif" translatesAutoresizingMaskIntoConstraints="NO" id="SFp-5b-mne">
@@ -1243,10 +1262,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="acz-Pa-BWk" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1545.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1550" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="acz-Pa-BWk" id="sCK-Sh-vBx">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiBologna.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jod-6M-gIv">
@@ -1277,10 +1296,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BJu-eI-0d0" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1589.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1594" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BJu-eI-0d0" id="DIf-Eg-0yq">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli Studi di Modena e Reggio Emilia" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-Au-58G">
@@ -1311,10 +1330,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wyo-wu-4vE" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1633.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1638" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wyo-wu-4vE" id="O61-17-jsA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiFerrara.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="A1f-pw-zG9">
@@ -1349,10 +1368,10 @@
                             <tableViewSection headerTitle="Marche" id="CQh-X7-w86">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X3m-K4-21k" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1727.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1733" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X3m-K4-21k" id="BFf-7e-vwl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiCamerino.png" translatesAutoresizingMaskIntoConstraints="NO" id="aD2-BE-m8d">
@@ -1383,10 +1402,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OYa-tP-ufi" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1771.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1777" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OYa-tP-ufi" id="slq-62-Rv9">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaPolitecnicaDelleMarche.png" translatesAutoresizingMaskIntoConstraints="NO" id="bI6-05-61A">
@@ -1417,10 +1436,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pA3-dp-qLt" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1815.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1821" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pA3-dp-qLt" id="u8y-xY-nzr">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli Studi di Macerata" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2K-gW-JYo">
@@ -1451,10 +1470,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mug-55-y6c" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1859.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1865" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mug-55-y6c" id="Ydb-kj-Bi6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiUrbino.png" translatesAutoresizingMaskIntoConstraints="NO" id="XUt-z4-PQa">
@@ -1489,10 +1508,10 @@
                             <tableViewSection headerTitle="Puglia" id="ONn-pi-Pni">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1cD-LY-1Pz" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1953.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="1960" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1cD-LY-1Pz" id="ep0-xq-9ux">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiBari.png" translatesAutoresizingMaskIntoConstraints="NO" id="PJC-vg-FcH">
@@ -1523,10 +1542,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZRo-7c-g8s" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="1997.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2004" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZRo-7c-g8s" id="dHP-QE-aux">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PolitecnicoDiBari.gif" translatesAutoresizingMaskIntoConstraints="NO" id="QTy-49-ub1">
@@ -1557,10 +1576,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JQU-hW-WJR" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2041.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2048" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JQU-hW-WJR" id="q5Y-1U-3H0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università del Salento" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxr-RM-gEw">
@@ -1591,10 +1610,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gRx-Fn-7jD" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2085.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2092" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRx-Fn-7jD" id="OZq-0k-l2P">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiFoggia.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Wet-L6-Bw7">
@@ -1629,10 +1648,10 @@
                             <tableViewSection headerTitle="Veneto" id="Tqy-mg-Nl0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vdT-e3-bj4" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2179.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2187" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vdT-e3-bj4" id="Bv4-cv-chS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaCaFoscariDiVenezia.png" translatesAutoresizingMaskIntoConstraints="NO" id="7zQ-ch-gYa">
@@ -1663,10 +1682,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dXF-ci-dDD" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2223.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2231" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dXF-ci-dDD" id="Xtb-fa-UoV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Iuav.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ktl-AV-frl">
@@ -1697,10 +1716,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xr7-bg-vvx" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2267.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2275" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xr7-bg-vvx" id="ktO-ja-JxU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli Studi di Verona" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bED-H0-ceV">
@@ -1731,10 +1750,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="p5H-cY-3qF" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2311.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2319" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p5H-cY-3qF" id="Ahh-xR-vKV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiPadova.png" translatesAutoresizingMaskIntoConstraints="NO" id="jsc-mG-Xzc">
@@ -1769,10 +1788,10 @@
                             <tableViewSection headerTitle="Sicilia" id="9i5-MH-mMd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KMb-05-l9e" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2405.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2414" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KMb-05-l9e" id="MNx-de-ZFy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiCatania.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qls-mF-v17">
@@ -1803,10 +1822,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="arb-7g-Nq2" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2449.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2458" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="arb-7g-Nq2" id="403-2N-wNn">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiMessina.png" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-Bi-LR0">
@@ -1837,10 +1856,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Kdr-WG-KHb" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2493.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2502" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kdr-WG-KHb" id="hHJ-g9-t0l">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli Studi di Palermo" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLg-vj-yJ5">
@@ -1875,10 +1894,10 @@
                             <tableViewSection headerTitle="Abruzzo" id="x5V-nw-TF3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cKL-2X-XFA" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2587.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2597" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cKL-2X-XFA" id="LOH-DW-ZQm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiGabrieleDAnnunzio.png" translatesAutoresizingMaskIntoConstraints="NO" id="8rc-ne-woU">
@@ -1909,10 +1928,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zxd-ub-eJe" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2631.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2641" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zxd-ub-eJe" id="xGZ-tM-2zd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDellAquila.gif" translatesAutoresizingMaskIntoConstraints="NO" id="x3r-El-nrl">
@@ -1943,10 +1962,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fKQ-az-dmN" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2675.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2685" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fKQ-az-dmN" id="raK-yh-Dii">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli Studi di Teramo" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRV-Hw-hE4">
@@ -1981,10 +2000,10 @@
                             <tableViewSection headerTitle="Calabria" id="fAj-K0-A13">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SY5-uU-yYw" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2769.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2780" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SY5-uU-yYw" id="rnq-a6-aVc">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDellaCalabria.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YEM-dF-LWv">
@@ -2015,10 +2034,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X9S-tR-z3h" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2813.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2824" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X9S-tR-z3h" id="byd-LC-QRY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiCatanzaro.gif" translatesAutoresizingMaskIntoConstraints="NO" id="yzE-lk-hXU">
@@ -2049,10 +2068,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ll1-vr-jqV" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2857.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2868" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ll1-vr-jqV" id="Wdl-kl-yBs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mediterranea - Università degli Studi di Reggio Calabria" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-f1-VEb">
@@ -2087,10 +2106,10 @@
                             <tableViewSection headerTitle="Piemonte" id="HDg-IA-NdM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="E6L-Dt-wKX" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2951.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="2963" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E6L-Dt-wKX" id="DPd-Ci-5MK">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDelPiemonte.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="k89-lS-tHt">
@@ -2121,10 +2140,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GjW-Iz-Klk" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="2995.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3007" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GjW-Iz-Klk" id="mBV-Hf-LAV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiTorino.png" translatesAutoresizingMaskIntoConstraints="NO" id="4UC-0F-058">
@@ -2155,10 +2174,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6gz-ha-C15" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3039.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3051" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gz-ha-C15" id="tIf-07-MZ2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Politecnico di Torino" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8T-OX-K8b">
@@ -2193,10 +2212,10 @@
                             <tableViewSection headerTitle="Sardegna" id="9wG-Xv-HUW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ya4-Pa-jka" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3133.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3146" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ya4-Pa-jka" id="AFG-rd-1yO">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddyUniversita.png" translatesAutoresizingMaskIntoConstraints="NO" id="gkA-Af-dXb">
@@ -2227,10 +2246,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a2k-FV-F0c" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3177.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3190" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a2k-FV-F0c" id="U7E-0s-waL">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiCagliari.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BrV-VI-LDA">
@@ -2261,10 +2280,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gwi-53-VRq" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3221.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3234" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gwi-53-VRq" id="IAJ-qm-TR3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Università degli Studi di Sassari" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMa-qG-9c3">
@@ -2299,10 +2318,10 @@
                             <tableViewSection headerTitle="Friuli Venezia Giulia" id="yrr-sO-YEV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZiL-sF-LAd" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3315.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3329" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZiL-sF-LAd" id="XYc-fW-Hur">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiTrieste.gif" translatesAutoresizingMaskIntoConstraints="NO" id="C3P-xY-MnE">
@@ -2333,10 +2352,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jb4-gJ-Cqr" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3359.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3373" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jb4-gJ-Cqr" id="XWj-eo-g5Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiUdine.png" translatesAutoresizingMaskIntoConstraints="NO" id="At6-rI-8K8">
@@ -2371,10 +2390,10 @@
                             <tableViewSection headerTitle="Umbria" id="2dF-F5-4s3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N1H-e3-Pi4" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3453.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3468" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N1H-e3-Pi4" id="hGr-E0-uHM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiPerugia.gif" translatesAutoresizingMaskIntoConstraints="NO" id="RxY-fo-Bi0">
@@ -2405,10 +2424,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3ek-JQ-meb" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3497.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3512" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ek-JQ-meb" id="rst-E3-Yev">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddyUniversita.png" translatesAutoresizingMaskIntoConstraints="NO" id="G8d-86-U6q">
@@ -2443,10 +2462,10 @@
                             <tableViewSection headerTitle="Trentino Alto Adige" id="BdC-wy-nPh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dDD-Y8-dOR" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3591.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3607" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dDD-Y8-dOR" id="jgH-91-V7K">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiTrento.gif" translatesAutoresizingMaskIntoConstraints="NO" id="roK-YH-vkY">
@@ -2481,10 +2500,10 @@
                             <tableViewSection headerTitle="Liguria" id="Hp5-ap-aDz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="999-FA-EzN" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3685.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3702" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="999-FA-EzN" id="6Fq-xU-6G6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDiGenova.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tsJ-4N-sct">
@@ -2519,10 +2538,10 @@
                             <tableViewSection headerTitle="Basilicata" id="KcQ-hm-ak2">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Cf5-1J-T7d" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3779.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3797" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cf5-1J-T7d" id="ym1-Rh-ozo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDellaBasilicata.png" translatesAutoresizingMaskIntoConstraints="NO" id="1cT-ac-ohE">
@@ -2557,10 +2576,10 @@
                             <tableViewSection headerTitle="Molise" id="5bb-sD-uUX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OOL-2g-Uxf" customClass="UPCustomCellUniversitaTableViewCell">
-                                        <rect key="frame" x="0.0" y="3873.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="3892" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OOL-2g-Uxf" id="8fj-72-mKc">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UniversitaDegliStudiDelMolise.png" translatesAutoresizingMaskIntoConstraints="NO" id="IMY-as-r8r">
@@ -2609,10 +2628,12 @@
         <!--Page View Controller-->
         <scene sceneID="Jhn-aj-Hp7">
             <objects>
-                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Wll-7k-RS6" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Wll-7k-RS6" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TiI-02-UDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008" y="-4043"/>
+            <point key="canvasLocation" x="1772" y="-4043"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sqw-F2-7Bb">
@@ -2647,7 +2668,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="5bZ-ir-lto">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="ENd-Tn-1gD">
+                        <barButtonItem key="rightBarButtonItem" image="location.png" id="ENd-Tn-1gD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sDJ-jR-DMH">
                                 <rect key="frame" x="544" y="4" width="36" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2664,7 +2685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uag-wZ-aiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008" y="-3332"/>
+            <point key="canvasLocation" x="1074" y="-3332"/>
         </scene>
         <!--Registrazione Luogo-->
         <scene sceneID="uFl-2i-zPA">
@@ -2736,6 +2757,11 @@
                                 <state key="normal" title="Galleria Immagini">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eZb-TK-eN5"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="immagineDaGalleria:" destination="aa7-cy-OTs" eventType="touchUpInside" id="3Wr-6W-FXK"/>
                                 </connections>
@@ -2748,12 +2774,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yP3-i6-sjv"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cB-yL-Qlx">
                                 <rect key="frame" x="0.0" y="499" width="600" height="101"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="GJ3-ca-X5P"/>
                                     <constraint firstAttribute="height" constant="101" id="tA2-25-sXo"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tA2-25-sXo"/>
+                                    </mask>
+                                </variation>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-Um-1Y3">
                                 <rect key="frame" x="20" y="455" width="560" height="36"/>
@@ -2765,6 +2802,11 @@
                                 <state key="normal" title="Scatta Foto">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5XO-j4-M4g"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="immagineDaFotocamera:" destination="aa7-cy-OTs" eventType="touchUpInside" id="rmC-wA-D40"/>
                                 </connections>
@@ -2774,6 +2816,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="196" id="i7W-bQ-80d"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="i7W-bQ-80d"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n28-iN-jSh">
                                 <rect key="frame" x="0.0" y="64" width="600" height="196"/>
@@ -2798,21 +2845,33 @@
                                     <constraint firstAttribute="height" constant="196" id="cQm-Mf-fW6"/>
                                 </constraints>
                                 <blurEffect style="light"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cQm-Mf-fW6"/>
+                                    </mask>
+                                </variation>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.4941176471" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="1SK-wk-jnO" firstAttribute="top" secondItem="Dd4-Sb-EU2" secondAttribute="bottom" constant="8" symbolic="YES" id="10H-GP-w28"/>
                             <constraint firstItem="1SO-CA-h61" firstAttribute="top" secondItem="AMe-JR-JB7" secondAttribute="bottom" constant="8" symbolic="YES" id="1sT-HA-UWV"/>
+                            <constraint firstItem="1CQ-sV-o0a" firstAttribute="top" secondItem="n28-iN-jSh" secondAttribute="top" id="50X-CT-RbA"/>
                             <constraint firstItem="1CQ-sV-o0a" firstAttribute="leading" secondItem="n28-iN-jSh" secondAttribute="leading" id="69u-IY-HwN"/>
+                            <constraint firstItem="6cB-yL-Qlx" firstAttribute="bottom" secondItem="7KT-3z-lpb" secondAttribute="top" id="8EY-xD-hc9"/>
+                            <constraint firstItem="Dd4-Sb-EU2" firstAttribute="top" secondItem="pab-Pn-Xef" secondAttribute="bottom" constant="8" symbolic="YES" id="8Vq-ek-OIS"/>
                             <constraint firstItem="AMe-JR-JB7" firstAttribute="leading" secondItem="1SO-CA-h61" secondAttribute="leading" id="8d7-Wp-v6f"/>
                             <constraint firstItem="Dd4-Sb-EU2" firstAttribute="trailing" secondItem="1SK-wk-jnO" secondAttribute="trailing" id="AFs-kj-3qm"/>
                             <constraint firstItem="6cB-yL-Qlx" firstAttribute="bottom" secondItem="7KT-3z-lpb" secondAttribute="top" id="CAD-Hp-5gp"/>
+                            <constraint firstItem="6cB-yL-Qlx" firstAttribute="top" secondItem="GgG-Um-1Y3" secondAttribute="bottom" constant="8" symbolic="YES" id="DJ4-7T-5Fj"/>
                             <constraint firstItem="1CQ-sV-o0a" firstAttribute="trailing" secondItem="PHo-je-gLI" secondAttribute="trailing" id="EkR-ba-gbN"/>
                             <constraint firstItem="1CQ-sV-o0a" firstAttribute="leading" secondItem="PHo-je-gLI" secondAttribute="leading" id="Fhf-vC-Z86"/>
+                            <constraint firstItem="GgG-Um-1Y3" firstAttribute="top" secondItem="1SK-wk-jnO" secondAttribute="bottom" constant="8" symbolic="YES" id="Jfl-CR-OXb"/>
                             <constraint firstItem="pab-Pn-Xef" firstAttribute="top" secondItem="1SO-CA-h61" secondAttribute="bottom" constant="8" symbolic="YES" id="SWh-TK-lb9"/>
                             <constraint firstItem="Dd4-Sb-EU2" firstAttribute="leading" secondItem="GgG-Um-1Y3" secondAttribute="leading" id="TB7-E4-cR6"/>
                             <constraint firstItem="PHo-je-gLI" firstAttribute="top" secondItem="VRs-YE-MHa" secondAttribute="bottom" id="WBW-oa-gBC"/>
                             <constraint firstItem="1SK-wk-jnO" firstAttribute="centerX" secondItem="Dd4-Sb-EU2" secondAttribute="centerX" id="YJ0-EZ-zvE"/>
+                            <constraint firstItem="PHo-je-gLI" firstAttribute="top" secondItem="1CQ-sV-o0a" secondAttribute="top" id="YVW-rJ-8kl"/>
                             <constraint firstItem="PHo-je-gLI" firstAttribute="leading" secondItem="6cB-yL-Qlx" secondAttribute="leading" id="YhJ-sU-B5H"/>
                             <constraint firstItem="pab-Pn-Xef" firstAttribute="leading" secondItem="Dd4-Sb-EU2" secondAttribute="leading" id="cHy-at-aYT"/>
                             <constraint firstItem="6cB-yL-Qlx" firstAttribute="leading" secondItem="RoO-qa-JEv" secondAttribute="leading" id="cRb-mP-RFk"/>
@@ -2828,14 +2887,35 @@
                             <constraint firstItem="GgG-Um-1Y3" firstAttribute="top" secondItem="1SK-wk-jnO" secondAttribute="bottom" constant="8" symbolic="YES" id="k2P-DG-cLI"/>
                             <constraint firstItem="pab-Pn-Xef" firstAttribute="trailing" secondItem="1SO-CA-h61" secondAttribute="trailing" id="k5n-BB-aw2"/>
                             <constraint firstItem="AMe-JR-JB7" firstAttribute="top" secondItem="n28-iN-jSh" secondAttribute="bottom" constant="8" symbolic="YES" id="kUM-zo-ae8"/>
+                            <constraint firstItem="n28-iN-jSh" firstAttribute="top" secondItem="VRs-YE-MHa" secondAttribute="bottom" id="mxH-ST-Tjo"/>
                             <constraint firstItem="1SO-CA-h61" firstAttribute="leading" secondItem="pab-Pn-Xef" secondAttribute="leading" id="olS-Z2-V59"/>
+                            <constraint firstItem="AMe-JR-JB7" firstAttribute="top" secondItem="n28-iN-jSh" secondAttribute="bottom" constant="8" symbolic="YES" id="p6m-Sg-l9i"/>
                             <constraint firstItem="1CQ-sV-o0a" firstAttribute="top" secondItem="n28-iN-jSh" secondAttribute="top" id="ptJ-mh-q6R"/>
+                            <constraint firstItem="AMe-JR-JB7" firstAttribute="top" secondItem="PHo-je-gLI" secondAttribute="bottom" constant="8" symbolic="YES" id="sR7-v9-DdS"/>
                             <constraint firstItem="1SK-wk-jnO" firstAttribute="trailing" secondItem="GgG-Um-1Y3" secondAttribute="trailing" id="uHg-uw-mea"/>
                             <constraint firstItem="1CQ-sV-o0a" firstAttribute="top" secondItem="PHo-je-gLI" secondAttribute="top" id="uQ2-hV-oys"/>
                             <constraint firstItem="6cB-yL-Qlx" firstAttribute="top" secondItem="GgG-Um-1Y3" secondAttribute="bottom" constant="8" symbolic="YES" id="va5-7J-9bE"/>
+                            <constraint firstItem="1SO-CA-h61" firstAttribute="top" secondItem="AMe-JR-JB7" secondAttribute="bottom" constant="8" symbolic="YES" id="wCI-r2-9lt"/>
                             <constraint firstItem="AMe-JR-JB7" firstAttribute="leading" secondItem="RoO-qa-JEv" secondAttribute="leadingMargin" id="yBB-vP-cUo"/>
                             <constraint firstItem="AMe-JR-JB7" firstAttribute="top" secondItem="1CQ-sV-o0a" secondAttribute="bottom" constant="8" symbolic="YES" id="yt0-vp-oZ6"/>
+                            <constraint firstItem="pab-Pn-Xef" firstAttribute="top" secondItem="1SO-CA-h61" secondAttribute="bottom" constant="8" symbolic="YES" id="zwc-2r-ikj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ptJ-mh-q6R"/>
+                                <exclude reference="uQ2-hV-oys"/>
+                                <exclude reference="WBW-oa-gBC"/>
+                                <exclude reference="e37-if-AmP"/>
+                                <exclude reference="kUM-zo-ae8"/>
+                                <exclude reference="1sT-HA-UWV"/>
+                                <exclude reference="SWh-TK-lb9"/>
+                                <exclude reference="eVg-7Y-ygT"/>
+                                <exclude reference="hYy-Lr-sPc"/>
+                                <exclude reference="k2P-DG-cLI"/>
+                                <exclude reference="CAD-Hp-5gp"/>
+                                <exclude reference="va5-7J-9bE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Mi9-dY-ZqP">
                         <barButtonItem key="rightBarButtonItem" title="Check In" id="5Zo-lK-ief">
@@ -2868,7 +2948,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57t-zq-dmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="-3332"/>
+            <point key="canvasLocation" x="1772" y="-3332"/>
         </scene>
         <!--Atterraggio Table View Controller-->
         <scene sceneID="BYS-8F-qzp">
@@ -2886,7 +2966,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWv-BF-12E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="-4043"/>
+            <point key="canvasLocation" x="2416" y="-4043"/>
         </scene>
         <!--Benvenuto-->
         <scene sceneID="QGK-To-gxR">
@@ -3070,7 +3150,7 @@
                                 <color key="textColor" red="0.98565705128205128" green="0.98565705128205128" blue="0.98565705128205128" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DaC-1U-Nna">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DaC-1U-Nna">
                                 <rect key="frame" x="20" y="293" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3087,13 +3167,13 @@
                                     <action selector="insertPasswordDidEnd:" destination="oTr-kp-4gu" eventType="editingDidEnd" id="XcJ-2R-Rnq"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Conferma password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOV-QD-WXy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conferma password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOV-QD-WXy">
                                 <rect key="frame" x="20" y="360" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Conferma Password ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zCI-Sa-0EL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Conferma Password ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zCI-Sa-0EL">
                                 <rect key="frame" x="20" y="389" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3110,7 +3190,7 @@
                                     <action selector="insertPasswordConfirmDidEnd:" destination="oTr-kp-4gu" eventType="editingDidEnd" id="yEe-Vf-NnS"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jal-0c-O2N">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jal-0c-O2N">
                                 <rect key="frame" x="20" y="264" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99789663461538458" green="0.99789663461538458" blue="0.99789663461538458" alpha="1" colorSpace="calibratedRGB"/>
@@ -3142,7 +3222,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Questo campo non può essere lasciato vuoto." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wQ-2Q-Szv">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questo campo non può essere lasciato vuoto." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wQ-2Q-Szv">
                                 <rect key="frame" x="20" y="235" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="0IT-oY-zNu"/>
@@ -3151,7 +3231,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Questo campo non può essere lasciato vuoto." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luy-DG-hOh">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questo campo non può essere lasciato vuoto." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luy-DG-hOh">
                                 <rect key="frame" x="20" y="331" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ZhC-sZ-IVa"/>
@@ -3166,7 +3246,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indirizzo email ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ycl-dB-cdQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Indirizzo email ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ycl-dB-cdQ">
                                 <rect key="frame" x="20" y="197" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3184,7 +3264,7 @@
                                     <action selector="insertEmailDidEnd:" destination="oTr-kp-4gu" eventType="editingDidEnd" id="3pS-8C-5k9"/>
                                 </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOx-KC-3pC">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOx-KC-3pC">
                                 <rect key="frame" x="20" y="427" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Ae8-qM-0iQ"/>
@@ -3267,7 +3347,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cbq-ac-rFK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gu0-EG-o9B" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="noWarning" automaticallyAdjustsScrollViewInsets="NO" id="gu0-EG-o9B" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UJN-gB-vfh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3286,10 +3366,10 @@
             </objects>
             <point key="canvasLocation" x="-1264" y="-2553"/>
         </scene>
-        <!--Reveal View Controller-->
+        <!--RevelViewController-->
         <scene sceneID="6XR-4U-TNC">
             <objects>
-                <viewController id="qMp-oE-C6m" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RevealViewContoller" title="RevelViewController" id="qMp-oE-C6m" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="q2m-Lv-bos" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="kbk-LT-SUc"/>
                         <segue destination="tIq-YH-gHV" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="l9M-RI-1IH"/>
@@ -3300,104 +3380,139 @@
             </objects>
             <point key="canvasLocation" x="-391" y="-3332"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Slide Out Menu Tabel View Controller Table View Controller-->
         <scene sceneID="wWD-bb-zwd">
             <objects>
-                <tableViewController id="q2m-Lv-bos" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8CE-Dd-40W">
+                <tableViewController id="q2m-Lv-bos" customClass="UPSlideOutMenuTabelViewControllerTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="146" sectionHeaderHeight="28" sectionFooterHeight="28" id="8CE-Dd-40W">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.12941176469999999" green="0.41568627450000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Home" textLabel="Ifr-o6-2Ia" style="IBUITableViewCellStyleDefault" id="bRr-X4-wnt">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noIdenifier" focusStyle="custom" rowHeight="146" id="V1K-qO-JcJ">
+                                <rect key="frame" x="0.0" y="28" width="600" height="146"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bRr-X4-wnt" id="ti0-GN-2BA">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V1K-qO-JcJ" id="Ftf-CW-R1i">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="145"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ifr-o6-2Ia">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
+                                    <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.12941176469999999" green="0.41568627450000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Appelli" textLabel="ByR-Il-rxg" style="IBUITableViewCellStyleDefault" id="tob-h6-ic2">
-                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Home" textLabel="LaE-0Q-W6U" rowHeight="72" style="IBUITableViewCellStyleDefault" id="wzV-Np-lBG">
+                                <rect key="frame" x="0.0" y="174" width="600" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tob-h6-ic2" id="bs2-y5-oOB">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wzV-Np-lBG" id="h5Z-zX-ryd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Appelli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ByR-Il-rxg">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LaE-0Q-W6U">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="71"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
+                                            <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.12941176469999999" green="0.41568627450000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="Bsy-2H-rWK" kind="custom" customClass="SWRevealViewControllerSegue" id="NZi-Jo-deq"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Statistiche" textLabel="vLa-Em-dN9" style="IBUITableViewCellStyleDefault" id="odD-B9-F4M">
-                                <rect key="frame" x="0.0" y="116" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeMieCoordinateAttuali" textLabel="BqJ-Db-Lo5" rowHeight="90" style="IBUITableViewCellStyleDefault" id="Mka-YI-B07">
+                                <rect key="frame" x="0.0" y="246" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="odD-B9-F4M" id="4dw-AF-akE">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mka-YI-B07" id="Zsw-wM-lMi">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Statistiche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vLa-Em-dN9">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Le mie Coordinate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BqJ-Db-Lo5">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="89"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
+                                            <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.12941176469999999" green="0.41568627450000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="XZF-DM-h3g" kind="custom" customClass="SWRevealViewControllerSegue" id="0yr-ZA-DNg"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Libretto" textLabel="iVw-Q9-ZYe" style="IBUITableViewCellStyleDefault" id="DhK-Wo-5hK">
-                                <rect key="frame" x="0.0" y="160" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UniPlace" textLabel="TMj-vh-hBF" rowHeight="83" style="IBUITableViewCellStyleDefault" id="wlL-Se-0J8">
+                                <rect key="frame" x="0.0" y="336" width="600" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DhK-Wo-5hK" id="B0H-Ff-S0L">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wlL-Se-0J8" id="reo-Tp-J3g">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Libretto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iVw-Q9-ZYe">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Cos'è UniPlace?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TMj-vh-hBF">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="82"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
+                                            <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.12941176469999999" green="0.41568627450000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="8SL-wt-5YK" kind="custom" customClass="SWRevealViewControllerSegue" id="nf4-ML-OoX"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Impostazioni" textLabel="qi8-sl-ac8" style="IBUITableViewCellStyleDefault" id="bb5-bb-JDS">
-                                <rect key="frame" x="0.0" y="204" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChiSiamo" textLabel="aKJ-xs-hOs" rowHeight="53" style="IBUITableViewCellStyleDefault" id="VK3-te-45e">
+                                <rect key="frame" x="0.0" y="419" width="600" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bb5-bb-JDS" id="Lok-F6-EXu">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VK3-te-45e" id="IXw-J5-WhY">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Impostazioni" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qi8-sl-ac8">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Chi Siamo ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aKJ-xs-hOs">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="52"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
+                                            <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.12941176469999999" green="0.41568627450000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="Gij-SZ-NaA" kind="custom" customClass="SWRevealViewControllerSegue" id="kBw-41-dGC"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Copyright" textLabel="vPa-aY-y9C" rowHeight="72" style="IBUITableViewCellStyleDefault" id="clP-Rn-97f">
+                                <rect key="frame" x="0.0" y="472" width="600" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="clP-Rn-97f" id="2xA-mq-rRt">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Copyright © 2015 Idriss e Gabriele. All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vPa-aY-y9C">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="71"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -3409,16 +3524,299 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHH-R0-AD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Menù" id="rBR-NP-6Gr"/>
             </objects>
-            <point key="canvasLocation" x="374" y="-4043"/>
+            <point key="canvasLocation" x="374" y="-4261"/>
+        </scene>
+        <!--Le Mie Coordinate-->
+        <scene sceneID="GY5-je-oGA">
+            <objects>
+                <viewController id="XZF-DM-h3g" customClass="UPSlideOutViewControllerForSegue" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="diZ-0C-P6f"/>
+                        <viewControllerLayoutGuide type="bottom" id="nH6-DT-FQv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3nc-rP-s8k">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le tue Coordinate attuali sono" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlR-y3-zpA">
+                                <rect key="frame" x="20" y="8" width="560" height="21"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitudine:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Du-02-yuH">
+                                <rect key="frame" x="20" y="37" width="560" height="25"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottengo longitudine ... " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tR4-ZF-UOp">
+                                <rect key="frame" x="20" y="70" width="560" height="23"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitudine:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5A-tx-1lc">
+                                <rect key="frame" x="20" y="101" width="560" height="25"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottengo latitudine ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3k-Hg-usi">
+                                <rect key="frame" x="20" y="134" width="560" height="23"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altitudine:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fy-AQ-axS">
+                                <rect key="frame" x="20" y="165" width="560" height="25"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinate Geografiche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYp-TK-LCa">
+                                <rect key="frame" x="209" y="278" width="183" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK8-1d-UqP">
+                                <rect key="frame" x="20" y="307" width="560" height="129"/>
+                                <string key="text">Le coordinate geografiche sono strumenti che servono a identificare la posizione di un punto sulla superficie terrestre. 
+Esse sono la latitudine, la longitudine e l'altitudine.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottengo altitudine ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-fF-4Gh">
+                                <rect key="frame" x="20" y="198" width="560" height="23"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="M5A-tx-1lc" firstAttribute="top" secondItem="tR4-ZF-UOp" secondAttribute="bottom" constant="8" symbolic="YES" id="0BI-JZ-co4"/>
+                            <constraint firstAttribute="bottom" secondItem="VK8-1d-UqP" secondAttribute="bottom" constant="100" id="0G1-sM-n1H"/>
+                            <constraint firstItem="IlR-y3-zpA" firstAttribute="leading" secondItem="3nc-rP-s8k" secondAttribute="leadingMargin" id="4ak-BW-Tzo"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="top" secondItem="8i0-fF-4Gh" secondAttribute="bottom" constant="57" id="6uu-im-s7t"/>
+                            <constraint firstItem="VK8-1d-UqP" firstAttribute="leading" secondItem="8i0-fF-4Gh" secondAttribute="leading" id="74O-Cf-Nf9"/>
+                            <constraint firstItem="tR4-ZF-UOp" firstAttribute="leading" secondItem="M5A-tx-1lc" secondAttribute="leading" id="BMN-Vu-Gvh"/>
+                            <constraint firstItem="IlR-y3-zpA" firstAttribute="top" secondItem="diZ-0C-P6f" secondAttribute="bottom" constant="8" id="EVl-9e-EWN"/>
+                            <constraint firstItem="VK8-1d-UqP" firstAttribute="top" secondItem="JYp-TK-LCa" secondAttribute="bottom" constant="8" id="JVs-b6-rgm"/>
+                            <constraint firstItem="6Du-02-yuH" firstAttribute="leading" secondItem="IlR-y3-zpA" secondAttribute="leading" id="Mwp-mr-jAJ"/>
+                            <constraint firstItem="6Du-02-yuH" firstAttribute="leading" secondItem="tR4-ZF-UOp" secondAttribute="leading" id="NVE-R1-biA"/>
+                            <constraint firstItem="6Du-02-yuH" firstAttribute="top" secondItem="IlR-y3-zpA" secondAttribute="bottom" constant="8" id="RKo-CH-I5O"/>
+                            <constraint firstItem="8i0-fF-4Gh" firstAttribute="leading" secondItem="3fy-AQ-axS" secondAttribute="leading" id="TqA-nK-W1U"/>
+                            <constraint firstItem="VK8-1d-UqP" firstAttribute="trailing" secondItem="8i0-fF-4Gh" secondAttribute="trailing" id="USx-gm-sgd"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="centerX" secondItem="tR4-ZF-UOp" secondAttribute="centerX" constant="0.5" id="WSb-pQ-d1A"/>
+                            <constraint firstItem="8i0-fF-4Gh" firstAttribute="top" secondItem="3fy-AQ-axS" secondAttribute="bottom" constant="8" symbolic="YES" id="WTJ-H9-OEy"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="centerX" secondItem="M5A-tx-1lc" secondAttribute="centerX" constant="0.5" id="YGn-PD-rYA"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="centerX" secondItem="3fy-AQ-axS" secondAttribute="centerX" constant="0.5" id="b1m-wv-IZc"/>
+                            <constraint firstItem="IlR-y3-zpA" firstAttribute="trailing" secondItem="3nc-rP-s8k" secondAttribute="trailingMargin" id="baG-Xu-HeW"/>
+                            <constraint firstItem="F3k-Hg-usi" firstAttribute="leading" secondItem="M5A-tx-1lc" secondAttribute="leading" id="cdk-uk-qy5"/>
+                            <constraint firstItem="nH6-DT-FQv" firstAttribute="top" secondItem="JYp-TK-LCa" secondAttribute="bottom" constant="237" id="dbz-yS-it7"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="centerX" secondItem="6Du-02-yuH" secondAttribute="centerX" constant="0.5" id="gkU-Aw-mhG"/>
+                            <constraint firstItem="F3k-Hg-usi" firstAttribute="top" secondItem="M5A-tx-1lc" secondAttribute="bottom" constant="8" symbolic="YES" id="l0t-xO-yNm"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="centerX" secondItem="IlR-y3-zpA" secondAttribute="centerX" constant="0.5" id="m3a-LZ-MFH"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="centerX" secondItem="8i0-fF-4Gh" secondAttribute="centerX" constant="0.5" id="n5B-qt-GjG"/>
+                            <constraint firstItem="nH6-DT-FQv" firstAttribute="top" secondItem="IlR-y3-zpA" secondAttribute="bottom" constant="507" id="nm1-kF-wbS"/>
+                            <constraint firstItem="3fy-AQ-axS" firstAttribute="top" secondItem="F3k-Hg-usi" secondAttribute="bottom" constant="8" symbolic="YES" id="nyW-IP-ysC"/>
+                            <constraint firstItem="JYp-TK-LCa" firstAttribute="centerX" secondItem="F3k-Hg-usi" secondAttribute="centerX" constant="0.5" id="phY-9c-Qu4"/>
+                            <constraint firstItem="F3k-Hg-usi" firstAttribute="leading" secondItem="3fy-AQ-axS" secondAttribute="leading" id="zOb-DF-eOY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Le Mie Coordinate" id="ooY-ih-jlO">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="C7O-or-Nix">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="altitudineLabel" destination="8i0-fF-4Gh" id="8rT-Pt-nEf"/>
+                        <outlet property="latituineLabel" destination="F3k-Hg-usi" id="aOy-ZP-6bO"/>
+                        <outlet property="longitudineLabel" destination="tR4-ZF-UOp" id="2ll-oo-5nK"/>
+                        <outlet property="menuButton" destination="C7O-or-Nix" id="bzA-Zk-8sb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IaS-JQ-qGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="-5586"/>
+        </scene>
+        <!--Cos'è UniPlace-->
+        <scene sceneID="Omo-GG-L3j">
+            <objects>
+                <viewController id="8SL-wt-5YK" customClass="UPSlideOutViewControllerForSegue" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AMs-Fa-6ZL"/>
+                        <viewControllerLayoutGuide type="bottom" id="ha3-zx-V1p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QiB-48-rYr">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compito di gabri spiegare UNIPLACE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOS-lN-fRS">
+                                <rect key="frame" x="159" y="110" width="282" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uOS-lN-fRS" firstAttribute="top" secondItem="AMs-Fa-6ZL" secondAttribute="bottom" constant="110" id="0OR-Xx-eoE"/>
+                            <constraint firstItem="uOS-lN-fRS" firstAttribute="centerX" secondItem="QiB-48-rYr" secondAttribute="centerX" id="Lsl-5F-oqK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cos'è UniPlace" id="bg5-eM-k17">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="avv-ru-16b">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="menuButton" destination="avv-ru-16b" id="tbx-1c-oaS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qZ-JS-Msf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="-4856"/>
+        </scene>
+        <!--Chi Siamo?-->
+        <scene sceneID="YJI-br-sCm">
+            <objects>
+                <viewController id="Gij-SZ-NaA" customClass="UPSlideOutViewControllerForSegue" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s33-65-WGE"/>
+                        <viewControllerLayoutGuide type="bottom" id="ehB-A8-WxR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="f6h-hl-aax">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhi-dM-GsE">
+                                <rect key="frame" x="20" y="20" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vlp-vE-mrn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siamo due amici e colleghi, studenti dell'Università degli Studi di Parma. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yut-v0-ZMl">
+                                <rect key="frame" x="20" y="48" width="560" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ldO-ef-fmi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gabriele Etta aka MANetta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBg-9e-7C4">
+                                <rect key="frame" x="20" y="90" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hCV-QF-wRN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pugile, Camerire e Programmatore.  Sboccia Calicella" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9a-KH-Dxr">
+                                <rect key="frame" x="15" y="472" width="560" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4si-Zh-mnm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idriss Riouak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-nn-vaf">
+                                <rect key="frame" x="20" y="307" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="tZI-5e-q07"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IdrissRio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SGu-LL-m1w">
+                                <rect key="frame" x="236" y="336" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="C4e-Ti-4RN"/>
+                                    <constraint firstAttribute="width" secondItem="SGu-LL-m1w" secondAttribute="height" multiplier="1:1" id="ISU-Kl-47i"/>
+                                    <constraint firstAttribute="width" constant="128" id="a86-EH-5rh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ManEtta.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dmz-54-gRU">
+                                <rect key="frame" x="231" y="119" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2k2-88-VD0"/>
+                                    <constraint firstAttribute="width" secondItem="Dmz-54-gRU" secondAttribute="height" multiplier="1:1" id="igM-VE-7UI"/>
+                                    <constraint firstAttribute="width" constant="128" id="jB7-dG-LFn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pugile e Commesso.  Ha un Mac ma adora Microsoft.  Miglior Meme 2015" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpj-PN-CtE">
+                                <rect key="frame" x="20" y="255" width="560" height="43"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="u9a-KH-Dxr" firstAttribute="top" secondItem="SGu-LL-m1w" secondAttribute="bottom" constant="8" symbolic="YES" id="0qI-kd-iVE"/>
+                            <constraint firstItem="hhi-dM-GsE" firstAttribute="trailing" secondItem="yut-v0-ZMl" secondAttribute="trailing" id="8Qf-sB-HC0"/>
+                            <constraint firstItem="Ghz-nn-vaf" firstAttribute="top" secondItem="hpj-PN-CtE" secondAttribute="bottom" constant="9" id="8Se-Ci-G0T"/>
+                            <constraint firstItem="nBg-9e-7C4" firstAttribute="top" secondItem="yut-v0-ZMl" secondAttribute="bottom" constant="8" symbolic="YES" id="9gG-1g-aS6"/>
+                            <constraint firstItem="hhi-dM-GsE" firstAttribute="top" secondItem="s33-65-WGE" secondAttribute="bottom" constant="20" id="AMb-AL-WoA"/>
+                            <constraint firstItem="Ghz-nn-vaf" firstAttribute="leading" secondItem="u9a-KH-Dxr" secondAttribute="leading" constant="5" id="CUq-ss-7yh"/>
+                            <constraint firstItem="u9a-KH-Dxr" firstAttribute="trailing" secondItem="Ghz-nn-vaf" secondAttribute="trailing" constant="-5" id="FYq-uk-lly"/>
+                            <constraint firstItem="hpj-PN-CtE" firstAttribute="centerX" secondItem="SGu-LL-m1w" secondAttribute="centerX" id="G1H-Dg-gxA"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="top" secondItem="hhi-dM-GsE" secondAttribute="bottom" constant="7" id="IAe-N9-jdv"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="leading" secondItem="f6h-hl-aax" secondAttribute="leadingMargin" id="IwC-u1-KTA"/>
+                            <constraint firstItem="ehB-A8-WxR" firstAttribute="top" secondItem="u9a-KH-Dxr" secondAttribute="bottom" constant="20" id="Kv5-pX-47O"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="leading" secondItem="hhi-dM-GsE" secondAttribute="leading" id="NkT-3w-yTI"/>
+                            <constraint firstItem="nBg-9e-7C4" firstAttribute="trailing" secondItem="hpj-PN-CtE" secondAttribute="trailing" id="Pdk-DF-GdV"/>
+                            <constraint firstItem="SGu-LL-m1w" firstAttribute="top" secondItem="Ghz-nn-vaf" secondAttribute="bottom" constant="8" symbolic="YES" id="Tj1-Dn-6cz"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="trailing" secondItem="f6h-hl-aax" secondAttribute="trailingMargin" id="UJR-IC-Dk0"/>
+                            <constraint firstItem="Ghz-nn-vaf" firstAttribute="leading" secondItem="f6h-hl-aax" secondAttribute="leadingMargin" id="Ujf-pI-aQJ"/>
+                            <constraint firstItem="Dmz-54-gRU" firstAttribute="top" secondItem="nBg-9e-7C4" secondAttribute="bottom" constant="8" symbolic="YES" id="Yxy-OX-6Kz"/>
+                            <constraint firstItem="hpj-PN-CtE" firstAttribute="top" secondItem="Dmz-54-gRU" secondAttribute="bottom" constant="8" symbolic="YES" id="dXD-yk-tgJ"/>
+                            <constraint firstItem="Dmz-54-gRU" firstAttribute="centerX" secondItem="Ghz-nn-vaf" secondAttribute="centerX" constant="-5" id="iyG-jV-jBk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ghz-nn-vaf" secondAttribute="trailing" id="mOe-oa-6AR"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="trailing" secondItem="nBg-9e-7C4" secondAttribute="trailing" id="v5M-JH-unm"/>
+                            <constraint firstItem="hpj-PN-CtE" firstAttribute="leading" secondItem="nBg-9e-7C4" secondAttribute="leading" id="vCA-E4-sLr"/>
+                            <constraint firstItem="nBg-9e-7C4" firstAttribute="leading" secondItem="yut-v0-ZMl" secondAttribute="leading" id="wV8-hx-B02"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chi Siamo?" id="bOK-Ck-wOr">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="dkJ-iE-keB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="immagineGabri" destination="Dmz-54-gRU" id="T4e-XT-0vK"/>
+                        <outlet property="immagineIdriss" destination="SGu-LL-m1w" id="Ww1-04-lon"/>
+                        <outlet property="labelBenvenuto" destination="hhi-dM-GsE" id="spH-p1-PkF"/>
+                        <outlet property="menuButton" destination="dkJ-iE-keB" id="4Mq-ZZ-sDS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RpO-y4-6vN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093" y="-4165"/>
         </scene>
     </scenes>
     <resources>
         <image name="ForoItalicoUniversitaDegliStudiDiRoma.png" width="170" height="170"/>
+        <image name="IdrissRio.jpg" width="720" height="720"/>
         <image name="IstitutoDiStudiAvanzatiDiLucca.png" width="209" height="241"/>
         <image name="IstitutoItalianoDiScienzeUmane.jpg" width="540" height="480"/>
         <image name="IstitutoUniversitarioDiStudiSuperiori.jpeg" width="591" height="591"/>
         <image name="Iuav.jpg" width="530" height="530"/>
         <image name="L'Orientale - UniversitaDegliStudiDiNapoli.jpg" width="156" height="158"/>
+        <image name="ManEtta.png" width="178" height="177"/>
         <image name="ParthenopeUnivesitaDegliStudidiNapoli.gif" width="250" height="250"/>
         <image name="PolitecnicoDiBari.gif" width="400" height="400"/>
         <image name="PolitecnicoDiMilano.png" width="664" height="488"/>
@@ -3482,8 +3880,9 @@
         <image name="menu.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MeX-b3-Z31"/>
         <segue reference="7kF-JW-3ue"/>
+        <segue reference="RYr-d0-TCL"/>
+        <segue reference="FDs-uE-J2a"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

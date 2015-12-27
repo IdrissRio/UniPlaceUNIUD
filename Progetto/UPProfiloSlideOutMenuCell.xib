@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Bariol_Regular.otf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="137" id="ibc-oV-tqI" customClass="UPProfiloSlideOutMenu">
+            <rect key="frame" x="0.0" y="0.0" width="247" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ibc-oV-tqI" id="Ykg-dK-xHu">
+                <rect key="frame" x="0.0" y="0.0" width="247" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UF2-eU-r8R">
+                        <rect key="frame" x="75" y="37" width="65" height="65"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="65" id="3N1-X2-A9x"/>
+                            <constraint firstAttribute="width" constant="65" id="iP6-S2-uhe"/>
+                            <constraint firstAttribute="width" secondItem="UF2-eU-r8R" secondAttribute="height" multiplier="1:1" id="ilb-2h-tK2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ilb-2h-tK2"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGg-SH-qmd">
+                        <rect key="frame" x="8" y="107" width="199" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="9oj-Sw-AnO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UniPlace" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S78-xa-Kgw">
+                        <rect key="frame" x="10" y="8" width="197" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="WZN-Di-ce3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="29"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="UF2-eU-r8R" firstAttribute="top" secondItem="S78-xa-Kgw" secondAttribute="bottom" constant="8" symbolic="YES" id="KGG-lQ-Hlq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="S78-xa-Kgw" secondAttribute="trailing" constant="32" id="jgn-ex-9H4"/>
+                    <constraint firstItem="S78-xa-Kgw" firstAttribute="leading" secondItem="Ykg-dK-xHu" secondAttribute="leadingMargin" constant="2" id="qHE-SH-7mr"/>
+                    <constraint firstItem="UGg-SH-qmd" firstAttribute="trailing" secondItem="S78-xa-Kgw" secondAttribute="trailing" id="rdC-aP-3NS"/>
+                    <constraint firstItem="S78-xa-Kgw" firstAttribute="top" secondItem="Ykg-dK-xHu" secondAttribute="topMargin" id="sYR-6i-Kyy"/>
+                    <constraint firstItem="UGg-SH-qmd" firstAttribute="leading" secondItem="Ykg-dK-xHu" secondAttribute="leadingMargin" id="tSe-iR-Ghd"/>
+                    <constraint firstItem="UF2-eU-r8R" firstAttribute="centerX" secondItem="UGg-SH-qmd" secondAttribute="centerX" id="whX-qY-c6M"/>
+                    <constraint firstItem="UGg-SH-qmd" firstAttribute="bottom" secondItem="Ykg-dK-xHu" secondAttribute="bottomMargin" id="xLa-je-Mve"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nomeCognomeLabel" destination="UGg-SH-qmd" id="u4u-kL-L25"/>
+                <outlet property="userImageProfile" destination="UF2-eU-r8R" id="eMt-YQ-dUi"/>
+            </connections>
+            <point key="canvasLocation" x="326.5" y="294.5"/>
+        </tableViewCell>
+    </objects>
+</document>
