@@ -10,8 +10,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 @interface UPLuogo : NSObject{
-    double longitudine;
-    double latitudine;
+    NSString* longitudine;
+    NSString* latitudine;
 }
 
 @property(nonatomic,weak)NSString* indirizzo;
@@ -22,8 +22,8 @@
 -(id)initWithIndirizzo:(NSString*)indirizzo
               telefono:(NSString*) telefono
                   nome:(NSString*)nome
-           longitudine:(double)longitud
-            latitudine:(double)latitud
+           longitudine:(NSString*)longitud
+            latitudine:(NSString*)latitud
               immagine:(NSData*)immagine
              tipologia:(NSString*)tipologia;
     

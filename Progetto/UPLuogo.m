@@ -12,8 +12,8 @@
 -(id)initWithIndirizzo:(NSString *)indirizzo
               telefono:(NSString *)telefono
                   nome:(NSString *)nome
-           longitudine:(double)longitud
-            latitudine:(double)latitud
+           longitudine:(NSString*)longitud
+            latitudine:(NSString*)latitud
               immagine:(NSData *)immagine
              tipologia:(NSString *)tipologia{
     if (self = [super init]){
