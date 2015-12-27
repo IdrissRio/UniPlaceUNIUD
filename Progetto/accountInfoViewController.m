@@ -20,7 +20,7 @@
 - (void)setErrorBorder:(UITextField *)textField;
 //Metodo utilizzato per verificare la corretta sintassi di una mail mediante espressioni regolari.
 - (BOOL)isValidEmail:(NSString *)email;
-- (void)isDuplicated;
+//- (void)isDuplicated;
 - (void)AlertSuccessfullRegistration;
 
 @end

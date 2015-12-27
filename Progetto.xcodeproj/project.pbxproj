@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D045D5A1C2ADA030021F14F /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D045D591C2ADA030021F14F /* checkin.png */; };
+		2D057C8A1C3009F000ABA819 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D057C891C3009F000ABA819 /* SWRevealViewController.m */; };
 		2D0E2F991C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F591C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png */; };
 		2D0E2F9A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png */; };
 		2D0E2F9B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg */; };
@@ -77,15 +78,18 @@
 		2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */; };
 		2D4D5BA01C2C7C0B0025A939 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4D5B9F1C2C7C0B0025A939 /* menu.png */; };
 		2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D75279E1BFD135B00459FD1 /* UPUniversitario.m */; };
-		2D83E4751C2DC023006DCC33 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D83E4741C2DC023006DCC33 /* SWRevealViewController.m */; };
 		2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */; };
 		2DC180D71C20E38000673136 /* UPAltreCategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */; };
 		2DC180DA1C20E39600673136 /* UPAltreCategorieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D91C20E39600673136 /* UPAltreCategorieCell.m */; };
 		2DC180DD1C20E3B200673136 /* UPNelleVicinanzeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180DC1C20E3B200673136 /* UPNelleVicinanzeCell.m */; };
 		2DC180DF1C20E3C500673136 /* UPNelleVicinanzeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180DE1C20E3C500673136 /* UPNelleVicinanzeCell.xib */; };
 		2DC180E51C20E48100673136 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180E21C20E48100673136 /* lock.png */; };
+		2DC81FB41C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC81FB31C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m */; };
 		2DD2059D1C23067E00133056 /* UPCategoriePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */; };
 		2DD2059F1C23196600133056 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD2059E1C23196600133056 /* CoreLocation.framework */; };
+		2DE95BDB1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE95BDA1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib */; };
+		2DE95BDE1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE95BDD1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m */; };
+		2DE95BE11C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE95BE01C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m */; };
 		2DF567E51C297FF100941E2D /* UPLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF567E41C297FF100941E2D /* UPLuogo.m */; };
 		2DF567EB1C299CD000941E2D /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF567E91C299CD000941E2D /* close.png */; };
 		2DF567ED1C299D1700941E2D /* cestino.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DF567EC1C299D1700941E2D /* cestino.png */; };
@@ -137,6 +141,8 @@
 
 /* Begin PBXFileReference section */
 		2D045D591C2ADA030021F14F /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
+		2D057C881C3009F000ABA819 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		2D057C891C3009F000ABA819 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2D0E2F591C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ForoItalicoUniversitaDegliStudiDiRoma.png; sourceTree = "<group>"; };
 		2D0E2F5A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IstitutoDiStudiAvanzatiDiLucca.png; sourceTree = "<group>"; };
 		2D0E2F5B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IstitutoItalianoDiScienzeUmane.jpg; sourceTree = "<group>"; };
@@ -208,8 +214,6 @@
 		2D4D5B9F1C2C7C0B0025A939 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		2D75279D1BFD135B00459FD1 /* UPUniversitario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPUniversitario.h; sourceTree = "<group>"; };
 		2D75279E1BFD135B00459FD1 /* UPUniversitario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPUniversitario.m; sourceTree = "<group>"; };
-		2D83E4731C2DC023006DCC33 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		2D83E4741C2DC023006DCC33 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2DC180D31C20E35D00673136 /* UPAtterraggioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAtterraggioTableViewController.h; sourceTree = "<group>"; };
 		2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPAtterraggioTableViewController.m; sourceTree = "<group>"; };
 		2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPAltreCategorieCell.xib; sourceTree = "<group>"; };
@@ -219,9 +223,16 @@
 		2DC180DC1C20E3B200673136 /* UPNelleVicinanzeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPNelleVicinanzeCell.m; sourceTree = "<group>"; };
 		2DC180DE1C20E3C500673136 /* UPNelleVicinanzeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPNelleVicinanzeCell.xib; sourceTree = "<group>"; };
 		2DC180E21C20E48100673136 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		2DC81FB21C2F4749005B6148 /* UPSlideOutViewControllerForSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPSlideOutViewControllerForSegue.h; sourceTree = "<group>"; };
+		2DC81FB31C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPSlideOutViewControllerForSegue.m; sourceTree = "<group>"; };
 		2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCategoriePageViewController.h; sourceTree = "<group>"; };
 		2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCategoriePageViewController.m; sourceTree = "<group>"; };
 		2DD2059E1C23196600133056 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2DE95BDA1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPProfiloSlideOutMenuCell.xib; sourceTree = "<group>"; };
+		2DE95BDC1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPProfiloSlideOutMenu.h; sourceTree = "<group>"; };
+		2DE95BDD1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPProfiloSlideOutMenu.m; sourceTree = "<group>"; };
+		2DE95BDF1C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPSlideOutMenuTabelViewControllerTableViewController.h; sourceTree = "<group>"; };
+		2DE95BE01C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPSlideOutMenuTabelViewControllerTableViewController.m; sourceTree = "<group>"; };
 		2DF567E31C297FF100941E2D /* UPLuogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPLuogo.h; sourceTree = "<group>"; };
 		2DF567E41C297FF100941E2D /* UPLuogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPLuogo.m; sourceTree = "<group>"; };
 		2DF567E61C299B6300941E2D /* cestino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cestino.png; sourceTree = "<group>"; };
@@ -305,8 +316,15 @@
 		2D045D5B1C2ADC300021F14F /* SlideOutMenu */ = {
 			isa = PBXGroup;
 			children = (
-				2D83E4731C2DC023006DCC33 /* SWRevealViewController.h */,
-				2D83E4741C2DC023006DCC33 /* SWRevealViewController.m */,
+				2D057C881C3009F000ABA819 /* SWRevealViewController.h */,
+				2D057C891C3009F000ABA819 /* SWRevealViewController.m */,
+				2DE95BDA1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib */,
+				2DE95BDF1C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.h */,
+				2DE95BE01C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m */,
+				2DE95BDC1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.h */,
+				2DE95BDD1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m */,
+				2DC81FB21C2F4749005B6148 /* UPSlideOutViewControllerForSegue.h */,
+				2DC81FB31C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m */,
 			);
 			name = SlideOutMenu;
 			sourceTree = "<group>";
@@ -585,11 +603,11 @@
 		CAC374601BF5EBC900CB53DD /* Progetto */ = {
 			isa = PBXGroup;
 			children = (
+				CAC374641BF5EBC900CB53DD /* AppDelegate.h */,
+				CAC374651BF5EBC900CB53DD /* AppDelegate.m */,
 				CA83AC341C2DDC5B000D6432 /* Inserimento Recensione */,
 				2D4C49761C245DB400743AC1 /* RegistrazioneLuogo */,
 				CA83AC291C2DD322000D6432 /* Inserimento Luogo */,
-				CAC374641BF5EBC900CB53DD /* AppDelegate.h */,
-				CAC374651BF5EBC900CB53DD /* AppDelegate.m */,
 				2D045D5B1C2ADC300021F14F /* SlideOutMenu */,
 				2DC180CD1C20E23600673136 /* Categorie */,
 				CA79D5D11BFA2DFB0003137D /* Registrazione */,
@@ -781,6 +799,7 @@
 				2D0E2FA81C045022009420A5 /* UniveresitaDegliStudiDiParma.gif in Resources */,
 				2D0E2FA11C045022009420A5 /* PolitecnicoDiMilano.png in Resources */,
 				2D0E2F9E1C045022009420A5 /* L'Orientale - UniversitaDegliStudiDiNapoli.jpg in Resources */,
+				2DE95BDB1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib in Resources */,
 				2D0E2FBD1C045022009420A5 /* UniversitaDegliStudiDiFoggia.jpg in Resources */,
 				2D0E2FCF1C045022009420A5 /* UniversitaDegliStudiDiUrbino.png in Resources */,
 				2DF567EB1C299CD000941E2D /* close.png in Resources */,
@@ -845,23 +864,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC81FB41C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m in Sources */,
 				CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */,
 				CA83AC191C2DD263000D6432 /* NetworkLoadingManager.m in Sources */,
 				CA83AC2C1C2DD33A000D6432 /* InserimentoLuogoViewController.m in Sources */,
 				CAC3746F1BF5EBC900CB53DD /* Progetto.xcdatamodeld in Sources */,
 				CAC374661BF5EBC900CB53DD /* AppDelegate.m in Sources */,
+				2DE95BDE1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m in Sources */,
 				2DC180DA1C20E39600673136 /* UPAltreCategorieCell.m in Sources */,
 				CA83AC281C2DD311000D6432 /* firstLoginScreenViewController.m in Sources */,
 				2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */,
 				2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */,
 				2DD2059D1C23067E00133056 /* UPCategoriePageViewController.m in Sources */,
-				2D83E4751C2DC023006DCC33 /* SWRevealViewController.m in Sources */,
+				2D057C8A1C3009F000ABA819 /* SWRevealViewController.m in Sources */,
 				CA83AC151C2DD238000D6432 /* UIViewController+TextFieldDelegate.m in Sources */,
 				2DC180DD1C20E3B200673136 /* UPNelleVicinanzeCell.m in Sources */,
 				CA83AC3A1C2DDC6E000D6432 /* AddReviewController.m in Sources */,
 				CA83AC241C2DD2A8000D6432 /* UPSelectUniversity.m in Sources */,
 				2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */,
 				CAC374631BF5EBC900CB53DD /* main.m in Sources */,
+				2DE95BE11C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m in Sources */,
 				CA83AC221C2DD2A8000D6432 /* accountInfoViewController.m in Sources */,
 				CA83AC251C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m in Sources */,
 				CA83AC231C2DD2A8000D6432 /* userInfoViewController.m in Sources */,

@@ -1600,8 +1600,6 @@ const int FrontViewPositionNone = 0xff;
         }
         else if ( [identifier isEqualToString:SWSegueFrontIdentifier] )
         {
-            //Inserisci aggiornamento del contesto
-            
             segue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc)
             {
                 [self _setFrontViewController:dvc animated:NO];

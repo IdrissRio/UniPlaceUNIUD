@@ -17,9 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _menuButton.target=self.revealViewController;
-    _menuButton.action=@selector(revealToggle:);
-    [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    _menuButton.target = self.revealViewController;
+    _menuButton.action = @selector(revealToggle:);
+    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     UIColor * UPGreenColor=[UIColor colorWithRed:1.0/255.0 green:106.0/255.0 blue:127.0/255.0 alpha:1];
     self.navigationController.navigationBar.barTintColor = UPGreenColor;
@@ -40,15 +41,7 @@
     // Do any additional setup after loading the view.
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 4;
-}
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -94,6 +87,8 @@
     
     return pageContentViewController;
 }
+
+
 
 /*
 #pragma mark - Navigation

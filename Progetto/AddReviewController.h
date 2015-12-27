@@ -4,7 +4,7 @@
 #import "StarRatingView.h"
 #import "UIViewController+TextFieldDelegate.h"
 
-@interface AddReviewController : UIViewController <StarRatingViewDelegate, UITextFieldDelegate>
+@interface AddReviewController : UIViewController <StarRatingViewDelegate, UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *immagineRecensione;
 
