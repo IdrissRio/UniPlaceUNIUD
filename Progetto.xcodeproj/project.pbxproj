@@ -105,7 +105,6 @@
 		CA83AC241C2DD2A8000D6432 /* UPSelectUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC1F1C2DD2A8000D6432 /* UPSelectUniversity.m */; };
 		CA83AC251C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC211C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m */; };
 		CA83AC281C2DD311000D6432 /* firstLoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC271C2DD311000D6432 /* firstLoginScreenViewController.m */; };
-		CA83AC2C1C2DD33A000D6432 /* InserimentoLuogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC2B1C2DD33A000D6432 /* InserimentoLuogoViewController.m */; };
 		CA83AC311C2DDB37000D6432 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83AC2E1C2DDB37000D6432 /* Camera.png */; };
 		CA83AC321C2DDB37000D6432 /* piena.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83AC2F1C2DDB37000D6432 /* piena.png */; };
 		CA83AC331C2DDB37000D6432 /* vuota.png in Resources */ = {isa = PBXBuildFile; fileRef = CA83AC301C2DDB37000D6432 /* vuota.png */; };
@@ -258,8 +257,6 @@
 		CA83AC211C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCustomCellUniversitaTableViewCell.m; sourceTree = "<group>"; };
 		CA83AC261C2DD311000D6432 /* firstLoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstLoginScreenViewController.h; sourceTree = "<group>"; };
 		CA83AC271C2DD311000D6432 /* firstLoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstLoginScreenViewController.m; sourceTree = "<group>"; };
-		CA83AC2A1C2DD33A000D6432 /* InserimentoLuogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InserimentoLuogoViewController.h; sourceTree = "<group>"; };
-		CA83AC2B1C2DD33A000D6432 /* InserimentoLuogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InserimentoLuogoViewController.m; sourceTree = "<group>"; };
 		CA83AC2E1C2DDB37000D6432 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
 		CA83AC2F1C2DDB37000D6432 /* piena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piena.png; sourceTree = "<group>"; };
 		CA83AC301C2DDB37000D6432 /* vuota.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vuota.png; sourceTree = "<group>"; };
@@ -359,7 +356,7 @@
 		2DC180CD1C20E23600673136 /* Categorie */ = {
 			isa = PBXGroup;
 			children = (
-				CA83AC161C2DD241000D6432 /* Gestione dati Server */,
+				CA83AC161C2DD241000D6432 /* Gestione dati Client - Server */,
 				CA83AC0F1C2DD1EA000D6432 /* Controllo TextField */,
 				2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */,
 				2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */,
@@ -540,22 +537,13 @@
 			name = "Controllo TextField";
 			sourceTree = "<group>";
 		};
-		CA83AC161C2DD241000D6432 /* Gestione dati Server */ = {
+		CA83AC161C2DD241000D6432 /* Gestione dati Client - Server */ = {
 			isa = PBXGroup;
 			children = (
 				CA83AC171C2DD263000D6432 /* NetworkLoadingManager.h */,
 				CA83AC181C2DD263000D6432 /* NetworkLoadingManager.m */,
 			);
-			name = "Gestione dati Server";
-			sourceTree = "<group>";
-		};
-		CA83AC291C2DD322000D6432 /* Inserimento Luogo */ = {
-			isa = PBXGroup;
-			children = (
-				CA83AC2A1C2DD33A000D6432 /* InserimentoLuogoViewController.h */,
-				CA83AC2B1C2DD33A000D6432 /* InserimentoLuogoViewController.m */,
-			);
-			name = "Inserimento Luogo";
+			name = "Gestione dati Client - Server";
 			sourceTree = "<group>";
 		};
 		CA83AC2D1C2DDB1C000D6432 /* ImmaginiRecensione */ = {
@@ -867,7 +855,6 @@
 				2DC81FB41C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m in Sources */,
 				CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */,
 				CA83AC191C2DD263000D6432 /* NetworkLoadingManager.m in Sources */,
-				CA83AC2C1C2DD33A000D6432 /* InserimentoLuogoViewController.m in Sources */,
 				CAC3746F1BF5EBC900CB53DD /* Progetto.xcdatamodeld in Sources */,
 				CAC374661BF5EBC900CB53DD /* AppDelegate.m in Sources */,
 				2DE95BDE1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m in Sources */,

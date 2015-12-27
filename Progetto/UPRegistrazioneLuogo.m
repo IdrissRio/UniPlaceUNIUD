@@ -32,32 +32,45 @@
 @implementation UPRegistrazioneLuogo
 
 
-- (IBAction)CheckInButtonItem:(UIBarButtonItem *)sender {
+
+
+
+- (IBAction)CheckInButtonItem:(id)sender {
     //Creare un oggetto di tipo UPLuogo, riempirne ogni campo (l'immagine se esiste la si trova in immagineInserita), la location la si trova in locationManager.location.longitude/latitude poi telefono e nome luogo e indirizzo li si prendono dai textbox.
-        //Va preso questo oggetto e mandato sul db.
+    //Va preso questo oggetto e mandato sul db.
+    
+    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Inserimento luogo .."
+                                                                 preferredStyle:UIAlertControllerStyleAlert ];
+    [self presentViewController:errorAlert animated:YES completion:nil];
     
     self.pickerTipologia.dataSource = self;
     self.pickerTipologia.delegate = self;
     
     NetworkLoadingManager *locationUploader = [[NetworkLoadingManager alloc]init];
     
+    NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+    NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+    
+    
     NSDictionary *parametriLuogo = [[NSDictionary alloc]initWithObjectsAndKeys:
-        self.nomeLuogoTextField.text, @"nome",
-        self.indirizzoLuogoTextField.text, @"indirizzo",
-        self.telefonoLuogoTextField.text, @"numeroTelefonico",
-        selectedPicker, @"categoria",
-        self.locationManager.location.coordinate.latitude, @"latitudine",
-        self.locationManager.location.coordinate.longitude, @"longitudine",
-        nil];
+                                    self.nomeLuogoTextField.text, @"nome",
+                                    self.indirizzoLuogoTextField.text, @"indirizzo",
+                                    self.telefonoLuogoTextField.text, @"numeroTelefonico",
+                                    selectedPicker, @"categoria",
+                                    latitudine, @"latitudine",
+                                    longitudine, @"longitudine",
+                                    nil];
     
     NSData *immagineLuogo = UIImageJPEGRepresentation(immagineInserita, 0.9);
-    NSArray*infoImmagine = @[self.nomeLuogoTextField, @"photo"];
+    NSArray*infoImmagine = @[self.nomeLuogoTextField.text, @"photo"];
+    
+    UPLuogo *luogoDaInserire = [[UPLuogo alloc]initWithIndirizzo:self.indirizzoLuogoTextField.text telefono:self.telefonoLuogoTextField.text nome:self.nomeLuogoTextField.text longitudine:longitudine latitudine:latitudine immagine:immagineLuogo tipologia:selectedPicker];
     
     NSURLRequest *request = [locationUploader createBodyWithURL:@"http://mobdev2015.com/aggiungiluogo.php" Parameters:parametriLuogo DataImage:immagineLuogo ImageInformations:infoImmagine];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-
+    
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if(data){
@@ -91,11 +104,7 @@
         
         
     }] resume];
-
-    
 }
-
-
 
 - (CLLocationManager *)locationManager{
     if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
@@ -159,6 +168,16 @@
     return 1;
 }
 
+// Fetching values for user input
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    
+    NSString *str = [pickerValues objectAtIndex:row];
+    NSLog(@"%@", str);
+    selectedPicker = str;
+    
+}
+
 // The number of rows of data
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
@@ -178,6 +197,7 @@
 // The data to return for the row and component (column) that's being passed in
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    NSLog(@"%@", pickerValues[row]);
     selectedPicker = pickerValues[row];
     return pickerValues[row];
 }

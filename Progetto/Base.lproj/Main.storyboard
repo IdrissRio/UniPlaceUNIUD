@@ -2667,7 +2667,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="location.png"/>
                                 <connections>
-                                    <segue destination="aa7-cy-OTs" kind="show" id="4TO-KM-Yyy"/>
+                                    <segue destination="aa7-cy-OTs" kind="show" identifier="luogoSegue" id="4TO-KM-Yyy"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2917,9 +2917,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Check In"/>
+                                <connections>
+                                    <action selector="CheckInButtonItem:" destination="aa7-cy-OTs" eventType="touchUpInside" id="xDV-TZ-kIu"/>
+                                </connections>
                             </button>
                             <connections>
-                                <action selector="CheckInButtonItem:" destination="aa7-cy-OTs" id="tFE-Zq-hqg"/>
+                                <action selector="CheckInButtonItem:" destination="aa7-cy-OTs" id="l0f-x2-Kg0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
