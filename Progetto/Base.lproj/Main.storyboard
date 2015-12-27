@@ -3,10 +3,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Bariol_Regular.otf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
@@ -2704,11 +2711,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="hvn-5Z-Z8B"/>
-                                    </mask>
-                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ottengo indirizzo ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SO-CA-h61">
                                 <rect key="frame" x="20" y="306" width="560" height="30"/>
@@ -2719,11 +2726,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3px-OM-3XP"/>
-                                    </mask>
-                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefono ... " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pab-Pn-Xef">
                                 <rect key="frame" x="20" y="344" width="560" height="30"/>
@@ -2734,11 +2741,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="uac-hs-6BF"/>
-                                    </mask>
-                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SK-wk-jnO">
                                 <rect key="frame" x="21" y="411" width="559" height="36"/>
@@ -3684,10 +3691,104 @@ Esse sono la latitudine, la longitudine e l'altitudine.</string>
                         <viewControllerLayoutGuide type="top" id="s33-65-WGE"/>
                         <viewControllerLayoutGuide type="bottom" id="ehB-A8-WxR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f6h-hl-aax">
+                    <view key="view" contentMode="scaleAspectFill" id="f6h-hl-aax">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhi-dM-GsE">
+                                <rect key="frame" x="20" y="20" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vlp-vE-mrn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siamo due amici e colleghi, studenti dell'Università degli Studi di Parma. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yut-v0-ZMl">
+                                <rect key="frame" x="20" y="48" width="560" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ldO-ef-fmi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gabriele Etta aka MANetta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBg-9e-7C4">
+                                <rect key="frame" x="20" y="90" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hCV-QF-wRN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pugile, Camerire e Programmatore.  Sboccia Calicella" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9a-KH-Dxr">
+                                <rect key="frame" x="15" y="472" width="560" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4si-Zh-mnm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idriss Riouak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-nn-vaf">
+                                <rect key="frame" x="20" y="307" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="tZI-5e-q07"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IdrissRio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SGu-LL-m1w">
+                                <rect key="frame" x="236" y="336" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="C4e-Ti-4RN"/>
+                                    <constraint firstAttribute="width" secondItem="SGu-LL-m1w" secondAttribute="height" multiplier="1:1" id="ISU-Kl-47i"/>
+                                    <constraint firstAttribute="width" constant="128" id="a86-EH-5rh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ManEtta.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dmz-54-gRU">
+                                <rect key="frame" x="231" y="119" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2k2-88-VD0"/>
+                                    <constraint firstAttribute="width" secondItem="Dmz-54-gRU" secondAttribute="height" multiplier="1:1" id="igM-VE-7UI"/>
+                                    <constraint firstAttribute="width" constant="128" id="jB7-dG-LFn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pugile e Commesso.  Ha un Mac ma adora Microsoft.  Miglior Meme 2015" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpj-PN-CtE">
+                                <rect key="frame" x="20" y="255" width="560" height="43"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="u9a-KH-Dxr" firstAttribute="top" secondItem="SGu-LL-m1w" secondAttribute="bottom" constant="8" symbolic="YES" id="0qI-kd-iVE"/>
+                            <constraint firstItem="hhi-dM-GsE" firstAttribute="trailing" secondItem="yut-v0-ZMl" secondAttribute="trailing" id="8Qf-sB-HC0"/>
+                            <constraint firstItem="Ghz-nn-vaf" firstAttribute="top" secondItem="hpj-PN-CtE" secondAttribute="bottom" constant="9" id="8Se-Ci-G0T"/>
+                            <constraint firstItem="nBg-9e-7C4" firstAttribute="top" secondItem="yut-v0-ZMl" secondAttribute="bottom" constant="8" symbolic="YES" id="9gG-1g-aS6"/>
+                            <constraint firstItem="hhi-dM-GsE" firstAttribute="top" secondItem="s33-65-WGE" secondAttribute="bottom" constant="20" id="AMb-AL-WoA"/>
+                            <constraint firstItem="Ghz-nn-vaf" firstAttribute="leading" secondItem="u9a-KH-Dxr" secondAttribute="leading" constant="5" id="CUq-ss-7yh"/>
+                            <constraint firstItem="u9a-KH-Dxr" firstAttribute="trailing" secondItem="Ghz-nn-vaf" secondAttribute="trailing" constant="-5" id="FYq-uk-lly"/>
+                            <constraint firstItem="hpj-PN-CtE" firstAttribute="centerX" secondItem="SGu-LL-m1w" secondAttribute="centerX" id="G1H-Dg-gxA"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="top" secondItem="hhi-dM-GsE" secondAttribute="bottom" constant="7" id="IAe-N9-jdv"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="leading" secondItem="f6h-hl-aax" secondAttribute="leadingMargin" id="IwC-u1-KTA"/>
+                            <constraint firstItem="ehB-A8-WxR" firstAttribute="top" secondItem="u9a-KH-Dxr" secondAttribute="bottom" constant="20" id="Kv5-pX-47O"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="leading" secondItem="hhi-dM-GsE" secondAttribute="leading" id="NkT-3w-yTI"/>
+                            <constraint firstItem="nBg-9e-7C4" firstAttribute="trailing" secondItem="hpj-PN-CtE" secondAttribute="trailing" id="Pdk-DF-GdV"/>
+                            <constraint firstItem="SGu-LL-m1w" firstAttribute="top" secondItem="Ghz-nn-vaf" secondAttribute="bottom" constant="8" symbolic="YES" id="Tj1-Dn-6cz"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="trailing" secondItem="f6h-hl-aax" secondAttribute="trailingMargin" id="UJR-IC-Dk0"/>
+                            <constraint firstItem="Ghz-nn-vaf" firstAttribute="leading" secondItem="f6h-hl-aax" secondAttribute="leadingMargin" id="Ujf-pI-aQJ"/>
+                            <constraint firstItem="Dmz-54-gRU" firstAttribute="top" secondItem="nBg-9e-7C4" secondAttribute="bottom" constant="8" symbolic="YES" id="Yxy-OX-6Kz"/>
+                            <constraint firstItem="hpj-PN-CtE" firstAttribute="top" secondItem="Dmz-54-gRU" secondAttribute="bottom" constant="8" symbolic="YES" id="dXD-yk-tgJ"/>
+                            <constraint firstItem="Dmz-54-gRU" firstAttribute="centerX" secondItem="Ghz-nn-vaf" secondAttribute="centerX" constant="-5" id="iyG-jV-jBk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ghz-nn-vaf" secondAttribute="trailing" id="mOe-oa-6AR"/>
+                            <constraint firstItem="yut-v0-ZMl" firstAttribute="trailing" secondItem="nBg-9e-7C4" secondAttribute="trailing" id="v5M-JH-unm"/>
+                            <constraint firstItem="hpj-PN-CtE" firstAttribute="leading" secondItem="nBg-9e-7C4" secondAttribute="leading" id="vCA-E4-sLr"/>
+                            <constraint firstItem="nBg-9e-7C4" firstAttribute="leading" secondItem="yut-v0-ZMl" secondAttribute="leading" id="wV8-hx-B02"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chi Siamo?" id="bOK-Ck-wOr">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="dkJ-iE-keB">
@@ -3696,6 +3797,9 @@ Esse sono la latitudine, la longitudine e l'altitudine.</string>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="immagineGabri" destination="Dmz-54-gRU" id="T4e-XT-0vK"/>
+                        <outlet property="immagineIdriss" destination="SGu-LL-m1w" id="Ww1-04-lon"/>
+                        <outlet property="labelBenvenuto" destination="hhi-dM-GsE" id="spH-p1-PkF"/>
                         <outlet property="menuButton" destination="dkJ-iE-keB" id="4Mq-ZZ-sDS"/>
                     </connections>
                 </viewController>
@@ -3706,11 +3810,13 @@ Esse sono la latitudine, la longitudine e l'altitudine.</string>
     </scenes>
     <resources>
         <image name="ForoItalicoUniversitaDegliStudiDiRoma.png" width="170" height="170"/>
+        <image name="IdrissRio.jpg" width="720" height="720"/>
         <image name="IstitutoDiStudiAvanzatiDiLucca.png" width="209" height="241"/>
         <image name="IstitutoItalianoDiScienzeUmane.jpg" width="540" height="480"/>
         <image name="IstitutoUniversitarioDiStudiSuperiori.jpeg" width="591" height="591"/>
         <image name="Iuav.jpg" width="530" height="530"/>
         <image name="L'Orientale - UniversitaDegliStudiDiNapoli.jpg" width="156" height="158"/>
+        <image name="ManEtta.png" width="178" height="177"/>
         <image name="ParthenopeUnivesitaDegliStudidiNapoli.gif" width="250" height="250"/>
         <image name="PolitecnicoDiBari.gif" width="400" height="400"/>
         <image name="PolitecnicoDiMilano.png" width="664" height="488"/>

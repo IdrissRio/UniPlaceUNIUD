@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D045D5A1C2ADA030021F14F /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D045D591C2ADA030021F14F /* checkin.png */; };
 		2D057C8A1C3009F000ABA819 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D057C891C3009F000ABA819 /* SWRevealViewController.m */; };
+		2D057C8E1C30295000ABA819 /* ManEtta.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D057C8C1C30295000ABA819 /* ManEtta.png */; };
+		2D057C8F1C30295000ABA819 /* IdrissRio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D057C8D1C30295000ABA819 /* IdrissRio.jpg */; };
 		2D0E2F991C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F591C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png */; };
 		2D0E2F9A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png */; };
 		2D0E2F9B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D0E2F5B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg */; };
@@ -142,6 +144,8 @@
 		2D045D591C2ADA030021F14F /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
 		2D057C881C3009F000ABA819 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		2D057C891C3009F000ABA819 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		2D057C8C1C30295000ABA819 /* ManEtta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManEtta.png; sourceTree = "<group>"; };
+		2D057C8D1C30295000ABA819 /* IdrissRio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IdrissRio.jpg; sourceTree = "<group>"; };
 		2D0E2F591C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ForoItalicoUniversitaDegliStudiDiRoma.png; sourceTree = "<group>"; };
 		2D0E2F5A1C045022009420A5 /* IstitutoDiStudiAvanzatiDiLucca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IstitutoDiStudiAvanzatiDiLucca.png; sourceTree = "<group>"; };
 		2D0E2F5B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IstitutoItalianoDiScienzeUmane.jpg; sourceTree = "<group>"; };
@@ -324,6 +328,15 @@
 				2DC81FB31C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m */,
 			);
 			name = SlideOutMenu;
+			sourceTree = "<group>";
+		};
+		2D057C8B1C30294300ABA819 /* ImmaginiSviluppatori */ = {
+			isa = PBXGroup;
+			children = (
+				2D057C8C1C30295000ABA819 /* ManEtta.png */,
+				2D057C8D1C30295000ABA819 /* IdrissRio.jpg */,
+			);
+			name = ImmaginiSviluppatori;
 			sourceTree = "<group>";
 		};
 		2D4C49761C245DB400743AC1 /* RegistrazioneLuogo */ = {
@@ -595,7 +608,6 @@
 				CAC374651BF5EBC900CB53DD /* AppDelegate.m */,
 				CA83AC341C2DDC5B000D6432 /* Inserimento Recensione */,
 				2D4C49761C245DB400743AC1 /* RegistrazioneLuogo */,
-				CA83AC291C2DD322000D6432 /* Inserimento Luogo */,
 				2D045D5B1C2ADC300021F14F /* SlideOutMenu */,
 				2DC180CD1C20E23600673136 /* Categorie */,
 				CA79D5D11BFA2DFB0003137D /* Registrazione */,
@@ -612,6 +624,7 @@
 		CAC374611BF5EBC900CB53DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2D057C8B1C30294300ABA819 /* ImmaginiSviluppatori */,
 				CA83AC2D1C2DDB1C000D6432 /* ImmaginiRecensione */,
 				2DC180E01C20E47500673136 /* ImmaginiSupportoMappe */,
 				2D7A884D1C084D9F0077B9DA /* immaginiUtente */,
@@ -749,6 +762,7 @@
 				2DC180DF1C20E3C500673136 /* UPNelleVicinanzeCell.xib in Resources */,
 				2D0E2FAA1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png in Resources */,
 				2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */,
+				2D057C8E1C30295000ABA819 /* ManEtta.png in Resources */,
 				2D0E2FC81C045022009420A5 /* UniversitaDegliStudiDiSassari.png in Resources */,
 				2D0E2FAF1C045022009420A5 /* UniversitaDegliStudiDelMolise.png in Resources */,
 				2D0E2FD11C045022009420A5 /* UniversitaDegliStudiGabrieleDAnnunzio.png in Resources */,
@@ -826,6 +840,7 @@
 				2D0E2FC31C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png in Resources */,
 				2D0E2FA91C045022009420A5 /* UniversitaCaFoscariDiVenezia.png in Resources */,
 				2D0E2FBC1C045022009420A5 /* UniversitaDegliStudiDiFirenze.jpg in Resources */,
+				2D057C8F1C30295000ABA819 /* IdrissRio.jpg in Resources */,
 				2D0E2FAD1C045022009420A5 /* UniversitaDegliStudiDellaTuscia.gif in Resources */,
 				2D0E2FC91C045022009420A5 /* UniversitaDegliStudiDiSiena.jpg in Resources */,
 			);

@@ -34,6 +34,16 @@
         _latituineLabel.text=[NSString stringWithFormat:@"%f",_locationManager.location.coordinate.latitude];
         _altitudineLabel.text=[NSString stringWithFormat:@"%f",_locationManager.location.altitude];
     }
+    if(_immagineGabri!=nil){
+        _immagineGabri.layer.cornerRadius=_immagineGabri.frame.size.width/2;
+        _immagineGabri.layer.borderWidth=3.0f;
+        _immagineGabri.layer.borderColor=[UIColor whiteColor].CGColor;
+        _immagineGabri.clipsToBounds=YES;
+        _immagineIdriss.layer.cornerRadius=_immagineIdriss.frame.size.width/2;
+        _immagineIdriss.layer.borderWidth=3.0f;
+        _immagineIdriss.layer.borderColor=[UIColor whiteColor].CGColor;
+        _immagineIdriss.clipsToBounds=YES;
+    }
     _menuButton.target = self.revealViewController;
     _menuButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];

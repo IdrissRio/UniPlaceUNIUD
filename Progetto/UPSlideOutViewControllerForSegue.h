@@ -13,5 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *longitudineLabel;
 @property (strong, nonatomic) IBOutlet UILabel *latituineLabel;
 @property (strong, nonatomic) IBOutlet UILabel *altitudineLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *immagineGabri;
+@property (strong, nonatomic) IBOutlet UIImageView *immagineIdriss;
+@property (strong, nonatomic) IBOutlet UILabel *labelBenvenuto;
 
 @end
