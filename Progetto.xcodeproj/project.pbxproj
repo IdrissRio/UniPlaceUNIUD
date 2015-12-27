@@ -338,7 +338,7 @@
 		2DC180CD1C20E23600673136 /* Categorie */ = {
 			isa = PBXGroup;
 			children = (
-				CA83AC161C2DD241000D6432 /* Gestione dati Server */,
+				CA83AC161C2DD241000D6432 /* Gestione dati Client - Server */,
 				CA83AC0F1C2DD1EA000D6432 /* Controllo TextField */,
 				2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */,
 				2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */,
@@ -519,13 +519,13 @@
 			name = "Controllo TextField";
 			sourceTree = "<group>";
 		};
-		CA83AC161C2DD241000D6432 /* Gestione dati Server */ = {
+		CA83AC161C2DD241000D6432 /* Gestione dati Client - Server */ = {
 			isa = PBXGroup;
 			children = (
 				CA83AC171C2DD263000D6432 /* NetworkLoadingManager.h */,
 				CA83AC181C2DD263000D6432 /* NetworkLoadingManager.m */,
 			);
-			name = "Gestione dati Server";
+			name = "Gestione dati Client - Server";
 			sourceTree = "<group>";
 		};
 		CA83AC2D1C2DDB1C000D6432 /* ImmaginiRecensione */ = {
