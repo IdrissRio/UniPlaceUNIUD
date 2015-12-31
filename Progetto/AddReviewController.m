@@ -73,11 +73,6 @@
     formatter.dateFormat = @"yyyy/M/d";
     NSString *dataOdierna = [formatter stringFromDate:[NSDate date]];
     NSLog(@"data: %@", dataOdierna);
-    // Dictionary contenente i campi di testo da inserire singolarmente nella recensione.
-    NSDictionary *testualiRecensione = [NSDictionary dictionaryWithObjectsAndKeys: dataOdierna, @"dataRecensione",
-                                        self.recensioneTexfField.text, @"recensione", voto, @"voto", nil];
-    NSString *url = @"http://mobdev2015.com/aggiungirecensione.php";
-    NetworkLoadingManager *loader = [[NetworkLoadingManager alloc] init];
     
     // Creo l'UIAlertController che verrà visualizzato mentre l'operazione è in corso, munito di spinner di tipo
     // UIActivityIndicatorview
@@ -90,12 +85,26 @@
     [spinner startAnimating];
     
     // array contenente il nome testuale del file e il tag necessario per poter essere passato in POST.
-    NSArray *infoImmagine = @[@"luogo", @"photo"];
+    NSArray *infoImmagine;
     NSData *dataImmagine;
+    NSString *immaginePresente;
     // Se è stata selezionata un'immagine, la vado a preparare dalla property apposta, altrimenti verrà messa a nil.
-    if(ImageSelected == YES) dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
-    else dataImmagine = nil;
-    
+    if(ImageSelected == YES){
+        dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
+        infoImmagine = @[@"luogo", @"photo"];
+        immaginePresente = @"si";
+        
+    }else{
+        dataImmagine = nil;
+        infoImmagine = nil;
+        immaginePresente = @"no";
+    }
+    // Dictionary contenente i campi di testo da inserire singolarmente nella recensione.
+    NSDictionary *testualiRecensione = [NSDictionary dictionaryWithObjectsAndKeys: dataOdierna, @"dataRecensione",
+                                        self.recensioneTexfField.text, @"recensione", voto, @"voto", immaginePresente, @"immaginePresente", nil];
+    NSString *url = @"http://mobdev2015.com/aggiungirecensione.php";
+    NetworkLoadingManager *loader = [[NetworkLoadingManager alloc] init];
+
     // Creo la NSURLRequest mediante il metodo fornito dall'oggetto loader di tipo NetworkLoadingManager.
     NSURLRequest *request = [loader createBodyWithURL:url Parameters:testualiRecensione DataImage:dataImmagine ImageInformations:infoImmagine];
     [self presentViewController:alert animated:YES completion:nil];
