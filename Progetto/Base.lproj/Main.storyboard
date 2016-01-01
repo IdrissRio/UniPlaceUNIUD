@@ -220,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-2553"/>
+            <point key="canvasLocation" x="1601" y="-2553"/>
         </scene>
         <!--Add Review Controller-->
         <scene sceneID="L0x-Ho-bMg">
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrC-TY-d5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="-1716"/>
+            <point key="canvasLocation" x="1468" y="-1732"/>
         </scene>
         <!--Select University-->
         <scene sceneID="vc1-QA-54C">
@@ -2623,7 +2623,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UX-5n-wbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-447" y="-1790"/>
+            <point key="canvasLocation" x="721" y="-1740"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Jhn-aj-Hp7">
@@ -2633,7 +2633,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TiI-02-UDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="-4043"/>
+            <point key="canvasLocation" x="1852" y="-4811"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sqw-F2-7Bb">
@@ -2649,7 +2649,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQU-It-fWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="-3332"/>
+            <point key="canvasLocation" x="790" y="-3348"/>
         </scene>
         <!--UniPlace-->
         <scene sceneID="UOs-Er-09J">
@@ -2685,7 +2685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uag-wZ-aiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="-3332"/>
+            <point key="canvasLocation" x="1610" y="-3356"/>
         </scene>
         <!--Registrazione Luogo-->
         <scene sceneID="uFl-2i-zPA">
@@ -2948,7 +2948,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57t-zq-dmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="-3332"/>
+            <point key="canvasLocation" x="2412" y="-3340"/>
         </scene>
         <!--Atterraggio Table View Controller-->
         <scene sceneID="BYS-8F-qzp">
@@ -2966,7 +2966,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWv-BF-12E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2416" y="-4043"/>
+            <point key="canvasLocation" x="1816" y="-4083"/>
         </scene>
         <!--Benvenuto-->
         <scene sceneID="QGK-To-gxR">
@@ -3129,7 +3129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgR-9O-WbH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-524" y="-2497"/>
+            <point key="canvasLocation" x="516" y="-2553"/>
         </scene>
         <!--Registrazione-->
         <scene sceneID="Mrz-cn-tvF">
@@ -3342,7 +3342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAi-rd-r4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-2545"/>
+            <point key="canvasLocation" x="2426" y="-2569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cbq-ac-rFK">
@@ -3364,7 +3364,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ub-CC-gEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1264" y="-2553"/>
+            <point key="canvasLocation" x="-304" y="-2537"/>
         </scene>
         <!--RevelViewController-->
         <scene sceneID="6XR-4U-TNC">
@@ -3378,7 +3378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MI-3a-7Fd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391" y="-3332"/>
+            <point key="canvasLocation" x="-255" y="-3340"/>
         </scene>
         <!--Slide Out Menu Tabel View Controller Table View Controller-->
         <scene sceneID="wWD-bb-zwd">
@@ -3524,7 +3524,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHH-R0-AD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Menù" id="rBR-NP-6Gr"/>
             </objects>
-            <point key="canvasLocation" x="374" y="-4261"/>
+            <point key="canvasLocation" x="358" y="-4829"/>
         </scene>
         <!--Le Mie Coordinate-->
         <scene sceneID="GY5-je-oGA">
@@ -3880,8 +3880,8 @@ Esse sono la latitudine, la longitudine e l'altitudine.</string>
         <image name="menu.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7kF-JW-3ue"/>
         <segue reference="RYr-d0-TCL"/>
+        <segue reference="7kF-JW-3ue"/>
         <segue reference="FDs-uE-J2a"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
