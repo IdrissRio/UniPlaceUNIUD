@@ -36,7 +36,50 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    ///QUA VORREI LA CHIAMATA.
+    
+    // Si vogliono cercare i luoghi più vicini alla posizione attuale. Per
+    // farlo, prelevo latitudine e longitudine.
+    NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+    NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+    
+    // Costruisco il corpo della richiesta da mandare al server contenente solamente
+    // i due campi appena prelevati, creando l'oggetto apposito.
+    NetworkLoadingManager *positionUploader = [[NetworkLoadingManager alloc]init];
+    
+    // Inserisco latitudine e longitudine in un dictionary come richiesto dal metodo.
+    NSDictionary *parametri = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
+                               longitudine, @"longitudine",
+                               nil];
+    
+    NSURLRequest * request = [positionUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:parametri DataImage:nil ImageInformations:nil];
+    
+    // Creo la NSURLSessionConfiguration e la relativa NSURLSession
+    
+    NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError *error){
+        if(data){
+            NSError *parseError;
+            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            if (datiUtente) {
+                NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                
+                if([esito isEqualToString:@"1"]){
+                    // Inserisci qui il metodo.
+                }
+                    
+            }else NSLog(@"parseError = %@ \n", parseError);
+            
+            NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
+            
+        }
+
+    }]resume];
+    
+    
+    
+   
 }
 
 - (void)viewDidLoad {
