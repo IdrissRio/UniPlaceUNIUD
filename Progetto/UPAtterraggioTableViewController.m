@@ -16,10 +16,7 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
-    NSArray *varie;
-    NSArray *biblioteche;
-    NSArray *gastronomie;
-    NSArray *vitaNotturna ;
+    NSDictionary* datiUtente;
     
 }
 @property (nonatomic,strong) CLLocationManager *locationManager;
@@ -75,15 +72,15 @@
             [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
                 if(data){
                     NSError *parseError;
-                    NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                    datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
                     if (datiUtente) {
                         NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
                         
                         if([esito isEqualToString:@"1"]){
-                            
+                            NSLog(@"%@",datiUtente);
                         }
                         else{
-                            
+                            NSLog(@"%@",datiUtente);
                         }
                         
                     } else
@@ -94,6 +91,7 @@
                 }
 
             }];
+            
         }
     }
 }
@@ -120,7 +118,7 @@
         
         
         
-        for(NSDictionary *dict in vitaNotturna){
+        for(NSDictionary *dict in datiUtente){
             NSLog(@"Aggiungo MKNotation");
             MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
             NSString *longitudine=[dict objectForKey:@"Longitudine"];
@@ -170,7 +168,7 @@
             mapRegion.span.latitudeDelta = 0.001;
             mapRegion.span.longitudeDelta = 0.001;
             [cell.mappaLuogo setRegion:mapRegion animated:YES];
-            for(NSDictionary *dict in varie){
+            for(NSDictionary *dict in datiUtente){
                 NSLog(@"Aggiungo MKNotation");
                 MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
                 NSString *longitudine=[dict objectForKey:@"Longitudine"];
