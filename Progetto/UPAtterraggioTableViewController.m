@@ -58,7 +58,8 @@
     
     switch(self.pageIndex){
             
-        case 0:{
+        case (0):{
+            
             NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
             NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
             
@@ -70,7 +71,8 @@
             
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
             NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            
+            [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
                 if(data){
                     NSError *parseError;
                     NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
@@ -83,7 +85,7 @@
                         else{
                             
                         }
-                            
+                        
                     } else
                         NSLog(@"parseError = %@ \n", parseError);
                     
@@ -91,14 +93,13 @@
                     
                 }
 
-                
-            }] resume];
-            
+            }];
         }
-            
     }
 }
 
+
+              
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
@@ -109,6 +110,35 @@
             return nil;
     return path;
     
+    
+    
+    
+    //// Idriss Code: Qui Andrà messo l'array nelle vicinanze anziche vitaNotturna.
+    
+    if(self.pageIndex==0){
+        UPAltreCategorieCell*cell = (UPAltreCategorieCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        
+        
+        
+        for(NSDictionary *dict in vitaNotturna){
+            NSLog(@"Aggiungo MKNotation");
+            MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
+            point.coordinate =newCenter;
+            point.title = [dict objectForKey:@"Nome"];
+            point.subtitle = [dict objectForKey:@"Indirizzo"];
+            [cell.mappaLuogo addAnnotation:point];
+        }
+        
+        for (int i=1;i<10;i++){
+            UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            cell.imageView.image;
+        }
+    }
+    
+    //// Fine codice di Idriss
 
 }
 
