@@ -53,6 +53,11 @@
 
     return 10;
 }
+
+
+// LO VEDI?
+
+
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
     // Determine if row is selectable based on the NSIndexPath.
