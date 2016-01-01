@@ -58,7 +58,8 @@
     
     switch(self.pageIndex){
             
-        case 0:{
+        case (0):{
+            
             NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
             NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
             
@@ -70,7 +71,8 @@
             
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
             NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            
+            [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
                 if(data){
                     NSError *parseError;
                     NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
@@ -83,7 +85,7 @@
                         else{
                             
                         }
-                            
+                        
                     } else
                         NSLog(@"parseError = %@ \n", parseError);
                     
@@ -91,8 +93,13 @@
                     
                 }
 
+            }];
+        }
+    }
+}
 
 
+              
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
@@ -127,7 +134,7 @@
         
         for (int i=1;i<10;i++){
             UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            cell.imageView.image=
+            cell.imageView.image;
         }
     }
     
