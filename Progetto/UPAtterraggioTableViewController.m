@@ -152,8 +152,12 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self setReviewResult:0];
   
+            });
+        
 
-
+      
+        
+        
     }] resume];
     
 
