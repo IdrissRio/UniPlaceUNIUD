@@ -14,7 +14,7 @@
 #import "NetworkLoadingManager.h"
 @interface UPRegistrazioneLuogo ()<CLLocationManagerDelegate,UIPickerViewDataSource, UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate
    >{
-       
+       BOOL immagineSelezionata;
        NSArray* pickerValues;
        UIImage* immagineInserita;
        NSString* selectedPicker;
@@ -52,21 +52,36 @@
     NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
     
     
+    NSString *immaginePresente = [[NSString alloc]init];
+    NSData *immagineLuogo;
+    NSArray *infoImmagine;
+    
+    if(immagineSelezionata){
+        immagineLuogo = UIImageJPEGRepresentation(immagineInserita, 0.9);
+        infoImmagine = @[self.nomeLuogoTextField.text, @"photo"];
+        immaginePresente = @"si";
+    }
+    else{
+        immaginePresente = @"no";
+        immagineLuogo = nil;
+        infoImmagine = nil;
+    }
+    
     NSDictionary *parametriLuogo = [[NSDictionary alloc]initWithObjectsAndKeys:
                                     self.nomeLuogoTextField.text, @"nome",
+                                    immaginePresente, @"immaginePresente",
                                     self.indirizzoLuogoTextField.text, @"indirizzo",
                                     self.telefonoLuogoTextField.text, @"numeroTelefonico",
                                     selectedPicker, @"categoria",
                                     latitudine, @"latitudine",
                                     longitudine, @"longitudine",
+                                    
                                     nil];
-    
-    NSData *immagineLuogo = UIImageJPEGRepresentation(immagineInserita, 0.9);
-    NSArray*infoImmagine = @[self.nomeLuogoTextField.text, @"photo"];
+
     
     UPLuogo *luogoDaInserire = [[UPLuogo alloc]initWithIndirizzo:self.indirizzoLuogoTextField.text telefono:self.telefonoLuogoTextField.text nome:self.nomeLuogoTextField.text longitudine:longitudine latitudine:latitudine immagine:immagineLuogo tipologia:selectedPicker];
     
-    NSURLRequest *request = [locationUploader createBodyWithURL:@"http://mobdev2015.com/aggiungiluogo.php" Parameters:parametriLuogo DataImage:immagineLuogo ImageInformations:infoImmagine];
+     NSURLRequest *request = [locationUploader createBodyWithURL:@"http://mobdev2015.com/aggiungiluogo.php" Parameters:parametriLuogo DataImage:immagineLuogo ImageInformations:infoImmagine];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -113,6 +128,7 @@
 
 
 - (void)viewDidLoad {
+    immagineSelezionata = NO;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -223,6 +239,7 @@
     picker.allowsEditing = YES; //L'utente potrà modificare l'immagine dalla galleria.
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //Indico come risorsa la Photo Library di iOS.
     
+    immagineSelezionata = YES;
     //Il picker selezionato verrà visualizzato dal view Controller attuale mediante un'animazione.
     [self presentViewController:picker animated:YES completion:NULL];
 
