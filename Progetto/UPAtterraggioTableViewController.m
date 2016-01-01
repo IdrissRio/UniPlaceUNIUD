@@ -54,8 +54,50 @@
     return 10;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    switch(self.pageIndex){
+            
+        case 0:{
+            NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+            NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+            
+            NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
+                                        @"longitudine", longitudine, nil];
+            
+            NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
+            NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
+            
+            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+            NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+                if(data){
+                    NSError *parseError;
+                    NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                    if (datiUtente) {
+                        NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                        
+                        if([esito isEqualToString:@"1"]){
+                            
+                        }
+                        else{
+                            
+                        }
+                            
+                    } else
+                        NSLog(@"parseError = %@ \n", parseError);
+                    
+                    NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
+                    
+                }
 
-// LO VEDI?
+                
+            }] resume];
+            
+        }
+            
+    }
+}
 
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
