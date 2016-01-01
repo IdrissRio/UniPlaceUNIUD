@@ -161,6 +161,9 @@
                         aviableEmail = YES;
                         messaggioAlertController = @"Inserimento avvenuto";
                         titoloAlertController = @"Messaggio";
+                        [self dismissViewControllerAnimated:NO completion:^{
+                            [self performSegueWithIdentifier:@"successfulRegistrationSegue" sender:self];
+                        }];
                     }
                     else{
                         messaggioAlertController = @"Email e/o password non corretti. Controlla i campi inseriti.";
@@ -196,6 +199,7 @@
             NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self dismissViewControllerAnimated:NO completion:NULL];
+                
             });
         }
         
