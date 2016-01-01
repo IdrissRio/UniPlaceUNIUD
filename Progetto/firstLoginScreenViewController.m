@@ -13,12 +13,13 @@
 #import "UPUniversitario.h"
 #import "userInfoViewController.h"
 #import "AppDelegate.h"
+#import "NetworkLoadingManager.h"
 @interface firstLoginScreenViewController (){
     UPUniversitario* soloFacebookUniversitario;
-     NSString *serverReply;
+    NSString *serverReply;
     
 }
--(void)checkCredentials;
+-(void)setLoginResult:(int)Esito;
 @end
 
 @implementation firstLoginScreenViewController
@@ -29,134 +30,113 @@
     
     NSString *user = self.usernameTextField.text;
     NSString *pass = self.passwordTextField.text;
-   
+    
     NSDictionary *credenziali = [NSDictionary dictionaryWithObjectsAndKeys:user, @"username", pass, @"password", nil];
     
     if([NSJSONSerialization isValidJSONObject:credenziali]){
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Accesso in corso \n\n\n"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
-
+        
         UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125,50,30,30)];
         spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
         [alert.view addSubview:spinner];
         [spinner startAnimating];
         [self presentViewController:alert animated:YES completion:nil];
         
-
-        NSError *error;
-       
-        NSData *JSONData = [NSJSONSerialization dataWithJSONObject:credenziali options:0 error:&error];
-        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[JSONData length]];
-        NSURL *url = [NSURL URLWithString:@"http://mobdev2015.com/login.php"];
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-        [request setHTTPMethod:@"POST"];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setHTTPBody:JSONData];
         
+        NetworkLoadingManager * uploadManager = [[NetworkLoadingManager alloc]init];
+        NSURLRequest * request  = [uploadManager createBodyWithURL:@"http://mobdev2015.com/login.php" Parameters:credenziali DataImage:nil ImageInformations:nil];
         
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             
-            // If something goes wrong, an error message is showed.
-            if (error) {
-                NSLog(@"%@", error);
-                return;
-            }
-            // If nothing is retrieved, the method returns.
-            if (!data) {
-                return;
-            }
-            if([[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding] isEqualToString:@"0"])
-            {
-                // Setting the global variabile equal to string 0, codificated as Error login singleton, and calling the login controller
-                // method to set up the error login message.
-                serverReply = @"0";
-                [self checkCredentials];
-                return;
-            }
             
             UPUniversitario *universitarioLoggato = [[UPUniversitario alloc] init];
             // Otherwise, the JSON received will be converted into an array and the contets will be printed, showing
             // an error message if the serialitazion goes wrong.
             NSError *parseError;
-            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-            if (datiUtente && !error) {
-                
-                // Because is known at this point that the login is completed, the login succeded method is set. This part of code
-                // should be placed at the end of the method, but due to the asynchronous nature of NSURLSession, it is possibile
-                // to assign the JSON fields to our UPUniversitarioObject and setting the login at the same time by using dispatch_async
-                // related to the main thread (obtained by get_global_queue(0,0) method).
-                dispatch_async(dispatch_get_global_queue(0,0), ^{
-                    serverReply = @"1";
-                    [self checkCredentials];
-
-                });
-                
-                NSLog(@"responseObject = %@", datiUtente);
-                // After we've received the informations stored into the JSON array, the field related to the profile image is retreived and used to load the phisycal image. The same mechanics will happen for the university Image. This  synchronous but fits with the login design.
-                // We start by getting the local path on the server of the two images related to the user.
-                NSString *localProfilePath = [NSString stringWithString: [datiUtente objectForKey:@"immagineProfilo"]];
-                NSString *localUniPath = [NSString stringWithString: [datiUtente objectForKey:@"immagineUni"]];
-                
-                // Ceating the complete url for the image profile and the university image by appending the local path
-                // previously obtained deleting the dot '.' from the begin of the string.
-                NSString * urlProfileImage = [NSString stringWithFormat:@"http://mobdev2015.com%@", [localProfilePath substringFromIndex:1]];
-                NSString * urlUniImage = [NSString stringWithFormat:@"http://mobdev2015.com%@", [localUniPath substringFromIndex:1]];
-                
-                // Printing the result just for debugging purposes.
-                NSLog(@"%@", urlProfileImage);
-                NSLog(@"%@", urlUniImage);
-                
-                // Assigning every field of the JSON aaray to the object which contains the logged user data.
-                universitarioLoggato.nome = [datiUtente objectForKey:@"nome"];
-                universitarioLoggato.cognome = [datiUtente objectForKey:@"cognome"];
-                universitarioLoggato.email = [datiUtente objectForKey:@"email"];
-                universitarioLoggato.nomeUtente = [datiUtente objectForKey:@"nomeUtente"];
-                
-                // If the data needs to be assigned to a UIImage, the static method imageWithData: is required for each
-                // of the fields above, as parameter.
-                universitarioLoggato.LogoUni = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlUniImage]];
-                universitarioLoggato.fotoProfilo = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlProfileImage]];
             
-                [self salvaDatiNelDBnome:universitarioLoggato.nome cognome:universitarioLoggato.nome email:universitarioLoggato.email fotoProfilo:universitarioLoggato.fotoProfilo nomeUtente:universitarioLoggato.nomeUtente universita:universitarioLoggato.universita];
-                } else {
-                NSLog(@"parseError = %@", parseError);
-                NSLog(@"responseString = %@", universitarioLoggato);
-            }
+            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            // Se ho ricevuto qualcosa in risposta dal server e sono riuscito a convertirlo da JSON ad array
+            if (datiUtente) {
+                NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                
+                // Se l'esito della stringa adibita è pari a 1, invoco il metodo delegato nel main thread
+                // che in base al parametro, indicato da un numero che può essere 0 oppure 1, visualizzerà o
+                // meno un messaggio di errore.
+                if([esito isEqualToString:@"1"]){
+                    NSLog(@"responseObject = %@", datiUtente);
+                    
+                    NSString *localProfilePath = [NSString stringWithString: [datiUtente objectForKey:@"immagineProfilo"]];
+                    NSString *localUniPath = [NSString stringWithString: [datiUtente objectForKey:@"immagineUni"]];
+
+                    NSString * urlProfileImage = [NSString stringWithFormat:@"http://mobdev2015.com%@", [localProfilePath substringFromIndex:1]];
+                    NSString * urlUniImage = [NSString stringWithFormat:@"http://mobdev2015.com%@", [localUniPath substringFromIndex:1]];
+                    
+                    NSLog(@"%@", urlProfileImage);
+                    NSLog(@"%@", urlUniImage);
+                    
+                    // Assigning every field of the JSON aaray to the object which contains the logged user data.
+                    universitarioLoggato.nome = [datiUtente objectForKey:@"nome"];
+                    universitarioLoggato.cognome = [datiUtente objectForKey:@"cognome"];
+                    universitarioLoggato.email = [datiUtente objectForKey:@"email"];
+                    universitarioLoggato.nomeUtente = [datiUtente objectForKey:@"nomeUtente"];
+                    
+                    // If the data needs to be assigned to a UIImage, the static method imageWithData: is required for each
+                    // of the fields above, as parameter.
+                    universitarioLoggato.LogoUni = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlUniImage]];
+                    universitarioLoggato.fotoProfilo = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlProfileImage]];
+                    
+                    [self salvaDatiNelDBnome:universitarioLoggato.nome cognome:universitarioLoggato.nome email:universitarioLoggato.email fotoProfilo:universitarioLoggato.fotoProfilo nomeUtente:universitarioLoggato.nomeUtente universita:universitarioLoggato.universita];
+                  
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                    [self dismissViewControllerAnimated:alert completion:nil];
+                    [self performSegueWithIdentifier:@"successfulLoginSegue" sender:self];
+                    });
+                    
+                } else{
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self setLoginResult:0];
+                        
+                    });
+                    
+                }
+                // Se la conversione è fallita, verrà stampato a console il messaggio di errore con quanto scaricato
+                // dal server, indicando comunque che c'è stato un errore nella comunicazione.
+            } else
+                NSLog(@"parseError = %@ \n", parseError);
+            
+            NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
             
         }] resume];
         
-       
+        
         
         
     }
 }
 
--(void)checkCredentials{
-    if(![serverReply isEqualToString:@"0"]){
-        [self dismissViewControllerAnimated:NO completion:^{
 
-            [self performSegueWithIdentifier:@"successfulLoginSegue" sender:self];
-        }];
-        
-        
-    }
-    else{
+#pragma mark Metodi di routine della classe.
+
+- (void) setLoginResult:(int)Esito{
+  
+    if(Esito == 0){
         [self dismissViewControllerAnimated:NO completion:^{
-            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Errore" message:@"Email e/o Password non corretti." preferredStyle:UIAlertControllerStyleAlert ];
-            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Username e/o password errati!"
+                                                                         preferredStyle:UIAlertControllerStyleAlert ];
+            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Errore" style:UIAlertActionStyleDefault handler:nil];
             [errorAlert addAction:OkAction];
             [self presentViewController:errorAlert animated:YES completion:nil];
-            [self loginError];
+            
+            
+            [self setErrorBorder:self.usernameTextField];
+            [self setErrorBorder:self.passwordTextField];
         }];
     }
-
 }
-#pragma mark Metodi di routine della classe.
 
 -(void)loginError{
     [self setErrorBorder:self.usernameTextField];
@@ -167,10 +147,10 @@
 }
 
 -(void)setErrorBorder:(UITextField *)textField{
-textField.layer.cornerRadius=8.0f;
-textField.layer.masksToBounds=YES;
-textField.layer.borderColor=[[UIColor redColor]CGColor];
-textField.layer.borderWidth= 1.0f;
+    textField.layer.cornerRadius=8.0f;
+    textField.layer.masksToBounds=YES;
+    textField.layer.borderColor=[[UIColor redColor]CGColor];
+    textField.layer.borderWidth= 1.0f;
 }
 
 -(void)prepareInterface{
@@ -184,7 +164,7 @@ textField.layer.borderWidth= 1.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prepareInterface];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -209,7 +189,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
         [params setValue:@"id,first_name,last_name,email,picture.type(large)" forKey:@"fields"];
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:params]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-               NSURL* url= [[NSURL alloc]initWithString:[[[result valueForKey:@"picture"] valueForKey:@"data"] valueForKey:@"url"]];
+             NSURL* url= [[NSURL alloc]initWithString:[[[result valueForKey:@"picture"] valueForKey:@"data"] valueForKey:@"url"]];
              NSData* dataFoto=[[NSData alloc]initWithContentsOfURL:url];
              soloFacebookUniversitario.nome=[result objectForKey:@"first_name"];
              soloFacebookUniversitario.cognome=[result objectForKey:@"last_name"];
@@ -279,11 +259,11 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
             NSString * email= [[NSString alloc]initWithString:soloFacebookUniversitario.email];
             obj.universitario.email=email;
             obj.universitario.fotoProfilo=soloFacebookUniversitario.fotoProfilo;
-           
-           
+            
+            
         }
     }
-
+    
 }
 
 
