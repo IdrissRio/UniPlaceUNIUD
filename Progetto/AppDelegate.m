@@ -10,6 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "firstLoginScreenViewController.h"
+#import "NetworkLoadingManager.h"
 @interface AppDelegate (){
     NSManagedObjectContext* context;
 
@@ -22,13 +23,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    NSFetchRequest * request=[[NSFetchRequest alloc]init];
+    NSFetchRequest * requestDB=[[NSFetchRequest alloc]init];
     AppDelegate *objApp=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     context=[objApp managedObjectContext];
-    [request setEntity:[NSEntityDescription entityForName:@"Utente" inManagedObjectContext:context  ]];
-    [request setIncludesSubentities:NO]; //Omit subentities. Default is YES (i.e. include subentities)
+    [requestDB setEntity:[NSEntityDescription entityForName:@"Utente" inManagedObjectContext:context  ]];
+    [requestDB setIncludesSubentities:NO]; //Omit subentities. Default is YES (i.e. include subentities)
     NSError *err;
-    NSUInteger count = [context countForFetchRequest:request error:&err];
+    NSUInteger count = [context countForFetchRequest:requestDB error:&err];
     if(count == 0) {
         NSLog(@"DB vuoto, procedere con la registrazione");
         firstLoginScreenViewController *loginController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"dbVuotoController"]; //or the homeController
@@ -37,6 +38,11 @@
     }else{
         NSLog(@"DB contentente dati, portare l'utente alla schermata con le mappe.");
     }
+    
+
+    
+    
+    
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     [FBSDKLoginButton class];

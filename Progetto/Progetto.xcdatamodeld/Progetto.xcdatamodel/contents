@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="Luogo" syncable="YES">
+        <attribute name="fotoprofilo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="indirizzo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitudine" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitudine" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="media" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numerotelefonico" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Utente" syncable="YES">
         <attribute name="cognome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,5 +20,6 @@
     </entity>
     <elements>
         <element name="Utente" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Luogo" positionX="-63" positionY="27" width="128" height="165"/>
     </elements>
 </model>
