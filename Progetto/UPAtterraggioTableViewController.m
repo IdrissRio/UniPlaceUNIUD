@@ -33,55 +33,6 @@
     if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
     return _locationManager;
 }
-
-
--(void)viewWillAppear:(BOOL)animated{
-    
-    // Si vogliono cercare i luoghi più vicini alla posizione attuale. Per
-    // farlo, prelevo latitudine e longitudine.
-    NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
-    NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
-    
-    // Costruisco il corpo della richiesta da mandare al server contenente solamente
-    // i due campi appena prelevati, creando l'oggetto apposito.
-    NetworkLoadingManager *positionUploader = [[NetworkLoadingManager alloc]init];
-    
-    // Inserisco latitudine e longitudine in un dictionary come richiesto dal metodo.
-    NSDictionary *parametri = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
-                               longitudine, @"longitudine",
-                               nil];
-    
-    NSURLRequest * request = [positionUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:parametri DataImage:nil ImageInformations:nil];
-    
-    // Creo la NSURLSessionConfiguration e la relativa NSURLSession
-    
-    NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError *error){
-        if(data){
-            NSError *parseError;
-            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-            if (datiUtente) {
-                NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
-                
-                if([esito isEqualToString:@"1"]){
-                    // Inserisci qui il metodo.
-                }
-                    
-            }else NSLog(@"parseError = %@ \n", parseError);
-            
-            NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
-            
-        }
-
-    }]resume];
-    
-    
-    
-   
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -100,9 +51,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 4;
+    return 10;
 }
+- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
+{
+    // Determine if row is selectable based on the NSIndexPath.
+    
+    if(self.pageIndex==0)
+        if([path row]==0)
+            return nil;
+    return path;
+    
 
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
@@ -115,6 +76,7 @@
             {
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPNelleVicinanzeCell" owner:self options:nil];
                 cell = [nib objectAtIndex:0];
+               
             }
 #ifdef __IPHONE_8_0
             if(IS_OS_8_OR_LATER) {
