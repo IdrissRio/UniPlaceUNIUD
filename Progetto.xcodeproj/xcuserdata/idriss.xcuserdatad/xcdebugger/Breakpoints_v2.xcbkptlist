@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Progetto/UPAtterraggioTableViewController.m"
-            timestampString = "473448117.233809"
+            timestampString = "473448714.662861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-inserisciNotation"
             landmarkType = "5">
          </BreakpointContent>

@@ -16,10 +16,6 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
-    NSArray *varie;
-    NSArray *biblioteche;
-    NSArray *gastronomie;
-    NSArray *vitaNotturna ;
     __block NSDictionary *luoghiVicini;
    __block NSArray *luoghiRecenti;
     UPNelleVicinanzeCell* Header;
