@@ -8,6 +8,7 @@
 
 #import "UPAtterraggioTableViewController.h"
 #import "UPAltreCategorieCell.h"
+#import "UPListaLuoghiNelleVicinanzeTableViewCell.h"
 #import "UPNelleVicinanzeCell.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -56,9 +57,11 @@
             NSString *longitudine=[dict objectForKey:@"Longitudine"];
             NSString *latitudine=[dict objectForKey:@"Latitudine"];
             if(longitudine!=nil && latitudine!=nil){
-                UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-                cell.textLabel.text=[dict objectForKey:@"Nome"];
-                cell.imageView.image =[UIImage imageNamed:@"ManEtta.png"];
+                UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+                cell.longitudine=[longitudine doubleValue];
+                cell.latitudine=[latitudine doubleValue];
+                cell.labelNome.text=[dict objectForKey:@"Nome"];
+                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
                 //Quando gabri mette l'immagine profilo.
                 // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
             }
@@ -217,12 +220,18 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
-    // Determine if row is selectable based on the NSIndexPath.
-    
-    if(self.pageIndex==0)
-        if([path row]==0)
-            return nil;
     return path;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:indexPath];
+    MKCoordinateRegion mapRegion;
+     CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake(cell.latitudine,cell.longitudine);
+    mapRegion.center =  newCenter;
+    mapRegion.span.latitudeDelta = 0.005;
+    mapRegion.span.longitudeDelta = 0.005;
+    [Header.mappaLuogo setRegion:mapRegion animated:YES];
 }
 
 
@@ -264,10 +273,10 @@
     
     if(self.pageIndex==0){
        
-            UITableViewCell*cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-            if (cell == nil) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-            }
+            UPListaLuoghiNelleVicinanzeTableViewCell*cell = (UPListaLuoghiNelleVicinanzeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPListaLuoghiNelleVicinanze" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
         
         
             NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]];
@@ -275,8 +284,10 @@
             NSString *longitudine=[dict objectForKey:@"Longitudine"];
             NSString *latitudine=[dict objectForKey:@"Latitudine"];
             if(longitudine!=nil && latitudine!=nil){
-                cell.textLabel.text=[dict objectForKey:@"Nome"];
-                cell.imageView.image =[UIImage imageNamed:@"ManEtta.png"];
+                cell.longitudine=[longitudine doubleValue];
+                cell.latitudine=[latitudine doubleValue];
+                cell.labelNome.text=[dict objectForKey:@"Nome"];
+                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
                 //Quando gabri mette l'immagine profilo.
                 // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
             }
