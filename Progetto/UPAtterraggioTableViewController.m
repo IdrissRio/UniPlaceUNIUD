@@ -153,16 +153,27 @@
     }
     
     if(self.pageIndex == 1){
-
-            
-            NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
-            NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
-            
-            NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
-                                        longitudine,@"longitudine", nil];
-            
-            NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
-            NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
+        NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
+        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_nuovi.php" Parameters:nil DataImage:nil ImageInformations:nil];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if(data){
+                NSError *parseError;
+                luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                if (luoghiRecenti) {
+                    NSString *esito = [NSString stringWithString: [luoghiRecenti valueForKey:@"success"]];
+                    
+                    if([esito isEqualToString:@"1"]){
+                        NSLog(@"%@", luoghiRecenti);
+                    }
+                    
+                    
+                } else NSLog(@"parseError = %@ \n", parseError);
+                
+            }
             
         }] resume];
     }//if
@@ -189,23 +200,24 @@
                 
             }
             
-            
-            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-                NSLog(@"Entro dentro il compeltionHandler");
-                if(data){
-                    NSError *parseError;
-                    luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-                    if (luoghiRecenti) {
-                        NSString *esito = [NSString stringWithString: [luoghiRecenti valueForKey:@"success"]];
-                        
-                        if([esito isEqualToString:@"1"]){
-                            NSLog(@"%@", luoghiRecenti);
-                        }
-                        else{
-                            // Inserire eventualmente qualcosa.
-                        }
-                        
-                    } else NSLog(@"parseError = %@ \n", parseError);
+        }] resume];
+        
+    }//if
+    
+    if(self.pageIndex == 3){
+        
+        NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
+        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_tendenze.php" Parameters:nil DataImage:nil ImageInformations:nil];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if(data){
+                NSError *parseError;
+                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                if (luoghiRecensiti) {
+                    NSString *esito = [NSString stringWithString: [luoghiRecensiti valueForKey:@"success"]];
                     
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiRecensiti);
