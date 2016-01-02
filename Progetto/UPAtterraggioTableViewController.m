@@ -16,8 +16,13 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
-   __block NSDictionary * datiUtente;
-    BOOL annotationInsert;
+    NSArray *varie;
+    NSArray *biblioteche;
+    NSArray *gastronomie;
+    NSArray *vitaNotturna ;
+    __block NSDictionary *luoghiVicini;
+   __block NSArray *luoghiRecenti;
+    UPNelleVicinanzeCell* Header;
     
     
 }
@@ -33,15 +38,37 @@
 
 -(void)inserisciNotation{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    if(self.pageIndex==0)
-        [self tableView:self.tableView viewForHeaderInSection:0];
-        for(int i=0;i<datiUtente.count;i++){
-            NSDictionary* dict = [datiUtente objectForKey:[NSString stringWithFormat:@"%d",i]];
-            UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            cell.textLabel.text=[dict objectForKey:@"Nome"];
-            cell.imageView.image    =[UIImage imageNamed:@"ManEtta.png"];
-            //Quando gabri mette l'immagine profilo.
-           // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
+    if(self.pageIndex==0){
+        for(int i=0;i<luoghiVicini.count;++i){
+            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+            NSLog(@"Aggiungo MKNotation");
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            if(longitudine!=nil && latitudine!=nil){
+                MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
+                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
+                point.coordinate =newCenter;
+                point.title=[dict objectForKey:@"Nome"];
+                point.subtitle=@"salve";
+                [Header.mappaLuogo addAnnotation:point];
+            }
+        }
+    }
+        for(int i=0;i<luoghiVicini.count;i++){
+            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+            NSLog(@"Modifico le TableViewCell");
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            if(longitudine!=nil && latitudine!=nil){
+                UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+                cell.textLabel.text=[dict objectForKey:@"Nome"];
+                cell.imageView.image =[UIImage imageNamed:@"ManEtta.png"];
+                //Quando gabri mette l'immagine profilo.
+                // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
+            }
+               
+            
+         
         }
 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
@@ -51,7 +78,6 @@
     return _locationManager;
 }
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
 }
 
@@ -72,18 +98,33 @@
     return 10;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
 
-
--(void)scaricaDatiLuogo{
-    switch(self.pageIndex){
-            
-        case (0):{
-            
-            NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
-            NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
-            
-            NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
-                                        longitudine,@"longitudine", nil];
+    
+    /* La seguente serie di if scaricherà, in base all'indice della pagina che l'utente sta visualizzando, diverse
+     * tipologie di luoghi:
+     * - pageIndex = 0: verranno prelevati i luoghi più vicini alla posizione attuale.
+     * - pageIndex = 1: verranno prelevati i luoghi aggiunti di recente partendo dai più nuovi.
+     * - pageIndex = 2: verranno prelevati i luoghi di tendenza, ovvero i luoghi più recensiti negli ultimi
+     * sette giorni.
+     * - pageIndex = 3: verranno prelevati i luoghi più recensiti, in ordine decrescente.
+     */
+    
+    
+    if(self.pageIndex == 0){
+        NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+        NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+        
+        NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
+                                    longitudine, @"longitudine", nil];
+        
+        NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
+        NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        NSURLSessionTask *task1 = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             
             if(data){
                 NSError *parseError;
@@ -93,7 +134,7 @@
                     
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiVicini );
-                        
+                        [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
                     }
                     else{
                         // Inserire eventualmente qualcosa.
@@ -106,14 +147,23 @@
                 
             }
         }];
+        
         [task1 resume];
 
         
     }
     
     if(self.pageIndex == 1){
-               NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
-            NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_nuovi.php" Parameters:nil DataImage:nil ImageInformations:nil];
+
+            
+            NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+            NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+            
+            NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
+                                        longitudine,@"longitudine", nil];
+            
+            NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
+            NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
             
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
             NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -123,17 +173,15 @@
                 NSLog(@"Entro dentro il compeltionHandler");
                 if(data){
                     NSError *parseError;
-                    
-                    datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-                    if (datiUtente) {
-                        NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                    luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                    if (luoghiRecenti) {
+                        NSString *esito = [NSString stringWithString: [luoghiRecenti valueForKey:@"success"]];
                         
                         if([esito isEqualToString:@"1"]){
-                            NSLog(@"Download effettuato con successo");
-                            NSLog(@"%@",datiUtente);
+                            NSLog(@"%@", luoghiRecenti);
                         }
                         else{
-                            NSLog(@"Errore");
+                            // Inserire eventualmente qualcosa.
                         }
                         
                     } else NSLog(@"parseError = %@ \n", parseError);
@@ -141,16 +189,22 @@
                     //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
                 }
                 
-                [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
-                
-                
-                
-                
-                
-            }]resume];
-        }
-    }
+            }] resume];
+    }//if
+    
+}
 
+
+
+#pragma mark Metodi per la gestione del download e salvataggio dei luoghi filtrati per categorie
+/*
+ * Prima vediamo se va tutto bene con il codice diretto negli if, poi mano a mano spostiamo tutto in 
+ * funzioni apposite.
+ *
+ */
+
+- (void)prelevaVicinanze{
+   
 }
 
 - (void)prelevaRecenti{
@@ -163,10 +217,6 @@
 
 - (void)prelevaMaggiormenteRecensiti{
     
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [self performSelectorOnMainThread:@selector(scaricaDatiLuogo) withObject:nil waitUntilDone:NO];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
@@ -182,41 +232,27 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(self.pageIndex==0){
-        
-        
         static NSString *simpleTableIdentifier = @"SimpleTableCell";
-        UPNelleVicinanzeCell*cell = (UPNelleVicinanzeCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        
+        Header= (UPNelleVicinanzeCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPNelleVicinanzeCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+        Header= [nib objectAtIndex:0];
         [self.locationManager startUpdatingLocation];
-        cell.mappaLuogo.delegate=self;
+        Header.mappaLuogo.delegate=self;
         [MKMapView class];
         MKCoordinateRegion mapRegion;
         mapRegion.center =  _locationManager.location.coordinate;
         mapRegion.span.latitudeDelta = 0.001;
         mapRegion.span.longitudeDelta = 0.001;
-        [cell.mappaLuogo setRegion:mapRegion animated:YES];
-        for(int i=0;i<datiUtente.count;++i){
-            NSDictionary* dict = [datiUtente objectForKey:[NSString stringWithFormat:@"%d",i]];
-            NSLog(@"Aggiungo MKNotation");
-            NSString *longitudine=[dict objectForKey:@"Longitudine"];
-            NSString *latitudine=[dict objectForKey:@"Latitudine"];
-            if(longitudine!=nil && latitudine!=nil){
-               MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
-                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
-                point.coordinate =newCenter;
-                [cell.mappaLuogo addAnnotation:point];
-            }
-        }
+        [Header.mappaLuogo setRegion:mapRegion animated:YES];
+        return Header;
+    }
         
 #ifdef __IPHONE_8_0
         if(IS_OS_8_OR_LATER) {
             [self.locationManager requestWhenInUseAuthorization];
         }
 #endif
-        return cell;
-    }
+    
     return nil;
 }
 
@@ -236,6 +272,25 @@
             if (cell == nil) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
             }
+        
+        
+            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]];
+            NSLog(@"Modifico le TableViewCell");
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            if(longitudine!=nil && latitudine!=nil){
+                cell.textLabel.text=[dict objectForKey:@"Nome"];
+                cell.imageView.image =[UIImage imageNamed:@"ManEtta.png"];
+                //Quando gabri mette l'immagine profilo.
+                // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
+            }
+            
+            
+        
+
+
+        
+        
             return cell;
         
     }else{
