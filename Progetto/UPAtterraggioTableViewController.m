@@ -65,7 +65,7 @@
             NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
             
             NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
-                                        @"longitudine", longitudine, nil];
+                                        longitudine, @"longitudine", nil];
             
             NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
             NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
@@ -74,7 +74,7 @@
             NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
             
             __block NSDictionary *datiUtente;
-            [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
                 if(data){
                     NSError *parseError;
                    datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
@@ -107,7 +107,7 @@
                     
                 }
                 
-            }];
+            }] resume];
         }
     }
 }
