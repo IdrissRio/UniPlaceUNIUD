@@ -79,6 +79,8 @@
 		2D4C49721C245BA800743AC1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C49711C245BA800743AC1 /* location.png */; };
 		2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */; };
 		2D4D5BA01C2C7C0B0025A939 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4D5B9F1C2C7C0B0025A939 /* menu.png */; };
+		2D6629BA1C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6629B91C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib */; };
+		2D6629BD1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6629BC1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m */; };
 		2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D75279E1BFD135B00459FD1 /* UPUniversitario.m */; };
 		2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */; };
 		2DC180D71C20E38000673136 /* UPAltreCategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */; };
@@ -215,6 +217,9 @@
 		2D4C49731C245DAF00743AC1 /* UPRegistrazioneLuogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPRegistrazioneLuogo.h; sourceTree = "<group>"; };
 		2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPRegistrazioneLuogo.m; sourceTree = "<group>"; };
 		2D4D5B9F1C2C7C0B0025A939 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		2D6629B91C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPListaLuoghiNelleVicinanze.xib; sourceTree = "<group>"; };
+		2D6629BB1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPListaLuoghiNelleVicinanzeTableViewCell.h; sourceTree = "<group>"; };
+		2D6629BC1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPListaLuoghiNelleVicinanzeTableViewCell.m; sourceTree = "<group>"; };
 		2D75279D1BFD135B00459FD1 /* UPUniversitario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPUniversitario.h; sourceTree = "<group>"; };
 		2D75279E1BFD135B00459FD1 /* UPUniversitario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPUniversitario.m; sourceTree = "<group>"; };
 		2DC180D31C20E35D00673136 /* UPAtterraggioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAtterraggioTableViewController.h; sourceTree = "<group>"; };
@@ -348,6 +353,16 @@
 			name = RegistrazioneLuogo;
 			sourceTree = "<group>";
 		};
+		2D6629B81C38428500BDCB6E /* ListaLuoghiNelleVicinanze */ = {
+			isa = PBXGroup;
+			children = (
+				2D6629B91C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib */,
+				2D6629BB1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.h */,
+				2D6629BC1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m */,
+			);
+			name = ListaLuoghiNelleVicinanze;
+			sourceTree = "<group>";
+		};
 		2D75279C1BFD124B00459FD1 /* Modello */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +406,7 @@
 		2DC180D01C20E31B00673136 /* TabelViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				2D6629B81C38428500BDCB6E /* ListaLuoghiNelleVicinanze */,
 				2DC180D21C20E33D00673136 /* AltreCategorie */,
 				2DC180D11C20E32E00673136 /* NelleVicinanze */,
 			);
@@ -797,6 +813,7 @@
 				2D0E2FC21C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif in Resources */,
 				2D045D5A1C2ADA030021F14F /* checkin.png in Resources */,
 				2DC180E51C20E48100673136 /* lock.png in Resources */,
+				2D6629BA1C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib in Resources */,
 				2D0E2FAE1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG in Resources */,
 				2D0E2FA81C045022009420A5 /* UniveresitaDegliStudiDiParma.gif in Resources */,
 				2D0E2FA11C045022009420A5 /* PolitecnicoDiMilano.png in Resources */,
@@ -887,6 +904,7 @@
 				CAC374631BF5EBC900CB53DD /* main.m in Sources */,
 				2DE95BE11C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m in Sources */,
 				CA83AC221C2DD2A8000D6432 /* accountInfoViewController.m in Sources */,
+				2D6629BD1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m in Sources */,
 				CA83AC251C2DD2A8000D6432 /* UPCustomCellUniversitaTableViewCell.m in Sources */,
 				CA83AC231C2DD2A8000D6432 /* userInfoViewController.m in Sources */,
 				2DF567E51C297FF100941E2D /* UPLuogo.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "UPAtterraggioTableViewController.h"
 #import "UPAltreCategorieCell.h"
+#import "UPListaLuoghiNelleVicinanzeTableViewCell.h"
 #import "UPNelleVicinanzeCell.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -16,13 +17,9 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
-    NSArray *varie;
-    NSArray *biblioteche;
-    NSArray *gastronomie;
-    NSArray *vitaNotturna ;
-    __block NSArray *luoghiVicini;
-    __block NSArray *luoghiRecenti;
-    __block NSArray *luoghiRecensiti;
+    __block NSDictionary *luoghiVicini;
+   __block NSArray *luoghiRecenti;
+    UPNelleVicinanzeCell* Header;
     
     
 }
@@ -36,14 +33,50 @@
 
 @implementation UPAtterraggioTableViewController
 
-
+-(void)inserisciNotation{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    if(self.pageIndex==0){
+        for(int i=0;i<luoghiVicini.count;++i){
+            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+            NSLog(@"Aggiungo MKNotation");
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            if(longitudine!=nil && latitudine!=nil){
+                MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
+                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
+                point.coordinate =newCenter;
+                point.title=[dict objectForKey:@"Nome"];
+                point.subtitle=@"salve";
+                [Header.mappaLuogo addAnnotation:point];
+            }
+        }
+    }
+        for(int i=0;i<luoghiVicini.count;i++){
+            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+            NSLog(@"Modifico le TableViewCell");
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            if(longitudine!=nil && latitudine!=nil){
+                UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+                cell.longitudine=[longitudine doubleValue];
+                cell.latitudine=[latitudine doubleValue];
+                cell.labelNome.text=[dict objectForKey:@"Nome"];
+                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+                //Quando gabri mette l'immagine profilo.
+                // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
+            }
+               
+            
+         
+        }
+[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
 
 - (CLLocationManager *)locationManager{
     if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
     return _locationManager;
 }
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
 }
 
@@ -100,7 +133,7 @@
                     
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiVicini );
-                        
+                        [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
                     }
                     else{
                         // Inserire eventualmente qualcosa.
@@ -113,6 +146,7 @@
                 
             }
         }];
+        
         [task1 resume];
         
         
@@ -229,43 +263,51 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
-    // Determine if row is selectable based on the NSIndexPath.
-    
-    if(self.pageIndex==0)
-        if([path row]==0)
-            return nil;
     return path;
-    
-    
-    
-    
-    //// Idriss Code: Qui Andrà messo l'array nelle vicinanze anziche vitaNotturna.
-    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:indexPath];
+    MKCoordinateRegion mapRegion;
+     CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake(cell.latitudine,cell.longitudine);
+    mapRegion.center =  newCenter;
+    mapRegion.span.latitudeDelta = 0.005;
+    mapRegion.span.longitudeDelta = 0.005;
+    [Header.mappaLuogo setRegion:mapRegion animated:YES];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(self.pageIndex==0){
-        UPAltreCategorieCell*cell = (UPAltreCategorieCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        
-        
-        
-        for(NSDictionary *dict in vitaNotturna){
-            NSLog(@"Aggiungo MKNotation");
-            MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-            NSString *longitudine=[dict objectForKey:@"Longitudine"];
-            NSString *latitudine=[dict objectForKey:@"Latitudine"];
-            CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
-            point.coordinate =newCenter;
-            point.title = [dict objectForKey:@"Nome"];
-            point.subtitle = [dict objectForKey:@"Indirizzo"];
-            [cell.mappaLuogo addAnnotation:point];
-        }
-        
-        for (int i=1;i<10;i++){
-            UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            cell.imageView.image;
-        }
+        static NSString *simpleTableIdentifier = @"SimpleTableCell";
+        Header= (UPNelleVicinanzeCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPNelleVicinanzeCell" owner:self options:nil];
+        Header= [nib objectAtIndex:0];
+        [self.locationManager startUpdatingLocation];
+        Header.mappaLuogo.delegate=self;
+        [MKMapView class];
+        MKCoordinateRegion mapRegion;
+        mapRegion.center =  _locationManager.location.coordinate;
+        mapRegion.span.latitudeDelta = 0.001;
+        mapRegion.span.longitudeDelta = 0.001;
+        [Header.mappaLuogo setRegion:mapRegion animated:YES];
+        return Header;
     }
+        
+#ifdef __IPHONE_8_0
+        if(IS_OS_8_OR_LATER) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+#endif
     
-    //// Fine codice di Idriss
-    
+    return nil;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(self.pageIndex==0)
+    return 290;
+    else return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -273,51 +315,34 @@
     
     
     if(self.pageIndex==0){
-        if([indexPath row]==0){
-            UPAltreCategorieCell*cell = (UPAltreCategorieCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-            if (cell == nil)
-            {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPNelleVicinanzeCell" owner:self options:nil];
+       
+            UPListaLuoghiNelleVicinanzeTableViewCell*cell = (UPListaLuoghiNelleVicinanzeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPListaLuoghiNelleVicinanze" owner:self options:nil];
                 cell = [nib objectAtIndex:0];
-                
-            }
-#ifdef __IPHONE_8_0
-            if(IS_OS_8_OR_LATER) {
-                
-                [self.locationManager requestWhenInUseAuthorization];
-                
-            }
-#endif
-            [self.locationManager startUpdatingLocation];
-            
-            [MKMapView class];
-            MKCoordinateRegion mapRegion;
-            mapRegion.center =  _locationManager.location.coordinate;
-            mapRegion.span.latitudeDelta = 0.001;
-            mapRegion.span.longitudeDelta = 0.001;
-            [cell.mappaLuogo setRegion:mapRegion animated:YES];
-            for(NSDictionary *dict in varie){
-                NSLog(@"Aggiungo MKNotation");
-                MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-                NSString *longitudine=[dict objectForKey:@"Longitudine"];
-                NSString *latitudine=[dict objectForKey:@"Latitudine"];
-                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
-                point.coordinate =newCenter;
-                point.title = [dict objectForKey:@"Nome"];
-                point.subtitle = [dict objectForKey:@"Indirizzo"];
-                [cell.mappaLuogo addAnnotation:point];
+        
+        
+            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]];
+            NSLog(@"Modifico le TableViewCell");
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            if(longitudine!=nil && latitudine!=nil){
+                cell.longitudine=[longitudine doubleValue];
+                cell.latitudine=[latitudine doubleValue];
+                cell.labelNome.text=[dict objectForKey:@"Nome"];
+                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+                //Quando gabri mette l'immagine profilo.
+                // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
             }
             
             
+        
+
+
+        
+        
             return cell;
-        }
-        else{
-            UITableViewCell*cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-            if (cell == nil) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-            }
-            return cell;
-        }
+        
     }else{
         UPNelleVicinanzeCell *cell = (UPNelleVicinanzeCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         if (cell == nil)
@@ -328,18 +353,15 @@
         return cell;
         
     }
-    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.pageIndex==0){
-        if([indexPath row]>0)
             return 140;
-        else
-            return 290;
-    }else return 240;
-    
+    }
+     return 240;
 }
 
 /*

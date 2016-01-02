@@ -75,7 +75,6 @@
                                     selectedPicker, @"categoria",
                                     latitudine, @"latitudine",
                                     longitudine, @"longitudine",
-                                    
                                     nil];
 
     
