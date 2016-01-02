@@ -21,7 +21,8 @@
     NSArray *gastronomie;
     NSArray *vitaNotturna ;
     __block NSArray *luoghiVicini;
-   __block NSArray *luoghiRecenti;
+    __block NSArray *luoghiRecenti;
+    __block NSArray *luoghiRecensiti;
     
     
 }
@@ -145,6 +146,36 @@
                 
             }] resume];
     }//if
+    
+    if(self.pageIndex == 2){
+        NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
+        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_recensiti.php" Parameters:nil DataImage:nil ImageInformations:nil];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if(data){
+                NSError *parseError;
+                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                if (luoghiRecensiti) {
+                    NSString *esito = [NSString stringWithString: [luoghiRecensiti valueForKey:@"success"]];
+                    
+                    if([esito isEqualToString:@"1"]){
+                        NSLog(@"%@", luoghiRecensiti);
+                    }
+                    else{
+                        // Inserire eventualmente qualcosa.
+                    }
+                    
+                } else NSLog(@"parseError = %@ \n", parseError);
+                
+                //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
+            }
+            
+        }] resume];
+
+    }
     
 }
 

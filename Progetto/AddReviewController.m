@@ -218,7 +218,7 @@
             UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:
                                        ^(UIAlertAction * action)
                                        {
-                                           ImageSelected = NO;
+                                           
                                            [self dismissViewControllerAnimated:YES completion:nil];
                                            //[self performSegueWithIdentifier:@"ExampleMainSegue" sender:self];
                                            
