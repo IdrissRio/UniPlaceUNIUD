@@ -63,7 +63,7 @@
                 cell.latitudine=[latitudine doubleValue];
                 cell.labelNome.text=[dict objectForKey:@"Nome"];
                 cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
-                //Quando gabri mette l'immagine profilo.
+                
                 // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
             }
                
@@ -331,10 +331,26 @@
                 cell.longitudine=[longitudine doubleValue];
                 cell.latitudine=[latitudine doubleValue];
                 cell.labelNome.text=[dict objectForKey:@"Nome"];
-                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
-                //Quando gabri mette l'immagine profilo.
-                // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
-            }
+                
+                
+                 // Prelevo il percorso al database locale salvato nella chiave PercorsoImmagine all'interno
+                 // dell'array
+                 NSString *percorsoImmagineLocale = [dict objectForKey:@"PercorsoImmagine"];
+                 
+                 // Se non è stringa vuota, sarà riempita dal percorso
+                 if(![percorsoImmagineLocale isEqualToString:@"0"]){
+                 // Concateno la stringa a meno del primo simbolo (che è un punto) con la stringa indicante il link
+                 NSString * urlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                 
+                 // Assegno l'immagine alla UIImage designata, andando a prelevare l'NSData mediante dataWithContentsOfURL
+                 // e poi assegnandolo all'immagine vera e propria mediante il metodo imaageWithData
+                 cell.immagineLuogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]]];
+                 } else cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+
+                //cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+                
+                
+}
             
             
         
