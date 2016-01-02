@@ -11,7 +11,7 @@
 @implementation UPNelleVicinanzeCell{
     Boolean scroll;
 }
-
+@synthesize mappaLuogo;
 - (void)awakeFromNib {
     // Initialization code
     scroll=false;

@@ -16,7 +16,9 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
-    NSDictionary* datiUtente;
+   __block NSDictionary * datiUtente;
+    BOOL annotationInsert;
+    
     
 }
 @property (nonatomic,strong) CLLocationManager *locationManager;
@@ -24,7 +26,24 @@
 
 @implementation UPAtterraggioTableViewController
 
-
+-(void)inserisciNotation{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    if(self.pageIndex==0){
+        [self tableView:self.tableView viewForHeaderInSection:0];
+ 
+    }
+    
+        for(int i=0;i<datiUtente.count;i++){
+            NSDictionary* dict = [datiUtente objectForKey:[NSString stringWithFormat:@"%d",i]];
+            UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            cell.textLabel.text=[dict objectForKey:@"Nome"];
+            
+            cell.imageView.image    =[UIImage imageNamed:@"ManEtta.png"];
+            //Quando gabri mette l'immagine profilo.
+           // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
+        }
+[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
 
 - (CLLocationManager *)locationManager{
     if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
@@ -51,9 +70,9 @@
     return 10;
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-    NSDictionary *risultatoGlobale;
+
+
+-(void)scaricaDatiLuogo{
     switch(self.pageIndex){
             
         case (0):{
@@ -62,7 +81,7 @@
             NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
             
             NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
-                                        @"longitudine", longitudine, nil];
+                                        longitudine,@"longitudine", nil];
             
             NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
             NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
@@ -70,19 +89,22 @@
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
             NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
             
-            __block NSDictionary *datiUtente;
-            [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            
+            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+                NSLog(@"Entro dentro il compeltionHandler");
                 if(data){
                     NSError *parseError;
+                    
                     datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
                     if (datiUtente) {
                         NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
                         
                         if([esito isEqualToString:@"1"]){
+                            NSLog(@"Download effettuato con successo");
                             NSLog(@"%@",datiUtente);
                         }
                         else{
-                            NSLog(@"%@",datiUtente);
+                            NSLog(@"Errore");
                         }
                         
                     } else
@@ -92,14 +114,24 @@
                     
                 }
                 
-            }];
-            
+                [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
+                
+                
+                
+                
+                
+            }]resume];
         }
     }
+
 }
 
 
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self performSelectorOnMainThread:@selector(scaricaDatiLuogo) withObject:nil waitUntilDone:NO];
+}
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
@@ -109,37 +141,53 @@
         if([path row]==0)
             return nil;
     return path;
-    
-    
-    
-    
-    //// Idriss Code: Qui Andrà messo l'array nelle vicinanze anziche vitaNotturna.
-    
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(self.pageIndex==0){
-        UPAltreCategorieCell*cell = (UPAltreCategorieCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         
         
+        static NSString *simpleTableIdentifier = @"SimpleTableCell";
+        UPNelleVicinanzeCell*cell = (UPNelleVicinanzeCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         
-        for(NSDictionary *dict in datiUtente){
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPNelleVicinanzeCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        [self.locationManager startUpdatingLocation];
+        cell.mappaLuogo.delegate=self;
+        [MKMapView class];
+        MKCoordinateRegion mapRegion;
+        mapRegion.center =  _locationManager.location.coordinate;
+        mapRegion.span.latitudeDelta = 0.001;
+        mapRegion.span.longitudeDelta = 0.001;
+        [cell.mappaLuogo setRegion:mapRegion animated:YES];
+        for(int i=0;i<datiUtente.count;++i){
+            NSDictionary* dict = [datiUtente objectForKey:[NSString stringWithFormat:@"%d",i]];
             NSLog(@"Aggiungo MKNotation");
-            MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
             NSString *longitudine=[dict objectForKey:@"Longitudine"];
             NSString *latitudine=[dict objectForKey:@"Latitudine"];
-            CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
-            point.coordinate =newCenter;
-            point.title = [dict objectForKey:@"Nome"];
-            point.subtitle = [dict objectForKey:@"Indirizzo"];
-            [cell.mappaLuogo addAnnotation:point];
+            if(longitudine!=nil && latitudine!=nil){
+               MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
+                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
+                point.coordinate =newCenter;
+                [cell.mappaLuogo addAnnotation:point];
+            }
         }
         
-        for (int i=1;i<10;i++){
-            UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            cell.imageView.image;
+#ifdef __IPHONE_8_0
+        if(IS_OS_8_OR_LATER) {
+            [self.locationManager requestWhenInUseAuthorization];
         }
+#endif
+        return cell;
     }
-    
-    //// Fine codice di Idriss
-    
+    return nil;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(self.pageIndex==0)
+    return 290;
+    else return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -147,51 +195,13 @@
     
     
     if(self.pageIndex==0){
-        if([indexPath row]==0){
-            UPAltreCategorieCell*cell = (UPAltreCategorieCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-            if (cell == nil)
-            {
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPNelleVicinanzeCell" owner:self options:nil];
-                cell = [nib objectAtIndex:0];
-                
-            }
-#ifdef __IPHONE_8_0
-            if(IS_OS_8_OR_LATER) {
-                
-                [self.locationManager requestWhenInUseAuthorization];
-                
-            }
-#endif
-            [self.locationManager startUpdatingLocation];
-            
-            [MKMapView class];
-            MKCoordinateRegion mapRegion;
-            mapRegion.center =  _locationManager.location.coordinate;
-            mapRegion.span.latitudeDelta = 0.001;
-            mapRegion.span.longitudeDelta = 0.001;
-            [cell.mappaLuogo setRegion:mapRegion animated:YES];
-            for(NSDictionary *dict in datiUtente){
-                NSLog(@"Aggiungo MKNotation");
-                MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-                NSString *longitudine=[dict objectForKey:@"Longitudine"];
-                NSString *latitudine=[dict objectForKey:@"Latitudine"];
-                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
-                point.coordinate =newCenter;
-                point.title = [dict objectForKey:@"Nome"];
-                point.subtitle = [dict objectForKey:@"Indirizzo"];
-                [cell.mappaLuogo addAnnotation:point];
-            }
-            
-            
-            return cell;
-        }
-        else{
+       
             UITableViewCell*cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
             if (cell == nil) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
             }
             return cell;
-        }
+        
     }else{
         UPNelleVicinanzeCell *cell = (UPNelleVicinanzeCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         if (cell == nil)
@@ -202,18 +212,15 @@
         return cell;
         
     }
-    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.pageIndex==0){
-        if([indexPath row]>0)
             return 140;
-        else
-            return 290;
-    }else return 240;
-    
+    }
+     return 240;
 }
 
 /*
