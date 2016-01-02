@@ -65,7 +65,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-
+    
     
     /* La seguente serie di if scaricherà, in base all'indice della pagina che l'utente sta visualizzando, diverse
      * tipologie di luoghi:
@@ -114,37 +114,34 @@
             }
         }];
         [task1 resume];
-
+        
         
     }
     
     if(self.pageIndex == 1){
-               NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
-            NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_nuovi.php" Parameters:nil DataImage:nil ImageInformations:nil];
-            
-            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-            NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-            
-            [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-                if(data){
-                    NSError *parseError;
-                    luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-                    if (luoghiRecenti) {
-                        NSString *esito = [NSString stringWithString: [luoghiRecenti valueForKey:@"success"]];
-                        
-                        if([esito isEqualToString:@"1"]){
-                            NSLog(@"%@", luoghiRecenti);
-                        }
-                        else{
-                            // Inserire eventualmente qualcosa.
-                        }
-                        
-                    } else NSLog(@"parseError = %@ \n", parseError);
+        NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
+        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_nuovi.php" Parameters:nil DataImage:nil ImageInformations:nil];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if(data){
+                NSError *parseError;
+                luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                if (luoghiRecenti) {
+                    NSString *esito = [NSString stringWithString: [luoghiRecenti valueForKey:@"success"]];
                     
-                    //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
-                }
+                    if([esito isEqualToString:@"1"]){
+                        NSLog(@"%@", luoghiRecenti);
+                    }
+                    
+                    
+                } else NSLog(@"parseError = %@ \n", parseError);
                 
-            }] resume];
+            }
+            
+        }] resume];
     }//if
     
     if(self.pageIndex == 2){
@@ -164,18 +161,44 @@
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiRecensiti);
                     }
-                    else{
-                        // Inserire eventualmente qualcosa.
-                    }
                     
                 } else NSLog(@"parseError = %@ \n", parseError);
                 
-                //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
             }
             
         }] resume];
-
-    }
+        
+    }//if
+    
+    if(self.pageIndex == 3){
+        
+        NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
+        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_tendenze.php" Parameters:nil DataImage:nil ImageInformations:nil];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if(data){
+                NSError *parseError;
+                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                if (luoghiRecensiti) {
+                    NSString *esito = [NSString stringWithString: [luoghiRecensiti valueForKey:@"success"]];
+                    
+                    if([esito isEqualToString:@"1"]){
+                        NSLog(@"%@", luoghiRecensiti);
+                    }
+                    
+                    
+                } else NSLog(@"parseError = %@ \n", parseError);
+                
+            }
+            
+        }] resume];
+        
+    }//if
+    
+    
     
 }
 
@@ -183,18 +206,18 @@
 
 #pragma mark Metodi per la gestione del download e salvataggio dei luoghi filtrati per categorie
 /*
- * Prima vediamo se va tutto bene con il codice diretto negli if, poi mano a mano spostiamo tutto in 
+ * Prima vediamo se va tutto bene con il codice diretto negli if, poi mano a mano spostiamo tutto in
  * funzioni apposite.
  *
  */
 
 - (void)prelevaVicinanze{
-   
+    
 }
 
 - (void)prelevaRecenti{
     
-   }
+}
 
 - (void)prelevaTendenze{
     
