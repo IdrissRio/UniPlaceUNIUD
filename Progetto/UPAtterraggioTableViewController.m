@@ -20,8 +20,16 @@
     NSArray *biblioteche;
     NSArray *gastronomie;
     NSArray *vitaNotturna ;
+    __block NSArray *luoghiVicini;
+   __block NSArray *luoghiRecenti;
+    
     
 }
+
+- (void)prelevaRecenti;
+- (void)prelevaVicinanze;
+- (void)prelevaMaggiormenteRecensiti;
+- (void)prelevaTendenze;
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @end
 
@@ -34,6 +42,7 @@
     return _locationManager;
 }
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
 }
 
@@ -55,65 +64,114 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+
     
-    NSDictionary *risultatoGlobale;
-    switch(self.pageIndex){
+    /* La seguente serie di if scaricherà, in base all'indice della pagina che l'utente sta visualizzando, diverse
+     * tipologie di luoghi:
+     * - pageIndex = 0: verranno prelevati i luoghi più vicini alla posizione attuale.
+     * - pageIndex = 1: verranno prelevati i luoghi aggiunti di recente partendo dai più nuovi.
+     * - pageIndex = 2: verranno prelevati i luoghi di tendenza, ovvero i luoghi più recensiti negli ultimi
+     * sette giorni.
+     * - pageIndex = 3: verranno prelevati i luoghi più recensiti, in ordine decrescente.
+     */
+    
+    
+    if(self.pageIndex == 0){
+        NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+        NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+        
+        NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
+                                    longitudine, @"longitudine", nil];
+        
+        NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
+        NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        NSURLSessionTask *task1 = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             
-        case (0):{
-            
-            NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
-            NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
-            
-            NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
-                                        longitudine, @"longitudine", nil];
-            
-            NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
-            NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
+            if(data){
+                NSError *parseError;
+                luoghiVicini = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                if (luoghiVicini) {
+                    NSString *esito = [NSString stringWithString: [luoghiVicini valueForKey:@"success"]];
+                    
+                    if([esito isEqualToString:@"1"]){
+                        NSLog(@"%@", luoghiVicini );
+                        
+                    }
+                    else{
+                        // Inserire eventualmente qualcosa.
+                    }
+                    
+                }
+                NSLog(@"parseError = %@ \n", parseError);
+                
+                //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
+                
+            }
+        }];
+        [task1 resume];
+
+        
+    }
+    
+    if(self.pageIndex == 1){
+               NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
+            NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_nuovi.php" Parameters:nil DataImage:nil ImageInformations:nil];
             
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
             NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
             
-            __block NSDictionary *datiUtente;
             [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
                 if(data){
                     NSError *parseError;
-                   datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-                    if (datiUtente) {
-                        NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                    luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                    if (luoghiRecenti) {
+                        NSString *esito = [NSString stringWithString: [luoghiRecenti valueForKey:@"success"]];
                         
                         if([esito isEqualToString:@"1"]){
-                            
-                            for(NSDictionary *dict in datiUtente){
-                                NSLog(@"%@", [dict valueForKey:@"ID"]);
-                                NSLog(@"%@", [dict valueForKey:@"Nome"]);
-                                NSLog(@"%@", [dict valueForKey:@"Cognome"]);
-                                NSLog(@"%@", [dict valueForKey:@"Indirizzo"]);
-                                NSLog(@"%@", [dict valueForKey:@"Categoria"]);
-                                NSLog(@"%@", [dict valueForKey:@"NumeroTelefonico"]);
-                                NSLog(@"%@", [dict valueForKey:@"Media"]);
-                                
-                            }
-                            
-                            
+                            NSLog(@"%@", luoghiRecenti);
                         }
                         else{
-                            
+                            // Inserire eventualmente qualcosa.
                         }
                         
-                    } else
-                        NSLog(@"parseError = %@ \n", parseError);
+                    } else NSLog(@"parseError = %@ \n", parseError);
                     
-                    NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
-                    
+                    //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
                 }
                 
             }] resume];
-        }
-    }
+    }//if
+    
 }
 
 
 
+#pragma mark Metodi per la gestione del download e salvataggio dei luoghi filtrati per categorie
+/*
+ * Prima vediamo se va tutto bene con il codice diretto negli if, poi mano a mano spostiamo tutto in 
+ * funzioni apposite.
+ *
+ */
+
+- (void)prelevaVicinanze{
+   
+}
+
+- (void)prelevaRecenti{
+    
+   }
+
+- (void)prelevaTendenze{
+    
+}
+
+- (void)prelevaMaggiormenteRecensiti{
+    
+}
 
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
