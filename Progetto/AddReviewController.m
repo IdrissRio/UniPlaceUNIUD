@@ -1,6 +1,12 @@
 #import "AddReviewController.h"
 #import "NetworkLoadingManager.h" // Fornisce l'oggetto per poter costruire il corpo delle richieste HTTP.
 
+/*
+ * CHE COSA MANCA: per completare l'inserimento della recensione è necessario prelevare l'utente che inserisce
+ * la recensione e l'ID del luogo, con ovviamente nome e coordinate (non ne sono ancora certo). L'ID serve per
+ * andare a modificare il numero di recensioni del luogo e la sua media in O(1).
+ *
+ */
 
 // Utilizzo di un'anonymous category al fine di poter dichiarare variabili non accessibili da altri oggetti.
 @interface AddReviewController ()

@@ -21,6 +21,11 @@
     
     
 }
+
+- (void)prelevaRecenti;
+- (void)prelevaVicinanze;
+- (void)prelevaMaggiormenteRecensiti;
+- (void)prelevaTendenze;
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @end
 
@@ -46,6 +51,7 @@
     return _locationManager;
 }
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
 }
 
@@ -79,8 +85,35 @@
             NSDictionary *coordinate = [NSDictionary dictionaryWithObjectsAndKeys:latitudine, @"latitudine",
                                         longitudine,@"longitudine", nil];
             
-            NetworkLoadingManager *geoUploader = [[NetworkLoadingManager alloc]init];
-            NSURLRequest *request = [geoUploader createBodyWithURL:@"http://mobdev2015.com/preleva_vicinanze.php" Parameters:coordinate DataImage:nil ImageInformations:nil];
+            if(data){
+                NSError *parseError;
+                luoghiVicini = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                if (luoghiVicini) {
+                    NSString *esito = [NSString stringWithString: [luoghiVicini valueForKey:@"success"]];
+                    
+                    if([esito isEqualToString:@"1"]){
+                        NSLog(@"%@", luoghiVicini );
+                        
+                    }
+                    else{
+                        // Inserire eventualmente qualcosa.
+                    }
+                    
+                }
+                NSLog(@"parseError = %@ \n", parseError);
+                
+                //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
+                
+            }
+        }];
+        [task1 resume];
+
+        
+    }
+    
+    if(self.pageIndex == 1){
+               NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
+            NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_nuovi.php" Parameters:nil DataImage:nil ImageInformations:nil];
             
             NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
             NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -103,11 +136,9 @@
                             NSLog(@"Errore");
                         }
                         
-                    } else
-                        NSLog(@"parseError = %@ \n", parseError);
+                    } else NSLog(@"parseError = %@ \n", parseError);
                     
-                    NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
-                    
+                    //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
                 }
                 
                 [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
@@ -122,8 +153,17 @@
 
 }
 
+- (void)prelevaRecenti{
+    
+   }
 
+- (void)prelevaTendenze{
+    
+}
 
+- (void)prelevaMaggiormenteRecensiti{
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [self performSelectorOnMainThread:@selector(scaricaDatiLuogo) withObject:nil waitUntilDone:NO];
