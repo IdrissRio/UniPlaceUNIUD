@@ -28,16 +28,12 @@
 
 -(void)inserisciNotation{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    if(self.pageIndex==0){
+    if(self.pageIndex==0)
         [self tableView:self.tableView viewForHeaderInSection:0];
- 
-    }
-    
         for(int i=0;i<datiUtente.count;i++){
             NSDictionary* dict = [datiUtente objectForKey:[NSString stringWithFormat:@"%d",i]];
             UITableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
             cell.textLabel.text=[dict objectForKey:@"Nome"];
-            
             cell.imageView.image    =[UIImage imageNamed:@"ManEtta.png"];
             //Quando gabri mette l'immagine profilo.
            // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
