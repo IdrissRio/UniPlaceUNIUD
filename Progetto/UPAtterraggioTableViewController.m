@@ -19,6 +19,7 @@
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
     __block NSDictionary *luoghiVicini;
    __block NSArray *luoghiRecenti;
+    __block NSArray *luoghiRecensiti;
     UPNelleVicinanzeCell* Header;
     
     
