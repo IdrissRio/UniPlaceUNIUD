@@ -14,14 +14,18 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AppDelegate.h"
 #import "NetworkLoadingManager.h"
+#import "UPLuogo.h"
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
     __block NSDictionary *luoghiVicini;
-   __block NSArray *luoghiRecenti;
+    __block NSArray *luoghiRecenti;
     __block NSArray *luoghiRecensiti;
     UPNelleVicinanzeCell* Header;
-    
+    NSMutableArray * annotationPoint;
+    NSString * lastTouchd;
+    NSData* lastTouchdImage;
+    UPLuogo* preparedForSegue;
     
 }
 
@@ -34,9 +38,68 @@
 
 @implementation UPAtterraggioTableViewController
 
+
+
+-(NSDictionary *)cercaCorrispondenzaConTitolo:(NSString *)titolo{
+    for(int i=0;i<luoghiVicini.count;++i){
+        NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+        NSString*titolo=[dict objectForKey:@"Nome"];
+        if([titolo isEqualToString:titolo]){
+            return dict;
+        }
+    }
+    return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView
+ annotationView:(MKAnnotationView *)view
+calloutAccessoryControlTapped:(UIControl *)control{
+    NSDictionary* dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
+    //Preparo l'oggetto da mandare nella pagina recensioni
+    if(dict!=nil){
+    preparedForSegue=[[UPLuogo alloc]initWithIndirizzo:[dict objectForKey:@"Indirizzo"] telefono:[dict objectForKey:@"Telefono"] nome:[dict objectForKey:@"Nome"] longitudine:[dict objectForKey:@"Longitudine"] latitudine:[dict objectForKey:@"Latitudine"] immagine:UIImagePNGRepresentation([view image]) tipologia:[dict objectForKey:@"Categoria"]];
+    }
+}
+
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    id<MKAnnotation> annSelected = view.annotation;
+    if ([annSelected isKindOfClass:[MKPointAnnotation class]])
+    {
+        MKPointAnnotation *dm = (MKPointAnnotation *)annSelected;
+        NSLog(@"Pin touched: title=%@", dm.title);
+        lastTouchd=dm.title;
+    }
+}
+
+
+# pragma mark Modifica MKAnnotationView
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id<MKAnnotation>)annotation{
+    NSString *AnnotationIdentifier = [NSString stringWithFormat:@"%@",[annotation title]];
+    MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+    if(!view){
+        view= [[MKPinAnnotationView alloc]initWithAnnotation:annotation	 reuseIdentifier:AnnotationIdentifier];
+        view.canShowCallout=YES;
+    }
+    view.annotation = annotation;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 36, 36)];
+    
+    //Serve foto Luogo se esiste, altrimenti ci mettiamo l'icona di UP.
+    NSDictionary * dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
+    
+    imageView.image = [UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+    view.leftCalloutAccessoryView = imageView;
+    view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    ;
+    return view;}
+
+
 -(void)inserisciNotation{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     if(self.pageIndex==0){
+        annotationPoint=[[NSMutableArray alloc]init];
         for(int i=0;i<luoghiVicini.count;++i){
             NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
             NSLog(@"Aggiungo MKNotation");
@@ -47,31 +110,37 @@
                 CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
                 point.coordinate =newCenter;
                 point.title=[dict objectForKey:@"Nome"];
-                point.subtitle=@"salve";
+                
+                NSString* indirizzo=[dict objectForKey:@"Indirizzo"];
+                if(indirizzo!=nil)
+                    point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
+                [annotationPoint addObject:point];
                 [Header.mappaLuogo addAnnotation:point];
             }
         }
     }
-        for(int i=0;i<luoghiVicini.count;i++){
-            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
-            NSLog(@"Modifico le TableViewCell");
-            NSString *longitudine=[dict objectForKey:@"Longitudine"];
-            NSString *latitudine=[dict objectForKey:@"Latitudine"];
-            if(longitudine!=nil && latitudine!=nil){
-                UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-                cell.longitudine=[longitudine doubleValue];
-                cell.latitudine=[latitudine doubleValue];
-                cell.labelNome.text=[dict objectForKey:@"Nome"];
-                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
-                
-                // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
-            }
-               
+    for(int i=0;i<luoghiVicini.count;i++){
+        NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+        NSLog(@"Modifico le TableViewCell");
+        NSString *longitudine=[dict objectForKey:@"Longitudine"];
+        NSString *latitudine=[dict objectForKey:@"Latitudine"];
+        if(longitudine!=nil && latitudine!=nil){
+            UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            cell.longitudine=[longitudine doubleValue];
+            cell.latitudine=[latitudine doubleValue];
+            cell.labelNome.text=[dict objectForKey:@"Nome"];
+            cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
             
-         
+            // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
         }
-[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        
+        
+    }
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
+
+
 
 - (CLLocationManager *)locationManager{
     if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
@@ -152,6 +221,7 @@
         
         
     }
+    
     
     if(self.pageIndex == 1){
         NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
@@ -269,13 +339,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:indexPath];
-    MKCoordinateRegion mapRegion;
-     CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake(cell.latitudine,cell.longitudine);
-    mapRegion.center =  newCenter;
-    mapRegion.span.latitudeDelta = 0.005;
-    mapRegion.span.longitudeDelta = 0.005;
-    [Header.mappaLuogo setRegion:mapRegion animated:YES];
+    if([indexPath row]<=annotationPoint.count-1)
+        [Header.mappaLuogo selectAnnotation:annotationPoint[[indexPath row]] animated:YES];
+    
 }
 
 
@@ -295,11 +361,11 @@
         [Header.mappaLuogo setRegion:mapRegion animated:YES];
         return Header;
     }
-        
+    
 #ifdef __IPHONE_8_0
-        if(IS_OS_8_OR_LATER) {
-            [self.locationManager requestWhenInUseAuthorization];
-        }
+    if(IS_OS_8_OR_LATER) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
 #endif
     
     return nil;
@@ -307,58 +373,66 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(self.pageIndex==0)
-    return 290;
+        return 290;
     else return 0;
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
     
     if(self.pageIndex==0){
-       
-            UPListaLuoghiNelleVicinanzeTableViewCell*cell = (UPListaLuoghiNelleVicinanzeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPListaLuoghiNelleVicinanze" owner:self options:nil];
-                cell = [nib objectAtIndex:0];
+        
+        UPListaLuoghiNelleVicinanzeTableViewCell*cell = (UPListaLuoghiNelleVicinanzeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPListaLuoghiNelleVicinanze" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
         
         
-            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]];
-            NSLog(@"Modifico le TableViewCell");
-            NSString *longitudine=[dict objectForKey:@"Longitudine"];
-            NSString *latitudine=[dict objectForKey:@"Latitudine"];
-            if(longitudine!=nil && latitudine!=nil){
-                cell.longitudine=[longitudine doubleValue];
-                cell.latitudine=[latitudine doubleValue];
-                cell.labelNome.text=[dict objectForKey:@"Nome"];
+        NSMutableDictionary* dict =[[NSMutableDictionary alloc]initWithDictionary:[luoghiVicini objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]]];
+        
+        NSLog(@"Modifico le TableViewCell");
+        NSString *longitudine=[dict objectForKey:@"Longitudine"];
+        NSString *latitudine=[dict objectForKey:@"Latitudine"];
+        if(longitudine!=nil && latitudine!=nil){
+            cell.longitudine=[longitudine doubleValue];
+            cell.latitudine=[latitudine doubleValue];
+            cell.labelNome.text=[dict objectForKey:@"Nome"];
+            // Prelevo il percorso al database locale salvato nella chiave PercorsoImmagine all'interno
+            // dell'array
+            NSString *percorsoImmagineLocale = [dict objectForKey:@"PercorsoImmagine"];
+            
+            // Se non è stringa vuota, sarà riempita dal percorso
+            if(![percorsoImmagineLocale isEqualToString:@"0"]){
+                // Concateno la stringa a meno del primo simbolo (che è un punto) con la stringa indicante il link
+                NSString * urlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                
+                // Assegno l'immagine alla UIImage designata, andando a prelevare l'NSData mediante dataWithContentsOfURL
+                // e poi assegnandolo all'immagine vera e propria mediante il metodo imaageWithData
+                NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+                if(tmp!=nil)
+                    [dict setObject:tmp forKey:@"FotoProfilo"];
+                cell.immagineLuogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]]];
                 
                 
-                 // Prelevo il percorso al database locale salvato nella chiave PercorsoImmagine all'interno
-                 // dell'array
-                 NSString *percorsoImmagineLocale = [dict objectForKey:@"PercorsoImmagine"];
-                 
-                 // Se non è stringa vuota, sarà riempita dal percorso
-                 if(![percorsoImmagineLocale isEqualToString:@"0"]){
-                 // Concateno la stringa a meno del primo simbolo (che è un punto) con la stringa indicante il link
-                 NSString * urlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
-                 
-                 // Assegno l'immagine alla UIImage designata, andando a prelevare l'NSData mediante dataWithContentsOfURL
-                 // e poi assegnandolo all'immagine vera e propria mediante il metodo imaageWithData
-                 cell.immagineLuogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]]];
-                 } else cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
-
-                //cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
-                
-                
-}
+            }
+            else
+                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+            
+            //cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
             
             
-        
-
-
+        }
         
         
-            return cell;
+        
+        
+        
+        
+        
+        return cell;
         
     }else{
         UPNelleVicinanzeCell *cell = (UPNelleVicinanzeCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -370,15 +444,15 @@
         return cell;
         
     }
-
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.pageIndex==0){
-            return 140;
+        return 140;
     }
-     return 240;
+    return 240;
 }
 
 /*

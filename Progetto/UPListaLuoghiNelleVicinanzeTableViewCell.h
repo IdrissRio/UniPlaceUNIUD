@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MapKit/MapKit.h>
 @interface UPListaLuoghiNelleVicinanzeTableViewCell : UITableViewCell{
     
 }
 @property double longitudine;
 @property double latitudine;
+
 @property (strong, nonatomic) IBOutlet UILabel *labelNome;
 @property (strong, nonatomic) IBOutlet UILabel *labelIndirizzo;
 @property (strong, nonatomic) IBOutlet UILabel *labelTelefono;
