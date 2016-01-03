@@ -15,28 +15,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="138" id="QK1-HP-Oty" customClass="UPListaLuoghiNelleVicinanzeTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="138"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="QK1-HP-Oty" customClass="UPListaLuoghiNelleVicinanzeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QK1-HP-Oty" id="bbj-n7-QMu">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cti-jJ-GSR">
-                        <rect key="frame" x="0.0" y="0.0" width="128" height="137"/>
+                        <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="128" id="7HO-w0-Hei"/>
+                            <constraint firstAttribute="width" constant="121" id="7HO-w0-Hei"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottengo Dati ..." textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpp-U3-wUQ">
-                        <rect key="frame" x="136" y="8" width="176" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="zaa-jz-3Ot"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La forza scorre potente" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBr-Ed-XFN">
                         <rect key="frame" x="133" y="37" width="179" height="21"/>
                         <constraints>
@@ -46,8 +37,17 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in te, giovane Padawan" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUA-Ve-s7e">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="in te, giovane Padawan" textAlignment="justified" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUA-Ve-s7e">
                         <rect key="frame" x="133" y="66" width="179" height="21"/>
+                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottengo Dati ..." textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpp-U3-wUQ">
+                        <rect key="frame" x="133" y="8" width="179" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="zaa-jz-3Ot"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -55,17 +55,17 @@
                 </subviews>
                 <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="kpp-U3-wUQ" firstAttribute="leading" secondItem="cti-jJ-GSR" secondAttribute="trailing" constant="8" symbolic="YES" id="6FS-aW-FDp"/>
+                    <constraint firstItem="kpp-U3-wUQ" firstAttribute="leading" secondItem="cti-jJ-GSR" secondAttribute="trailing" constant="12" id="6FS-aW-FDp"/>
                     <constraint firstItem="cti-jJ-GSR" firstAttribute="top" secondItem="bbj-n7-QMu" secondAttribute="top" id="FDG-se-TFP"/>
                     <constraint firstItem="xUA-Ve-s7e" firstAttribute="top" secondItem="iBr-Ed-XFN" secondAttribute="bottom" constant="8" symbolic="YES" id="FrH-8K-Ngw"/>
                     <constraint firstAttribute="bottom" secondItem="cti-jJ-GSR" secondAttribute="bottom" id="OlV-7w-8X3"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xUA-Ve-s7e" secondAttribute="bottom" constant="42" id="PHL-1G-JGx"/>
                     <constraint firstItem="cti-jJ-GSR" firstAttribute="leading" secondItem="bbj-n7-QMu" secondAttribute="leading" id="ZYs-BK-hZR"/>
-                    <constraint firstItem="iBr-Ed-XFN" firstAttribute="leading" secondItem="cti-jJ-GSR" secondAttribute="trailing" constant="5" id="aif-Iy-109"/>
+                    <constraint firstItem="iBr-Ed-XFN" firstAttribute="leading" secondItem="cti-jJ-GSR" secondAttribute="trailing" constant="12" id="aif-Iy-109"/>
                     <constraint firstItem="kpp-U3-wUQ" firstAttribute="top" secondItem="bbj-n7-QMu" secondAttribute="topMargin" id="gM1-f6-ErB"/>
                     <constraint firstItem="iBr-Ed-XFN" firstAttribute="trailing" secondItem="kpp-U3-wUQ" secondAttribute="trailing" id="qLN-rW-b75"/>
                     <constraint firstItem="iBr-Ed-XFN" firstAttribute="trailing" secondItem="xUA-Ve-s7e" secondAttribute="trailing" id="qzp-11-epE"/>
-                    <constraint firstItem="xUA-Ve-s7e" firstAttribute="centerX" secondItem="kpp-U3-wUQ" secondAttribute="centerX" constant="-1.5" id="s7y-cb-JiQ"/>
+                    <constraint firstItem="xUA-Ve-s7e" firstAttribute="centerX" secondItem="kpp-U3-wUQ" secondAttribute="centerX" id="s7y-cb-JiQ"/>
                     <constraint firstItem="iBr-Ed-XFN" firstAttribute="top" secondItem="kpp-U3-wUQ" secondAttribute="bottom" constant="8" symbolic="YES" id="tCz-9m-Fk1"/>
                     <constraint firstItem="kpp-U3-wUQ" firstAttribute="trailing" secondItem="bbj-n7-QMu" secondAttribute="trailingMargin" id="vrx-9H-4jP"/>
                 </constraints>
@@ -76,7 +76,7 @@
                 <outlet property="labelNome" destination="kpp-U3-wUQ" id="2Fs-ch-mtQ"/>
                 <outlet property="labelTelefono" destination="xUA-Ve-s7e" id="c99-hG-VWT"/>
             </connections>
-            <point key="canvasLocation" x="341" y="317"/>
+            <point key="canvasLocation" x="341" y="309"/>
         </tableViewCell>
     </objects>
 </document>

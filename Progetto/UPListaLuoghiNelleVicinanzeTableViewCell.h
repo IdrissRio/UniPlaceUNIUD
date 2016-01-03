@@ -11,8 +11,6 @@
 @interface UPListaLuoghiNelleVicinanzeTableViewCell : UITableViewCell{
     
 }
-@property double longitudine;
-@property double latitudine;
 
 @property (strong, nonatomic) IBOutlet UILabel *labelNome;
 @property (strong, nonatomic) IBOutlet UILabel *labelIndirizzo;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D02D9151C395B7C005478EB /* UPCustomSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02D9141C395B7C005478EB /* UPCustomSectionCell.m */; };
 		2D045D5A1C2ADA030021F14F /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D045D591C2ADA030021F14F /* checkin.png */; };
 		2D057C8A1C3009F000ABA819 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D057C891C3009F000ABA819 /* SWRevealViewController.m */; };
 		2D057C8E1C30295000ABA819 /* ManEtta.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D057C8C1C30295000ABA819 /* ManEtta.png */; };
@@ -91,6 +92,7 @@
 		2DC81FB41C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC81FB31C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m */; };
 		2DD2059D1C23067E00133056 /* UPCategoriePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */; };
 		2DD2059F1C23196600133056 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD2059E1C23196600133056 /* CoreLocation.framework */; };
+		2DD997D81C395A4200DB12D5 /* UPCustomSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD997D71C395A4200DB12D5 /* UPCustomSection.xib */; };
 		2DE95BDB1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE95BDA1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib */; };
 		2DE95BDE1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE95BDD1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m */; };
 		2DE95BE11C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE95BE01C2EC5F7008E3D79 /* UPSlideOutMenuTabelViewControllerTableViewController.m */; };
@@ -143,6 +145,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D02D9131C395B7C005478EB /* UPCustomSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCustomSectionCell.h; sourceTree = "<group>"; };
+		2D02D9141C395B7C005478EB /* UPCustomSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCustomSectionCell.m; sourceTree = "<group>"; };
 		2D045D591C2ADA030021F14F /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
 		2D057C881C3009F000ABA819 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		2D057C891C3009F000ABA819 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		2DD2059B1C23067E00133056 /* UPCategoriePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCategoriePageViewController.h; sourceTree = "<group>"; };
 		2DD2059C1C23067E00133056 /* UPCategoriePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCategoriePageViewController.m; sourceTree = "<group>"; };
 		2DD2059E1C23196600133056 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2DD997D71C395A4200DB12D5 /* UPCustomSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCustomSection.xib; sourceTree = "<group>"; };
 		2DE95BDA1C2EC483008E3D79 /* UPProfiloSlideOutMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPProfiloSlideOutMenuCell.xib; sourceTree = "<group>"; };
 		2DE95BDC1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPProfiloSlideOutMenu.h; sourceTree = "<group>"; };
 		2DE95BDD1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPProfiloSlideOutMenu.m; sourceTree = "<group>"; };
@@ -406,6 +411,7 @@
 		2DC180D01C20E31B00673136 /* TabelViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				2DD997D61C395A2100DB12D5 /* SectionCustom */,
 				2D6629B81C38428500BDCB6E /* ListaLuoghiNelleVicinanze */,
 				2DC180D21C20E33D00673136 /* AltreCategorie */,
 				2DC180D11C20E32E00673136 /* NelleVicinanze */,
@@ -446,6 +452,16 @@
 				2DC180E21C20E48100673136 /* lock.png */,
 			);
 			name = ImmaginiSupportoMappe;
+			sourceTree = "<group>";
+		};
+		2DD997D61C395A2100DB12D5 /* SectionCustom */ = {
+			isa = PBXGroup;
+			children = (
+				2DD997D71C395A4200DB12D5 /* UPCustomSection.xib */,
+				2D02D9131C395B7C005478EB /* UPCustomSectionCell.h */,
+				2D02D9141C395B7C005478EB /* UPCustomSectionCell.m */,
+			);
+			name = SectionCustom;
 			sourceTree = "<group>";
 		};
 		2DFDCBE01BFA3028008A2558 /* Framework */ = {
@@ -813,6 +829,7 @@
 				2D0E2FC21C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif in Resources */,
 				2D045D5A1C2ADA030021F14F /* checkin.png in Resources */,
 				2DC180E51C20E48100673136 /* lock.png in Resources */,
+				2DD997D81C395A4200DB12D5 /* UPCustomSection.xib in Resources */,
 				2D6629BA1C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib in Resources */,
 				2D0E2FAE1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG in Resources */,
 				2D0E2FA81C045022009420A5 /* UniveresitaDegliStudiDiParma.gif in Resources */,
@@ -909,6 +926,7 @@
 				CA83AC231C2DD2A8000D6432 /* userInfoViewController.m in Sources */,
 				2DF567E51C297FF100941E2D /* UPLuogo.m in Sources */,
 				CA83AC391C2DDC6E000D6432 /* StarRatingView.m in Sources */,
+				2D02D9151C395B7C005478EB /* UPCustomSectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

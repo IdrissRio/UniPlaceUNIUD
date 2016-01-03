@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Bariol_Regular.otf">
+            <string>Bariol-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="BSg-Pk-GV7" customClass="UPCustomSectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="83"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BSg-Pk-GV7" id="KLs-rZ-2z1">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsV-XT-aeD">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="82"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UVa-gr-rhm">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="82"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePr-9D-zAk">
+                                    <rect key="frame" x="8" y="0.0" width="324" height="82"/>
+                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="29"/>
+                                    <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="ePr-9D-zAk" secondAttribute="bottom" id="Azp-am-XqR"/>
+                                <constraint firstItem="ePr-9D-zAk" firstAttribute="top" secondItem="UVa-gr-rhm" secondAttribute="top" id="ILJ-Kz-LCU"/>
+                                <constraint firstItem="ePr-9D-zAk" firstAttribute="leading" secondItem="UVa-gr-rhm" secondAttribute="leadingMargin" id="UN3-vP-lmp"/>
+                                <constraint firstItem="ePr-9D-zAk" firstAttribute="trailing" secondItem="UVa-gr-rhm" secondAttribute="trailingMargin" id="h9i-9a-SyQ"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IsV-XT-aeD" firstAttribute="top" secondItem="KLs-rZ-2z1" secondAttribute="top" id="4po-cx-gVj"/>
+                    <constraint firstAttribute="trailing" secondItem="IsV-XT-aeD" secondAttribute="trailing" id="MTd-bO-D0z"/>
+                    <constraint firstItem="IsV-XT-aeD" firstAttribute="leading" secondItem="KLs-rZ-2z1" secondAttribute="leading" id="Pf2-cV-4nU"/>
+                    <constraint firstAttribute="bottom" secondItem="IsV-XT-aeD" secondAttribute="bottom" id="btI-KA-jJb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelTitolo" destination="ePr-9D-zAk" id="19r-cD-8wO"/>
+            </connections>
+            <point key="canvasLocation" x="325" y="348.5"/>
+        </tableViewCell>
+    </objects>
+</document>
