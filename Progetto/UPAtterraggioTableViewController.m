@@ -18,7 +18,7 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface UPAtterraggioTableViewController ()<CLLocationManagerDelegate>{
-    __block NSDictionary *luoghiVicini;
+    __block NSMutableDictionary *luoghiVicini;
     __block NSArray *luoghiRecenti;
     __block NSArray *luoghiRecensiti;
     UPNelleVicinanzeCell* Header;
@@ -26,7 +26,6 @@
     NSString * lastTouchd;
     NSData* lastTouchdImage;
     UPLuogo* preparedForSegue;
-    
 }
 
 - (void)prelevaRecenti;
@@ -40,26 +39,7 @@
 
 
 
--(NSDictionary *)cercaCorrispondenzaConTitolo:(NSString *)titolo{
-    for(int i=0;i<luoghiVicini.count;++i){
-        NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
-        NSString*titolo=[dict objectForKey:@"Nome"];
-        if([titolo isEqualToString:titolo]){
-            return dict;
-        }
-    }
-    return nil;
-}
 
-- (void)mapView:(MKMapView *)mapView
- annotationView:(MKAnnotationView *)view
-calloutAccessoryControlTapped:(UIControl *)control{
-    NSDictionary* dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
-    //Preparo l'oggetto da mandare nella pagina recensioni
-    if(dict!=nil){
-    preparedForSegue=[[UPLuogo alloc]initWithIndirizzo:[dict objectForKey:@"Indirizzo"] telefono:[dict objectForKey:@"Telefono"] nome:[dict objectForKey:@"Nome"] longitudine:[dict objectForKey:@"Longitudine"] latitudine:[dict objectForKey:@"Latitudine"] immagine:UIImagePNGRepresentation([view image]) tipologia:[dict objectForKey:@"Categoria"]];
-    }
-}
 
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
@@ -73,8 +53,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
 }
 
 
-# pragma mark Modifica MKAnnotationView
-
+# pragma mark Gestione MKAnnotationView e PrePrepareForSegue
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation{
     NSString *AnnotationIdentifier = [NSString stringWithFormat:@"%@",[annotation title]];
@@ -96,56 +75,20 @@ calloutAccessoryControlTapped:(UIControl *)control{
     return view;}
 
 
--(void)inserisciNotation{
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    if(self.pageIndex==0){
-        annotationPoint=[[NSMutableArray alloc]init];
-        for(int i=0;i<luoghiVicini.count;++i){
-            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
-            NSLog(@"Aggiungo MKNotation");
-            NSString *longitudine=[dict objectForKey:@"Longitudine"];
-            NSString *latitudine=[dict objectForKey:@"Latitudine"];
-            if(longitudine!=nil && latitudine!=nil){
-                MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
-                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
-                point.coordinate =newCenter;
-                point.title=[dict objectForKey:@"Nome"];
-                
-                NSString* indirizzo=[dict objectForKey:@"Indirizzo"];
-                if(indirizzo!=nil)
-                    point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
-                [annotationPoint addObject:point];
-                [Header.mappaLuogo addAnnotation:point];
-            }
-        }
+//Preparo il luogo da mandare nell'altra view.
+- (void)mapView:(MKMapView *)mapView
+ annotationView:(MKAnnotationView *)view
+calloutAccessoryControlTapped:(UIControl *)control{
+    NSDictionary* dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
+    //Preparo l'oggetto da mandare nella pagina recensioni
+    if(dict!=nil){
+        preparedForSegue=[[UPLuogo alloc]initWithIndirizzo:[dict objectForKey:@"Indirizzo"] telefono:[dict objectForKey:@"Telefono"] nome:[dict objectForKey:@"Nome"] longitudine:[dict objectForKey:@"Longitudine"] latitudine:[dict objectForKey:@"Latitudine"] immagine:UIImagePNGRepresentation([view image]) tipologia:[dict objectForKey:@"Categoria"]];
     }
-    for(int i=0;i<luoghiVicini.count;i++){
-        NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
-        NSLog(@"Modifico le TableViewCell");
-        NSString *longitudine=[dict objectForKey:@"Longitudine"];
-        NSString *latitudine=[dict objectForKey:@"Latitudine"];
-        if(longitudine!=nil && latitudine!=nil){
-            UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            cell.longitudine=[longitudine doubleValue];
-            cell.latitudine=[latitudine doubleValue];
-            cell.labelNome.text=[dict objectForKey:@"Nome"];
-            cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
-            
-            // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
-        }
-        
-        
-        
-    }
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 
 
-- (CLLocationManager *)locationManager{
-    if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
-    return _locationManager;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -155,17 +98,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 10;
-}
 
 - (void)viewWillAppear:(BOOL)animated{
     
@@ -332,19 +266,89 @@ calloutAccessoryControlTapped:(UIControl *)control{
     
 }
 
+
+
+
+
+
+
+#pragma mark Gestione MKPointAnnotation
+//Se viene effettuato un tap sulla cell di un luogo, la mappa nell'header viene focalizzata su quel determinato luogo
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Controllo per non lanciare l'eccezione outOfBounds
+    if([indexPath row]<=annotationPoint.count-1)
+        [Header.mappaLuogo selectAnnotation:annotationPoint[[indexPath row]] animated:YES];
+}
+
+//Funzione che ritorna il Dictionary relativo al MKPointAnnotation selezionato
+-(NSDictionary *)cercaCorrispondenzaConTitolo:(NSString *)titolo{
+    for(int i=0;i<luoghiVicini.count;++i){
+        NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+        NSString*titolo=[dict objectForKey:@"Nome"];
+        if([titolo isEqualToString:titolo]){
+            return dict;
+        }
+    }
+    return nil;
+}
+
+-(void)inserisciNotation{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    if(self.pageIndex==0){
+        annotationPoint=[[NSMutableArray alloc]init];
+        for(int i=0;i<luoghiVicini.count;++i){
+            NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+            NSLog(@"Aggiungo MKNotation");
+            NSString *longitudine=[dict objectForKey:@"Longitudine"];
+            NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            if(longitudine!=nil && latitudine!=nil){
+                MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
+                CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
+                point.coordinate =newCenter;
+                point.title=[dict objectForKey:@"Nome"];
+                
+                NSString* indirizzo=[dict objectForKey:@"Indirizzo"];
+                if(indirizzo!=nil)
+                    point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
+                [annotationPoint addObject:point];
+                [Header.mappaLuogo addAnnotation:point];
+            }
+        }
+    }
+    for(int i=0;i<luoghiVicini.count;i++){
+        NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+        NSLog(@"Modifico le TableViewCell");
+        NSString *longitudine=[dict objectForKey:@"Longitudine"];
+        NSString *latitudine=[dict objectForKey:@"Latitudine"];
+        if(longitudine!=nil && latitudine!=nil){
+            UPListaLuoghiNelleVicinanzeTableViewCell* cell=[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            cell.longitudine=[longitudine doubleValue];
+            cell.latitudine=[latitudine doubleValue];
+            cell.labelNome.text=[dict objectForKey:@"Nome"];
+            cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+            
+            // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
+        }
+        
+        
+        
+    }
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+
+
+#pragma mark Gestione Tipo, Grandezza e Contenuto TableviewCell
+
+
+//Determino quali sono le cell selezionabili. In questo caso Tutte.
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
     return path;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if([indexPath row]<=annotationPoint.count-1)
-        [Header.mappaLuogo selectAnnotation:annotationPoint[[indexPath row]] animated:YES];
-    
-}
-
-
+//Customizzo la mappa nell'Header.
 -(UITableViewCell *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(self.pageIndex==0){
         static NSString *simpleTableIdentifier = @"SimpleTableCell";
@@ -371,6 +375,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
     return nil;
 }
 
+
+//Gestico la grandezza dell'Header. La prima mappa che viene visualizzata nel pageIndex==0 è una section.
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(self.pageIndex==0)
         return 290;
@@ -378,24 +384,21 @@ calloutAccessoryControlTapped:(UIControl *)control{
 }
 
 
-
+//Gestisco come vengono crete le cell in base all'indexPath e all'PageIndex
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
-    
-    
+    //se pageIndex è zero allora creo delle tableViewCell customizzate per la prima pagina del pageViewController.
     if(self.pageIndex==0){
-        
         UPListaLuoghiNelleVicinanzeTableViewCell*cell = (UPListaLuoghiNelleVicinanzeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        
+        //Carico gli elementi dal Nib
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPListaLuoghiNelleVicinanze" owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        
-        
         NSMutableDictionary* dict =[[NSMutableDictionary alloc]initWithDictionary:[luoghiVicini objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]]];
-        
+        //Debug
         NSLog(@"Modifico le TableViewCell");
         NSString *longitudine=[dict objectForKey:@"Longitudine"];
         NSString *latitudine=[dict objectForKey:@"Latitudine"];
+        //Controllo che esistano la longitudine e latitudine in quanto nella string JSON ci sono dati relativi al successo della query.
         if(longitudine!=nil && latitudine!=nil){
             cell.longitudine=[longitudine doubleValue];
             cell.latitudine=[latitudine doubleValue];
@@ -415,27 +418,20 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 if(tmp!=nil)
                     [dict setObject:tmp forKey:@"FotoProfilo"];
                 cell.immagineLuogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]]];
-                
-                
             }
             else
+                //Da rimpiazzare con il luogo di UNIplace
                 cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
             
             //cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
             
             
         }
-        
-        
-        
-        
-        
-        
-        
         return cell;
         
     }else{
-        UPNelleVicinanzeCell *cell = (UPNelleVicinanzeCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        //Se pageIndex è diverso da 0 allora creo delle tableviewcell chiamate UPAltreCategorieCell.
+        UPAltreCategorieCell *cell = (UPAltreCategorieCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         if (cell == nil)
         {
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPAltreCategorieCell" owner:self options:nil];
@@ -447,12 +443,36 @@ calloutAccessoryControlTapped:(UIControl *)control{
     
 }
 
+//Modifica la gandezza delle Celle in base all'indexPath e al pageIndex
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.pageIndex==0){
         return 140;
     }
     return 240;
+}
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 10;
+}
+
+
+
+#pragma mark Gestione CLLOCationManager
+
+- (CLLocationManager *)locationManager{
+    if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
+    return _locationManager;
 }
 
 /*
@@ -498,6 +518,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
  // Pass the selected object to the new view controller.
  }
  */
+
 
 - (void) setReviewResult:(int)Esito{
     if(Esito == 1){
