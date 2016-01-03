@@ -66,7 +66,8 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 36, 36)];
     
     //Serve foto Luogo se esiste, altrimenti ci mettiamo l'icona di UP.
-    NSDictionary * dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
+    [self mapView:mapView didSelectAnnotationView:view];
+    NSMutableDictionary * dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
     
     imageView.image = [UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
     view.leftCalloutAccessoryView = imageView;
@@ -126,17 +127,32 @@ calloutAccessoryControlTapped:(UIControl *)control{
         
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         
+        
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
         NSURLSessionTask *task1 = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             
             if(data){
                 NSError *parseError;
-                luoghiVicini = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                luoghiVicini = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
                 if (luoghiVicini) {
                     NSString *esito = [NSString stringWithString: [luoghiVicini valueForKey:@"success"]];
                     
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiVicini );
+                        
+                        for(int i=0;i<luoghiVicini.count;i++){
+                            NSString* percorsoImmagineLocale =[[luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                            if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
+                                NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                                
+                                NSString *urlImmagine=[tmpUrlImmagine stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                                 NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+                                if(tmp!=nil){
+                                [[luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoProfilo"];
+                                }
+                            }
+          
+                        }
                         [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
                     }
                     else{
@@ -282,11 +298,11 @@ calloutAccessoryControlTapped:(UIControl *)control{
 }
 
 //Funzione che ritorna il Dictionary relativo al MKPointAnnotation selezionato
--(NSDictionary *)cercaCorrispondenzaConTitolo:(NSString *)titolo{
+-(NSMutableDictionary *)cercaCorrispondenzaConTitolo:(NSString *)titolo{
     for(int i=0;i<luoghiVicini.count;++i){
-        NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
-        NSString*titolo=[dict objectForKey:@"Nome"];
-        if([titolo isEqualToString:titolo]){
+        NSMutableDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+        NSString*placeTitle=[dict objectForKey:@"Nome"];
+        if([placeTitle isEqualToString:titolo]){
             return dict;
         }
     }
@@ -326,7 +342,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
             cell.longitudine=[longitudine doubleValue];
             cell.latitudine=[latitudine doubleValue];
             cell.labelNome.text=[dict objectForKey:@"Nome"];
-            cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+            cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
             
             // cell.imageView.image=[UIImage imageWithData:[dict objectForKey:@"fotoProfilo"] scale:0.5];
         }
@@ -405,23 +421,23 @@ calloutAccessoryControlTapped:(UIControl *)control{
             cell.labelNome.text=[dict objectForKey:@"Nome"];
             // Prelevo il percorso al database locale salvato nella chiave PercorsoImmagine all'interno
             // dell'array
-            NSString *percorsoImmagineLocale = [dict objectForKey:@"PercorsoImmagine"];
+           // NSString *percorsoImmagineLocale = [dict objectForKey:@"PercorsoImmagine"];
             
             // Se non è stringa vuota, sarà riempita dal percorso
-            if(![percorsoImmagineLocale isEqualToString:@"0"]){
+           // if(![percorsoImmagineLocale isEqualToString:@"0"]){
                 // Concateno la stringa a meno del primo simbolo (che è un punto) con la stringa indicante il link
-                NSString * urlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+               // NSString * urlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
                 
                 // Assegno l'immagine alla UIImage designata, andando a prelevare l'NSData mediante dataWithContentsOfURL
                 // e poi assegnandolo all'immagine vera e propria mediante il metodo imaageWithData
-                NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
-                if(tmp!=nil)
-                    [dict setObject:tmp forKey:@"FotoProfilo"];
-                cell.immagineLuogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]]];
-            }
-            else
+              //  NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+               // if(tmp!=nil)
+               //     [dict setObject:tmp forKey:@"FotoProfilo"];
+                //cell.immagineLuogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]]];
+           // }
+            //else
                 //Da rimpiazzare con il luogo di UNIplace
-                cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
+                cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
             
             //cell.immagineLuogo.image =[UIImage imageNamed:@"ManEtta.png"];
             
