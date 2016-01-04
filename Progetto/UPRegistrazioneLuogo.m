@@ -145,9 +145,7 @@
     self.galleriaButton.layer.borderWidth=2.0f;
 #ifdef __IPHONE_8_0
     if(IS_OS_8_OR_LATER) {
-        // Use one or the other, not both. Depending on what you put in info.plist
         [self.locationManager requestWhenInUseAuthorization];
-        
     }
 #endif
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -263,7 +261,7 @@
 
 
 - (IBAction)immagineDaFotocamera:(UIButton *)sender {
-
+    immagineSelezionata=YES;
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;

@@ -99,7 +99,9 @@ calloutAccessoryControlTapped:(UIControl *)control{
 
 
 - (void)viewWillAppear:(BOOL)animated{
-    
+    luoghiVicini=nil;
+    luoghiRecenti=nil;
+    luoghiRecensiti=nil;
     
     /* La seguente serie di if scaricherà, in base all'indice della pagina che l'utente sta visualizzando, diverse
      * tipologie di luoghi:
@@ -110,6 +112,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
      * - pageIndex = 3: verranno prelevati i luoghi più recensiti, in ordine decrescente.
      */
     if(self.pageIndex == 0){
+        
         NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
         NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
         
@@ -622,7 +625,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
         return cell;
         
     }else if (self.pageIndex==3){
-        int row= [indexPath row];
+    
         UPAltreCategorieCell *cell = (UPAltreCategorieCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPAltreCategorieCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
