@@ -57,7 +57,7 @@
         if (self.rating >= i+1) {
             imageView.image = self.fullSelectedImage;
         } else if (self.rating > i) {
-            imageView.image = self.halfSelectedImage;
+            
         } else {
             imageView.image = self.notSelectedImage;
         }
@@ -98,57 +98,67 @@
   
 }
 
-// Imposto il voto massimo dell'immagine. Una volta impostato, rimuovo tutte le stelle e ne aggiungo per una punteggio
-// di rating, facendo un refresh di tutti gli elementi aggiunti in modo tale da impostare le proporzioni corrette.
+// Imposto il voto massimo dell'immagine. Una volta fatto, rimuovo tutte le stelle e aggiungo una subview che le conterrà,
+// una per punteggio di rating, facendo un refresh di tutti gli elementi aggiunti in modo tale da impostare le proporzioni corrette.
 - (void)setMaxRating:(int)maxRating {
     _maxRating = maxRating;
     
-    // Rimozione
+    // Rimozione delle immagini eventualmente presenti (in caso di resizing)
     for(int i = 0; i < self.imageViews.count; ++i) {
         UIImageView *imageView = (UIImageView *) [self.imageViews objectAtIndex:i];
         [imageView removeFromSuperview];
     }
     [self.imageViews removeAllObjects];
     
-    // Aggiunta
+    // Aggiunta dello spazio per le immagini, una per ogni unità del punteggio massimo.
     for(int i = 0; i < maxRating; ++i) {
+        
         UIImageView *imageView = [[UIImageView alloc] init];
+        // L'immagine che dovrà andare a riempire la subview sarà scalata in AspectFit per
+        // mantenere le proporzioni per poi essere aggiunta.
         imageView.contentMode = UIViewContentModeScaleAspectFit;
+        // Aggiungo uno slot all'array e una subview all'oggetto generale
         [self.imageViews addObject:imageView];
         [self addSubview:imageView];
     }
     
-    // Resizing
+    // Risistemo il layout mediante setNeedsLayout e aggiungo le immagini vere e proprie
+    // richiamando il metodo rfresh che , con il valore aggiornato di imageViews.count
+    // potrà inserire le figure necessarie nelle subview create.
     [self setNeedsLayout];
     [self refresh];
 }
 
+// In caso di immagine non selezionata verrà impostata l'immagine relativa (stella vuota).
 - (void)setNotSelectedImage:(UIImage *)image {
     _notSelectedImage = image;
     [self refresh];
 }
 
-- (void)setHalfSelectedImage:(UIImage *)image {
-    _halfSelectedImage = image;
-    [self refresh];
-}
-
+// In caso di immagine selezionata verrà impostata l'immagine relativa (stella piena).
 - (void)setFullSelectedImage:(UIImage *)image {
     _fullSelectedImage = image;
     [self refresh];
 }
 
+// Imposto il voto
 - (void)setRating:(float)rating {
     _rating = rating;
     [self refresh];
 }
 
-
+/* Metodo per la gestione del tocco relativo ad una stella. Il codice
+ * scandirà tuttu gli oggetti immagine (salvati nell'array imageViews) e
+ * se la posizione del tocco è più a destra dell'origine del rettangolo
+ * dell'imageView della stella, vorrà dire che tale stella è stata selezionata
+ * e pertanto verrà aumentato il contatore di 1 (voto reale) e stoppato il ciclo.
+ * In caso contrario si continuerà a scandire l'array di immagini.
+ */
 - (void)handleTouchAtLocation:(CGPoint)touchLocation {
     if (!self.editable) return;
     
     int newRating = 0;
-    for(int i = (int)self.imageViews.count - 1; i >= 0; i--) {
+    for(int i = (int)self.imageViews.count - 1; i >= 0; --i) {
         UIImageView *imageView = [self.imageViews objectAtIndex:i];
         if (touchLocation.x > imageView.frame.origin.x) {
             newRating = i+1;
@@ -156,21 +166,33 @@
         }
     }
     
+    // Il voto attuale diventerà il nuovo voto.
     self.rating = newRating;
 }
 
+/* A tocco iniziato prelevo le coordinate del tocco servendomi dell'oggetto
+ * UITouch da cui, mediante un oggetto CGPoint ottengo le informazioni richieste
+ * sulla posizione. Tale oggetto verrà poi passato al metodo handleTouchAtLocation
+ * che varierà il voto.
+ */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInView:self];
     [self handleTouchAtLocation:touchLocation];
 }
 
+/* Il comportamento attuato con il tocco singolo viene anche applicato nel caso in cui
+ * l'utente muova il dito tenendolo premuto tra le varie stelle.
+ */
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInView:self];
     [self handleTouchAtLocation:touchLocation];
 }
 
+/* A tocco concluso, swipe o tocco singolo che sia, richiamo il delegate
+ * indicandogli che il voto è cambiato.
+ */
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.delegate StarRatingView:self ratingDidChange:self.rating];
 }

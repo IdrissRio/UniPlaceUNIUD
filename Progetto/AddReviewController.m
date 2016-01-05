@@ -85,16 +85,22 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Inserimento recensione in corso \n\n\n"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
+    // Creo l'UIActivityIndicatorView che fungerà da spinner mediante un rettangolo, indicando coordinate iniziale
+    // di creazione, larghezza e altezza. Verrà inoltre assegnato ad esso uno stile di visualizzazione per poi
+    // essere aggiunto come subview alla view padre che è l'UIAlertController.
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125,50,30,30)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     [alert.view addSubview:spinner];
     [spinner startAnimating];
     
-    // array contenente il nome testuale del file e il tag necessario per poter essere passato in POST.
+    // Specifico il l'array contenente i file dell'immagine, l'immagine in se convertita in NSData e una stringa che
+    // farà da controllo nel caso l'utente abbia selezionato un'immagine da caricare o meno. Il tutto verrà poi mandato
+    // al server.
     NSArray *infoImmagine;
     NSData *dataImmagine;
     NSString *immaginePresente;
-    // Se è stata selezionata un'immagine, la vado a preparare dalla property apposta, altrimenti verrà messa a nil.
+    
+    // Se è stata selezionata un'immagine, la vado a prelevare altrimenti verrà messa a nil in quanto non presente.
     if(ImageSelected == YES){
         dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
         infoImmagine = @[@"luogo", @"photo"];
@@ -166,7 +172,9 @@
 
 
 
-
+/* Gestione del tocco singola, mirata ad azionarsi solo nel caso l'utente abbia selezionato
+ * l'immagine adibita a caricare una foto inerente alla recensione che sta scrivendo
+ */
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
@@ -210,6 +218,10 @@
 
 #pragma mark Implementazione metodi della classe
 
+/* Gestore dell'esito della recensione dal punto di vista degli alertView. In base all'esito fornito, 
+    che può essere 0 o 1, verrà chiusa l'alertView attuale e presentato un messaggio di avvenuta conferma
+    dell'inserimento della recensione o di errore.
+ */
 - (void) setReviewResult:(int)Esito{
     if(Esito == 1){
         [self dismissViewControllerAnimated:NO completion:^{

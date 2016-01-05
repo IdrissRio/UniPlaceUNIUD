@@ -68,7 +68,10 @@
     return request;
 }
 
-
+/* Genero un boundary che divide i vari campi (testo o immagini nel caso di questo oggetto) all'interno del body
+ * della chiamata HTTP. Esso è generato automaticamente da un oggetto di classe NSUIID (Universally Unique Identifiers) 
+ * che mediante il metodo UIIDString ritorna una stringa a 128 bit, random, come richiesto.
+ */
 - (NSString *)generateBoundaryString
 {
     return [NSString stringWithFormat:@"Boundary-%@", [[NSUUID UUID] UUIDString]];
