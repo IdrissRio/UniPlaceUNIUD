@@ -1,10 +1,3 @@
-//
-//  UPRegistrazioneLuogo.h
-//  Progetto
-//
-//  Created by IdrissRio on 18/12/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>

@@ -1,12 +1,6 @@
 #import "AddReviewController.h"
 #import "NetworkLoadingManager.h" // Fornisce l'oggetto per poter costruire il corpo delle richieste HTTP.
 
-/*
- * CHE COSA MANCA: per completare l'inserimento della recensione è necessario prelevare l'utente che inserisce
- * la recensione e l'ID del luogo, con ovviamente nome e coordinate (non ne sono ancora certo). L'ID serve per
- * andare a modificare il numero di recensioni del luogo e la sua media in O(1).
- *
- */
 
 // Utilizzo di un'anonymous category al fine di poter dichiarare variabili non accessibili da altri oggetti.
 @interface AddReviewController ()
@@ -15,7 +9,10 @@
     BOOL ImageSelected;
     // Contiene il valore convertito dal numero di stelle selezionate.
     NSString *voto;
+    __block NSMutableDictionary *recensioni;
 }
+
+- (void)downloadRecensioni:(int)idLuogo;
 @end
 
 @implementation AddReviewController
@@ -38,6 +35,8 @@
     self.rateView.editable = YES;
     self.rateView.maxRating = 5;
     self.rateView.delegate = self;
+    
+    [self downloadRecensioni:46];
 }
 
 - (void)viewDidUnload
@@ -213,7 +212,75 @@
 }
 
 
+#pragma mark download delle recensioni del luogo selezionato
 
+- (void)downloadRecensioni:(int)idLuogo{
+    
+    // Creo l'oggetto che gestirà il download delle recensioni. L'NSDictionary contenente le informazioni da mandare
+    // server sarà solamente riempito con l'id del luogo dal quale si vogliono tutte le recensioni.
+    NetworkLoadingManager *recensioniDownloader = [[NetworkLoadingManager alloc]init];
+    NSDictionary *parametriRecensioni = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:idLuogo], @"idLuogo", nil];
+    
+    // Ottengo il corpo della richiesta da dare alla NSURLSession per completare la comunicazione.
+    NSURLRequest * request = [recensioniDownloader createBodyWithURL:@"http://mobdev2015.com/preleva_recensioni.php" Parameters:parametriRecensioni DataImage:nil ImageInformations:nil];
+    
+    // Costruisco un oggetto di tipo NSURLSessionConfiguration utile all'istanziazione di un oggetto di
+    // tipo NSURLSession.
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * session = [NSURLSession sessionWithConfiguration:configuration];
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+       
+        
+        if(data){
+            NSError *parseError;
+            
+            // Decodifico il JSON ricevuto in un NSArray.
+            recensioni = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
+            
+            // Se c'è qualcosa, vado a prelevare l'oggetto contenente il valore dell'esito della risposta.
+            if (recensioni) {
+                NSString *esito = [NSString stringWithString: [recensioni valueForKey:@"success"]];
+                
+                // Se l'esito è positivo, scandisco il dictionary prelevando le immagini della recensione dove presenti.
+                if([esito isEqualToString:@"1"]){
+                    NSLog(@"%@", recensioni );
+                    
+                    for(int i=0; i< recensioni.count; i++){
+                        
+                        // Prelevo l'eventuale path all'immagine su server
+                        NSString* percorsoImmagineLocale =[[recensioni objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                        
+                        // Se non vale 0 o è presente, accodo all'url principale il percorso dell'immagine, senza il primo
+                        // carattere indicante il puntino '.'
+                        if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
+                            NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                            
+                            // Nel path ottenuto rimpiazzo gli spazi con il %20 indicante pur sempre lo spazio ma per una
+                            // maggiore compatibilità di decodifica tra charset del server (UTF8) e charset dell'applicazione.
+                            NSString *urlImmagine = [tmpUrlImmagine stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                            
+                            // Preparato il path e normalizzato, scarico l'immagine dall'url generato.
+                            NSData* tmp = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+                            
+                            if(tmp != nil){
+                                
+                                // Se è stato scaricato qualcosa, aggiungo all'oggetto iterato (in posizione i) una coppia
+                                // contenente l'NSData dell'immagine con la chiave FotoRecensione,
+                                [[recensioni objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoRecensione"];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        
+    }]resume];
+    
+    
+    
+    return;
+}
 
 
 #pragma mark Implementazione metodi della classe
@@ -232,7 +299,6 @@
                                        {
                                            
                                            [self dismissViewControllerAnimated:YES completion:nil];
-                                           //[self performSegueWithIdentifier:@"ExampleMainSegue" sender:self];
                                            
                                        }];
             [errorAlert addAction:OkAction];

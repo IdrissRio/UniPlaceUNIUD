@@ -38,9 +38,6 @@
  * @discussion prepareInterface: funzione che crea e dipone gli oggetti a runtime quando la view viene chiamata.
  */
 -(void)prepareInterface;
-
-//Gestione grafica in caso di errore nell'accesso.
-- (void)loginError;
 - (void)setErrorBorder:(UITextField *)textField;
 
 @end
