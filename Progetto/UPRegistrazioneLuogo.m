@@ -1,10 +1,4 @@
-//
-//  UPRegistrazioneLuogo.m
-//  Progetto
-//
-//  Created by IdrissRio on 18/12/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
-//
+
 
 #import "UPRegistrazioneLuogo.h"
 #import <QuartzCore/QuartzCore.h>
@@ -36,8 +30,7 @@
 
 
 - (IBAction)CheckInButtonItem:(id)sender {
-    //Creare un oggetto di tipo UPLuogo, riempirne ogni campo (l'immagine se esiste la si trova in immagineInserita), la location la si trova in locationManager.location.longitude/latitude poi telefono e nome luogo e indirizzo li si prendono dai textbox.
-    //Va preso questo oggetto e mandato sul db.
+    
     
     UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Inserimento luogo .."
                                                                  preferredStyle:UIAlertControllerStyleAlert ];

@@ -1,16 +1,9 @@
-//
-//  anagraficaApplianceViewController.m
-//  Progetto
-//
-//  Created by Gabriele Etta on 19/11/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
-//
 
 #import "userInfoViewController.h"
 #import "accountInfoViewController.h"
 #import "UPSelectUniversity.h"
 #include <math.h>
-#define MAX_FIELD_LENGTH 10
+// Non sono sicuro che serva, provare senza #define MAX_FIELD_LENGTH 10
 
 @interface userInfoViewController()
 {
@@ -76,7 +69,7 @@
         if (![ self.nomeTextField.text isEqualToString:@""]) {
             aviableNome=YES;
         }
-        aviableCognome = YES;
+        // Portava a bug. aviableCognome = YES;
         
         if(_universitario.fotoProfilo!=nil)
         aviableImmagineProfilo = YES;
@@ -153,9 +146,13 @@
 #pragma mark Gestione delle segue.
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"GoToUserInfo"]){
+    
+    /*
+     * Se è stato scelto di andare alla segue successiva contenente le informazioni
+     * relative all'account, salvo tutte le informazioni ottenute in questa View.
+     */
+    if([segue.identifier isEqualToString:@"GoToAccountInfo"]){
         if([segue.destinationViewController isKindOfClass:[accountInfoViewController class]]){
-            //Creo un oggetto 'ancora' del tipo del prossimo view controller, in modo da avere un ponte per passare i valori scelti dall'utente in questa view. MANCA IL PASSAGGIO DELL'UNI SCELTA.
             accountInfoViewController *accountView = (accountInfoViewController *) segue.destinationViewController;
             accountView.universitario=[[UPUniversitario alloc]init];
             accountView.universitario.nome = self.nomeTextField.text;
@@ -165,7 +162,14 @@
             accountView.universitario.universita = self.labelUniversita.text;
             accountView.universitario.LogoUni=self.universitario.LogoUni;
         }
-    }else if([segue.identifier isEqualToString:@"selectUniversitySegue"]){
+    }
+    /*
+     * Se l'utente invece sta andando a selezionare l'università, salvo comunque tutte le informazioni
+     * prese fino ad ora, con l'opportuno controllo sulla mail nel caso l'utente si sia registrato con
+     * Facebook.
+     */
+    else if([segue.identifier isEqualToString:@"selectUniversitySegue"]){
+       
         if([segue.destinationViewController isKindOfClass:[UPSelectUniversity class]]){
             UPSelectUniversity *accountView = (UPSelectUniversity *) segue.destinationViewController;
             accountView.tieniInfoViewPrecedente=[[UPUniversitario alloc]init];
@@ -178,16 +182,22 @@
     }
 }
 
-#pragma mark Gestione del contenuto inserito dall'utente
+#pragma mark Gestione del cambiamento del contenuto inserito dall'utente
 
+/*
+ * I metodi di questo pragma verranno richiamati al cambiamento di testo della
+ * view a cui sono delegati, controllando che non sia presente una stringa vuota e,
+ * nel caso lo fosse, visualizzando un opportuno messaggio.
+ */
 
 - (IBAction)insertNomeDidChanged:(id)sender {
     self.nomeTextField.layer.borderColor = [[UIColor clearColor]CGColor];
     self.errorNomeInsert.hidden = YES;
-    
+    /*
     if([self.nomeTextField.text length] >= MAX_FIELD_LENGTH)
         self.nomeTextField.enabled = NO;
-    else if([self.nomeTextField.text isEqualToString:@""])
+    else */
+    if([self.nomeTextField.text isEqualToString:@""])
         aviableNome = NO;
     else aviableNome = YES;
     
@@ -195,15 +205,26 @@
 }
 
 - (IBAction)insertCognomeDidChanged:(id)sender {
-    
+    /*
     if([self.cognomeTextField.text length] >= MAX_FIELD_LENGTH)
         self.cognomeTextField.enabled = NO;
-    else if([self.cognomeTextField.text isEqualToString:@""])
+    else */
+    
+    if([self.cognomeTextField.text isEqualToString:@""])
         aviableCognome = NO;
     else aviableCognome = YES;
     
     [self canGoAhead];
 }
+
+# pragma mark gestione delle textField ad inizio modifica
+
+/*
+ * I metodi di questo pragma si attiveranno ad inizio tocco su una textField
+ * e non faranno altro che resettare il colore del bordo a quello originario 
+ * facendo sparire eventuali messaggi d'errore.
+ */
+
 - (IBAction)insertNomeDidBegin:(id)sender {
     self.nomeTextField.layer.borderColor = [[UIColor clearColor]CGColor];
     self.errorNomeInsert.hidden = YES;
@@ -213,6 +234,14 @@
     self.cognomeTextField.layer.borderColor = [[UIColor clearColor]CGColor];
     self.errorCognomeInsert.hidden = YES;
 }
+
+# pragma mark gestione delle textField a fine modifica
+
+/*
+ * I metodi di questo pragma verranno richiamati alla fine inserimento della
+ * view a cui sono delegati, controllando che non sia presente una stringa vuota e
+ * , nel caso lo fosse, visualizzando un opportuno messaggio.
+ */
 
 - (IBAction)insertNomeDidEnd:(id)sender {
     if([self.nomeTextField.text isEqualToString:@""]){

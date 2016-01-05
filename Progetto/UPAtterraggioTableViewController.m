@@ -219,9 +219,11 @@ calloutAccessoryControlTapped:(UIControl *)control{
         }] resume];
     }//if
     
+    
     if(self.pageIndex == 2){
+        
         NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
-        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_recensiti.php" Parameters:nil DataImage:nil ImageInformations:nil];
+        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_tendenze.php" Parameters:nil DataImage:nil ImageInformations:nil];
         
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -251,6 +253,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
                         
                     }
                     
+                    
                 } else NSLog(@"parseError = %@ \n", parseError);
                 
             }
@@ -260,9 +263,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
     }//if
     
     if(self.pageIndex == 3){
-        
         NetworkLoadingManager *recentUploader = [[NetworkLoadingManager alloc]init];
-        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_tendenze.php" Parameters:nil DataImage:nil ImageInformations:nil];
+        NSURLRequest *request = [recentUploader createBodyWithURL:@"http://mobdev2015.com/preleva_recensiti.php" Parameters:nil DataImage:nil ImageInformations:nil];
         
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -292,7 +294,6 @@ calloutAccessoryControlTapped:(UIControl *)control{
                         
                     }
                     
-                    
                 } else NSLog(@"parseError = %@ \n", parseError);
                 
             }
@@ -300,6 +301,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
         }] resume];
         
     }//if
+
     
     
     

@@ -152,16 +152,22 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Inserimento recensione in corso \n\n\n"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
+    // Creo l'UIActivityIndicatorView che fungerà da spinner mediante un rettangolo, indicando coordinate iniziale
+    // di creazione, larghezza e altezza. Verrà inoltre assegnato ad esso uno stile di visualizzazione per poi
+    // essere aggiunto come subview alla view padre che è l'UIAlertController.
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125,50,30,30)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     [alert.view addSubview:spinner];
     [spinner startAnimating];
     
-    // array contenente il nome testuale del file e il tag necessario per poter essere passato in POST.
+    // Specifico il l'array contenente i file dell'immagine, l'immagine in se convertita in NSData e una stringa che
+    // farà da controllo nel caso l'utente abbia selezionato un'immagine da caricare o meno. Il tutto verrà poi mandato
+    // al server.
     NSArray *infoImmagine;
     NSData *dataImmagine;
     NSString *immaginePresente;
-    // Se è stata selezionata un'immagine, la vado a preparare dalla property apposta, altrimenti verrà messa a nil.
+    
+    // Se è stata selezionata un'immagine, la vado a prelevare altrimenti verrà messa a nil in quanto non presente.
     if(ImageSelected == YES){
         //dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
         infoImmagine = @[@"luogo", @"photo"];
@@ -272,11 +278,83 @@
 }
 
 
+#pragma mark download delle recensioni del luogo selezionato
 
+- (void)downloadRecensioni:(int)idLuogo{
+    
+    // Creo l'oggetto che gestirà il download delle recensioni. L'NSDictionary contenente le informazioni da mandare
+    // server sarà solamente riempito con l'id del luogo dal quale si vogliono tutte le recensioni.
+    NetworkLoadingManager *recensioniDownloader = [[NetworkLoadingManager alloc]init];
+    NSDictionary *parametriRecensioni = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:idLuogo], @"idLuogo", nil];
+    
+    // Ottengo il corpo della richiesta da dare alla NSURLSession per completare la comunicazione.
+    NSURLRequest * request = [recensioniDownloader createBodyWithURL:@"http://mobdev2015.com/preleva_recensioni.php" Parameters:parametriRecensioni DataImage:nil ImageInformations:nil];
+    
+    // Costruisco un oggetto di tipo NSURLSessionConfiguration utile all'istanziazione di un oggetto di
+    // tipo NSURLSession.
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * session = [NSURLSession sessionWithConfiguration:configuration];
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+       
+        
+        if(data){
+            NSError *parseError;
+            
+            // Decodifico il JSON ricevuto in un NSArray.
+            recensioni = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
+            
+            // Se c'è qualcosa, vado a prelevare l'oggetto contenente il valore dell'esito della risposta.
+            if (recensioni) {
+                NSString *esito = [NSString stringWithString: [recensioni valueForKey:@"success"]];
+                
+                // Se l'esito è positivo, scandisco il dictionary prelevando le immagini della recensione dove presenti.
+                if([esito isEqualToString:@"1"]){
+                    NSLog(@"%@", recensioni );
+                    
+                    for(int i=0; i< recensioni.count; i++){
+                        
+                        // Prelevo l'eventuale path all'immagine su server
+                        NSString* percorsoImmagineLocale =[[recensioni objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                        
+                        // Se non vale 0 o è presente, accodo all'url principale il percorso dell'immagine, senza il primo
+                        // carattere indicante il puntino '.'
+                        if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
+                            NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                            
+                            // Nel path ottenuto rimpiazzo gli spazi con il %20 indicante pur sempre lo spazio ma per una
+                            // maggiore compatibilità di decodifica tra charset del server (UTF8) e charset dell'applicazione.
+                            NSString *urlImmagine = [tmpUrlImmagine stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                            
+                            // Preparato il path e normalizzato, scarico l'immagine dall'url generato.
+                            NSData* tmp = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+                            
+                            if(tmp != nil){
+                                
+                                // Se è stato scaricato qualcosa, aggiungo all'oggetto iterato (in posizione i) una coppia
+                                // contenente l'NSData dell'immagine con la chiave FotoRecensione,
+                                [[recensioni objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoRecensione"];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        
+    }]resume];
+    
+    
+    
+    return;
+}
 
 
 #pragma mark Implementazione metodi della classe
 
+/* Gestore dell'esito della recensione dal punto di vista degli alertView. In base all'esito fornito, 
+    che può essere 0 o 1, verrà chiusa l'alertView attuale e presentato un messaggio di avvenuta conferma
+    dell'inserimento della recensione o di errore.
+ */
 - (void) setReviewResult:(int)Esito{
     if(Esito == 1){
         [self dismissViewControllerAnimated:NO completion:^{
@@ -287,7 +365,6 @@
                                        {
                                            
                                            [self dismissViewControllerAnimated:YES completion:nil];
-                                           //[self performSegueWithIdentifier:@"ExampleMainSegue" sender:self];
                                            
                                        }];
             [errorAlert addAction:OkAction];
