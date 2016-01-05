@@ -12,8 +12,9 @@
 @interface UPLuogo : NSObject{
     NSString* longitudine;
     NSString* latitudine;
+   
 }
-
+@property NSInteger identificativo;
 @property(nonatomic,weak)NSString* indirizzo;
 @property(nonatomic,weak)NSString* telefono;
 @property(nonatomic,weak)NSString* nome;
@@ -27,7 +28,8 @@
             latitudine:(NSString*)latitud
               immagine:(NSData*)immagine
              tipologia:(NSString*)tipologia
-                 media:(float)media;
+                 media:(float)media
+                 andID:(NSInteger )identificativo;
     
 
 

@@ -1,5 +1,6 @@
 #import "AddReviewController.h"
 #import "NetworkLoadingManager.h" // Fornisce l'oggetto per poter costruire il corpo delle richieste HTTP.
+
 #import "UPViewCommento.h"
 /*
  * CHE COSA MANCA: per completare l'inserimento della recensione è necessario prelevare l'utente che inserisce
@@ -9,18 +10,16 @@
  */
 
 // Utilizzo di un'anonymous category al fine di poter dichiarare variabili non accessibili da altri oggetti.
-@interface AddReviewController() <UITextViewDelegate>
+@interface AddReviewController() <UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     // Gestisce la selezione dell'immagine.
     BOOL ImageSelected;
     // Contiene il valore convertito dal numero di stelle selezionate.
     NSString *voto;
     float offset;
-  
-    NSMutableDictionary * recensioni;
+    __block NSMutableDictionary *recensioni;
+
 }
-
-
 @end
 
 
@@ -32,6 +31,7 @@
 
 @implementation AddReviewController
 
+
 -(void)UPSetRateView:(StarRatingView*)star editable:(BOOL)editable rating:(float)rating{
     star.notSelectedImage = [UIImage imageNamed:@"vuota.png"];
     star.fullSelectedImage = [UIImage imageNamed:@"piena.png"];
@@ -42,6 +42,10 @@
 }
 
 -(void)loadUPLuogo{
+    self.textViewRecensione.delegate=self;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    tapGesture.cancelsTouchesInView = NO;
+    [self.scrollView addGestureRecognizer:tapGesture];
     self.immagineSottoBlur.image=[UIImage imageWithData:self.luogo.immagine];
     self.immagineSopraBlur.image=[UIImage imageWithData:self.luogo.immagine];
     self.labelNome.text=[NSString stringWithFormat:@"%@",self.luogo.nome];
@@ -53,94 +57,41 @@
     [self UPSetRateView:self.rateViewByUser editable:YES rating:0];
     self.labelMedia.text=[NSString stringWithFormat:@"%.2f ",self.luogo.media];
     offset=self.rateViewByUser.frame.origin.y;
-  
     
+    //Gestione dei UIBarButtonItem
+    UIImage *immagineCamera = [UIImage imageNamed:@"cameraIcon.png"];
+    UIButton *bottoneCamera = [UIButton buttonWithType:UIButtonTypeCustom];
+    [bottoneCamera setFrame:CGRectMake(0, 0, 35, 35)];
+    [bottoneCamera setBackgroundImage:immagineCamera forState:UIControlStateNormal];
+    UIImage *immagineInvia = [UIImage imageNamed:@"invia.png"];
+    UIButton *bottoneInvia = [UIButton buttonWithType:UIButtonTypeCustom];
+    [bottoneInvia setFrame:CGRectMake(0, 0, 35, 35)];
+    [bottoneInvia setBackgroundImage:immagineInvia forState:UIControlStateNormal];
+    [bottoneCamera addTarget:self action:@selector(ActionCamera) forControlEvents:UIControlEventTouchUpInside];
+    [bottoneInvia addTarget:self action:@selector(ActionInvia) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButtonCamera = [[UIBarButtonItem alloc] initWithCustomView:bottoneCamera];
+    [barButtonCamera setTag:1];
+    UIBarButtonItem *barButtonInvia = [[UIBarButtonItem alloc] initWithCustomView:bottoneInvia];
+    [barButtonInvia setTag:0];
+    [barButtonInvia setEnabled:NO];
+    self.navigationItem.rightBarButtonItems= @[barButtonInvia,barButtonCamera];
 }
 
--(void)VisualizzaRecensioni{
-    for(int i=0;i<recensioni.count;++i){
-        NSDictionary* singolaRecensione = [recensioni objectForKey:[NSString stringWithFormat:@"%d",i]];
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPViewCommento" owner:self options:nil];
-        UPViewCommento* viewRecensione=[nib objectAtIndex:0];
-        viewRecensione.textViewRecensione.text=[recensioni objectForKey:@"TESTORECENSIONE"];
-        
-    }
-
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self.scrollView setDelegate:self];
-    [self loadUPLuogo];
-    offset=570;
-    
-    // Per ora non ho selezionato nessuna immagine.
-    ImageSelected = NO;
-    for(int i=0;i<6;++i){
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPViewCommento" owner:self options:nil];
-    UPViewCommento*commento = [nib objectAtIndex:0];
-    CGRect frame = commento.frame;
-    frame.size.width=self.view.frame.size.width;
-    frame.origin.y = offset;
-    offset+=235;
-    commento.frame = frame;
-    [self.viewWithChild addSubview:commento];
-        
-    
-    }
-    self.scrollView.contentSize=self.viewWithChild.frame.size;
-
-}
-
-- (void)viewDidLayoutSubviews {
-    [self.scrollView setContentSize:CGSizeMake(320, offset)];
-}
-
-
-    /*
-     * Inizializzazione della view relativa al voto del luogo: assegno l'immagine relativa alla stella piena (selezionata)
-     * o vuota (non selezionata), il voto iniziale, quello massimo, il suo delegate (che è la view stessa in quanto nell'header
-     * è già stato indicato l'utilizzo del delegate apposito), e il fatto che sia modificabile nel suo valore.
-     */
-
-
-
-
-- (void)viewDidUnload
-{
-
-    [super viewDidUnload];
-}
-
-/*
- * Questo metodo viene richiamato non appena l'utente seleziona un voto diverso da quello precedente. 
- * Esso non farà altro che andare a modificare il valore della variabile globale voto, in modo tale
- * da essere accessibile ovunque nella view.
- */
-- (void)StarRatingView:(StarRatingView *)rateView ratingDidChange:(float)rating{
-    voto = [NSString stringWithFormat:@"%f", rating];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-
-#pragma mark Gestione chiamata HTTP
 
 
 /*
  * Alla pressione del tasto, verranno caricati tutti i dati relativi alla recensione mediante l'utilizzo di
- * un oggetto di tipo NetworkLoadingManager, custom, che genera una NSURLMutableRequest utilizzata da una 
+ * un oggetto di tipo NetworkLoadingManager, custom, che genera una NSURLMutableRequest utilizzata da una
  * NSURLSession la quale comunica in modo vero e proprio con il server. Durante l'operazione, l'utente viene
  * informato del corso dell'operazione mediante un UIAlertController che visualizza uno spinner indicante il
  * progresso. L'esito viene visualizzato prelevando dall'array JSON mandato in risposta dal server il campo
  * opportuno.
  */
 
-- (IBAction)sendButtonPressed:(id)sender {
-    
+
+
+-(void)ActionInvia
+{
     // Prelevo la data odierna
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy/M/d";
@@ -169,7 +120,7 @@
     
     // Se è stata selezionata un'immagine, la vado a prelevare altrimenti verrà messa a nil in quanto non presente.
     if(ImageSelected == YES){
-        //dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
+        dataImmagine = UIImageJPEGRepresentation(self.immagineSopraBlur.image, 0.9);
         infoImmagine = @[@"luogo", @"photo"];
         immaginePresente = @"si";
         
@@ -183,7 +134,7 @@
     //[NSDictionary dictionaryWithObjectsAndKeys: dataOdierna, @"dataRecensione",self.recensioneTexfField.text, @"recensione", voto, @"voto", immaginePresente, @"immaginePresente", nil];
     NSString *url = @"http://mobdev2015.com/aggiungirecensione.php";
     NetworkLoadingManager *loader = [[NetworkLoadingManager alloc] init];
-
+    
     // Creo la NSURLRequest mediante il metodo fornito dall'oggetto loader di tipo NetworkLoadingManager.
     NSURLRequest *request = [loader createBodyWithURL:url Parameters:testualiRecensione DataImage:dataImmagine ImageInformations:infoImmagine];
     [self presentViewController:alert animated:YES completion:nil];
@@ -199,47 +150,204 @@
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if(data){
-        NSError *parseError;
-        NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            NSError *parseError;
+            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
             // Se ho ricevuto qualcosa in risposta dal server e sono riuscito a convertirlo da JSON ad array
             if (datiUtente) {
-            NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
-            
-            // Se l'esito della stringa adibita è pari a 1, invoco il metodo delegato nel main thread
-            // che in base al parametro, indicato da un numero che può essere 0 oppure 1, visualizzerà o
-            // meno un messaggio di errore.
-            if([esito isEqualToString:@"1"])
-                dispatch_async(dispatch_get_main_queue(), ^{
-                [self setReviewResult:1];
-                });
-            
-            else
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self setReviewResult:0];
-                });
-        
-        // Se la conversione è fallita, verrà stampato a console il messaggio di errore con quanto scaricato
-        // dal server, indicando comunque che c'è stato un errore nella comunicazione.
-        } else
-            NSLog(@"parseError = %@ \n", parseError);
+                NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                
+                // Se l'esito della stringa adibita è pari a 1, invoco il metodo delegato nel main thread
+                // che in base al parametro, indicato da un numero che può essere 0 oppure 1, visualizzerà o
+                // meno un messaggio di errore.
+                if([esito isEqualToString:@"1"]){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self setReviewResult:1];
+                    });
+                }
+                else
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self setReviewResult:0];
+                    });
+                
+                // Se la conversione è fallita, verrà stampato a console il messaggio di errore con quanto scaricato
+                // dal server, indicando comunque che c'è stato un errore nella comunicazione.
+            } else
+                NSLog(@"parseError = %@ \n", parseError);
             
             NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self setReviewResult:0];
             });
-        
+            
         } else
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self setReviewResult:0];
-        });
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self setReviewResult:0];
+            });
         
-    
+        
     }] resume];
+
+    
+}
+
+-(void)ActionCamera
+{
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Fotocamera o Galleria?" message:@"Desideri inserire una foto dalla galleria oppure scattarla dalla fotocamera?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *fotocameraAction = [UIAlertAction actionWithTitle:@"Fotocamera" style:UIAlertActionStyleDefault handler:
+                               ^(UIAlertAction * action)
+                               {
+                                   
+                                   [self dismissViewControllerAnimated:YES completion:nil];
+                                   [self performSelectorOnMainThread:@selector(immagineDaFotocamera) withObject:nil waitUntilDone:YES];
+                               }];
+    
+    UIAlertAction *galleriaAction = [UIAlertAction actionWithTitle:@"Galleria" style:UIAlertActionStyleDefault handler:
+                                   ^(UIAlertAction * action)
+                                   {
+                                       
+                                       [self dismissViewControllerAnimated:YES completion:nil];
+                                       [self performSelectorOnMainThread:@selector(immagineDaGalleria) withObject:nil waitUntilDone:YES];
+                                       
+                                   }];
+    UIAlertAction *annulla = [UIAlertAction actionWithTitle:@"Annulla" style:UIAlertActionStyleDefault handler:
+                                     ^(UIAlertAction * action)
+                                     {
+                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                         
+                                         
+                                     }];
+    [alert addAction:fotocameraAction];
+    [alert addAction:galleriaAction];
+    [alert addAction:annulla];
+    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
 
+
+- (void)immagineDaGalleria {
+    //Creo un oggetto di tipo UIImagepickerController che mi servirà per accedere alla galleria mediante il metodo
+    //presentViewController:animated:completion:
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES; //L'utente potrà modificare l'immagine dalla galleria.
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //Indico come risorsa la Photo Library di iOS.
+    
+    //Il picker selezionato verrà visualizzato dal view Controller attuale mediante un'animazione.
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    self.immagineSopraBlur.image = info[UIImagePickerControllerEditedImage];
+    if(self.immagineSopraBlur.image!=self.immagineSottoBlur.image){
+        for(UIBarButtonItem *rightButton in self.navigationItem.rightBarButtonItems){
+            if(rightButton.tag==0){
+                ImageSelected=YES;
+                rightButton.enabled=YES;
+            }
+        }
+        self.immagineSottoBlur.image=self.immagineSottoBlur.image;
+    }
+    self.immagineSottoBlur.image=self.immagineSopraBlur.image;
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    
+}
+
+
+- (void)immagineDaFotocamera{
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    if(![textView.text isEqualToString:@"Scrivi qua la tua recensione ..."]){
+        for(UIBarButtonItem *rightButton in self.navigationItem.rightBarButtonItems){
+            if(rightButton.tag==0){
+                rightButton.enabled=YES;
+            }
+        }
+    }
+}
+
+-(void)VisualizzaRecensioni{
+    if(recensioni.count>=3){
+        self.labelCaricamento.text=@"Recensioni:";
+    }else{
+        self.labelCaricamento.text=@"Nessuna Recensione Inserita.";
+    }
+    for(int i=0;i<recensioni.count;++i){
+        NSDictionary* singolaRecensione = [recensioni objectForKey:[NSString stringWithFormat:@"%d",i]];
+        if([singolaRecensione objectForKey:@"Descrizione"]!=nil){
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPViewCommento" owner:self options:nil];
+            UPViewCommento* viewRecensione=[nib objectAtIndex:0];
+            viewRecensione.textViewRecensione.text=[singolaRecensione objectForKey:@"Descrizione"];
+            viewRecensione.labelAutore.text=[NSString stringWithFormat:@"Autore: %@",[singolaRecensione objectForKey:@"Recensitore"]];
+            viewRecensione.dataRecensione.text=[NSString stringWithFormat:@"Data: %@",[singolaRecensione objectForKey:@"DataRecensione"]];
+            [self UPSetRateView:viewRecensione.ratingView editable:NO rating:[[singolaRecensione objectForKey:@"Voto"]floatValue]];
+            CGRect frame= viewRecensione.frame;
+            frame.size.width=self.view.frame.size.width;
+            frame.origin.y = offset;
+   
+            viewRecensione.frame=frame;
+            [self.viewWithChild addSubview:viewRecensione];
+        }
+    }
+    
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    [self.scrollView setDelegate:self];
+    [self loadUPLuogo];
+    offset=590;
+    
+    //self.scrollView.contentSize=self.viewWithChild.frame.size;
+
+}
+
+- (void)viewDidLayoutSubviews {
+    [self.scrollView setContentSize:CGSizeMake(320, offset)];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+
+/*
+ * Questo metodo viene richiamato non appena l'utente seleziona un voto diverso da quello precedente. 
+ * Esso non farà altro che andare a modificare il valore della variabile globale voto, in modo tale
+ * da essere accessibile ovunque nella view.
+ */
+- (void)StarRatingView:(StarRatingView *)rateView ratingDidChange:(float)rating{
+    voto = [NSString stringWithFormat:@"%f", rating];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+
+#pragma mark Gestione chiamata HTTP
+
 /*
 
+/* Gestione del tocco singola, mirata ad azionarsi solo nel caso l'utente abbia selezionato
+ * l'immagine adibita a caricare una foto inerente alla recensione che sta scrivendo
+ 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
@@ -269,13 +377,6 @@
  @param info
  oggetto di tipo NSDictionary contenente l'immagine originale e nel nostro caso anche l'immagine modificata.
  */
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    //self.immagineRecensione.image = info[UIImagePickerControllerEditedImage];
-    ImageSelected = YES;
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-}
 
 
 #pragma mark download delle recensioni del luogo selezionato
@@ -310,7 +411,7 @@
                 // Se l'esito è positivo, scandisco il dictionary prelevando le immagini della recensione dove presenti.
                 if([esito isEqualToString:@"1"]){
                     NSLog(@"%@", recensioni );
-                    
+                     [self performSelectorOnMainThread:@selector(VisualizzaRecensioni) withObject:nil waitUntilDone:YES];
                     for(int i=0; i< recensioni.count; i++){
                         
                         // Prelevo l'eventuale path all'immagine su server
@@ -396,7 +497,9 @@
         }
     }
 }
+
 - (void)viewWillAppear:(BOOL)animated {
+    [self downloadRecensioni:(int)self.luogo.identificativo];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -423,6 +526,12 @@
         f.origin.y = 0.0f;
         self.view.frame = f;
     }];
+}
+
+-(void)dismissKeyboard
+{
+    
+    [_textViewRecensione resignFirstResponder];
 }
 
 

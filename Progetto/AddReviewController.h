@@ -25,8 +25,10 @@
 
 
 
+@property (strong, nonatomic) IBOutlet UILabel *labelCaricamento;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property(weak, nonatomic) UIView *activeTextView;
 @property (strong, nonatomic) IBOutlet UIView *viewWithChild;
 @property (strong, nonatomic) IBOutlet StarRatingView *rateViewByUser;
 

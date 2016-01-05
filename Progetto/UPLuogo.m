@@ -16,7 +16,8 @@
             latitudine:(NSString*)latitud
               immagine:(NSData *)immagine
              tipologia:(NSString *)tipologia
-                 media:(float)media{
+                 media:(float)media
+    andID:(NSInteger )identificativo{
     if (self = [super init]){
         _nome=nome;
         _telefono=telefono;
@@ -26,6 +27,7 @@
         _immagine=immagine;
         _tipologia=tipologia;
         _media=media;
+        _identificativo=identificativo;
     }
     return self;
 }
@@ -41,6 +43,7 @@
         _immagine=luogo.immagine;
         _tipologia=luogo.tipologia;
         _media=luogo.media;
+        _identificativo=luogo.identificativo;
      }
     return self;
 }
