@@ -106,6 +106,8 @@
 		CA1B873C1C39BF5300D82FB9 /* cocorico.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873B1C39BF5300D82FB9 /* cocorico.gpx */; };
 		CA1B873E1C39C21500D82FB9 /* pilotta.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873D1C39C21500D82FB9 /* pilotta.gpx */; };
 		CA1B87401C39C8E800D82FB9 /* bertinelli.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */; };
+		CA2319D11C3BC03700469009 /* cometFidenza.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA2319D01C3BC03700469009 /* cometFidenza.gpx */; };
+		CA2319D51C3BCDE700469009 /* DescrizioneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2319D41C3BCDE700469009 /* DescrizioneViewController.m */; };
 		CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */; };
 		CA83AC151C2DD238000D6432 /* UIViewController+TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC131C2DD238000D6432 /* UIViewController+TextFieldDelegate.m */; };
 		CA83AC191C2DD263000D6432 /* NetworkLoadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC181C2DD263000D6432 /* NetworkLoadingManager.m */; };
@@ -261,6 +263,9 @@
 		CA1B873B1C39BF5300D82FB9 /* cocorico.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cocorico.gpx; sourceTree = "<group>"; };
 		CA1B873D1C39C21500D82FB9 /* pilotta.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pilotta.gpx; sourceTree = "<group>"; };
 		CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bertinelli.gpx; sourceTree = "<group>"; };
+		CA2319D01C3BC03700469009 /* cometFidenza.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cometFidenza.gpx; sourceTree = "<group>"; };
+		CA2319D31C3BCDE700469009 /* DescrizioneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescrizioneViewController.h; sourceTree = "<group>"; };
+		CA2319D41C3BCDE700469009 /* DescrizioneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescrizioneViewController.m; sourceTree = "<group>"; };
 		CA83AC101C2DD238000D6432 /* UITextField+RuntimeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+RuntimeExtension.h"; sourceTree = "<group>"; };
 		CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+RuntimeExtension.m"; sourceTree = "<group>"; };
 		CA83AC121C2DD238000D6432 /* UIViewController+TextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TextFieldDelegate.h"; sourceTree = "<group>"; };
@@ -487,6 +492,15 @@
 			name = Facebook;
 			sourceTree = "<group>";
 		};
+		CA2319D21C3BCD8600469009 /* Descrizione Applicazione */ = {
+			isa = PBXGroup;
+			children = (
+				CA2319D31C3BCDE700469009 /* DescrizioneViewController.h */,
+				CA2319D41C3BCDE700469009 /* DescrizioneViewController.m */,
+			);
+			name = "Descrizione Applicazione";
+			sourceTree = "<group>";
+		};
 		CA79D5D01BFA2DBB0003137D /* loghiUniversita */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +635,7 @@
 		CAC374551BF5EBC900CB53DD = {
 			isa = PBXGroup;
 			children = (
+				CA2319D01C3BC03700469009 /* cometFidenza.gpx */,
 				CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */,
 				CA1B873D1C39C21500D82FB9 /* pilotta.gpx */,
 				CA1B873B1C39BF5300D82FB9 /* cocorico.gpx */,
@@ -645,6 +660,7 @@
 		CAC374601BF5EBC900CB53DD /* Progetto */ = {
 			isa = PBXGroup;
 			children = (
+				CA2319D21C3BCD8600469009 /* Descrizione Applicazione */,
 				CAC374641BF5EBC900CB53DD /* AppDelegate.h */,
 				CAC374651BF5EBC900CB53DD /* AppDelegate.m */,
 				CA83AC341C2DDC5B000D6432 /* Inserimento Recensione */,
@@ -802,6 +818,7 @@
 				2D0E2F991C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png in Resources */,
 				2DC180DF1C20E3C500673136 /* UPNelleVicinanzeCell.xib in Resources */,
 				2D0E2FAA1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png in Resources */,
+				CA2319D11C3BC03700469009 /* cometFidenza.gpx in Resources */,
 				2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */,
 				2D057C8E1C30295000ABA819 /* ManEtta.png in Resources */,
 				2D0E2FC81C045022009420A5 /* UniversitaDegliStudiDiSassari.png in Resources */,
@@ -916,6 +933,7 @@
 				2DC81FB41C2F4749005B6148 /* UPSlideOutViewControllerForSegue.m in Sources */,
 				CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */,
 				CA83AC191C2DD263000D6432 /* NetworkLoadingManager.m in Sources */,
+				CA2319D51C3BCDE700469009 /* DescrizioneViewController.m in Sources */,
 				CAC3746F1BF5EBC900CB53DD /* Progetto.xcdatamodeld in Sources */,
 				CAC374661BF5EBC900CB53DD /* AppDelegate.m in Sources */,
 				2DE95BDE1C2EC55B008E3D79 /* UPProfiloSlideOutMenu.m in Sources */,

@@ -2692,7 +2692,8 @@
                     <view key="view" contentMode="scaleToFill" id="QMJ-FJ-IfE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0039215686269999999" green="0.4941176471" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0039215686269999999" green="0.4941176471" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="UniPlace" id="iCW-Hg-kax">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="5bZ-ir-lto">
@@ -2715,7 +2716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uag-wZ-aiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="-3356"/>
+            <point key="canvasLocation" x="1672" y="-3378"/>
         </scene>
         <!--Registrazione Luogo-->
         <scene sceneID="uFl-2i-zPA">
@@ -3685,17 +3686,33 @@ Esse sono la latitudine, la longitudine e l'altitudine.</string>
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compito di gabri spiegare UNIPLACE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOS-lN-fRS">
-                                <rect key="frame" x="159" y="110" width="282" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJj-b0-dcn">
+                                <rect key="frame" x="33" y="8" width="534" height="520"/>
+                                <mutableString key="text"> Uniplace è un'applicazione per gli studenti universitari di tutta Italia
+ il cui scopo è quello di fornire la miglior qualità di informazioni 
+ circa le loro necessità e tendenze del momento, dando la possibilità di 
+ avere in tempo reale un resoconto completo e dettagliato dei luoghi più 
+ vicini alla posizione corrente, di quelli più recensiti e di tendenza. 
+ L'applicazione permette inoltre di inserire recensioni, munite di 
+ contenuti multimediali, testo e valutazione, e di visionare quelle 
+ lasciate dagl altri utenti dando la completa libertà di esprimere un 
+ proprio parere in merito ad un luogo o di far conoscere un punto di 
+ possibile interesse. 
+ Questa caratteristica di gestione non centralizzata è ciò che si addice 
+ alla quotidianità di uno studente, dinamica e in continuo cambiamento,
+ offrendo un servizio utile ma senza ostacoli.
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="uOS-lN-fRS" firstAttribute="top" secondItem="AMs-Fa-6ZL" secondAttribute="bottom" constant="110" id="0OR-Xx-eoE"/>
-                            <constraint firstItem="uOS-lN-fRS" firstAttribute="centerX" secondItem="QiB-48-rYr" secondAttribute="centerX" id="Lsl-5F-oqK"/>
+                            <constraint firstAttribute="trailing" secondItem="uJj-b0-dcn" secondAttribute="trailing" constant="33" id="0xP-YE-LBm"/>
+                            <constraint firstItem="uJj-b0-dcn" firstAttribute="top" secondItem="AMs-Fa-6ZL" secondAttribute="bottom" constant="8" id="7Mg-bO-C8m"/>
+                            <constraint firstItem="ha3-zx-V1p" firstAttribute="top" secondItem="uJj-b0-dcn" secondAttribute="bottom" constant="8" id="deT-Y6-OyK"/>
+                            <constraint firstItem="uJj-b0-dcn" firstAttribute="leading" secondItem="QiB-48-rYr" secondAttribute="leading" constant="33" id="tFO-V8-y3N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cos'è UniPlace" id="bg5-eM-k17">
