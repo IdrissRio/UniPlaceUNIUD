@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="mdj-jt-mD6" customClass="UPViewCommento">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="227"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottengo Dati ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jf-cH-J9h">
+                    <rect key="frame" x="8" y="136" width="584" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ottengo Dati ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUc-Nv-cc9">
+                    <rect key="frame" x="8" y="164" width="584" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.12549019610000001" green="0.3411764706" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTB-xG-dV3" customClass="StarRatingView">
+                    <rect key="frame" x="8" y="193" width="126" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="2qY-4a-Z2W"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="126" id="GVl-S4-oMH"/>
+                        <constraint firstAttribute="width" constant="126" id="NxK-eP-yWf"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iF-MO-f3L">
+                    <rect key="frame" x="8" y="8" width="584" height="112"/>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    <mutableString key="text">The UITextView class implements the behavior for a scrollable, multiline text region. The class supports the display of text using custom style information and also supports text editing. You typically use a text view to display multiple lines of text, such as when displaying the body of a large text document.
+Overview
+This class supports multiple text styles through use of the attributedText property. (Styled text is not supported in versions of iOS earlier than iOS 6.) Setting a value for this property causes the text view to use the style information provided in the attributed string. You can still use the font, textColor, and textAlignment properties to set style attributes, but those properties apply to all of the text in the text view. It’s recommended that you use a text view—and not a UIWebView object—to display both plain and rich text in your app.</mutableString>
+                    <color key="textColor" red="0.12941176469999999" green="0.41568627450000001" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="0.0039215686269999999" green="0.4941176471" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="MTB-xG-dV3" firstAttribute="top" secondItem="eUc-Nv-cc9" secondAttribute="bottom" constant="8" id="9U9-Lb-iQv"/>
+                <constraint firstItem="eUc-Nv-cc9" firstAttribute="top" secondItem="9Jf-cH-J9h" secondAttribute="bottom" constant="8" symbolic="YES" id="AbY-dy-A9n"/>
+                <constraint firstItem="eUc-Nv-cc9" firstAttribute="leading" secondItem="MTB-xG-dV3" secondAttribute="leading" id="ECA-cg-Bvd"/>
+                <constraint firstItem="9Jf-cH-J9h" firstAttribute="top" secondItem="4iF-MO-f3L" secondAttribute="bottom" constant="16" id="Enw-yI-wBv"/>
+                <constraint firstItem="9Jf-cH-J9h" firstAttribute="leading" secondItem="4iF-MO-f3L" secondAttribute="leading" id="Oq9-li-sB0"/>
+                <constraint firstItem="4iF-MO-f3L" firstAttribute="trailing" secondItem="mdj-jt-mD6" secondAttribute="trailingMargin" id="Tnv-LC-fKF"/>
+                <constraint firstItem="eUc-Nv-cc9" firstAttribute="leading" secondItem="9Jf-cH-J9h" secondAttribute="leading" id="XpH-1J-e3I"/>
+                <constraint firstItem="4iF-MO-f3L" firstAttribute="top" secondItem="mdj-jt-mD6" secondAttribute="topMargin" id="bwo-fr-tFo"/>
+                <constraint firstItem="MTB-xG-dV3" firstAttribute="bottom" secondItem="mdj-jt-mD6" secondAttribute="bottomMargin" id="erj-zM-OLJ"/>
+                <constraint firstItem="eUc-Nv-cc9" firstAttribute="trailing" secondItem="9Jf-cH-J9h" secondAttribute="trailing" id="lc1-uB-WCv"/>
+                <constraint firstItem="eUc-Nv-cc9" firstAttribute="leading" secondItem="mdj-jt-mD6" secondAttribute="leadingMargin" id="mg7-aB-n24"/>
+                <constraint firstItem="9Jf-cH-J9h" firstAttribute="trailing" secondItem="4iF-MO-f3L" secondAttribute="trailing" id="vIt-Pw-WcQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dataRecensione" destination="eUc-Nv-cc9" id="xKI-Im-GxH"/>
+                <outlet property="labelAutore" destination="9Jf-cH-J9h" id="SMP-Ia-JLv"/>
+                <outlet property="ratingView" destination="MTB-xG-dV3" id="tFE-27-QKl"/>
+                <outlet property="textViewRecensione" destination="4iF-MO-f3L" id="vlo-gU-UpJ"/>
+            </connections>
+            <point key="canvasLocation" x="250" y="-391.5"/>
+        </view>
+    </objects>
+</document>

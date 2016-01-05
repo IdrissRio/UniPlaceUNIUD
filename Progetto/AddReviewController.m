@@ -1,6 +1,6 @@
 #import "AddReviewController.h"
 #import "NetworkLoadingManager.h" // Fornisce l'oggetto per poter costruire il corpo delle richieste HTTP.
-
+#import "UPViewCommento.h"
 /*
  * CHE COSA MANCA: per completare l'inserimento della recensione è necessario prelevare l'utente che inserisce
  * la recensione e l'ID del luogo, con ovviamente nome e coordinate (non ne sono ancora certo). L'ID serve per
@@ -9,40 +9,107 @@
  */
 
 // Utilizzo di un'anonymous category al fine di poter dichiarare variabili non accessibili da altri oggetti.
-@interface AddReviewController ()
+@interface AddReviewController() <UITextViewDelegate>
 {
     // Gestisce la selezione dell'immagine.
     BOOL ImageSelected;
     // Contiene il valore convertito dal numero di stelle selezionate.
     NSString *voto;
+    float offset;
+  
+    NSMutableDictionary * recensioni;
 }
+
+
 @end
 
+
+
+
+
+
+
+
 @implementation AddReviewController
+
+-(void)UPSetRateView:(StarRatingView*)star editable:(BOOL)editable rating:(float)rating{
+    star.notSelectedImage = [UIImage imageNamed:@"vuota.png"];
+    star.fullSelectedImage = [UIImage imageNamed:@"piena.png"];
+    star.editable=editable;
+    star.maxRating=5;
+    star.rating=rating;
+    star.delegate=self;
+}
+
+-(void)loadUPLuogo{
+    self.immagineSottoBlur.image=[UIImage imageWithData:self.luogo.immagine];
+    self.immagineSopraBlur.image=[UIImage imageWithData:self.luogo.immagine];
+    self.labelNome.text=[NSString stringWithFormat:@"%@",self.luogo.nome];
+    self.labelIndirizzo.text=[NSString stringWithFormat:@"%@",self.luogo.indirizzo];
+    if(self.luogo.telefono!=nil)
+        self.labelTelefono.text=[NSString stringWithFormat:@"%@",self.luogo.telefono];
+    else
+        self.labelTelefono.text=@"Numero telefonico non presente.";
+    [self UPSetRateView:self.rateViewByUser editable:YES rating:0];
+    self.labelMedia.text=[NSString stringWithFormat:@"%.2f ",self.luogo.media];
+    offset=self.rateViewByUser.frame.origin.y;
+  
+    
+}
+
+-(void)VisualizzaRecensioni{
+    for(int i=0;i<recensioni.count;++i){
+        NSDictionary* singolaRecensione = [recensioni objectForKey:[NSString stringWithFormat:@"%d",i]];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPViewCommento" owner:self options:nil];
+        UPViewCommento* viewRecensione=[nib objectAtIndex:0];
+        viewRecensione.textViewRecensione.text=[recensioni objectForKey:@"TESTORECENSIONE"];
+        
+    }
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
+    [self.scrollView setDelegate:self];
+    [self loadUPLuogo];
+    offset=570;
+    
     // Per ora non ho selezionato nessuna immagine.
     ImageSelected = NO;
+    for(int i=0;i<6;++i){
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPViewCommento" owner:self options:nil];
+    UPViewCommento*commento = [nib objectAtIndex:0];
+    CGRect frame = commento.frame;
+    frame.size.width=self.view.frame.size.width;
+    frame.origin.y = offset;
+    offset+=235;
+    commento.frame = frame;
+    [self.viewWithChild addSubview:commento];
+        
     
+    }
+    self.scrollView.contentSize=self.viewWithChild.frame.size;
+
+}
+
+- (void)viewDidLayoutSubviews {
+    [self.scrollView setContentSize:CGSizeMake(320, offset)];
+}
+
+
     /*
      * Inizializzazione della view relativa al voto del luogo: assegno l'immagine relativa alla stella piena (selezionata)
      * o vuota (non selezionata), il voto iniziale, quello massimo, il suo delegate (che è la view stessa in quanto nell'header
      * è già stato indicato l'utilizzo del delegate apposito), e il fatto che sia modificabile nel suo valore.
      */
-    self.rateView.notSelectedImage = [UIImage imageNamed:@"vuota.png"];
-    self.rateView.fullSelectedImage = [UIImage imageNamed:@"piena.png"];
-    self.rateView.rating = 0;
-    self.rateView.editable = YES;
-    self.rateView.maxRating = 5;
-    self.rateView.delegate = self;
-}
+
+
+
 
 - (void)viewDidUnload
 {
-    [self setRateView:nil];
+
     [super viewDidUnload];
 }
 
@@ -96,7 +163,7 @@
     NSString *immaginePresente;
     // Se è stata selezionata un'immagine, la vado a preparare dalla property apposta, altrimenti verrà messa a nil.
     if(ImageSelected == YES){
-        dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
+        //dataImmagine = UIImageJPEGRepresentation(self.immagineRecensione.image, 0.9);
         infoImmagine = @[@"luogo", @"photo"];
         immaginePresente = @"si";
         
@@ -106,8 +173,8 @@
         immaginePresente = @"no";
     }
     // Dictionary contenente i campi di testo da inserire singolarmente nella recensione.
-    NSDictionary *testualiRecensione = [NSDictionary dictionaryWithObjectsAndKeys: dataOdierna, @"dataRecensione",
-                                        self.recensioneTexfField.text, @"recensione", voto, @"voto", immaginePresente, @"immaginePresente", nil];
+    NSDictionary *testualiRecensione =nil;
+    //[NSDictionary dictionaryWithObjectsAndKeys: dataOdierna, @"dataRecensione",self.recensioneTexfField.text, @"recensione", voto, @"voto", immaginePresente, @"immaginePresente", nil];
     NSString *url = @"http://mobdev2015.com/aggiungirecensione.php";
     NetworkLoadingManager *loader = [[NetworkLoadingManager alloc] init];
 
@@ -165,7 +232,7 @@
 }
 
 
-
+/*
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
@@ -174,7 +241,7 @@
     UITouch *touch = [touches anyObject];
     
     //Se ho premuto l'immagine di default per la selezione del proprio avatar..
-    if([touch view] == self.immagineRecensione){
+    //if([touch view] == self.immagineRecensione){
         
         //Creo un oggetto di tipo UIImagepickerController che mi servirà per accedere alla galleria mediante il metodo
         //presentViewController:animated:completion:
@@ -186,9 +253,9 @@
         //Il picker selezionato verrà visualizzato dal view Controller attuale mediante un'animazione.
         [self presentViewController:picker animated:YES completion:NULL];
         
-    }
+    //}
 }
-
+*/
 /*
  @descr Metodo richiamato alla fine della selezione dell'immagine dalla galleria. Al suo interno verrà assegnata l'immagine scelta al campo imageProfileView e verrà chiusa la view di selezione dalla galleria.
  @param picker
@@ -198,7 +265,7 @@
  */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    self.immagineRecensione.image = info[UIImagePickerControllerEditedImage];
+    //self.immagineRecensione.image = info[UIImagePickerControllerEditedImage];
     ImageSelected = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
@@ -238,5 +305,48 @@
         }];
     }
 }
+
+
+#pragma mark Gestione della tastiera
+-(void)touchesEnded: (NSSet *) touches withEvent: (UIEvent *) event {
+    NSArray *subviews = [self.view subviews];
+    for (id objects in subviews) {
+        if ([objects isKindOfClass:[UITextView class]]) {
+            UITextView *textView = objects;
+            if ([objects isFirstResponder]) {
+                [textView resignFirstResponder];
+            }
+        }
+    }
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = -keyboardSize.height;
+        self.view.frame = f;
+    }];
+}
+
+-(void)keyboardWillHide:(NSNotification *)notification
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = 0.0f;
+        self.view.frame = f;
+    }];
+}
+
 
 @end

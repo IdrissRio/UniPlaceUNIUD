@@ -78,7 +78,7 @@
                                     nil];
 
     
-    UPLuogo *luogoDaInserire = [[UPLuogo alloc]initWithIndirizzo:self.indirizzoLuogoTextField.text telefono:self.telefonoLuogoTextField.text nome:self.nomeLuogoTextField.text longitudine:longitudine latitudine:latitudine immagine:immagineLuogo tipologia:selectedPicker];
+   // UPLuogo *luogoDaInserire = [[UPLuogo alloc]initWithIndirizzo:self.indirizzoLuogoTextField.text telefono:self.telefonoLuogoTextField.text nome:self.nomeLuogoTextField.text longitudine:longitudine latitudine:latitudine immagine:immagineLuogo tipologia:selectedPicker];
     
      NSURLRequest *request = [locationUploader createBodyWithURL:@"http://mobdev2015.com/aggiungiluogo.php" Parameters:parametriLuogo DataImage:immagineLuogo ImageInformations:infoImmagine];
     
