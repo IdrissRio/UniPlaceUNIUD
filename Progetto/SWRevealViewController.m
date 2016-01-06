@@ -359,7 +359,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
 @interface SWContextTransitionObject : NSObject<UIViewControllerContextTransitioning>
 @end
 
-
+#pragma GCC diagnostic ignored "-Wwarning-flag"
 @implementation SWContextTransitionObject
 {
     __weak SWRevealViewController *_revealVC;

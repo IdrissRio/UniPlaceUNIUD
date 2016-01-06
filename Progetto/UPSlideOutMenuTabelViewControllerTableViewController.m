@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    menu = @[@"Home",@"LeMieCoordinateAttuali" ,@"UniPlace", @"ChiSiamo",@"Copyright"];
+    menu = @[@"Home",@"LeMieCoordinateAttuali" ,@"UniPlace", @"ChiSiamo",@"Logout",@"Copyright"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -106,6 +106,55 @@
 
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString* stimpleTableIdentifier=@"Logout";
+    UITableViewCell *tmp = [tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell*cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:stimpleTableIdentifier];
+    if(cell.reuseIdentifier==tmp.reuseIdentifier){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sei sicuro?" message:@"L'operazione di logout è irreversibile, i dati conentenuti nel Database locale verranno tutti eleminati!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *procedi = [UIAlertAction actionWithTitle:@"Procedi" style:UIAlertActionStyleDefault handler:
+                                           ^(UIAlertAction * action)
+                                           {
+                                               
+                                               [self dismissViewControllerAnimated:YES completion:nil];
+                                               [self performSelectorOnMainThread:@selector(eliminaDatiDatabase) withObject:nil waitUntilDone:YES];
+                                           }];
+        
+
+        UIAlertAction *annulla = [UIAlertAction actionWithTitle:@"Annulla" style:UIAlertActionStyleDefault handler:
+                                  ^(UIAlertAction * action)
+                                  {
+                                      [self dismissViewControllerAnimated:YES completion:nil];
+                                      
+                                      
+                                  }];
+        [alert addAction:procedi];
+        [alert addAction:annulla];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
+}
+
+
+
+-(void)eliminaDatiDatabase{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Utente"];
+    [fetchRequest setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *object in fetchedObjects)
+    {
+        [context deleteObject:object];
+    }
+    
+    error = nil;
+    [context save:&error];
+    [self performSegueWithIdentifier:@"logoutDatabase" sender:self];
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row==0){

@@ -97,6 +97,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
     [self.refreshControl addTarget:self
                             action:@selector(reloadDownloadDati)
                   forControlEvents:UIControlEventValueChanged];
+    [Header.mappaLuogo setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -509,6 +510,13 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 else
                     cell.labelTelefono.text=@"Nessun numero di Telefono Registrato";
                 cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+                cell.immagineLuogo.layer.cornerRadius=cell.immagineLuogo.frame.size.width/2;
+                cell.immagineLuogo.layer.borderColor=[UIColor whiteColor].CGColor;
+                cell.immagineLuogo.layer.borderWidth=2.0f;
+                cell.immagineLuogo.clipsToBounds=YES;
+                cell.immagineLuogo.hidden=NO;
+                [cell.indicatorActivity stopAnimating];
+                [cell.indicatorActivity setHidden:YES];
             }
         }
     }
@@ -627,6 +635,12 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 cell.labelTelefono.text=@"Nessun numero di Telefono Registrato";
             //Se l'utente non ha inserito alcuna immagine profilo per UPLuogo, dovremmo  metterci un placeholder con il logo di uniplace
             cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+            cell.immagineLuogo.layer.cornerRadius=cell.immagineLuogo.frame.size.width/2;
+            cell.immagineLuogo.layer.borderColor=[UIColor whiteColor].CGColor;
+            cell.immagineLuogo.layer.borderWidth=2.0f;
+            cell.immagineLuogo.clipsToBounds=YES;
+            [cell.indicatorActivity stopAnimating];
+            [cell.indicatorActivity setHidden:YES];
             
             
         }
@@ -735,7 +749,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.pageIndex==0){
-        return 140;
+        return 122;
     }
     return 240;
 }

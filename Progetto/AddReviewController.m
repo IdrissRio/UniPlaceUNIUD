@@ -343,40 +343,6 @@
 
 #pragma mark Gestione chiamata HTTP
 
-/*
-
-/* Gestione del tocco singola, mirata ad azionarsi solo nel caso l'utente abbia selezionato
- * l'immagine adibita a caricare una foto inerente alla recensione che sta scrivendo
- 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-    [super touchesBegan:touches withEvent:event];
-    //Inizializzo un oggetto di tipo touch contenente uno dei tocchi effettuati dall'utente preso dal metodo anyObject.
-    UITouch *touch = [touches anyObject];
-    
-    //Se ho premuto l'immagine di default per la selezione del proprio avatar..
-    //if([touch view] == self.immagineRecensione){
-        
-        //Creo un oggetto di tipo UIImagepickerController che mi servirà per accedere alla galleria mediante il metodo
-        //presentViewController:animated:completion:
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
-        picker.allowsEditing = YES; //L'utente potrà modificare l'immagine dalla galleria.
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //Indico come risorsa la Photo Library di iOS.
-        
-        //Il picker selezionato verrà visualizzato dal view Controller attuale mediante un'animazione.
-        [self presentViewController:picker animated:YES completion:NULL];
-        
-    //}
-}
-*/
-/*
- @descr Metodo richiamato alla fine della selezione dell'immagine dalla galleria. Al suo interno verrà assegnata l'immagine scelta al campo imageProfileView e verrà chiusa la view di selezione dalla galleria.
- @param picker
- oggetto di tipo UIImagePickerController incaricato per scegliere l'immagine.
- @param info
- oggetto di tipo NSDictionary contenente l'immagine originale e nel nostro caso anche l'immagine modificata.
- */
 
 
 #pragma mark download delle recensioni del luogo selezionato
