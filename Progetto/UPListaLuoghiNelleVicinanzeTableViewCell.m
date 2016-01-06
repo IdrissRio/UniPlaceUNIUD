@@ -7,11 +7,11 @@
 //
 
 #import "UPListaLuoghiNelleVicinanzeTableViewCell.h"
-
+#import <QuartzCore/QuartzCore.h> // Per impostare i border nelle textField
 @implementation UPListaLuoghiNelleVicinanzeTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    NSLog(@"UPListaLuoghiNelleVicinanzeTableViewCell - awakeFromNib: image Rounded" );
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

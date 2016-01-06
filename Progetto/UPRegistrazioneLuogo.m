@@ -71,6 +71,8 @@
                                     nil];
 
     
+   // UPLuogo *luogoDaInserire = [[UPLuogo alloc]initWithIndirizzo:self.indirizzoLuogoTextField.text telefono:self.telefonoLuogoTextField.text nome:self.nomeLuogoTextField.text longitudine:longitudine latitudine:latitudine immagine:immagineLuogo tipologia:selectedPicker];
+    
      NSURLRequest *request = [locationUploader createBodyWithURL:@"http://mobdev2015.com/aggiungiluogo.php" Parameters:parametriLuogo DataImage:immagineLuogo ImageInformations:infoImmagine];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -136,9 +138,7 @@
     self.galleriaButton.layer.borderWidth=2.0f;
 #ifdef __IPHONE_8_0
     if(IS_OS_8_OR_LATER) {
-        // Use one or the other, not both. Depending on what you put in info.plist
         [self.locationManager requestWhenInUseAuthorization];
-        
     }
 #endif
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -254,7 +254,7 @@
 
 
 - (IBAction)immagineDaFotocamera:(UIButton *)sender {
-
+    immagineSelezionata=YES;
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;

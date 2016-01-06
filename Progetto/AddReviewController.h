@@ -17,15 +17,31 @@
 
 #import <UIKit/UIKit.h>
 #import "StarRatingView.h"
+#import "UPLuogo.h"
 #import "UIViewController+TextFieldDelegate.h" // Necessaria per sfruttare gli URDA grazie ai metodi lì inseriti.
 
-@interface AddReviewController : UIViewController <StarRatingViewDelegate, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface AddReviewController : UIViewController <StarRatingViewDelegate, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *immagineRecensione;
 
-@property (weak, nonatomic) IBOutlet StarRatingView *rateView;
 
-@property (weak, nonatomic) IBOutlet UITextField *recensioneTexfField;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelCaricamento;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property(weak, nonatomic) UIView *activeTextView;
+@property (strong, nonatomic) IBOutlet UIView *viewWithChild;
+@property (strong, nonatomic) IBOutlet StarRatingView *rateViewByUser;
+
+@property (strong, nonatomic) IBOutlet UIImageView *immagineSottoBlur;
+@property (strong, nonatomic) IBOutlet UIImageView *immagineSopraBlur;
+@property (strong, nonatomic) IBOutlet UILabel *labelNome;
+@property (strong, nonatomic) IBOutlet UILabel *labelIndirizzo;
+@property (strong, nonatomic) IBOutlet UILabel *labelTelefono;
+@property (strong, nonatomic) IBOutlet UITextView *textViewRecensione;
+@property (strong, nonatomic) IBOutlet UILabel *labelMedia;
+
+
+@property (strong,nonatomic) UPLuogo * luogo;
 
 - (void) setReviewResult:(int)Esito;
 

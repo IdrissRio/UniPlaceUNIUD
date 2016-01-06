@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelIndirizzo;
 @property (strong, nonatomic) IBOutlet UILabel *labelTelefono;
 @property (strong, nonatomic) IBOutlet UIImageView *immagineLuogo;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicatorActivity;
 
 @end

@@ -15,6 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AppDelegate.h"
 #import "NetworkLoadingManager.h"
+#import "AddReviewController.h"
 #import "UPLuogo.h"
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
@@ -52,6 +53,7 @@
 # pragma mark Gestione MKAnnotationView e PrePrepareForSegue
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation{
+    
     NSString *AnnotationIdentifier = [NSString stringWithFormat:@"%@",[annotation title]];
     MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
     if(!view){
@@ -60,27 +62,31 @@
     }
     view.annotation = annotation;
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 36, 36)];
-    
     //Serve foto Luogo se esiste, altrimenti ci mettiamo l'icona di UP.
     [self mapView:mapView didSelectAnnotationView:view];
     NSMutableDictionary * dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
-    
     imageView.image = [UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
     view.leftCalloutAccessoryView = imageView;
     view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoDark];
-    ;
-    return view;}
+    return view;
+}
 
 
 //Preparo il luogo da mandare nell'altra view.
 - (void)mapView:(MKMapView *)mapView
  annotationView:(MKAnnotationView *)view
 calloutAccessoryControlTapped:(UIControl *)control{
-    NSDictionary* dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
-    //Preparo l'oggetto da mandare nella pagina recensioni
-    if(dict!=nil){
-        preparedForSegue=[[UPLuogo alloc]initWithIndirizzo:[dict objectForKey:@"Indirizzo"] telefono:[dict objectForKey:@"Telefono"] nome:[dict objectForKey:@"Nome"] longitudine:[dict objectForKey:@"Longitudine"] latitudine:[dict objectForKey:@"Latitudine"] immagine:UIImagePNGRepresentation([view image]) tipologia:[dict objectForKey:@"Categoria"]];
+    if(self.pageIndex>0){
+        [self mapView:mapView didSelectAnnotationView:view];
+        
     }
+        NSDictionary* dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
+        //Preparo l'oggetto da mandare nella pagina recensioni
+        if(dict!=nil){
+            preparedForSegue=[[UPLuogo alloc]initWithIndirizzo:[dict objectForKey:@"Indirizzo"] telefono:[dict objectForKey:@"Telefono"] nome:[dict objectForKey:@"Nome"] longitudine:[dict objectForKey:@"Longitudine"] latitudine:[dict objectForKey:@"Latitudine"] immagine:[dict objectForKey:@"FotoProfilo"] tipologia:[dict objectForKey:@"Categoria"] media:[[dict objectForKey:@"Media"]floatValue] andID:[[dict objectForKey:@"ID"] integerValue]];
+            [self performSegueWithIdentifier:@"luogoInfoSegue" sender:self];
+        }
+
 }
 
 
@@ -88,6 +94,10 @@ calloutAccessoryControlTapped:(UIControl *)control{
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.refreshControl addTarget:self
+                            action:@selector(reloadDownloadDati)
+                  forControlEvents:UIControlEventValueChanged];
+    [Header.mappaLuogo setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,11 +105,17 @@ calloutAccessoryControlTapped:(UIControl *)control{
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
-- (void)viewWillAppear:(BOOL)animated{
+-(void)reloadDownloadDati{
+    [self downloadDati];
+    [self.tableView reloadData];
     
+    [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:1];
+}
+
+-(void)downloadDati{
+    luoghiVicini=nil;
+    luoghiRecenti=nil;
+    luoghiRecensiti=nil;
     
     /* La seguente serie di if scaricherà, in base all'indice della pagina che l'utente sta visualizzando, diverse
      * tipologie di luoghi:
@@ -110,6 +126,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
      * - pageIndex = 3: verranno prelevati i luoghi più recensiti, in ordine decrescente.
      */
     if(self.pageIndex == 0){
+        
         NSString *latitudine = [[NSString alloc] initWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
         NSString *longitudine = [[NSString alloc]initWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
         
@@ -176,12 +193,24 @@ calloutAccessoryControlTapped:(UIControl *)control{
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             if(data){
                 NSError *parseError;
-                luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                luoghiRecenti = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
                 if (luoghiRecenti) {
                     NSString *esito = [NSString stringWithString: [luoghiRecenti valueForKey:@"success"]];
                     
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiRecenti);
+                        for(int i=0;i<luoghiRecenti.count;i++){
+                            NSString* percorsoImmagineLocale =[[luoghiRecenti objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                            if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
+                                NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                                
+                                NSString *urlImmagine=[tmpUrlImmagine stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                                NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+                                if(tmp!=nil){
+                                    [[luoghiRecenti objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoProfilo"];
+                                }
+                            }
+                        }
                         [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
                     }
                 } else NSLog(@"parseError = %@ \n", parseError);
@@ -203,12 +232,24 @@ calloutAccessoryControlTapped:(UIControl *)control{
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             if(data){
                 NSError *parseError;
-                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
                 if (luoghiRecensiti) {
                     NSString *esito = [NSString stringWithString: [luoghiRecensiti valueForKey:@"success"]];
                     
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiRecensiti);
+                        for(int i=0;i<luoghiRecensiti.count;i++){
+                            NSString* percorsoImmagineLocale =[[luoghiRecensiti objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                            if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
+                                NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                                
+                                NSString *urlImmagine=[tmpUrlImmagine stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                                NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+                                if(tmp!=nil){
+                                    [[luoghiRecensiti objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoProfilo"];
+                                }
+                            }
+                        }
                         [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
                         
                     }
@@ -232,12 +273,24 @@ calloutAccessoryControlTapped:(UIControl *)control{
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             if(data){
                 NSError *parseError;
-                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
                 if (luoghiRecensiti) {
                     NSString *esito = [NSString stringWithString: [luoghiRecensiti valueForKey:@"success"]];
                     
                     if([esito isEqualToString:@"1"]){
                         NSLog(@"%@", luoghiRecensiti);
+                        for(int i=0;i<luoghiRecensiti.count;i++){
+                            NSString* percorsoImmagineLocale =[[luoghiRecensiti objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                            if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
+                                NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
+                                
+                                NSString *urlImmagine=[tmpUrlImmagine stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+                                NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
+                                if(tmp!=nil){
+                                    [[luoghiRecensiti  objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoProfilo"];
+                                }
+                            }
+                        }
                         [self performSelectorOnMainThread:@selector(inserisciNotation) withObject:nil waitUntilDone:YES];
                         
                     }
@@ -253,7 +306,11 @@ calloutAccessoryControlTapped:(UIControl *)control{
     
     
     
+
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [self downloadDati];
+   }
 
 
 
@@ -296,8 +353,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
             if(indirizzo!=nil)
                 point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
             [annotationPoint addObject:point];
-            
             [cell.mappaLuogo addAnnotation:point];
+            cell.mappaLuogo.delegate=self;
             [cell.mappaLuogo selectAnnotation:point animated:YES];
             cell.indirizzoLuogo.text=[NSString stringWithFormat:@"%@ - %@",[dict objectForKey:@"Nome"],[dict objectForKey:@"Indirizzo"]];
         }
@@ -330,8 +387,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
             if(indirizzo!=nil)
                 point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
             [annotationPoint addObject:point];
-            
             [cell.mappaLuogo addAnnotation:point];
+            cell.mappaLuogo.delegate=self;
             [cell.mappaLuogo selectAnnotation:point animated:YES];
             cell.indirizzoLuogo.text=[NSString stringWithFormat:@"%@ - %@",[dict objectForKey:@"Nome"],[dict objectForKey:@"Indirizzo"]];
         }
@@ -360,14 +417,13 @@ calloutAccessoryControlTapped:(UIControl *)control{
             [cell.mappaLuogo setRegion:mapRegion animated:YES];
             //Inserisco un MKpointAnnotation nella mappa nel punto desiderato;
             MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
-            
             point.coordinate =newCenter;
             point.title=[dict objectForKey:@"Nome"];
             NSString* indirizzo=[dict objectForKey:@"Indirizzo"];
             if(indirizzo!=nil)
                 point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
             [annotationPoint addObject:point];
-            
+            cell.mappaLuogo.delegate=self;
             [cell.mappaLuogo addAnnotation:point];
             [cell.mappaLuogo selectAnnotation:point animated:YES];
             cell.indirizzoLuogo.text=[NSString stringWithFormat:@"%@ - %@",[dict objectForKey:@"Nome"],[dict objectForKey:@"Indirizzo"]];
@@ -375,7 +431,6 @@ calloutAccessoryControlTapped:(UIControl *)control{
     }
     
 }
-
 
 
 
@@ -392,13 +447,27 @@ calloutAccessoryControlTapped:(UIControl *)control{
 
 //Funzione che ritorna il Dictionary relativo al MKPointAnnotation selezionato
 -(NSMutableDictionary *)cercaCorrispondenzaConTitolo:(NSString *)titolo{
-    for(int i=0;i<luoghiVicini.count;++i){
-        NSMutableDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
+    NSMutableDictionary* tmp;
+    if(self.pageIndex==0){
+        tmp=luoghiVicini;
+    }else if(self.pageIndex==1){
+        tmp=luoghiRecenti;
+    }else if(self.pageIndex==2){
+        tmp=luoghiRecensiti;
+    }else if(self.pageIndex==3){
+        tmp=luoghiRecensiti;
+    }
+
+    for(int i=0;i<tmp.count;++i){
+        NSMutableDictionary* dict = [tmp objectForKey:[NSString stringWithFormat:@"%d",i]];
         NSString*placeTitle=[dict objectForKey:@"Nome"];
         if([placeTitle isEqualToString:titolo]){
             return dict;
-        }
+        
     }
+    }
+    
+    
     return nil;
 }
 
@@ -406,6 +475,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     if(self.pageIndex==0){
         annotationPoint=[[NSMutableArray alloc]init];
+        Header.mappaLuogo.delegate=self;
         for(int i=0;i<luoghiVicini.count;++i){
             NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
             NSLog(@"Aggiungo MKNotation");
@@ -440,6 +510,13 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 else
                     cell.labelTelefono.text=@"Nessun numero di Telefono Registrato";
                 cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+                cell.immagineLuogo.layer.cornerRadius=cell.immagineLuogo.frame.size.width/2;
+                cell.immagineLuogo.layer.borderColor=[UIColor whiteColor].CGColor;
+                cell.immagineLuogo.layer.borderWidth=2.0f;
+                cell.immagineLuogo.clipsToBounds=YES;
+                cell.immagineLuogo.hidden=NO;
+                [cell.indicatorActivity stopAnimating];
+                [cell.indicatorActivity setHidden:YES];
             }
         }
     }
@@ -464,10 +541,10 @@ calloutAccessoryControlTapped:(UIControl *)control{
 //Determino quali sono le cell selezionabili. In questo caso Tutte.
 - (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
 {
-    if(self.pageIndex==1){
-        return nil;
+    if(self.pageIndex==0){
+        return path;
     }
-    return path;
+    return nil;
 }
 
 //Customizzo la mappa nell'Header.
@@ -513,7 +590,6 @@ calloutAccessoryControlTapped:(UIControl *)control{
         UPCustomSectionCell* cell=(UPCustomSectionCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPCustomSection" owner:self options:nil];
         cell= [nib objectAtIndex:0];
-        
         cell.labelTitolo.text=@"Più Recensiti";
         return cell;
     }
@@ -537,12 +613,14 @@ calloutAccessoryControlTapped:(UIControl *)control{
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     //se pageIndex è zero allora creo delle tableViewCell customizzate per la prima pagina del pageViewController.
     if(self.pageIndex==0){
+        
         UPListaLuoghiNelleVicinanzeTableViewCell*cell = (UPListaLuoghiNelleVicinanzeTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         //Carico gli elementi dal Nib
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPListaLuoghiNelleVicinanze" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         NSMutableDictionary* dict =[[NSMutableDictionary alloc]initWithDictionary:[luoghiVicini objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]]];
         //Debug
+
         NSLog(@"Modifico le TableViewCell UPlistaLuoghiNelleVicinanze");
         NSString *longitudine=[dict objectForKey:@"Longitudine"];
         NSString *latitudine=[dict objectForKey:@"Latitudine"];
@@ -557,6 +635,13 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 cell.labelTelefono.text=@"Nessun numero di Telefono Registrato";
             //Se l'utente non ha inserito alcuna immagine profilo per UPLuogo, dovremmo  metterci un placeholder con il logo di uniplace
             cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+            cell.immagineLuogo.layer.cornerRadius=cell.immagineLuogo.frame.size.width/2;
+            cell.immagineLuogo.layer.borderColor=[UIColor whiteColor].CGColor;
+            cell.immagineLuogo.layer.borderWidth=2.0f;
+            cell.immagineLuogo.clipsToBounds=YES;
+            cell.immagineLuogo.hidden=NO;
+            [cell.indicatorActivity stopAnimating];
+            [cell.indicatorActivity setHidden:YES];
             
             
         }
@@ -580,7 +665,6 @@ calloutAccessoryControlTapped:(UIControl *)control{
             [cell.mappaLuogo setRegion:mapRegion animated:YES];
             //Inserisco un MKpointAnnotation nella mappa nel punto desiderato;
             MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
-            
             point.coordinate =newCenter;
             point.title=[dict objectForKey:@"Nome"];
             NSString* indirizzo=[dict objectForKey:@"Indirizzo"];
@@ -588,7 +672,9 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
             [annotationPoint addObject:point];
             [cell.mappaLuogo addAnnotation:point];
+            cell.mappaLuogo.delegate=self;
             [cell.mappaLuogo selectAnnotation:point animated:YES];
+            
             cell.indirizzoLuogo.text=[NSString stringWithFormat:@"%@ - %@",[dict objectForKey:@"Nome"],[dict objectForKey:@"Indirizzo"]];
         }
         return cell;
@@ -618,13 +704,13 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
             [annotationPoint addObject:point];
             [cell.mappaLuogo addAnnotation:point];
+            cell.mappaLuogo.delegate=self;
             [cell.mappaLuogo selectAnnotation:point animated:YES];
             cell.indirizzoLuogo.text=[NSString stringWithFormat:@"%@ - %@",[dict objectForKey:@"Nome"],[dict objectForKey:@"Indirizzo"]];
         }
         return cell;
         
     }else if (self.pageIndex==3){
-        int row= [indexPath row];
         UPAltreCategorieCell *cell = (UPAltreCategorieCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPAltreCategorieCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
@@ -649,6 +735,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
                 point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
             [annotationPoint addObject:point];
             [cell.mappaLuogo addAnnotation:point];
+            cell.mappaLuogo.delegate=self;
             [cell.mappaLuogo selectAnnotation:point animated:YES];
             cell.indirizzoLuogo.text=[NSString stringWithFormat:@"%@ - %@",[dict objectForKey:@"Nome"],[dict objectForKey:@"Indirizzo"]];
         }
@@ -663,7 +750,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.pageIndex==0){
-        return 140;
+        return 122;
     }
     return 240;
 }
@@ -724,15 +811,40 @@ calloutAccessoryControlTapped:(UIControl *)control{
  }
  */
 
-/*
+
+
+- (void)reloadData
+{
+    // Reload table data
+    [self.tableView reloadData];
+    
+    // End the refreshing
+    if (self.refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        self.refreshControl.attributedTitle = attributedTitle;
+        
+        [self.refreshControl endRefreshing];
+    }
+}
+
+
  #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
+
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+     if([segue.identifier isEqualToString:@"luogoInfoSegue"]){
+         if([segue.destinationViewController isKindOfClass:[AddReviewController class]]){
+             AddReviewController* svc=(AddReviewController *)segue.destinationViewController;
+             svc.luogo=preparedForSegue;
+         }
+     }
  }
- */
+
 
 
 - (void) setReviewResult:(int)Esito{
