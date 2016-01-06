@@ -154,7 +154,7 @@
     
     // Costruisco il dizionario contenente i vari campi di testo inseriti dall'utente. L'utilizzo dell'NSDictionary è per un fattore di comodità nella gestione dei vari campi mediante chiavi, addicendosi di più al contesto JSON.
     
-    NSDictionary *userInfo= [[NSDictionary alloc]initWithObjectsAndKeys:
+    NSDictionary *userInfo= [NSDictionary dictionaryWithObjectsAndKeys:
                                     self.universitario.nome,@"nome",
                                     self.universitario.cognome, @"cognome",
                                     self.nicknameTextField.text, @"nomeUtente",

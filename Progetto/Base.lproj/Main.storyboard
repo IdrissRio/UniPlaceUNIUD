@@ -42,7 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqD-9a-rM9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqD-9a-rM9">
                                 <rect key="frame" x="20" y="237" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="z2m-Sd-N2s"/>
@@ -51,7 +51,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cognome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-6G-QNY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cognome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-6G-QNY">
                                 <rect key="frame" x="20" y="333" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Umw-wl-CTe"/>
@@ -60,7 +60,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddy.png" translatesAutoresizingMaskIntoConstraints="NO" id="sY7-EX-ih4">
+                            <imageView contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="buddy.png" translatesAutoresizingMaskIntoConstraints="NO" id="sY7-EX-ih4">
                                 <rect key="frame" x="222" y="72" width="157" height="157"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="157" id="eq5-iX-au0"/>
@@ -68,7 +68,7 @@
                                     <constraint firstAttribute="width" constant="157" id="yit-0z-ibu"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cognome.." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tka-We-ivx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cognome.." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tka-We-ivx">
                                 <rect key="frame" x="20" y="362" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0039215686269999999" green="0.4941176471" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,7 +89,7 @@
                                     <action selector="insertCognomeDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1Yq-sB-yBb"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome.." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uiS-Bt-ra7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome.." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uiS-Bt-ra7">
                                 <rect key="frame" x="20" y="266" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0039215686269999999" green="0.4941176471" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,7 +110,7 @@
                                     <action selector="insertNomeDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="J5f-24-REv"/>
                                 </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Non è possibile lasciare vuoto questo campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4q-yq-Eug">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Non è possibile lasciare vuoto questo campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4q-yq-Eug">
                                 <rect key="frame" x="20" y="400" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="GmI-F2-gAZ"/>
@@ -119,7 +119,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Non è possibile lasciare vuoto questo campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEC-yb-d92">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Non è possibile lasciare vuoto questo campo." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEC-yb-d92">
                                 <rect key="frame" x="20" y="304" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="q0O-3F-YIA"/>
@@ -128,19 +128,19 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fi-fM-VQE">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fi-fM-VQE">
                                 <rect key="frame" x="0.0" y="429" width="600" height="171"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2SD-vu-5sg">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="171"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddyUniversita.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qjn-J6-hmz">
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="buddyUniversita.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qjn-J6-hmz">
                                             <rect key="frame" x="197" y="8" width="207" height="126"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="207" id="9TP-k5-ZhH"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleziona un'Università" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHz-RX-npR">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Seleziona un'Università" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHz-RX-npR">
                                             <rect key="frame" x="20" y="142" width="560" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="CtU-d8-MTb"/>
@@ -3174,7 +3174,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indirizzo email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzs-Ev-tmA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Indirizzo email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzs-Ev-tmA">
                                 <rect key="frame" x="20" y="168" width="560" height="21"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -3227,7 +3227,7 @@
                                 <color key="textColor" red="0.99789663461538458" green="0.99789663461538458" blue="0.99789663461538458" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Utente ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b3R-3F-fGO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Utente ... " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b3R-3F-fGO">
                                 <rect key="frame" x="20" y="101" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.53333333329999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3244,7 +3244,7 @@
                                     <action selector="insertNicknameDidEnd:" destination="oTr-kp-4gu" eventType="editingDidEnd" id="HTK-q1-Wae"/>
                                 </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questo campo non può essere lasciato vuoto." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYK-Er-w7I">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Questo campo non può essere lasciato vuoto." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYK-Er-w7I">
                                 <rect key="frame" x="20" y="139" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uR9-RI-1f8"/>
@@ -3271,7 +3271,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome utente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4y-f0-Ey2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome utente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4y-f0-Ey2">
                                 <rect key="frame" x="20" y="72" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
