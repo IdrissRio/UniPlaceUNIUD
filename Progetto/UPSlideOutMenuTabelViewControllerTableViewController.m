@@ -133,7 +133,7 @@
                                   }];
         [alert addAction:procedi];
         [alert addAction:annulla];
-        [self presentViewController:alert animated:YES completion:nil];
+        
         
     }
 }
