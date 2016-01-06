@@ -133,7 +133,7 @@
                                   }];
         [alert addAction:procedi];
         [alert addAction:annulla];
-        
+        [self presentViewController:alert animated:YES completion:nil];
         
     }
 }
@@ -155,6 +155,7 @@
     [context save:&error];
     [self performSegueWithIdentifier:@"logoutDatabase" sender:self];
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row==0){

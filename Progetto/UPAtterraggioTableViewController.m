@@ -639,6 +639,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
             cell.immagineLuogo.layer.borderColor=[UIColor whiteColor].CGColor;
             cell.immagineLuogo.layer.borderWidth=2.0f;
             cell.immagineLuogo.clipsToBounds=YES;
+            cell.immagineLuogo.hidden=NO;
             [cell.indicatorActivity stopAnimating];
             [cell.indicatorActivity setHidden:YES];
             

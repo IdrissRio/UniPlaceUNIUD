@@ -56,7 +56,7 @@
         self.labelTelefono.text=@"Numero telefonico non presente.";
     [self UPSetRateView:self.rateViewByUser editable:YES rating:0];
     self.labelMedia.text=[NSString stringWithFormat:@"%.2f ",self.luogo.media];
-    offset=self.rateViewByUser.frame.origin.y;
+
     
     //Gestione dei UIBarButtonItem
     UIImage *immagineCamera = [UIImage imageNamed:@"cameraIcon.png"];
@@ -295,7 +295,7 @@
             CGRect frame= viewRecensione.frame;
             frame.size.width=self.view.frame.size.width;
             frame.origin.y = offset;
-   
+            offset+=230;
             viewRecensione.frame=frame;
             [self.viewWithChild addSubview:viewRecensione];
         }
@@ -313,8 +313,7 @@
     [self.scrollView setDelegate:self];
     [self loadUPLuogo];
     offset=590;
-    
-    //self.scrollView.contentSize=self.viewWithChild.frame.size;
+  
 
 }
 
