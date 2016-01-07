@@ -221,7 +221,7 @@
     [alert addAction:fotocameraAction];
     [alert addAction:galleriaAction];
     [alert addAction:annulla];
-    
+    [self presentViewController:alert animated:YES completion:nil];
 
 }
 

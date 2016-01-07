@@ -76,10 +76,10 @@
 - (void)mapView:(MKMapView *)mapView
  annotationView:(MKAnnotationView *)view
 calloutAccessoryControlTapped:(UIControl *)control{
-    if(self.pageIndex>0){
+
         [self mapView:mapView didSelectAnnotationView:view];
         
-    }
+    
         NSDictionary* dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
         //Preparo l'oggetto da mandare nella pagina recensioni
         if(dict!=nil){
@@ -97,18 +97,15 @@ calloutAccessoryControlTapped:(UIControl *)control{
     [self.refreshControl addTarget:self
                             action:@selector(reloadDownloadDati)
                   forControlEvents:UIControlEventValueChanged];
-    [Header.mappaLuogo setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)reloadDownloadDati{
     [self downloadDati];
     [self.tableView reloadData];
-    
     [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:1];
 }
 
@@ -441,8 +438,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Controllo per non lanciare l'eccezione outOfBounds
-    if([indexPath row]<=annotationPoint.count-1)
-        [Header.mappaLuogo selectAnnotation:annotationPoint[[indexPath row]] animated:YES];
+    if([indexPath row]<=annotationPoint.count-1){
+        [Header.mappaLuogo selectAnnotation:annotationPoint[[indexPath row]] animated:YES];}
 }
 
 //Funzione che ritorna il Dictionary relativo al MKPointAnnotation selezionato
