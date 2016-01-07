@@ -87,9 +87,9 @@
                 NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
                 
                 if([esito isEqualToString:@"1"])
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self setReviewResult:1];
-                    });
+                    [self dismissViewControllerAnimated:NO completion:^(void){
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }];
                 
                 else
                     dispatch_async(dispatch_get_main_queue(), ^{

@@ -938,6 +938,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
 - (void) setReviewResult:(int)Esito{
     if(Esito == 1){
         [self dismissViewControllerAnimated:NO completion:nil];
+        
     }
     else{
         [self dismissViewControllerAnimated:NO completion:^{
@@ -950,6 +951,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
         }];
     }
 }
+
+
 
 @end
 

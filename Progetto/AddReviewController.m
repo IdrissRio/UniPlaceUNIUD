@@ -174,7 +174,7 @@
     // con il servcer.
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    
+     __block NSString  *esito ;
     // Invio la richiesta vera e propria, visualizzando il risulta in console.
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
@@ -183,39 +183,39 @@
             NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
             // Se ho ricevuto qualcosa in risposta dal server e sono riuscito a convertirlo da JSON ad array
             if (datiUtente) {
-                NSString *esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
+                esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
                 
                 // Se l'esito della stringa adibita è pari a 1, invoco il metodo delegato nel main thread
                 // che in base al parametro, indicato da un numero che può essere 0 oppure 1, visualizzerà o
                 // meno un messaggio di errore.
                 if([esito isEqualToString:@"1"]){
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self setReviewResult:1];
-                    });
+                    [self dismissViewControllerAnimated:NO completion:^(void){
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }];
+                    
+                }else{
+                    [self setReviewResult:0];
                 }
-                else
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self setReviewResult:0];
-                    });
                 
                 // Se la conversione è fallita, verrà stampato a console il messaggio di errore con quanto scaricato
                 // dal server, indicando comunque che c'è stato un errore nella comunicazione.
-            } else
+            } else{
                 NSLog(@"parseError = %@ \n", parseError);
-            
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self setReviewResult:0];
+                });
+            }
             NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self setReviewResult:0];
-            });
-            
         } else
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self setReviewResult:0];
             });
-        
+        if([esito isEqualToString:@"1"]){
+            [self setReviewResult:1];
+        }
         
     }] resume];
-
+    
     
 }
 
@@ -284,6 +284,7 @@
     
     
 }
+
 
 
 - (void)immagineDaFotocamera{
@@ -446,31 +447,24 @@
 
 #pragma mark Implementazione metodi della classe
 
+
 /* Gestore dell'esito della recensione dal punto di vista degli alertView. In base all'esito fornito, 
     che può essere 0 o 1, verrà chiusa l'alertView attuale e presentato un messaggio di avvenuta conferma
     dell'inserimento della recensione o di errore.
  */
 - (void) setReviewResult:(int)Esito{
     if(Esito == 1){
-        [self dismissViewControllerAnimated:NO completion:^{
-            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Recensione Inserita Correttamente"
-                                                                         preferredStyle:UIAlertControllerStyleAlert ];
-            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:
-                                       ^(UIAlertAction * action)
-                                       {
-                                           
-                                           [self dismissViewControllerAnimated:YES completion:nil];
-                                           
-                                       }];
-            [errorAlert addAction:OkAction];
-            [self presentViewController:errorAlert animated:YES completion:nil];
-        }];
+        
+        
+        
+        //[self performSegueWithIdentifier:@"successfulRecensioneSegue" sender:self];
+        
     }
     else{
         [self dismissViewControllerAnimated:NO completion:^{
-            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"La recensione non è stata inserita!"
+            UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Non puoi inserire più di una recensione per luogo!"
                                                                          preferredStyle:UIAlertControllerStyleAlert ];
-            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction *OkAction = [UIAlertAction actionWithTitle:@"Continua" style:UIAlertActionStyleDefault handler:nil];
             [errorAlert addAction:OkAction];
             [self presentViewController:errorAlert animated:YES completion:nil];
             
