@@ -1,6 +1,6 @@
 #import "AddReviewController.h"
 #import "NetworkLoadingManager.h" // Fornisce l'oggetto per poter costruire il corpo delle richieste HTTP.
-
+#import "AppDelegate.h"
 #import "UPViewCommento.h"
 /*
  * CHE COSA MANCA: per completare l'inserimento della recensione è necessario prelevare l'utente che inserisce
@@ -75,6 +75,10 @@
     [barButtonInvia setTag:0];
     [barButtonInvia setEnabled:NO];
     self.navigationItem.rightBarButtonItems= @[barButtonInvia,barButtonCamera];
+    
+    
+
+
 }
 
 
@@ -131,7 +135,24 @@
     NSString *idLuogo = [NSString stringWithFormat:@"%d", (int) self.luogo.identificativo];
     
     // Nickname dell'utente da cambiare!
-    NSString *utente = @"Utente prova";
+    //Caricamento nome da database.
+    NSManagedObjectContext* context;
+    NSFetchRequest * requestDB=[[NSFetchRequest alloc]init];
+    AppDelegate *objApp=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    context=[objApp managedObjectContext];
+    NSEntityDescription *entitydesc=[NSEntityDescription entityForName:@"Utente" inManagedObjectContext:context];
+    requestDB = [[NSFetchRequest alloc]init];
+    [requestDB setEntity:entitydesc];
+    NSPredicate * predicate =[ NSPredicate predicateWithFormat:@"nome like %@",@"*"];
+    [requestDB setPredicate:predicate];
+    NSError * error;
+    NSArray *results = [context executeFetchRequest:requestDB error:&error];
+    
+    NSString* utente;
+    
+    for(NSManagedObject* obj in results){
+        utente=[obj valueForKey:@"nomeutente"];
+    }
     // Dictionary contenente i campi di testo da inserire singolarmente nella recensione.
     NSDictionary *parametriTestualiRecensione = [NSDictionary dictionaryWithObjectsAndKeys: testoRecensione, @"recensione",
                                                  immaginePresente, @"immaginePresente",
