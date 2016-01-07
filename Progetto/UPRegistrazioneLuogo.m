@@ -88,7 +88,7 @@
                 
                 if([esito isEqualToString:@"1"])
                     [self dismissViewControllerAnimated:NO completion:^(void){
-                        [self.navigationController popViewControllerAnimated:YES];
+                        [self.navigationController popToRootViewControllerAnimated:YES];
                     }];
                 
                 else

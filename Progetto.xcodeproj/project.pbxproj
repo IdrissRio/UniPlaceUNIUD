@@ -86,6 +86,7 @@
 		2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D75279E1BFD135B00459FD1 /* UPUniversitario.m */; };
 		2DBE4BB71C3BCECB002B8A7C /* UPViewCommento.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DBE4BB61C3BCECB002B8A7C /* UPViewCommento.xib */; };
 		2DBE4BC11C3BD267002B8A7C /* UPViewCommento.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE4BC01C3BD267002B8A7C /* UPViewCommento.m */; };
+		2DC01A1A1C3F16CC00476271 /* notFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC01A191C3F16CC00476271 /* notFound.png */; };
 		2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */; };
 		2DC180D71C20E38000673136 /* UPAltreCategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */; };
 		2DC180DA1C20E39600673136 /* UPAltreCategorieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D91C20E39600673136 /* UPAltreCategorieCell.m */; };
@@ -238,6 +239,7 @@
 		2DBE4BB61C3BCECB002B8A7C /* UPViewCommento.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPViewCommento.xib; sourceTree = "<group>"; };
 		2DBE4BBF1C3BD267002B8A7C /* UPViewCommento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPViewCommento.h; path = ../UPViewCommento.h; sourceTree = "<group>"; };
 		2DBE4BC01C3BD267002B8A7C /* UPViewCommento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPViewCommento.m; path = ../UPViewCommento.m; sourceTree = "<group>"; };
+		2DC01A191C3F16CC00476271 /* notFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notFound.png; path = ../../../notFound.png; sourceTree = "<group>"; };
 		2DC180D31C20E35D00673136 /* UPAtterraggioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAtterraggioTableViewController.h; sourceTree = "<group>"; };
 		2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPAtterraggioTableViewController.m; sourceTree = "<group>"; };
 		2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPAltreCategorieCell.xib; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		2D057C8B1C30294300ABA819 /* ImmaginiSviluppatori */ = {
 			isa = PBXGroup;
 			children = (
+				2DC01A191C3F16CC00476271 /* notFound.png */,
 				2D057C8C1C30295000ABA819 /* ManEtta.png */,
 				2D057C8D1C30295000ABA819 /* IdrissRio.jpg */,
 			);
@@ -911,6 +914,7 @@
 				2DF567ED1C299D1700941E2D /* cestino.png in Resources */,
 				2D4C49721C245BA800743AC1 /* location.png in Resources */,
 				2D0E2FCB1C045022009420A5 /* UniversitaDegliStudiDiTorino.png in Resources */,
+				2DC01A1A1C3F16CC00476271 /* notFound.png in Resources */,
 				2D0E2FBE1C045022009420A5 /* UniversitaDegliStudiDiGenova.jpg in Resources */,
 				2D0E2FC31C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png in Resources */,
 				2D0E2FA91C045022009420A5 /* UniversitaCaFoscariDiVenezia.png in Resources */,

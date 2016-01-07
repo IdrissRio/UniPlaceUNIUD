@@ -68,7 +68,16 @@
     //Serve foto Luogo se esiste, altrimenti ci mettiamo l'icona di UP.
     [self mapView:mapView didSelectAnnotationView:view];
     NSMutableDictionary * dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
+    if([dict objectForKey:@"FotoProfilo"]!=nil)
     imageView.image = [UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+    else
+        imageView.image=[UIImage imageNamed:@"notFound.png"];
+    
+    imageView.layer.cornerRadius=imageView.frame.size.width/2;
+    imageView.layer.borderColor=[UIColor whiteColor].CGColor;
+    imageView.layer.borderWidth=2.0f;
+    imageView.clipsToBounds=YES;
+    
     view.leftCalloutAccessoryView = imageView;
     view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoDark];
     return view;
@@ -567,7 +576,10 @@ calloutAccessoryControlTapped:(UIControl *)control{
                     cell.labelTelefono.text=[NSString stringWithFormat:@"Tel: %@",tel];
                 else
                     cell.labelTelefono.text=@"Nessun numero di Telefono Registrato";
+                if([dict objectForKey:@"FotoProfilo"]!=nil)
                 cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+                else
+                    cell.immagineLuogo.image=[UIImage imageNamed:@"notFound.png"];
                 cell.immagineLuogo.layer.cornerRadius=cell.immagineLuogo.frame.size.width/2;
                 cell.immagineLuogo.layer.borderColor=[UIColor whiteColor].CGColor;
                 cell.immagineLuogo.layer.borderWidth=2.0f;
@@ -692,7 +704,10 @@ calloutAccessoryControlTapped:(UIControl *)control{
             else
                 cell.labelTelefono.text=@"Nessun numero di Telefono Registrato";
             //Se l'utente non ha inserito alcuna immagine profilo per UPLuogo, dovremmo  metterci un placeholder con il logo di uniplace
+            if([dict objectForKey:@"FotoProfilo"]!=nil)
             cell.immagineLuogo.image =[UIImage imageWithData:[dict objectForKey:@"FotoProfilo"]];
+            else
+                cell.immagineLuogo.image=[UIImage imageNamed:@"notFound.png"];
             cell.immagineLuogo.layer.cornerRadius=cell.immagineLuogo.frame.size.width/2;
             cell.immagineLuogo.layer.borderColor=[UIColor whiteColor].CGColor;
             cell.immagineLuogo.layer.borderWidth=2.0f;
