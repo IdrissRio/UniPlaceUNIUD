@@ -104,8 +104,8 @@
     // Creo l'UIActivityIndicatorView che fungerà da spinner mediante un rettangolo, indicando coordinate iniziale
     // di creazione, larghezza e altezza. Verrà inoltre assegnato ad esso uno stile di visualizzazione per poi
     // essere aggiunto come subview alla view padre che è l'UIAlertController.
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125,50,30,30)];
-    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125,100,30,30)];
+    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [alert.view addSubview:spinner];
     [spinner startAnimating];
     

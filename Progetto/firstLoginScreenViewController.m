@@ -107,7 +107,7 @@
                 // Assegnati tutti i valori all'oggetto di tipo UPUniversitario, è possibile richiamare il metodo salvaDatiNel
                 // DBnome:cognome:email:fotoProfilo:nomeUtente:universita, il quale come indicato dal nome salverà i valori
                 // di questo oggetto nel db locale, sfruttando CoreData.
-                [self salvaDatiNelDBnome:universitarioLoggato.nome cognome:universitarioLoggato.nome email:universitarioLoggato.email fotoProfilo:universitarioLoggato.fotoProfilo nomeUtente:universitarioLoggato.nomeUtente universita:universitarioLoggato.universita];
+                [self salvaDatiNelDBnome:universitarioLoggato.nome cognome:universitarioLoggato.cognome email:universitarioLoggato.email fotoProfilo:universitarioLoggato.fotoProfilo nomeUtente:universitarioLoggato.nomeUtente universita:universitarioLoggato.universita];
                 
                 // Ora che è stato completato il tutto, interrompo la visualizzazione
                 // dell'UIAlertController ed eseguo la segue che mi porterà alla home dell'applicazione per
