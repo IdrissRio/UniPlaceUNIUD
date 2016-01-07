@@ -39,7 +39,7 @@
     self.imageProfileView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.imageProfileView.clipsToBounds = YES; //Necessario per visualizzare le modifiche apportate.
     
-    if([self.nomeTextField.text isEqualToString:@""])
+    // if([self.nomeTextField.text isEqualToString:@""])
     aviableNome = NO;
     aviableCognome = NO;
     aviableImmagineProfilo = NO;
@@ -172,9 +172,11 @@
        
         if([segue.destinationViewController isKindOfClass:[UPSelectUniversity class]]){
             UPSelectUniversity *accountView = (UPSelectUniversity *) segue.destinationViewController;
-            accountView.tieniInfoViewPrecedente=[[UPUniversitario alloc]init];
-            if(_universitario.email!=nil)
-                accountView.tieniInfoViewPrecedente.email=_universitario.email;
+            accountView.tieniInfoViewPrecedente = [[UPUniversitario alloc]init];
+            
+            if(self.universitario.email != nil)
+                accountView.tieniInfoViewPrecedente.email = self.universitario.email;
+            
             accountView.tieniInfoViewPrecedente.nome = self.nomeTextField.text;
             accountView.tieniInfoViewPrecedente.cognome = self.cognomeTextField.text;
             accountView.tieniInfoViewPrecedente.fotoProfilo = UIImagePNGRepresentation(self.imageProfileView.image);

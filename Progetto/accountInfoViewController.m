@@ -154,7 +154,7 @@
     
     // Costruisco il dizionario contenente i vari campi di testo inseriti dall'utente. L'utilizzo dell'NSDictionary è per un fattore di comodità nella gestione dei vari campi mediante chiavi, addicendosi di più al contesto JSON.
     
-    NSDictionary *userInfo= [[NSDictionary alloc]initWithObjectsAndKeys:
+    NSDictionary *userInfo= [NSDictionary dictionaryWithObjectsAndKeys:
                                     self.universitario.nome,@"nome",
                                     self.universitario.cognome, @"cognome",
                                     self.nicknameTextField.text, @"nomeUtente",
@@ -217,9 +217,12 @@
                         aviableEmail = YES;
                         messaggioAlertController = @"Inserimento avvenuto";
                         titoloAlertController = @"Messaggio";
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
                         [self dismissViewControllerAnimated:NO completion:^{
                             [self performSegueWithIdentifier:@"successfulRegistrationSegue" sender:self];
-                        }];
+                            }];
+                        });
                     }
                     
                     // Se l'esito è negativo invece, notificherò l'utente dell'accaduta senza però indicare
@@ -262,12 +265,12 @@
                 NSLog(@"parseError = %@ \n", error);
             //NSLog(@"responseString = %@ \n", [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding]);
             
-            /* Da testare se inutile per toglierlo.
+  
              dispatch_async(dispatch_get_main_queue(), ^{
                 [self dismissViewControllerAnimated:NO completion:NULL];
              
                 
-            });*/
+            });
         }
         
     }]resume];

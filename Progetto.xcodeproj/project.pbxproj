@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D0180FC1C3C602E005289D5 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0180FB1C3C602E005289D5 /* cameraIcon.png */; };
-		2D0180FE1C3C681E005289D5 /* invia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0180FD1C3C681E005289D5 /* invia.png */; };
 		2D02D9151C395B7C005478EB /* UPCustomSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02D9141C395B7C005478EB /* UPCustomSectionCell.m */; };
 		2D045D5A1C2ADA030021F14F /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D045D591C2ADA030021F14F /* checkin.png */; };
 		2D057C8A1C3009F000ABA819 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D057C891C3009F000ABA819 /* SWRevealViewController.m */; };
@@ -111,6 +110,7 @@
 		CA1B873E1C39C21500D82FB9 /* pilotta.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873D1C39C21500D82FB9 /* pilotta.gpx */; };
 		CA1B87401C39C8E800D82FB9 /* bertinelli.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */; };
 		CA2319D11C3BC03700469009 /* cometFidenza.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA2319D01C3BC03700469009 /* cometFidenza.gpx */; };
+		CA6D9FBF1C3DB6BF00B47713 /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D9FBE1C3DB6BF00B47713 /* send.png */; };
 		CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */; };
 		CA83AC151C2DD238000D6432 /* UIViewController+TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC131C2DD238000D6432 /* UIViewController+TextFieldDelegate.m */; };
 		CA83AC191C2DD263000D6432 /* NetworkLoadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC181C2DD263000D6432 /* NetworkLoadingManager.m */; };
@@ -154,7 +154,6 @@
 
 /* Begin PBXFileReference section */
 		2D0180FB1C3C602E005289D5 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
-		2D0180FD1C3C681E005289D5 /* invia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = invia.png; path = "../../../Universita loghi/invia.png"; sourceTree = "<group>"; };
 		2D02D9131C395B7C005478EB /* UPCustomSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCustomSectionCell.h; sourceTree = "<group>"; };
 		2D02D9141C395B7C005478EB /* UPCustomSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCustomSectionCell.m; sourceTree = "<group>"; };
 		2D045D591C2ADA030021F14F /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
@@ -272,6 +271,7 @@
 		CA1B873D1C39C21500D82FB9 /* pilotta.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pilotta.gpx; sourceTree = "<group>"; };
 		CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bertinelli.gpx; sourceTree = "<group>"; };
 		CA2319D01C3BC03700469009 /* cometFidenza.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cometFidenza.gpx; sourceTree = "<group>"; };
+		CA6D9FBE1C3DB6BF00B47713 /* send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send.png; sourceTree = "<group>"; };
 		CA83AC101C2DD238000D6432 /* UITextField+RuntimeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+RuntimeExtension.h"; sourceTree = "<group>"; };
 		CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+RuntimeExtension.m"; sourceTree = "<group>"; };
 		CA83AC121C2DD238000D6432 /* UIViewController+TextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TextFieldDelegate.h"; sourceTree = "<group>"; };
@@ -470,11 +470,11 @@
 			isa = PBXGroup;
 			children = (
 				2DF567E61C299B6300941E2D /* cestino.png */,
+				CA6D9FBE1C3DB6BF00B47713 /* send.png */,
 				2D045D591C2ADA030021F14F /* checkin.png */,
 				2D4D5B9F1C2C7C0B0025A939 /* menu.png */,
 				2DF567EC1C299D1700941E2D /* cestino.png */,
 				2D0180FB1C3C602E005289D5 /* cameraIcon.png */,
-				2D0180FD1C3C681E005289D5 /* invia.png */,
 				2D4C496F1C24553700743AC1 /* unlock.png */,
 				2DF567E91C299CD000941E2D /* close.png */,
 				2D4C49711C245BA800743AC1 /* location.png */,
@@ -863,6 +863,7 @@
 				2D0E2FD61C045022009420A5 /* UniversitaDiPavia.png in Resources */,
 				2D0E2FC21C045022009420A5 /* UniversitaDegliStudiDiModenaEReggio.gif in Resources */,
 				2D045D5A1C2ADA030021F14F /* checkin.png in Resources */,
+				CA6D9FBF1C3DB6BF00B47713 /* send.png in Resources */,
 				2DC180E51C20E48100673136 /* lock.png in Resources */,
 				CA1B87401C39C8E800D82FB9 /* bertinelli.gpx in Resources */,
 				2DD997D81C395A4200DB12D5 /* UPCustomSection.xib in Resources */,
@@ -879,7 +880,6 @@
 				2D0E2FB41C045022009420A5 /* UniversitaDegliStudiDiBologna.png in Resources */,
 				2D0E2FB21C045022009420A5 /* UniversitaDegliStudiDiBari.png in Resources */,
 				2D0E2FA61C045022009420A5 /* SecondaUnviversitaDegliStudi.png in Resources */,
-				2D0180FE1C3C681E005289D5 /* invia.png in Resources */,
 				2D0E2F9B1C045022009420A5 /* IstitutoItalianoDiScienzeUmane.jpg in Resources */,
 				2D0E2FA21C045022009420A5 /* PolitecnicoDiTorino.png in Resources */,
 				2D0E2F9F1C045022009420A5 /* ParthenopeUnivesitaDegliStudidiNapoli.gif in Resources */,
