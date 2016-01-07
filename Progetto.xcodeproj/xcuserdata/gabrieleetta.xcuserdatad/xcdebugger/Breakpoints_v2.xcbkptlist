@@ -312,13 +312,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Progetto/AddReviewController.m"
-            timestampString = "473705435.455459"
+            timestampString = "473846781.948556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "-touchesBegan:withEvent:"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "-ActionInvia"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[AddReviewController ActionInvia]_block_invoke196"
+                  moduleName = "Progetto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrieleetta/Desktop/ULTIMATE/Progetto/AddReviewController.m"
+                  timestampString = "473848673.221696"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_197"
+                  moduleName = "Progetto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrieleetta/Desktop/ULTIMATE/Progetto/AddReviewController.m"
+                  timestampString = "473848673.222106"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_198"
+                  moduleName = "Progetto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrieleetta/Desktop/ULTIMATE/Progetto/AddReviewController.m"
+                  timestampString = "473848673.223145"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -397,7 +444,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "-didReceiveMemoryWarning"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -413,7 +460,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "-viewWillAppear:"
+            landmarkName = "-reloadDownloadDati"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -424,12 +471,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Progetto/AddReviewController.m"
-            timestampString = "473705435.455459"
+            timestampString = "473807999.629538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-sendButtonPressed:"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-ActionInvia"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -440,12 +487,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Progetto/AddReviewController.m"
-            timestampString = "473705435.455459"
+            timestampString = "473807999.629538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-sendButtonPressed:"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-ActionInvia"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -461,7 +508,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
             endingLineNumber = "172"
-            landmarkName = "-viewWillAppear:"
+            landmarkName = "-downloadDati"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -477,7 +524,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "195"
             endingLineNumber = "195"
-            landmarkName = "-viewWillAppear:"
+            landmarkName = "-downloadDati"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -493,7 +540,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
             endingLineNumber = "194"
-            landmarkName = "-viewWillAppear:"
+            landmarkName = "-downloadDati"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -509,7 +556,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "207"
             endingLineNumber = "207"
-            landmarkName = "-viewWillAppear:"
+            landmarkName = "-downloadDati"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -552,13 +599,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Progetto/AddReviewController.m"
-            timestampString = "473705435.455459"
+            timestampString = "473846781.948556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "-downloadRecensioni:"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AddReviewController imagePickerController:didFinishPickingMediaWithInfo:]"
+                  moduleName = "Progetto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrieleetta/Desktop/ULTIMATE/Progetto/AddReviewController.m"
+                  timestampString = "473848673.239852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "253"
+                  endingLineNumber = "253"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AddReviewController imagePickerController:didFinishPickingMediaWithInfo:]"
+                  moduleName = "Progetto"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrieleetta/Desktop/ULTIMATE/Progetto/AddReviewController.m"
+                  timestampString = "473848673.240041"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "253"
+                  endingLineNumber = "253"
+                  offsetFromSymbolStart = "496">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -568,12 +647,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Progetto/AddReviewController.m"
-            timestampString = "473705435.455459"
+            timestampString = "473846781.948556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "-downloadRecensioni:"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "-immagineDaGalleria"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -972,6 +1051,86 @@
             startingLineNumber = "165"
             endingLineNumber = "165"
             landmarkName = "-endRegistrationButtonPressed:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Progetto/AddReviewController.m"
+            timestampString = "473846781.948556"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "-ActionInvia"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Progetto/AddReviewController.m"
+            timestampString = "473846183.385292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-ActionInvia"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Progetto/AddReviewController.m"
+            timestampString = "473846781.948556"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-ActionInvia"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Progetto/AddReviewController.m"
+            timestampString = "473848306.2243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-loadUPLuogo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Progetto/AddReviewController.m"
+            timestampString = "473848544.771857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-ActionInvia"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

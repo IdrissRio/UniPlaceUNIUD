@@ -63,7 +63,7 @@
     UIButton *bottoneCamera = [UIButton buttonWithType:UIButtonTypeCustom];
     [bottoneCamera setFrame:CGRectMake(0, 0, 35, 35)];
     [bottoneCamera setBackgroundImage:immagineCamera forState:UIControlStateNormal];
-    UIImage *immagineInvia = [UIImage imageNamed:@"invia.png"];
+    UIImage *immagineInvia = [UIImage imageNamed:@"send.png"];
     UIButton *bottoneInvia = [UIButton buttonWithType:UIButtonTypeCustom];
     [bottoneInvia setFrame:CGRectMake(0, 0, 35, 35)];
     [bottoneInvia setBackgroundImage:immagineInvia forState:UIControlStateNormal];
@@ -92,12 +92,6 @@
 
 -(void)ActionInvia
 {
-    // Prelevo la data odierna
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy/M/d";
-    NSString *dataOdierna = [formatter stringFromDate:[NSDate date]];
-    NSLog(@"data: %@", dataOdierna);
-    
     // Creo l'UIAlertController che verrà visualizzato mentre l'operazione è in corso, munito di spinner di tipo
     // UIActivityIndicatorview
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Inserimento recensione in corso \n\n\n"
@@ -129,14 +123,28 @@
         infoImmagine = nil;
         immaginePresente = @"no";
     }
+    
+    // Testo della recensione
+    NSString *testoRecensione = self.textViewRecensione.text;
+    
+    // Identificativo del luogo
+    NSString *idLuogo = [NSString stringWithFormat:@"%d", (int) self.luogo.identificativo];
+    
+    // Nickname dell'utente da cambiare!
+    NSString *utente = @"Utente prova";
     // Dictionary contenente i campi di testo da inserire singolarmente nella recensione.
-    NSDictionary *testualiRecensione =nil;
+    NSDictionary *parametriTestualiRecensione = [NSDictionary dictionaryWithObjectsAndKeys: testoRecensione, @"recensione",
+                                                 immaginePresente, @"immaginePresente",
+                                                 voto, @"voto",
+                                                 idLuogo, @"idLuogo",
+                                                 utente, @"utente", nil];
+    
     //[NSDictionary dictionaryWithObjectsAndKeys: dataOdierna, @"dataRecensione",self.recensioneTexfField.text, @"recensione", voto, @"voto", immaginePresente, @"immaginePresente", nil];
     NSString *url = @"http://mobdev2015.com/aggiungirecensione.php";
     NetworkLoadingManager *loader = [[NetworkLoadingManager alloc] init];
     
     // Creo la NSURLRequest mediante il metodo fornito dall'oggetto loader di tipo NetworkLoadingManager.
-    NSURLRequest *request = [loader createBodyWithURL:url Parameters:testualiRecensione DataImage:dataImmagine ImageInformations:infoImmagine];
+    NSURLRequest *request = [loader createBodyWithURL:url Parameters:parametriTestualiRecensione DataImage:dataImmagine ImageInformations:infoImmagine];
     [self presentViewController:alert animated:YES completion:nil];
     
     
