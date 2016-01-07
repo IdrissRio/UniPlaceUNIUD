@@ -23,6 +23,7 @@
     __block NSMutableDictionary *luoghiVicini;
     __block NSMutableDictionary *luoghiRecenti;
     __block NSMutableDictionary *luoghiRecensiti;
+    __block NSMutableDictionary *luoghiDiTendenza;
     UPNelleVicinanzeCell* Header;
     NSMutableArray * annotationPoint;
     NSString * lastTouchd;
@@ -53,7 +54,9 @@
 # pragma mark Gestione MKAnnotationView e PrePrepareForSegue
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation{
-    
+    if(annotation==mapView.userLocation){
+        return nil;
+    }
     NSString *AnnotationIdentifier = [NSString stringWithFormat:@"%@",[annotation title]];
     MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
     if(!view){
@@ -104,15 +107,71 @@ calloutAccessoryControlTapped:(UIControl *)control{
 }
 
 -(void)reloadDownloadDati{
+    switch (self.pageIndex) {
+        case 0:
+            if(luoghiVicini!=nil){
+                luoghiVicini=nil;
+            }
+            break;
+        case 1:
+            if(luoghiRecenti!=nil){
+                luoghiRecenti=nil;
+                
+            }
+            break;
+        case 2:
+            if(luoghiDiTendenza!=nil){
+                luoghiDiTendenza=nil;
+                
+            }
+            
+            break;
+        case 3:
+            if(luoghiRecensiti!=nil){
+                luoghiRecensiti=nil;
+               
+            }
+            break;
+        default:
+            break;
+    }
+
     [self downloadDati];
     [self.tableView reloadData];
     [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:1];
 }
 
 -(void)downloadDati{
-    luoghiVicini=nil;
-    luoghiRecenti=nil;
-    luoghiRecensiti=nil;
+    switch (self.pageIndex) {
+        case 0:
+            if(luoghiVicini!=nil){
+                [self inserisciNotation];
+                return;
+            }
+            break;
+        case 1:
+            if(luoghiRecenti!=nil){
+                [self inserisciNotation];
+                return;
+            }
+            break;
+        case 2:
+            if(luoghiDiTendenza!=nil){
+                [self inserisciNotation];
+                return;
+            }
+
+            break;
+        case 3:
+            if(luoghiRecensiti!=nil){
+                [self inserisciNotation];
+                return;
+            }
+            break;
+        default:
+            break;
+    }
+
     
     /* La seguente serie di if scaricherà, in base all'indice della pagina che l'utente sta visualizzando, diverse
      * tipologie di luoghi:
@@ -229,21 +288,21 @@ calloutAccessoryControlTapped:(UIControl *)control{
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
             if(data){
                 NSError *parseError;
-                luoghiRecensiti = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
-                if (luoghiRecensiti) {
-                    NSString *esito = [NSString stringWithString: [luoghiRecensiti valueForKey:@"success"]];
+                luoghiDiTendenza = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
+                if (luoghiDiTendenza) {
+                    NSString *esito = [NSString stringWithString: [luoghiDiTendenza valueForKey:@"success"]];
                     
                     if([esito isEqualToString:@"1"]){
-                        NSLog(@"%@", luoghiRecensiti);
-                        for(int i=0;i<luoghiRecensiti.count;i++){
-                            NSString* percorsoImmagineLocale =[[luoghiRecensiti objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                        NSLog(@"%@", luoghiDiTendenza);
+                        for(int i=0;i<luoghiDiTendenza.count;i++){
+                            NSString* percorsoImmagineLocale =[[luoghiDiTendenza objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
                             if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
                                 NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
                                 
                                 NSString *urlImmagine=[tmpUrlImmagine stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
                                 NSData* tmp=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImmagine]];
                                 if(tmp!=nil){
-                                    [[luoghiRecensiti objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoProfilo"];
+                                    [[luoghiDiTendenza objectForKey:[NSString stringWithFormat:@"%d",i]] setObject:tmp forKey:@"FotoProfilo"];
                                 }
                             }
                         }
@@ -362,8 +421,8 @@ calloutAccessoryControlTapped:(UIControl *)control{
     
 }
 -(void)visualizzaDiTendenza{
-    for(int i=0;i<luoghiRecensiti.count;++i){
-        NSDictionary* dict = [luoghiRecensiti objectForKey:[NSString stringWithFormat:@"%d",i]];
+    for(int i=0;i<luoghiDiTendenza.count;++i){
+        NSDictionary* dict = [luoghiDiTendenza objectForKey:[NSString stringWithFormat:@"%d",i]];
         NSString *longitudine=[dict objectForKey:@"Longitudine"];
         NSString *latitudine=[dict objectForKey:@"Latitudine"];
         if(longitudine!=nil && latitudine!=nil){
@@ -450,7 +509,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
     }else if(self.pageIndex==1){
         tmp=luoghiRecenti;
     }else if(self.pageIndex==2){
-        tmp=luoghiRecensiti;
+        tmp=luoghiDiTendenza;
     }else if(self.pageIndex==3){
         tmp=luoghiRecensiti;
     }
@@ -471,22 +530,24 @@ calloutAccessoryControlTapped:(UIControl *)control{
 -(void)inserisciNotation{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     if(self.pageIndex==0){
+        annotationPoint=nil;
         annotationPoint=[[NSMutableArray alloc]init];
         Header.mappaLuogo.delegate=self;
         for(int i=0;i<luoghiVicini.count;++i){
             NSDictionary* dict = [luoghiVicini objectForKey:[NSString stringWithFormat:@"%d",i]];
-            NSLog(@"Aggiungo MKNotation");
+            
             NSString *longitudine=[dict objectForKey:@"Longitudine"];
             NSString *latitudine=[dict objectForKey:@"Latitudine"];
+            NSLog(@"%@",[NSString stringWithFormat:@"Aggiungo MKNotation lat: %@, long: %@",latitudine,longitudine]);
             if(longitudine!=nil && latitudine!=nil){
                 MKPointAnnotation * point= [[MKPointAnnotation  alloc]init];
                 CLLocationCoordinate2D newCenter = CLLocationCoordinate2DMake([latitudine doubleValue],[longitudine doubleValue]);
                 point.coordinate =newCenter;
                 point.title=[dict objectForKey:@"Nome"];
-                
                 NSString* indirizzo=[dict objectForKey:@"Indirizzo"];
                 if(indirizzo!=nil)
                     point.subtitle=[NSString stringWithFormat:@"%@",indirizzo];
+                
                 [annotationPoint addObject:point];
                 [Header.mappaLuogo addAnnotation:point];
             }
@@ -840,6 +901,36 @@ calloutAccessoryControlTapped:(UIControl *)control{
              svc.luogo=preparedForSegue;
          }
      }
+     switch (self.pageIndex) {
+         case 0:
+             if(luoghiVicini!=nil){
+                 luoghiVicini=nil;
+             }
+             break;
+         case 1:
+             if(luoghiRecenti!=nil){
+                 luoghiRecenti=nil;
+                 
+             }
+             break;
+         case 2:
+             if(luoghiDiTendenza!=nil){
+                 luoghiDiTendenza=nil;
+                 
+             }
+             
+             break;
+         case 3:
+             if(luoghiRecensiti!=nil){
+                 luoghiRecensiti=nil;
+                 
+             }
+             break;
+         default:
+             break;
+     }
+
+     
  }
 
 

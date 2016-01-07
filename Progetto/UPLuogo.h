@@ -15,7 +15,7 @@
    
 }
 @property NSInteger identificativo;
-@property(nonatomic,weak)NSString* indirizzo;
+@property(nonatomic,strong)NSString* indirizzo;
 @property(nonatomic,weak)NSString* telefono;
 @property(nonatomic,weak)NSString* nome;
 @property(nonatomic,weak)NSData* immagine;
