@@ -46,8 +46,14 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     tapGesture.cancelsTouchesInView = NO;
     [self.scrollView addGestureRecognizer:tapGesture];
+    
+    if(self.luogo.immagine!=nil){
     self.immagineSottoBlur.image=[UIImage imageWithData:self.luogo.immagine];
     self.immagineSopraBlur.image=[UIImage imageWithData:self.luogo.immagine];
+    }else{
+        self.immagineSopraBlur.image=[UIImage imageNamed:@"notFound.png"];
+        self.immagineSottoBlur.image=[UIImage imageNamed:@"notFound.png"];
+    }
     self.labelNome.text=[NSString stringWithFormat:@"%@",self.luogo.nome];
     self.labelIndirizzo.text=[NSString stringWithFormat:@"%@",self.luogo.indirizzo];
     if(self.luogo.telefono!=nil)

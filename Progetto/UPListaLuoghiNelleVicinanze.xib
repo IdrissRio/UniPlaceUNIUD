@@ -20,10 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QK1-HP-Oty" id="bbj-n7-QMu">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="121.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cti-jJ-GSR">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cti-jJ-GSR">
                         <rect key="frame" x="8" y="8" width="105" height="105"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="cti-jJ-GSR" secondAttribute="height" multiplier="1:1" id="dwn-gB-M4G"/>
