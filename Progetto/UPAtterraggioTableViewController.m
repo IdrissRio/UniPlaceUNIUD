@@ -116,6 +116,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
 }
 
 -(void)reloadDownloadDati{
+  
     switch (self.pageIndex) {
         case 0:
             if(luoghiVicini!=nil){
@@ -147,10 +148,10 @@ calloutAccessoryControlTapped:(UIControl *)control{
 
     [self downloadDati];
     [self.tableView reloadData];
-    [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:1];
 }
 
 -(void)downloadDati{
+       [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     switch (self.pageIndex) {
         case 0:
             if(luoghiVicini!=nil){
@@ -366,12 +367,10 @@ calloutAccessoryControlTapped:(UIControl *)control{
             
         }] resume];
         
-    }//if
+    }
 
     
     
-    
-
 }
 - (void)viewWillAppear:(BOOL)animated{
     [self downloadDati];
@@ -424,6 +423,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
             cell.indirizzoLuogo.text=[NSString stringWithFormat:@"%@ - %@",[dict objectForKey:@"Nome"],[dict objectForKey:@"Indirizzo"]];
         }
     }
+    
 }
 
 - (void)prelevaTendenze{
@@ -537,7 +537,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
 }
 
 -(void)inserisciNotation{
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+   
     if(self.pageIndex==0){
         annotationPoint=nil;
         annotationPoint=[[NSMutableArray alloc]init];
@@ -600,6 +600,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
     if(self.pageIndex==3){
         [self visualizzaMaggiormenteRecensiti];
     }
+    [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:1];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
@@ -630,6 +631,9 @@ calloutAccessoryControlTapped:(UIControl *)control{
         Header= (UPNelleVicinanzeCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPNelleVicinanzeCell" owner:self options:nil];
         Header= [nib objectAtIndex:0];
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = 100;
+       // self.locationManager.delegate = self;
         [self.locationManager startUpdatingLocation];
         Header.mappaLuogo.delegate=self;
         [MKMapView class];
@@ -669,6 +673,15 @@ calloutAccessoryControlTapped:(UIControl *)control{
     return nil;
 }
 
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    CLLocation *currentLocation = [locations lastObject];
+    MKCoordinateRegion mapRegion;
+    mapRegion.center =  currentLocation.coordinate;
+    mapRegion.span.latitudeDelta = 0.002;
+    mapRegion.span.longitudeDelta = 0.002;
+    [Header.mappaLuogo setRegion:mapRegion animated:YES];
+}
 
 //Gestico la grandezza dell'Header. La prima mappa che viene visualizzata nel pageIndex==0 è una section.
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -755,7 +768,7 @@ calloutAccessoryControlTapped:(UIControl *)control{
         UPAltreCategorieCell *cell = (UPAltreCategorieCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UPAltreCategorieCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        NSMutableDictionary* dict =[[NSMutableDictionary alloc]initWithDictionary:[luoghiRecensiti objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]]];
+        NSMutableDictionary* dict =[[NSMutableDictionary alloc]initWithDictionary:[luoghiDiTendenza objectForKey:[NSString stringWithFormat:@"%ld",(long)[indexPath row]]]];
         NSLog(@"Modifico le TableViewCell UPAltreCategorieCell");
         NSString *longitudine=[dict objectForKey:@"Longitudine"];
         NSString *latitudine=[dict objectForKey:@"Latitudine"];
@@ -916,36 +929,6 @@ calloutAccessoryControlTapped:(UIControl *)control{
              svc.luogo=preparedForSegue;
          }
      }
-     switch (self.pageIndex) {
-         case 0:
-             if(luoghiVicini!=nil){
-                 luoghiVicini=nil;
-             }
-             break;
-         case 1:
-             if(luoghiRecenti!=nil){
-                 luoghiRecenti=nil;
-                 
-             }
-             break;
-         case 2:
-             if(luoghiDiTendenza!=nil){
-                 luoghiDiTendenza=nil;
-                 
-             }
-             
-             break;
-         case 3:
-             if(luoghiRecensiti!=nil){
-                 luoghiRecensiti=nil;
-                 
-             }
-             break;
-         default:
-             break;
-     }
-
-     
  }
 
 

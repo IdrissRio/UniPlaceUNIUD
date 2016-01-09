@@ -12,7 +12,7 @@
  * @class UPUniversitario
  * @brief UPUniversitario : NSObject
  * @discussion UPUniversitario è la classe che implementa l'oggetto Studente Universitario, con le sue informazioni personali.
- @superclass SuperClass: NSObject
+ * @superclass SuperClass: NSObject
  */
 @interface UPUniversitario : NSObject{
 

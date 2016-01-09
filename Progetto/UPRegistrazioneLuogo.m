@@ -120,6 +120,8 @@
 
 
 - (void)viewDidLoad {
+    
+    selectedPicker=@"Biblioteche";
     immagineSelezionata = NO;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
@@ -150,6 +152,7 @@
     mapRegion.center =  _locationManager.location.coordinate;
     mapRegion.span.latitudeDelta = 0.001;
     mapRegion.span.longitudeDelta = 0.001;
+    self.mappaLuogo.showsUserLocation=YES;
     [self.mappaLuogo setRegion:mapRegion animated:YES];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:_locationManager.location

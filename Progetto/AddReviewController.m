@@ -125,7 +125,7 @@
     // Se è stata selezionata un'immagine, la vado a prelevare altrimenti verrà messa a nil in quanto non presente.
     if(ImageSelected == YES){
         dataImmagine = UIImageJPEGRepresentation(self.immagineSopraBlur.image, 0.9);
-        infoImmagine = @[@"luogo", @"photo"];
+        infoImmagine = @[self.luogo.nome, @"photo"];
         immaginePresente = @"si";
         
     }else{
@@ -186,7 +186,7 @@
         
         if(data){
             NSError *parseError;
-            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            NSDictionary *datiUtente = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
             // Se ho ricevuto qualcosa in risposta dal server e sono riuscito a convertirlo da JSON ad array
             if (datiUtente) {
                 esito = [NSString stringWithString: [datiUtente objectForKey:@"success"]];
@@ -196,7 +196,7 @@
                 // meno un messaggio di errore.
                 if([esito isEqualToString:@"1"]){
                     [self dismissViewControllerAnimated:NO completion:^(void){
-                        [self.navigationController popToRootViewControllerAnimated:YES];
+                         [self.navigationController popToRootViewControllerAnimated:YES];
                     }];
                     
                 }else{
@@ -250,8 +250,6 @@
                                      ^(UIAlertAction * action)
                                      {
                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                         
-                                         
                                      }];
     [alert addAction:fotocameraAction];
     [alert addAction:galleriaAction];
@@ -287,7 +285,6 @@
     }
     self.immagineSottoBlur.image=self.immagineSopraBlur.image;
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
     
 }
 
@@ -329,14 +326,24 @@
             viewRecensione.dataRecensione.text=[NSString stringWithFormat:@"Data: %@",[singolaRecensione objectForKey:@"DataRecensione"]];
             [self UPSetRateView:viewRecensione.ratingView editable:NO rating:[[singolaRecensione objectForKey:@"Voto"]floatValue]];
             CGRect frame= viewRecensione.frame;
+            if([singolaRecensione objectForKey:@"FotoRecensione"]!=nil){
+                viewRecensione.immagineRecension.image=[UIImage imageWithData:[singolaRecensione objectForKey:@"FotoRecensione"]];
+            }else{
+                viewRecensione.immagineRecension.image=[UIImage imageNamed:@"notFound.png"];
+            }
+            viewRecensione.immagineRecension.layer.cornerRadius=viewRecensione.immagineRecension.frame.size.width/2;
+            viewRecensione.immagineRecension.layer.borderWidth=3.0f;
+            viewRecensione.immagineRecension.layer.borderColor=[UIColor whiteColor].CGColor;
+            viewRecensione.immagineRecension.clipsToBounds=YES;
+            
             frame.size.width=self.view.frame.size.width;
             frame.origin.y = offset;
-            offset+=230;
+            offset+=310;
             viewRecensione.frame=frame;
             [self.viewWithChild addSubview:viewRecensione];
         }
     }
-    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 
@@ -383,7 +390,7 @@
 #pragma mark download delle recensioni del luogo selezionato
 
 - (void)downloadRecensioni:(int)idLuogo{
-    
+    [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:YES];
     // Creo l'oggetto che gestirà il download delle recensioni. L'NSDictionary contenente le informazioni da mandare
     // server sarà solamente riempito con l'id del luogo dal quale si vogliono tutte le recensioni.
     NetworkLoadingManager *recensioniDownloader = [[NetworkLoadingManager alloc]init];
@@ -412,15 +419,14 @@
                 // Se l'esito è positivo, scandisco il dictionary prelevando le immagini della recensione dove presenti.
                 if([esito isEqualToString:@"1"]){
                     NSLog(@"%@", recensioni );
-                     [self performSelectorOnMainThread:@selector(VisualizzaRecensioni) withObject:nil waitUntilDone:YES];
                     for(int i=0; i< recensioni.count; i++){
                         
                         // Prelevo l'eventuale path all'immagine su server
-                        NSString* percorsoImmagineLocale =[[recensioni objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"PercorsoImmagine"];
+                        NSString* percorsoImmagineLocale =[[recensioni objectForKey:[NSString stringWithFormat:@"%d",i]] objectForKey:@"Foto"];
                         
                         // Se non vale 0 o è presente, accodo all'url principale il percorso dell'immagine, senza il primo
                         // carattere indicante il puntino '.'
-                        if(![percorsoImmagineLocale isEqualToString:@"0"] && percorsoImmagineLocale!=nil){
+                        if(![percorsoImmagineLocale isEqualToString:@""] && percorsoImmagineLocale!=nil){
                             NSString * tmpUrlImmagine = [NSString stringWithFormat:@"http://mobdev2015.com%@", [percorsoImmagineLocale substringFromIndex:1]];
                             
                             // Nel path ottenuto rimpiazzo gli spazi con il %20 indicante pur sempre lo spazio ma per una
@@ -438,6 +444,7 @@
                             }
                         }
                     }
+                    [self performSelectorOnMainThread:@selector(VisualizzaRecensioni) withObject:nil waitUntilDone:YES];
                 }
             }
         }

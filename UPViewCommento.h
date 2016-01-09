@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelAutore;
 @property (strong, nonatomic) IBOutlet UILabel *dataRecensione;
 @property (strong, nonatomic) IBOutlet StarRatingView *ratingView;
+@property (strong, nonatomic) IBOutlet UIImageView *immagineRecension;
 
 @end

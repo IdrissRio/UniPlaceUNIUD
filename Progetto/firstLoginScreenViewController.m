@@ -113,7 +113,7 @@
                 // dell'UIAlertController ed eseguo la segue che mi porterà alla home dell'applicazione per
                 // gli utenti loggati.
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self dismissViewControllerAnimated:alert completion:nil];
+                    [self dismissViewControllerAnimated:YES completion:nil];
                     [self performSegueWithIdentifier:@"successfulLoginSegue" sender:self];
                 });
                 
