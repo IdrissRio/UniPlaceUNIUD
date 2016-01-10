@@ -124,13 +124,7 @@
                                            }];
         
 
-        UIAlertAction *annulla = [UIAlertAction actionWithTitle:@"Annulla" style:UIAlertActionStyleDefault handler:
-                                  ^(UIAlertAction * action)
-                                  {
-                                      [self dismissViewControllerAnimated:YES completion:nil];
-                                      
-                                      
-                                  }];
+        UIAlertAction *annulla = [UIAlertAction actionWithTitle:@"Annulla" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:procedi];
         [alert addAction:annulla];
         [self presentViewController:alert animated:YES completion:nil];

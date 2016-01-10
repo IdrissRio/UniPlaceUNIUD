@@ -234,7 +234,6 @@
                                ^(UIAlertAction * action)
                                {
                                    
-                                   [self dismissViewControllerAnimated:YES completion:nil];
                                    [self performSelectorOnMainThread:@selector(immagineDaFotocamera) withObject:nil waitUntilDone:YES];
                                }];
     
@@ -242,14 +241,14 @@
                                    ^(UIAlertAction * action)
                                    {
                                        
-                                       [self dismissViewControllerAnimated:YES completion:nil];
+
                                        [self performSelectorOnMainThread:@selector(immagineDaGalleria) withObject:nil waitUntilDone:YES];
                                        
                                    }];
     UIAlertAction *annulla = [UIAlertAction actionWithTitle:@"Annulla" style:UIAlertActionStyleDefault handler:
                                      ^(UIAlertAction * action)
                                      {
-                                         [self dismissViewControllerAnimated:YES completion:nil];
+
                                      }];
     [alert addAction:fotocameraAction];
     [alert addAction:galleriaAction];

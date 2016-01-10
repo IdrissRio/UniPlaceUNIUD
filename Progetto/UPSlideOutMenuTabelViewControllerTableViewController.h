@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UPSlideOutMenuTabelViewControllerTableViewController : UITableViewController
+@interface UPSlideOutMenuTabelViewControllerTableViewController : UITableViewController<UIAlertViewDelegate>
 
 @end
