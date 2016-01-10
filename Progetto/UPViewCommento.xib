@@ -44,7 +44,7 @@ This class supports multiple text styles through use of the attributedText prope
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notFound.png" translatesAutoresizingMaskIntoConstraints="NO" id="84N-Zw-Sd5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notFound.png" translatesAutoresizingMaskIntoConstraints="NO" id="84N-Zw-Sd5">
                     <rect key="frame" x="431" y="128" width="162" height="162"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="84N-Zw-Sd5" secondAttribute="height" multiplier="1:1" id="X4p-j1-5lm"/>
