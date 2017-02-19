@@ -225,7 +225,7 @@
                         });
                     }
                     
-                    // Se l'esito è negativo invece, notificherò l'utente dell'accaduta senza però indicare
+                    // Se l'esito è negativo invece, notificherò l'utente dell'accaduto senza però indicare
                     // che cosa è duplicato tra email e password, ai fini di sicurezza.
                     else{
                         messaggioAlertController = @"Email e/o password non corretti. Controlla i campi inseriti.";

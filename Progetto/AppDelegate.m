@@ -13,7 +13,6 @@
 #import "NetworkLoadingManager.h"
 @interface AppDelegate (){
     NSManagedObjectContext* context;
-
 }
 
 @end

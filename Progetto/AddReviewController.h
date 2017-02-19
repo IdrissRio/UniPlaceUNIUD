@@ -1,4 +1,4 @@
-/*
+ /*
  * NOME: AddReviewController.h
  * DESCRIZIONE: AddReviewController è il gestore della view relativa all'inserimento della recensione. Essa sfrutta 5 delegate:
  *  - StarRatingViewDelegate: contenente i metodi necessari per potere visualizzare correttamente le stelle della

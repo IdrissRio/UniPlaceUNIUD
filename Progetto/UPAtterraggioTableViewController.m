@@ -90,12 +90,11 @@
 calloutAccessoryControlTapped:(UIControl *)control{
 
         [self mapView:mapView didSelectAnnotationView:view];
-        
-    
+
         NSDictionary* dict= [self cercaCorrispondenzaConTitolo:lastTouchd];
         //Preparo l'oggetto da mandare nella pagina recensioni
         if(dict!=nil){
-            preparedForSegue=[[UPLuogo alloc]initWithIndirizzo:[dict objectForKey:@"Indirizzo"] telefono:[dict objectForKey:@"Telefono"] nome:[dict objectForKey:@"Nome"] longitudine:[dict objectForKey:@"Longitudine"] latitudine:[dict objectForKey:@"Latitudine"] immagine:[dict objectForKey:@"FotoProfilo"] tipologia:[dict objectForKey:@"Categoria"] media:[[dict objectForKey:@"Media"]floatValue] andID:[[dict objectForKey:@"ID"] integerValue]];
+            preparedForSegue=[[UPLuogo alloc]initWithIndirizzo:[dict objectForKey:@"Indirizzo"] telefono:[dict objectForKey:@"NumeroTelefonico"] nome:[dict objectForKey:@"Nome"] longitudine:[dict objectForKey:@"Longitudine"] latitudine:[dict objectForKey:@"Latitudine"] immagine:[dict objectForKey:@"FotoProfilo"] tipologia:[dict objectForKey:@"Categoria"] media:[[dict objectForKey:@"Media"]floatValue] andID:[[dict objectForKey:@"ID"] integerValue]];
             [self performSegueWithIdentifier:@"luogoInfoSegue" sender:self];
         }
 

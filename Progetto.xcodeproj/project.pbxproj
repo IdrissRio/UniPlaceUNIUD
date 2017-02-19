@@ -81,12 +81,12 @@
 		2D4C49721C245BA800743AC1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C49711C245BA800743AC1 /* location.png */; };
 		2D4C49751C245DAF00743AC1 /* UPRegistrazioneLuogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */; };
 		2D4D5BA01C2C7C0B0025A939 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4D5B9F1C2C7C0B0025A939 /* menu.png */; };
+		2D5F89CF1C43DDE3000AF6E3 /* notFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F89CE1C43DDE3000AF6E3 /* notFound.png */; };
 		2D6629BA1C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6629B91C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib */; };
 		2D6629BD1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6629BC1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m */; };
 		2D75279F1BFD135B00459FD1 /* UPUniversitario.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D75279E1BFD135B00459FD1 /* UPUniversitario.m */; };
 		2DBE4BB71C3BCECB002B8A7C /* UPViewCommento.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DBE4BB61C3BCECB002B8A7C /* UPViewCommento.xib */; };
 		2DBE4BC11C3BD267002B8A7C /* UPViewCommento.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE4BC01C3BD267002B8A7C /* UPViewCommento.m */; };
-		2DC01A1A1C3F16CC00476271 /* notFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC01A191C3F16CC00476271 /* notFound.png */; };
 		2DC180D51C20E35D00673136 /* UPAtterraggioTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */; };
 		2DC180D71C20E38000673136 /* UPAltreCategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */; };
 		2DC180DA1C20E39600673136 /* UPAltreCategorieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC180D91C20E39600673136 /* UPAltreCategorieCell.m */; };
@@ -231,6 +231,7 @@
 		2D4C49731C245DAF00743AC1 /* UPRegistrazioneLuogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPRegistrazioneLuogo.h; sourceTree = "<group>"; };
 		2D4C49741C245DAF00743AC1 /* UPRegistrazioneLuogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPRegistrazioneLuogo.m; sourceTree = "<group>"; };
 		2D4D5B9F1C2C7C0B0025A939 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		2D5F89CE1C43DDE3000AF6E3 /* notFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notFound.png; sourceTree = "<group>"; };
 		2D6629B91C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPListaLuoghiNelleVicinanze.xib; sourceTree = "<group>"; };
 		2D6629BB1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPListaLuoghiNelleVicinanzeTableViewCell.h; sourceTree = "<group>"; };
 		2D6629BC1C3842D900BDCB6E /* UPListaLuoghiNelleVicinanzeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPListaLuoghiNelleVicinanzeTableViewCell.m; sourceTree = "<group>"; };
@@ -239,7 +240,6 @@
 		2DBE4BB61C3BCECB002B8A7C /* UPViewCommento.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPViewCommento.xib; sourceTree = "<group>"; };
 		2DBE4BBF1C3BD267002B8A7C /* UPViewCommento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPViewCommento.h; path = ../UPViewCommento.h; sourceTree = "<group>"; };
 		2DBE4BC01C3BD267002B8A7C /* UPViewCommento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UPViewCommento.m; path = ../UPViewCommento.m; sourceTree = "<group>"; };
-		2DC01A191C3F16CC00476271 /* notFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notFound.png; path = ../../../notFound.png; sourceTree = "<group>"; };
 		2DC180D31C20E35D00673136 /* UPAtterraggioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAtterraggioTableViewController.h; sourceTree = "<group>"; };
 		2DC180D41C20E35D00673136 /* UPAtterraggioTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPAtterraggioTableViewController.m; sourceTree = "<group>"; };
 		2DC180D61C20E38000673136 /* UPAltreCategorieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPAltreCategorieCell.xib; sourceTree = "<group>"; };
@@ -362,8 +362,8 @@
 		2D057C8B1C30294300ABA819 /* ImmaginiSviluppatori */ = {
 			isa = PBXGroup;
 			children = (
-				2DC01A191C3F16CC00476271 /* notFound.png */,
 				2D057C8C1C30295000ABA819 /* ManEtta.png */,
+				2D5F89CE1C43DDE3000AF6E3 /* notFound.png */,
 				2D057C8D1C30295000ABA819 /* IdrissRio.jpg */,
 			);
 			name = ImmaginiSviluppatori;
@@ -791,6 +791,8 @@
 				TargetAttributes = {
 					CAC3745D1BF5EBC900CB53DD = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = B69FU2YEMX;
+						ProvisioningStyle = Automatic;
 					};
 					CAC374791BF5EBC900CB53DD = {
 						CreatedOnToolsVersion = 7.1;
@@ -903,6 +905,7 @@
 				2D0E2FD01C045022009420A5 /* UniversitaDegliStudiDiVerona.gif in Resources */,
 				CA1B873E1C39C21500D82FB9 /* pilotta.gpx in Resources */,
 				2D4C49701C24553700743AC1 /* unlock.png in Resources */,
+				2D5F89CF1C43DDE3000AF6E3 /* notFound.png in Resources */,
 				2D4D5BA01C2C7C0B0025A939 /* menu.png in Resources */,
 				2D0E2FD31C045022009420A5 /* UniversitaDegliStudiRomaTre.jpg in Resources */,
 				2D0E2FD41C045022009420A5 /* UniversitaDelSalento.png in Resources */,
@@ -914,7 +917,6 @@
 				2DF567ED1C299D1700941E2D /* cestino.png in Resources */,
 				2D4C49721C245BA800743AC1 /* location.png in Resources */,
 				2D0E2FCB1C045022009420A5 /* UniversitaDegliStudiDiTorino.png in Resources */,
-				2DC01A1A1C3F16CC00476271 /* notFound.png in Resources */,
 				2D0E2FBE1C045022009420A5 /* UniversitaDegliStudiDiGenova.jpg in Resources */,
 				2D0E2FC31C045022009420A5 /* UniversitaDegliStudiDiNapoliFedericoII.png in Resources */,
 				2D0E2FA91C045022009420A5 /* UniversitaCaFoscariDiVenezia.png in Resources */,
@@ -1113,6 +1115,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B69FU2YEMX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Progetto",
@@ -1128,6 +1132,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B69FU2YEMX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Progetto",
