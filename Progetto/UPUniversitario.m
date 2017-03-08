@@ -2,8 +2,8 @@
 //  UPUniversitario.m
 //  Progetto
 //
-//  Created by IdrissRio on 18/11/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
+//  Created by Idriss Riouak on 01/02/17.
+//  Copyright © 2017 Idriss Riouak. All rights reserved.
 //
 
 #import "UPUniversitario.h"

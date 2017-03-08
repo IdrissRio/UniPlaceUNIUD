@@ -2,8 +2,8 @@
 //  UPSlideOutViewControllerForSegue.m
 //  Progetto
 //
-//  Created by IdrissRio on 26/12/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
+//  Created by Idriss Riouak on 03/02/17.
+//  Copyright © 2017 Idriss Riouak. All rights reserved.
 //
 
 #import "UPSlideOutViewControllerForSegue.h"

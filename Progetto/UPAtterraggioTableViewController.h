@@ -2,8 +2,8 @@
 //  UPAtterraggioTableViewController.h
 //  Progetto
 //
-//  Created by IdrissRio on 16/12/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
+//  Created by Idriss Riouak on 23/02/17.
+//  Copyright © 2017 Idriss Riouak. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

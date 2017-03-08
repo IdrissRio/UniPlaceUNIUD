@@ -2,8 +2,8 @@
 //  UPListaLuoghiNelleVicinanzeTableViewCell.m
 //  Progetto
 //
-//  Created by IdrissRio on 02/01/16.
-//  Copyright © 2016 Idriss e Gabriele. All rights reserved.
+//  Created by IdrissRio on 09/03/17.
+//  Copyright © 2016 Idriss Riouak. All rights reserved.
 //
 
 #import "UPListaLuoghiNelleVicinanzeTableViewCell.h"
@@ -11,6 +11,7 @@
 @implementation UPListaLuoghiNelleVicinanzeTableViewCell
 
 - (void)awakeFromNib {
+        [super awakeFromNib];
     NSLog(@"UPListaLuoghiNelleVicinanzeTableViewCell - awakeFromNib: image Rounded" );
 }
 

@@ -2,8 +2,8 @@
 //  UPNelleVicinanzeCell.m
 //  Progetto
 //
-//  Created by IdrissRio on 16/12/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
+//  Created by Idriss Riouak on 09/02/17.
+//  Copyright © 2017 Idriss Riouak. All rights reserved.
 //
 
 #import "UPNelleVicinanzeCell.h"
@@ -13,6 +13,7 @@
 }
 @synthesize mappaLuogo;
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     scroll=false;
     

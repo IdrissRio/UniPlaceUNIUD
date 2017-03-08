@@ -2,8 +2,8 @@
 //  anagraficaApplianceViewController.h
 //  Progetto
 //
-//  Created by Gabriele Etta on 19/11/15.
-//  Copyright © 2015 Idriss e Gabriele. All rights reserved.
+//  Created by Idriss Riouak on 31/01/17.
+//  Copyright © 2017 Idriss Riouak. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
