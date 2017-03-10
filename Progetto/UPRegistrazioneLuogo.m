@@ -31,7 +31,7 @@
 
 - (IBAction)CheckInButtonItem:(id)sender {
     
-    
+    NSString* checkName;
     UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:nil message:@"Inserimento luogo .."
                                                                  preferredStyle:UIAlertControllerStyleAlert ];
     [self presentViewController:errorAlert animated:YES completion:nil];
@@ -59,9 +59,13 @@
         immagineLuogo = nil;
         infoImmagine = nil;
     }
+    if([_nomeLuogoTextField.text  isEqual: @""])
+        checkName=NULL;
+    else
+        checkName=_nomeLuogoTextField.text;
     
     NSDictionary *parametriLuogo = [[NSDictionary alloc]initWithObjectsAndKeys:
-                                    self.nomeLuogoTextField.text, @"nome",
+                                    checkName, @"nome",
                                     immaginePresente, @"immaginePresente",
                                     self.indirizzoLuogoTextField.text, @"indirizzo",
                                     self.telefonoLuogoTextField.text, @"numeroTelefonico",
@@ -95,7 +99,6 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self setReviewResult:0];
                     });
-                
             } else
                 NSLog(@"parseError = %@ \n", parseError);
             

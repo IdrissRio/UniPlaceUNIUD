@@ -107,10 +107,6 @@
 		2DFDCBE51BFA3159008A2558 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDCBE31BFA3158008A2558 /* FBSDKLoginKit.framework */; };
 		2DFDCBED1BFA4305008A2558 /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFDCBDF1BFA2F6A008A2558 /* Bariol_Regular.otf */; };
 		2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFDCBEE1BFA43BE008A2558 /* buddyUniversita.png */; };
-		CA1B873C1C39BF5300D82FB9 /* cocorico.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873B1C39BF5300D82FB9 /* cocorico.gpx */; };
-		CA1B873E1C39C21500D82FB9 /* pilotta.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873D1C39C21500D82FB9 /* pilotta.gpx */; };
-		CA1B87401C39C8E800D82FB9 /* bertinelli.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */; };
-		CA2319D11C3BC03700469009 /* cometFidenza.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA2319D01C3BC03700469009 /* cometFidenza.gpx */; };
 		CA6D9FBF1C3DB6BF00B47713 /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6D9FBE1C3DB6BF00B47713 /* send.png */; };
 		CA83AC141C2DD238000D6432 /* UITextField+RuntimeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */; };
 		CA83AC151C2DD238000D6432 /* UIViewController+TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA83AC131C2DD238000D6432 /* UIViewController+TextFieldDelegate.m */; };
@@ -269,10 +265,6 @@
 		2DFDCBE21BFA3158008A2558 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2DFDCBE31BFA3158008A2558 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		2DFDCBEE1BFA43BE008A2558 /* buddyUniversita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddyUniversita.png; sourceTree = "<group>"; };
-		CA1B873B1C39BF5300D82FB9 /* cocorico.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cocorico.gpx; sourceTree = "<group>"; };
-		CA1B873D1C39C21500D82FB9 /* pilotta.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pilotta.gpx; sourceTree = "<group>"; };
-		CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bertinelli.gpx; sourceTree = "<group>"; };
-		CA2319D01C3BC03700469009 /* cometFidenza.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cometFidenza.gpx; sourceTree = "<group>"; };
 		CA6D9FBE1C3DB6BF00B47713 /* send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send.png; sourceTree = "<group>"; };
 		CA83AC101C2DD238000D6432 /* UITextField+RuntimeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+RuntimeExtension.h"; sourceTree = "<group>"; };
 		CA83AC111C2DD238000D6432 /* UITextField+RuntimeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+RuntimeExtension.m"; sourceTree = "<group>"; };
@@ -648,10 +640,6 @@
 		CAC374551BF5EBC900CB53DD = {
 			isa = PBXGroup;
 			children = (
-				CA2319D01C3BC03700469009 /* cometFidenza.gpx */,
-				CA1B873F1C39C8E800D82FB9 /* bertinelli.gpx */,
-				CA1B873D1C39C21500D82FB9 /* pilotta.gpx */,
-				CA1B873B1C39BF5300D82FB9 /* cocorico.gpx */,
 				2DD2059E1C23196600133056 /* CoreLocation.framework */,
 				CAC374601BF5EBC900CB53DD /* Progetto */,
 				CAC3747D1BF5EBC900CB53DD /* ProgettoTests */,
@@ -832,7 +820,6 @@
 				2D0E2F991C045022009420A5 /* ForoItalicoUniversitaDegliStudiDiRoma.png in Resources */,
 				2DC180DF1C20E3C500673136 /* UPNelleVicinanzeCell.xib in Resources */,
 				2D0E2FAA1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png in Resources */,
-				CA2319D11C3BC03700469009 /* cometFidenza.gpx in Resources */,
 				2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */,
 				2D057C8E1C30295000ABA819 /* ManEtta.png in Resources */,
 				2D0E2FC81C045022009420A5 /* UniversitaDegliStudiDiSassari.png in Resources */,
@@ -870,7 +857,6 @@
 				2D045D5A1C2ADA030021F14F /* checkin.png in Resources */,
 				CA6D9FBF1C3DB6BF00B47713 /* send.png in Resources */,
 				2DC180E51C20E48100673136 /* lock.png in Resources */,
-				CA1B87401C39C8E800D82FB9 /* bertinelli.gpx in Resources */,
 				2DD997D81C395A4200DB12D5 /* UPCustomSection.xib in Resources */,
 				2D6629BA1C3842AF00BDCB6E /* UPListaLuoghiNelleVicinanze.xib in Resources */,
 				2D0E2FAE1C045022009420A5 /* UniversitaDegliStudiDellInsubria.PNG in Resources */,
@@ -891,7 +877,6 @@
 				2D0E2FD51C045022009420A5 /* UniversitaDiMilanoBicocca.png in Resources */,
 				2D0E2FD21C045022009420A5 /* UniversitaDegliStudiMediterraneaDiReggioCalabria.png in Resources */,
 				2D0E2FBA1C045022009420A5 /* UniversitaDegliStudiDiCatanzaro.gif in Resources */,
-				CA1B873C1C39BF5300D82FB9 /* cocorico.gpx in Resources */,
 				2D0E2FA51C045022009420A5 /* ScuolaSuperioreDiStudiUniversitariEDiPerfezionamentoSantAnna.png in Resources */,
 				2DC180D71C20E38000673136 /* UPAltreCategorieCell.xib in Resources */,
 				2D0E2FC01C045022009420A5 /* UniversitaDegliStudiDiMessina.png in Resources */,
@@ -903,7 +888,6 @@
 				2D0E2FC71C045022009420A5 /* UniversitaDegliStudiDiSalerno.jpg in Resources */,
 				2D0E2FA01C045022009420A5 /* PolitecnicoDiBari.gif in Resources */,
 				2D0E2FD01C045022009420A5 /* UniversitaDegliStudiDiVerona.gif in Resources */,
-				CA1B873E1C39C21500D82FB9 /* pilotta.gpx in Resources */,
 				2D4C49701C24553700743AC1 /* unlock.png in Resources */,
 				2D5F89CF1C43DDE3000AF6E3 /* notFound.png in Resources */,
 				2D4D5BA01C2C7C0B0025A939 /* menu.png in Resources */,
