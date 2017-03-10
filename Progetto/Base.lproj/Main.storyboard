@@ -2810,10 +2810,10 @@
         <scene sceneID="sqw-F2-7Bb">
             <objects>
                 <navigationController id="tIq-YH-gHV" sceneMemberID="viewController">
-                    <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="667"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ndP-D7-Yos">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ndP-D7-Yos">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

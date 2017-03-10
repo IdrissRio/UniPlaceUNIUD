@@ -124,13 +124,13 @@
 
 - (void)viewDidLoad {
     
-    selectedPicker=@"Biblioteche";
+    selectedPicker=@"Biblioteca";
     immagineSelezionata = NO;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.luogo= [[UPLuogo alloc]init];
-    pickerValues=@[@"Biblioteche",@"Vita Notturna",@"Gastronomia",@"Varie"];
+    pickerValues=@[@"Biblioteca",@"Pub",@"Cantina",@"Casa",@"Ristoranti",@"Discoteca",@"Aula Studio",@"Palestra", @"Diparimento",@"Mensa",@"Altro..."];
     [super viewDidLoad];
     self.pickerTipologia.delegate=self;
     self.pickerTipologia.dataSource=self;
