@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275F595A1E740E880014EC63 /* UNIPLACE-START.png in Resources */ = {isa = PBXBuildFile; fileRef = 275F59591E740E880014EC63 /* UNIPLACE-START.png */; };
 		2D0180FC1C3C602E005289D5 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0180FB1C3C602E005289D5 /* cameraIcon.png */; };
 		2D02D9151C395B7C005478EB /* UPCustomSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02D9141C395B7C005478EB /* UPCustomSectionCell.m */; };
 		2D045D5A1C2ADA030021F14F /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D045D591C2ADA030021F14F /* checkin.png */; };
@@ -149,6 +150,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		275F59591E740E880014EC63 /* UNIPLACE-START.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UNIPLACE-START.png"; sourceTree = SOURCE_ROOT; };
 		2D0180FB1C3C602E005289D5 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
 		2D02D9131C395B7C005478EB /* UPCustomSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCustomSectionCell.h; sourceTree = "<group>"; };
 		2D02D9141C395B7C005478EB /* UPCustomSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCustomSectionCell.m; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 		2D057C8B1C30294300ABA819 /* ImmaginiSviluppatori */ = {
 			isa = PBXGroup;
 			children = (
+				275F59591E740E880014EC63 /* UNIPLACE-START.png */,
 				2D5F89CE1C43DDE3000AF6E3 /* notFound.png */,
 				2D057C8D1C30295000ABA819 /* IdrissRio.jpg */,
 			);
@@ -819,6 +822,7 @@
 				2D0E2FAA1C045022009420A5 /* UniversitaDegliStudiDellaBasilicata.png in Resources */,
 				2DFDCBEF1BFA43BE008A2558 /* buddyUniversita.png in Resources */,
 				2D0E2FC81C045022009420A5 /* UniversitaDegliStudiDiSassari.png in Resources */,
+				275F595A1E740E880014EC63 /* UNIPLACE-START.png in Resources */,
 				2D0E2FAF1C045022009420A5 /* UniversitaDegliStudiDelMolise.png in Resources */,
 				2D0E2FD11C045022009420A5 /* UniversitaDegliStudiGabrieleDAnnunzio.png in Resources */,
 				2D0E2FB01C045022009420A5 /* UniversitaDegliStudiDelPiemonte.jpg in Resources */,

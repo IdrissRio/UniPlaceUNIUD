@@ -62,7 +62,7 @@
     if([_nomeLuogoTextField.text  isEqual: @""])
         checkName=NULL;
     else
-        checkName=_nomeLuogoTextField.text;
+        checkName=[NSString stringWithString:_nomeLuogoTextField.text];
     
     NSDictionary *parametriLuogo = [[NSDictionary alloc]initWithObjectsAndKeys:
                                     checkName, @"nome",

@@ -26,12 +26,12 @@
     AppDelegate *objApp=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     context=[objApp managedObjectContext];
     [requestDB setEntity:[NSEntityDescription entityForName:@"Utente" inManagedObjectContext:context  ]];
-    [requestDB setIncludesSubentities:NO]; //Omit subentities. Default is YES (i.e. include subentities)
+    [requestDB setIncludesSubentities:NO];
     NSError *err;
     NSUInteger count = [context countForFetchRequest:requestDB error:&err];
     if(count == 0) {
         NSLog(@"DB vuoto, procedere con la registrazione");
-        firstLoginScreenViewController *loginController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"dbVuotoController"]; //or the homeController
+        firstLoginScreenViewController *loginController=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"dbVuotoController"];
         UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:loginController];
         self.window.rootViewController=navController;
     }else{
